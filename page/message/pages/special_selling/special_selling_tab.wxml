@@ -1,0 +1,103 @@
+<common-tabs bindchooseTab="chooseTab"></common-tabs>
+<view class="special_selling" style="padding-top: 78rpx;" wx:if="{{haveData}}">
+    <view class="warp" wx:for="{{shopList}}" wx:for-index="i" wx:key="{{i}}">
+        <view bindtap="jumpToNext" class="special_selling_item_a" data-id="{{item.id}}" wx:if="{{item.imgUrls.length>1}}">
+            <view class="special_selling_item_a_1">{{item.name}}</view>
+            <view class="special_selling_item_a_2">
+                <image mode="aspectFill" src="{{img}}" wx:for="{{item.imgUrls}}" wx:for-index="j" wx:for-item="img" wx:key="{{j}}"></image>
+            </view>
+            <view class="special_selling_item_a_3">
+                <view class="special_selling_item_a_l">
+                    <text class="special_selling_comment">{{item.viewNum?item.viewNum:0}}浏览</text>
+                    <text class="special_selling_comment">{{item.comments.length>0?item.comments.length:0}}评论</text>
+                    <text class="special_selling_praise">{{item.likes.length>0?item.likes.length:0}}赞</text>
+                    <text class="special_selling_time">{{item.publishTime}}</text>
+                </view>
+                <view class="special_selling_item_a_r" wx:if="{{item.isSpecial==2&&item.price==0}}">
+                    <text class="special_selling_price"></text>
+                </view>
+                <view class="special_selling_item_a_r" wx:elif="{{item.isSpecial==2&&item.price!=0}}">
+                    <text class="special_selling_price">{{item.price1}}<text>{{item.price2}}</text>
+                        <text>万</text>
+                    </text>
+                    <text class="special_selling_original_price" wx:if="{{item.enableSupperMemberPrice===2&&item.superMemberPrice}}">￥{{item.salePrice3}}万</text>
+                    <text class="special_selling_original_price" wx:elif="{{item.originalPrice>0}}">￥{{item.originalPrice}}万</text>
+                    <image class="icon-vip" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/icon-svip.png" wx:if="{{item.enableSupperMemberPrice===2&&item.superMemberPrice}}"></image>
+                </view>
+                <view class="special_selling_item_a_r" wx:else>
+                    <text class="special_selling_price">
+                        <text style="font-size:24rpx">￥</text>{{item.price1}}<text style="font-size:22rpx">{{item.price2}}</text>
+                    </text>
+                    <text class="special_selling_original_price" wx:if="{{item.enableSupperMemberPrice===2&&item.superMemberPrice}}">￥{{item.salePrice3}}</text>
+                    <text class="special_selling_original_price" wx:elif="{{item.originalPrice>0}}">￥{{item.originalPrice}}</text>
+                    <image class="icon-vip" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/icon-svip.png" wx:if="{{item.enableSupperMemberPrice===2&&item.superMemberPrice}}"></image>
+                </view>
+            </view>
+        </view>
+        <view bindtap="jumpToNext" class="special_selling_item_b" data-id="{{item.id}}" wx:else>
+            <view class="special_selling_item_b_l">
+                <image mode="aspectFill" src="{{item.imgUrls}}"></image>
+            </view>
+            <view class="special_selling_item_b_r">
+                <view class="special_selling_item_b_t">{{item.name}}</view>
+                <view class="special_selling_item_b_2" wx:if="{{item.isSpecial==2&&item.price==0}}">
+                    <text class="special_selling_price"></text>
+                </view>
+                <view class="special_selling_item_b_2" wx:elif="{{item.isSpecial==2&&item.price!=0}}">
+                    <text class="special_selling_price">{{item.price1}}<text>{{item.price2}}</text>
+                        <text>万</text>
+                    </text>
+                    <text class="special_selling_original_price" wx:if="{{item.enableSupperMemberPrice===2&&item.superMemberPrice}}">￥{{item.salePrice3}}万</text>
+                    <text class="special_selling_original_price" wx:elif="{{item.originalPrice>0}}">￥{{item.originalPrice}}万</text>
+                    <image class="icon-vip" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/icon-svip.png" wx:if="{{item.enableSupperMemberPrice===2&&item.superMemberPrice}}"></image>
+                </view>
+                <view class="special_selling_item_b_2" wx:else>
+                    <text class="special_selling_price">
+                        <text style="font-size:24rpx">￥</text>{{item.price1}}<text style="font-size:22rpx">{{item.price2}}</text>
+                    </text>
+                    <text class="special_selling_original_price" wx:if="{{item.enableSupperMemberPrice===2&&item.superMemberPrice}}">￥{{item.salePrice3}}</text>
+                    <text class="special_selling_original_price" wx:elif="{{item.originalPrice>0}}">￥{{item.originalPrice}}</text>
+                    <image class="icon-vip" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/icon-svip.png" wx:if="{{item.enableSupperMemberPrice===2&&item.superMemberPrice}}"></image>
+                </view>
+                <view class="special_selling_item_b_b">
+                    <view class="special_selling_item_b_1">
+                        <text class="special_selling_comment">{{item.viewNum?item.viewNum:0}}浏览</text>
+                        <text class="special_selling_comment">{{item.comments.length>0?item.comments.length:0}}评论</text>
+                        <text class="special_selling_praise">{{item.likes.length>0?item.likes.length:0}}赞</text>
+                        <text class="special_selling_time">{{item.publishTime}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="loading" wx:if="{{showLoading}}">
+        <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/one-shop-one-mini-app/loading.png"></image>
+        <text>加载中...</text>
+    </view>
+    <block wx:if="{{showTipData.show}}">
+        <import src="../../../../components/template/show_dialog/show_dialog.wxml"></import>
+        <template is="showDialog" data="{{showTipData:showTipData}}"></template>
+    </block>
+</view>
+<view wx:if="{{noData}}">
+    <view class="no_data">
+        <view class="images">
+            <image class="no-bg" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/one-shop-one-mini-app/wushangpin.png"></image>
+        </view>
+        <view class="text">商家还没有发布任何商品</view>
+    </view>
+</view>
+<block wx:if="{{showTipData.show}}">
+    <import src="../../../../components/template/show_dialog/show_dialog.wxml"></import>
+    <template is="showDialog" data="{{showTipData:showTipData}}"></template>
+</block>
+<view class="loading_failure" wx:if="{{loading_fail}}">
+    <view bindtap="onLoad">
+        <view class="loading_failure_img">
+            <image alt="" src="../../../../image/xuanzhuan.png"></image>
+        </view>
+        <view class="loading_failure_text">加载失败<text>点击重试</text>
+        </view>
+    </view>
+</view>
+<return_index wx:if="{{showReturnIndexBtn}}"></return_index>

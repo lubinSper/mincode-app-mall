@@ -1,0 +1,195 @@
+<view wx:if="{{order}}">
+    <view class="marked_words" wx:if="{{order.status==2}}">
+        <view class="marked_words_text">待卖家发货</view>
+        <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/dfh.png" style="width:101rpx; height:87rpx;"></image>
+    </view>
+    <view class="marked_words" wx:elif="{{order.status==3}}">
+        <view class="marked_words_text">
+            <text>卖家已发货</text>
+            <text style="font-size:24rpx;color:#ffdfdc;" wx:if="{{remainingTime.length>0}}">请在{{remainingTime}}内确认收货</text>
+        </view>
+        <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/yfhcar.png" style="width:141rpx; height:75rpx; "></image>
+    </view>
+    <view class="marked_words" wx:elif="{{order.status==4}}">
+        <view class="marked_words_text">{{order.payMethod!=2?'已支付，待到店取货':'待到店取货并支付'}}</view>
+        <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/ddqh.png" style="width:131rpx; height:91rpx;"></image>
+    </view>
+    <view class="marked_words" wx:elif="{{order.status==5}}">
+        <view class="marked_words_text">预约成功，请按预约时间到店</view>
+        <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/yycg.png" style="width:127rpx; height:100rpx;"></image>
+    </view>
+    <view class="marked_words" wx:elif="{{order.status==6}}">
+        <view class="marked_words_text">已完成</view>
+        <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/yiwancheng.png" style="width:121rpx; height:93rpx;"></image>
+    </view>
+    <view class="marked_words" wx:elif="{{order.status==7||order.status==8}}">
+        <view class="marked_words_text">{{order.status==7?'买家已取消':'买家已关闭'}}</view>
+        <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/yqx.png" style="width:121rpx; height:93rpx; "></image>
+    </view>
+    <view class="order_detail_1">
+        <view class="order_detail_price">￥{{order.amountStr}}</view>
+        <view class="order_detail_prompt" wx:if="{{order.status==2}}">{{order.payMethod!=2?'已支付，请联系商家发货':'请联系商家发货并付款'}}</view>
+        <view class="order_detail_prompt" wx:elif="{{order.status==3}}">{{order.payMethod!=2?'请确认收到商品后再确认收货':'请确认收到商品后再确认收货并支付'}}</view>
+        <view class="order_detail_prompt" wx:elif="{{order.status==4}}">{{order.payMethod!=2?'请联系商家取货':'请联系商家取货并支付'}}</view>
+        <view class="order_detail_prompt" wx:elif="{{order.status==5}}">{{order.payMethod!=2?'已支付，请联系商家并按预约时间到店':'预约成功，请按照预约时间到店并付款'}}</view>
+        <view class="order_detail_prompt" wx:elif="{{order.status==6&&order.type==1}}">已确认{{order.carryType==1?'收':'取'}}货</view>
+        <view class="order_detail_prompt" wx:elif="{{order.status==6&&order.type==2}}">已完成</view>
+        <view class="order_detail_prompt" wx:elif="{{order.status==7||order.status==8}}">{{order.status==7?'取消':'关闭'}}原因：{{order.closureReason}}</view>
+    </view>
+    <view class="order_detail_2">
+        <view wx:if="{{order.carryType==1&&order.type==1}}">
+            <view class="peisong" wx:if="{{order.status==3||order.status==4||order.status==5||order.status==6}}">
+                <view class="peisong_title">配送信息</view>
+                <view>
+                    <text class="kuaidi">{{order.expressName?order.expressName:'商家配送'}}</text>
+                    <text>{{order.expressNo?order.expressNo:''}}</text>
+                </view>
+                <view catchtap="copyPost" class="peisong_copy" wx:if="{{order.expressNo}}">复制</view>
+            </view>
+            <view class="detail_item shouhuo">
+                <view class="detail_name">
+                    <text class="sh_name">{{order.consigneeName}}</text>
+                    <text>{{order.mobilePhone}}</text>
+                </view>
+                <view class="shouhuo_add">{{order.address}}</view>
+            </view>
+            <view class="detail_item liuyan" wx:if="{{order.customerRemark}}">
+                <view class="detail_name">留言</view>
+                <view class="liuyan_desc">{{order.customerRemark}}</view>
+            </view>
+        </view>
+        <view wx:if="{{order.carryType==2&&order.type==1}}">
+            <view class="detail_item shouhuo">
+                <view class="detail_name">店铺地址</view>
+                <view class="shouhuo_add">{{order.address}}</view>
+            </view>
+            <view class="detail_item quhuo">
+                <view class="detail_name">
+                    <text class="quhuo_1">取货人</text>
+                    <text class="quhuo_1">{{order.consigneeName}}</text>
+                    <text>{{order.mobilePhone}}</text>
+                </view>
+            </view>
+            <view class="detail_item liuyan" wx:if="{{order.customerRemark}}">
+                <view class="detail_name">留言</view>
+                <view class="liuyan_desc">{{order.customerRemark}}</view>
+            </view>
+        </view>
+        <view wx:if="{{order.type==2}}">
+            <view class="detail_item shouhuo">
+                <view class="detail_name">店铺地址</view>
+                <view class="shouhuo_add">{{order.address}}</view>
+            </view>
+            <view class="detail_item quhuo">
+                <view class="detail_name">
+                    <text class="quhuo_1">预约人</text>
+                    <text class="quhuo_1">{{order.consigneeName}}</text>
+                    <text>{{order.mobilePhone}}</text>
+                </view>
+            </view>
+            <view class="detail_item liuyan" wx:if="{{order.customerRemark}}">
+                <view class="detail_name">留言</view>
+                <view class="liuyan_desc">{{order.customerRemark}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="order_detail_3" wx:if="{{order.type==2}}">
+        <text class="order_detail_3_l">预约时间</text>
+        <text>{{order.reserveTime}}</text>
+    </view>
+    <view class="goods_list">
+        <view class="goods_item" wx:for="{{order.xcxOrderProductDtoList}}" wx:for-index="i" wx:key="item">
+            <view class="goods_icon">
+                <image alt="拼团" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/ptbq.png" wx:if="{{item.activityType==3}}"></image>
+                <image alt="限时购" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/xsgbqre.png" wx:if="{{item.activityType==1}}"></image>
+                <image alt="砍价" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/kjbqre.png" wx:if="{{item.activityType==2}}"></image>
+            </view>
+            <view class="goods_img">
+                <image mode="aspectFill" src="{{item.imageUrl?item.imageUrl:'http://yamxcx.oss-cn-shenzhen.aliyuncs.com/one-shop-one-mini-app/140.png'}}"></image>
+            </view>
+            <view class="goods_mid">
+                <view class="goods_name">{{item.productName}}</view>
+                <view class="goods_attr">
+                    <text class="attr1" wx:if="{{item.productFirstAttrName}}">{{item.productFirstAttrName}}</text>
+                    <text>{{item.productSecondAttrName}}</text>
+                    <view wx:if="{{item.isVipBuy==2}}">
+                        <image class="svip" mode="aspectFit" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/SVIP.png"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="goods_right">
+                <view class="goods_price">￥{{item.productPriceStr}}</view>
+                <view class="goods_originalPrice" wx:if="{{item.productOriginalPrice>=item.productPrice&&item.productOriginalPrice!==0}}">￥{{item.productOriginalPriceStr}}</view>
+                <view class="goods_count" wx:if="{{order.type==1}}">x{{item.productCount}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="order_detail_4">
+        <view class="order_info_row">
+            <view class="row_left">订单号</view>
+            <view class="row_right">{{order.orderNo}}</view>
+        </view>
+        <view class="order_info_row">
+            <view class="row_left">交易时间</view>
+            <view class="row_right">{{order.buyTime}}</view>
+        </view>
+        <view class="order_info_row" wx:if="{{order.status==6||order.status==7||order.status==8}}">
+            <view class="row_left">完成时间</view>
+            <view class="row_right">{{order.updateTime}}</view>
+        </view>
+        <view class="order_info_row" wx:if="{{order.price>0}}">
+            <view class="row_left">支付方式</view>
+            <view class="row_right" wx:if="{{order.payMethod==1}}">微信支付</view>
+            <view class="row_right" wx:elif="{{order.payMethod==3}}">会员卡支付({{order.account}})</view>
+            <view class="row_right" wx:else>{{order.carryType==1?'货到付款':'到店支付'}}</view>
+        </view>
+        <view class="order_info_row" wx:if="{{order.type==2}}">
+            <view class="row_left">服务金额</view>
+            <view class="row_right">￥{{order.priceStr}}</view>
+        </view>
+        <block wx:if="{{order.type==1}}">
+            <view class="order_info_row">
+                <view class="row_left">商品总额</view>
+                <view class="row_right">￥{{order.originalPrice>=order.price?order.originalPriceStr:order.priceStr}}</view>
+            </view>
+            <view class="order_info_row">
+                <view class="row_left">优惠</view>
+                <view class="row_right">-￥{{order.favourable}}</view>
+            </view>
+            <view class="order_info_row" wx:if="{{order.carryType!=2}}">
+                <view class="row_left">运费</view>
+                <view class="row_right">￥{{order.freightStr}}</view>
+            </view>
+            <view class="order_info_row" wx:if="{{order.carryType!=2}}">
+                <view class="row_left">运费优惠</view>
+                <view class="row_right">-￥{{order.freightDiscountStr}}</view>
+            </view>
+        </block>
+        <view class="order_info_total">合计： ￥{{order.amountStr}}</view>
+    </view>
+    <view class="order_bottom" wx:if="{{isContinueBuy==1}}">
+        <button catchtap="continueGoBuy" class="continue_buy">继续逛逛</button>
+        <button catchtap="searchOrderCode" data-order-id="{{order.id}}">查看订单码</button>
+        <button class="contactus" openType="contact">联系客服</button>
+    </view>
+    <block wx:else>
+        <view class="order_bottom" wx:if="{{order.status!=7&&order.status!=8}}">
+            <button catchtap="sureFuc" wx:if="{{order.status==3}}">确认收货</button>
+            <button catchtap="sureFuc" wx:if="{{order.status==4&&order.payMethod!=2}}">我已取货</button>
+            <button catchtap="sureFuc" wx:if="{{order.status==5&&(order.payMethod!=2||order.price==0)}}">确认完成</button>
+            <button catchtap="cancleOrder" wx:if="{{order.status==2||order.status==4||order.status==5}}">取消订单</button>
+            <button catchtap="searchOrderCode" data-order-id="{{order.id}}">查看订单码</button>
+            <button class="contactus" openType="contact">联系客服</button>
+        </view>
+        <view class="order_bottom" wx:else>
+            <button catchtap="searchOrderCode" data-order-id="{{order.id}}">查看订单码</button>
+        </view>
+    </block>
+</view>
+<view style="height:120rpx;"></view>
+<block wx:if="{{showTipData.show}}">
+    <import src="../../../../components/template/show_dialog/show_dialog.wxml"></import>
+    <template is="showDialog" data="{{showTipData:showTipData}}"></template>
+</block>
+<import src="../../../../components/template/order_code/order_code.wxml"></import>
+<template is="orderCode" data="{{...orderCode}}"></template>

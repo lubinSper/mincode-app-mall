@@ -1,0 +1,11 @@
+<view class="copyright_main" wx:if="{{content.isShowTechnicalSupport==2}}">
+    <view bindtap="wantProgram" class="copyright_logo" style="margin-bottom:10rpx" wx:if="{{content.technicalSupportType==1}}">
+        <text>{{content.technicalSupportContent}}</text>
+    </view>
+    <view bindtap="wantProgram" class="copyright_logo" style="margin-bottom:-3rpx" wx:if="{{content.technicalSupportType==2}}">
+        <image mode="aspectFill" src="{{content.technicalSupportImgUrl}}"></image>
+    </view>
+    <view bindtap="wantProgram" class="wantProgram" wx:if="{{content.isShowButton==2}}">
+            {{content.buttonContent}}
+      </view>
+</view>

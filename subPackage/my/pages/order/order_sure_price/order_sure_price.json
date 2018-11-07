@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "订单确认",
+    "usingComponents": {
+        "paySixDialog": "/subPackage/my/components/wx-tpl/pay-six-dialog/index"
+    }
+}

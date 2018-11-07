@@ -1,0 +1,9 @@
+<template name="orderCode">
+    <view wx:if="{{codeTip}}">
+        <view bindtap="clickMask" class="code_mask"></view>
+        <view class="order_code">
+            <image class="img" src="{{codeUrl}}"></image>
+            <view class="desc">订单码用于到店扫码核销</view>
+        </view>
+    </view>
+</template>

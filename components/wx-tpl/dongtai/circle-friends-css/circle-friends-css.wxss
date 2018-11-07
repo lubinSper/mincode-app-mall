@@ -1,0 +1,408 @@
+.floatFix {
+    width: 100%;
+    display: inline-block;
+    clear: both;
+    height: 0;
+}
+
+.carousel {
+    width: 750rpx;
+    height: 376rpx;
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.carousel swiper {
+    width: 750rpx;
+    height: 376rpx;
+    display: block;
+    overflow: hidden;
+}
+
+.carousel image {
+    width: 100%;
+    height: 376rpx;
+    background-color: #eeeeee;
+}
+
+.carousel text {
+    font-size: 26rpx;
+    color: #fff;
+    width: 86rpx;
+    height: 56rpx;
+    line-height: 56rpx;
+    text-align: center;
+    background-color: rgba(0,0,0,0.6);
+    position: absolute;
+    right: 0;
+    bottom: 20rpx;
+    z-index: 10;
+}
+
+page {
+    background-color: #f4f4f4;
+    position: relative;
+}
+
+.share_code_bg {
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/discover_cover.png) center center / 100% no-repeat;
+    height: 300rpx;
+    position: relative;
+}
+
+.share_code_bg .share_code {
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/one-shop-one-mini-app/tag2.png) no-repeat;
+    position: absolute;
+    background-size: 90rpx 60rpx;
+    bottom: 40rpx;
+    right: 0;
+    width: 90rpx;
+    height: 60rpx;
+}
+
+.goods {
+    background: #fff;
+    padding: 30rpx 0;
+    margin-bottom: 20rpx;
+}
+
+.goods .goods_row {
+    display: flex;
+    flex-direction: row;
+    padding-left: 30rpx;
+}
+
+.goods .goods_row:last-child {
+    margin-bottom: 0;
+    border-bottom: 0;
+}
+
+.goods .goods_row .goods_left {
+    width: 70rpx;
+    height: 80rpx;
+    border-radius: 8rpx;
+}
+
+.goods .goods_row .goods_left image {
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 8rpx;
+    background-color: #eee;
+}
+
+.goods_right {
+    display: block;
+    width: 580rpx;
+    margin: 0 auto;
+}
+
+.goods_right .goods_right_a {
+    color: #667494;
+    font-size: 32rpx;
+    font-weight: 500;
+    line-height: 44rpx;
+    margin-top: -4rpx;
+}
+
+.goods_mid {
+    padding: 0 30rpx;
+}
+
+.goods_mid .goods_right_b {
+    font-size: 30rpx;
+    color: #222;
+    padding-right: 20rpx;
+    line-height: 40rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+    word-wrap: break-word;
+    margin-top: 10rpx;
+}
+
+.goods_mid .goods_right_c {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    float: left;
+}
+
+.goods_mid .goods_right_c .goods_images {
+    width: 224rpx;
+    height: 224rpx;
+    margin-right: 6rpx;
+    margin-bottom: 6rpx;
+    background-color: #eee;
+}
+
+.goods_mid .goods_right_c .goods_image {
+    width: 360rpx;
+    height: 360rpx;
+    background-color: #eee;
+}
+
+.goods_mid .goods_right_d {
+    height: 50rpx;
+    overflow: hidden;
+    width: 100%;
+}
+
+.goods_mid .goods_right_d .goods_payment {
+    margin-top: 20rpx;
+    width: 246rpx;
+    border: 1px solid #ff7800;
+    border-radius: 10rpx;
+    font-size: 24rpx;
+    color: #ff7800;
+    line-height: 54rpx;
+    text-align: center;
+    padding: 0 10rpx;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+
+.goods_main .goods_right_d .goods_time {
+    font-size: 24rpx;
+    color: #888;
+    line-height: 50rpx;
+    height: 50rpx;
+}
+
+.block {
+    height: 130rpx;
+}
+
+.discuss_view {
+    padding-left: 30rpx;
+}
+
+.new_order_prompt {
+    width: 100%;
+    height: 52rpx;
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    left: 0;
+    bottom: -2rpx;
+    z-index: 99999;
+}
+
+.new_order_prompt .new_order_prompt_le {
+    flex: 2;
+}
+
+.new_order_prompt .new_order_prompt_ri {
+    flex: 1;
+    height: 52rpx;
+    position: relative;
+}
+
+.new_order_prompt .new_order_prompt_ri .btn_new_order_prompt_ri {
+    position: absolute;
+    top: 0;
+    left: 49%;
+    width: 90rpx;
+    margin-left: -40rpx;
+    height: 48rpx;
+    display: block;
+}
+
+.new_order_prompt .new_order_prompt_ri .btn_new_order_prompt_ri image {
+    width: 90rpx;
+    height: 47rpx;
+}
+
+.xz_img {
+    width: 110rpx;
+    height: 60px;
+    margin: 0 auto;
+    display: block;
+    margin-top: 272rpx;
+}
+
+.bind_click {
+    margin-top: 24rpx;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 318rpx;
+    font-size: 26rpx;
+    color: #bababa;
+}
+
+.bind_click text {
+    font-weight: bold;
+    color: #888;
+}
+
+.text {
+    font-size: 30rpx;
+    margin-top: 120rpx;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 602rpx;
+}
+
+.sign {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 22rpx;
+    color: #ccc;
+    height: 40rpx;
+}
+
+.sign view {
+    line-height: 32rpx;
+    width: 220rpx;
+    margin: 0 auto;
+    margin-top: -16rpx;
+}
+
+@import "../../../template/discuss/discuss.wxss";
+
+.loading {
+    text-align: center;
+    position: relative;
+    background-color: #f4f4f4;
+    width: 100%;
+    height: 90rpx;
+    line-height: 90rpx;
+}
+
+.loading image {
+    width: 32rpx;
+    height: 32rpx;
+    animation: circle 1s infinite linear;
+    position: absolute;
+    top: 50%;
+    margin-top: -16rpx;
+}
+
+.loading text {
+    font-size: 26rpx;
+    color: #222;
+    padding-left: 42rpx;
+}
+
+.dialog {
+    background: rgba(0,0,0,0.8);
+    line-height: 40rpx;
+    text-align: center;
+    border-radius: 8rpx;
+    display: inline-block;
+    padding: 14rpx 30rpx;
+    color: #fff;
+    font-size: 30rpx;
+}
+
+.sign {
+    display: none;
+}
+
+.ico_title_recommend {
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/tuijian.jpg) no-repeat 0 0 / 30rpx 30rpx;
+    padding-left: 42rpx;
+    margin-top: -4rpx;
+    font-size: 30rpx;
+    line-height: 43rpx;
+}
+
+.singleGoodInfo {
+    width: 690rpx;
+    margin: 0 auto;
+    background-color: #f8f8f8;
+    height: 160rpx;
+    overflow: hidden;
+    margin-top: 30rpx;
+}
+
+.singleGoodInfo .dl {
+    width: 100%;
+}
+
+.singleGoodInfo .dl .dt {
+    float: left;
+    width: 120rpx;
+}
+
+.singleGoodInfo .dl .dt image {
+    width: 120rpx;
+    height: 120rpx;
+    display: block;
+    background-color: #eee;
+    margin: 20rpx;
+}
+
+.singleGoodInfo .dl .dd {
+    float: right;
+    width: 510rpx;
+    margin-right: 20rpx;
+}
+
+.singleGoodInfo .dl .dd .sgi_title {
+    height: 44rpx;
+    line-height: 44rpx;
+    width: 510rpx;
+    display: block;
+    font-size: 28rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: 15rpx;
+}
+
+.singleGoodInfo .dl .dd .sgi_price {
+    font-size: 30rpx;
+    font-weight: 500;
+    color: #ff7800;
+}
+
+.singleGoodInfo .dl .dd .sgi_orgitialPrice {
+    float: left;
+    font-size: 22rpx;
+    color: #888;
+    text-decoration: line-through;
+    width: 100%;
+}
+
+.singleGoodInfo .dl .dd .sgi_orgitialPrice span {
+    float: left;
+    text-decoration: line-through;
+}
+
+.singleGoodInfo .dl .dd .sgi_orgitialPrice a {
+    float: right;
+    width: 158rpx;
+    height: 54rpx;
+    line-height: 52rpx;
+    background-color: #ff7800;
+    color: #fff;
+    text-align: center;
+    font-size: 26rpx;
+    border-radius: 28rpx;
+    margin-top: -20rpx;
+}
+
+.no_data {
+    text-align: center;
+    margin-top: 195rpx;
+    overflow: hidden;
+}
+
+.no_data .text {
+    color: #888;
+    font-size: 30rpx;
+}
+
+.custom-class {
+    position: static;
+    top: 0;
+    margin-top: 0rpx;
+    transform: none;
+}
+
+@import "../../../../app.wxss";

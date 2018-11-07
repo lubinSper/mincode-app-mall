@@ -1,0 +1,23 @@
+{
+    "component": true,
+    "usingComponents": {
+        "return_index": "/components/wx-tpl/return_index/return_index",
+        "copyright": "/components/wx-tpl/copyright/copyright/copyright",
+        "singleRowGoods": "/components/wx-tpl/custom-page-tpl/custom-page/single-row-goods/single-row-goods",
+        "doubleRowGoods": "/components/wx-tpl/custom-page-tpl/custom-page/double-row-goods/double-row-goods",
+        "scrollRowGoods": "/components/wx-tpl/custom-page-tpl/custom-page/scroll-row-goods/scroll-row-goods",
+        "limit_shopping": "/components/wx-tpl/index/limitShopping/limitShopping",
+        "custom-classify": "/components/wx-tpl/index/customClassify/customClassify",
+        "custom-banner": "/components/wx-tpl/custom-page-tpl/custom-page/custom-banner/custom-banner",
+        "custom-button": "/components/wx-tpl/custom-page-tpl/custom-page/custom-button/custom-button",
+        "custom-form": "/components/wx-tpl/custom-page-tpl/custom-page/custom-form/custom-form",
+        "custom-image": "/components/wx-tpl/custom-page-tpl/custom-page/custom-image/custom-image",
+        "custom-line": "/components/wx-tpl/custom-page-tpl/custom-page/custom-line/custom-line",
+        "custom-nav": "/components/wx-tpl/custom-page-tpl/custom-page/custom-nav/custom-nav",
+        "custom-text": "/components/wx-tpl/custom-page-tpl/custom-page/custom-text/custom-text",
+        "custom-video": "/components/wx-tpl/custom-page-tpl/custom-page/custom-video/custom-video",
+        "custom-waterfall": "/components/wx-tpl/custom-page-tpl/custom-page/custom-waterfall/custom-waterfall",
+        "greeting": "/components/wx-tpl/greeting/greeting",
+        "NoData": "/components/wx-tpl/nodata/index"
+    }
+}

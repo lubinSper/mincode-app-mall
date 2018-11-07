@@ -1,0 +1,131 @@
+.nav {
+    background-color: #fff;
+    height: 92rpx;
+    padding-top: 10rpx;
+}
+
+.search {
+    float: left;
+    margin-left: 28rpx;
+    position: relative;
+    height: 64rpx;
+    width: 610rpx;
+    line-height: 64rpx;
+    border-radius: 64rpx;
+    background: #f4f4f4 url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/find_icon.png) no-repeat 20rpx center / 28rpx 28rpx;
+}
+
+.search input {
+    font-size: 26rpx;
+    margin-left: 60rpx;
+    line-height: 64rpx;
+    height: 64rpx;
+    width: 530rpx;
+}
+
+.del-search {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 50rpx;
+    height: 50rpx;
+    margin-top: -25rpx;
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/search_close.png) no-repeat center center / 30rpx 30rpx;
+}
+
+.cancel_search {
+    float: left;
+    font-size: 30rpx;
+    color: #aaa;
+    text-align: center;
+    width: 80rpx;
+    height: 64rpx;
+    line-height: 64rpx;
+    margin-left: 15rpx;
+}
+
+.history {
+    background-color: #fff;
+    padding-bottom: 20rpx;
+}
+
+.history-head {
+    margin: 0 21rpx;
+    padding-top: 10rpx;
+    height: 80rpx;
+}
+
+.history-head .title {
+    font-size: 28rpx;
+    width: 200rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    color: #555;
+    float: left;
+}
+
+.history-head .clear {
+    float: right;
+    width: 46rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/search_delete.png) no-repeat center center / 22rpx 26rpx;
+}
+
+.history-list {
+    margin-left: 21rpx;
+}
+
+.history-item {
+    display: inline-block;
+    background-color: #f4f4f4;
+    border-radius: 57rpx;
+    margin-right: 30rpx;
+    margin-bottom: 20rpx;
+    height: 57rpx;
+    line-height: 57rpx;
+    padding: 0 30rpx;
+    font-size: 25rpx;
+    color: #555;
+}
+
+.recommend {
+    background-color: #fff;
+    margin-top: 20rpx;
+}
+
+.loading_failure {
+    position: relative;
+    width: 100%;
+    height: 600rpx;
+}
+
+.loading_failure .loading_wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    height: 176rpx;
+}
+
+.loading_failure .loading_failure_img {
+    text-align: center;
+}
+
+.loading_failure image {
+    width: 100rpx;
+    height: 118rpx;
+}
+
+.loading_failure .loading_failure_text {
+    text-align: center;
+    font-size: 25rpx;
+    color: #bababa;
+}
+
+.loading_failure .loading_failure_text text {
+    font-weight: bold;
+    color: #888;
+}

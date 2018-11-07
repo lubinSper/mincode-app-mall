@@ -1,0 +1,52 @@
+<template name="customerService">
+    <view bindtap="lookEvent" class="customerService">
+        <view class="cs_impor_contact">
+            <contact-button class="cb" size="27" type="default-light"></contact-button>
+            <contact-button class="cb" size="27" type="default-light"></contact-button>
+            <contact-button class="cb" size="27" type="default-light"></contact-button>
+            <contact-button class="cb" size="27" type="default-light"></contact-button>
+            <contact-button class="cb" size="27" type="default-light"></contact-button>
+            <contact-button class="cb" size="27" type="default-light"></contact-button>
+            <contact-button class="cb" size="27" type="default-light"></contact-button>
+            <contact-button class="cb" size="27" type="default-light"></contact-button>
+            <contact-button class="cb" size="27" type="default-light"></contact-button>
+            <contact-button class="cb" size="27" type="default-light"></contact-button>
+            <contact-button class="cb" size="27" type="default-light"></contact-button>
+            <contact-button class="cb" size="27" type="default-light"></contact-button>
+            <contact-button class="cb" size="27" type="default-light"></contact-button>
+            <contact-button class="cb" size="27" type="default-light"></contact-button>
+            <contact-button class="cb" size="27" type="default-light"></contact-button>
+            <contact-button class="cb" size="27" type="default-light"></contact-button>
+            <contact-button class="cb" size="27" type="default-light"></contact-button>
+            <contact-button class="cb" size="27" type="default-light"></contact-button>
+            <contact-button class="cb" size="27" type="default-light"></contact-button>
+            <contact-button class="cb" size="27" type="default-light"></contact-button>
+            <contact-button class="cb" size="27" type="default-light"></contact-button>
+            <contact-button class="cb" size="27" type="default-light"></contact-button>
+            <contact-button class="cb" size="27" type="default-light"></contact-button>
+            <contact-button class="cb" size="27" type="default-light"></contact-button>
+        </view>
+        <view class="cs_impor">
+            <view class="cs_impor_le">
+                <view class="cs_impor_le_title" style="overflow:hidden">
+                    <view class="title-shop-img">
+                        <image alt="" src="{{logo}}"></image>
+                    </view>
+                    <view class="title-shop" style="position:relative">
+                        <text>{{orgName}}</text>
+                    </view>
+                </view>
+                <view class="cs_impor_le_message">
+                    <span class="biaoqing">店主给你发来了一条信息，</span>
+                    <abcd>点击查看</abcd>
+                </view>
+            </view>
+            <view class="cs_impor_ri">
+                <view class="cs_impor_ri_time">刚刚</view>
+                <view>
+                    <image alt="" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/one-shop-one-mini-app/service_close.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>

@@ -1,0 +1,13 @@
+<view animation="{{animationData1}}" bindtap="closePayWayDialog" class="pay-way-modal" wx:if="{{isShowActionSheet}}"></view>
+<view animation="{{animationData2}}" class="pay-way-dialog" wx:if="{{isShowActionSheet}}">
+    <view class="way-container">
+        <view bindtap="checkSheet" class="way-item {{item.title?'vip':''}}" data-index="{{index}}" data-key="{{item.key}}" wx:if="{{item.use}}" wx:for="{{payList}}" wx:key="item">
+            <view class="item-box">
+                <image class="item-icon {{item.title?'item-icon-card':''}}" mode="widthFix" src="{{item.icon}}" wx:if="{{item.icon}}"></image>
+                <text class="item-text">{{item.name}}</text>
+            </view>
+            <view class="balance" wx:if="{{item.title}}">{{item.title}}</view>
+        </view>
+    </view>
+    <view bindtap="closePayWayDialog" class="cancel-dialog">取消</view>
+</view>

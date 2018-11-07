@@ -1,0 +1,96 @@
+.product-detail-comment {
+}
+
+.comment-title {
+    height: 86rpx;
+    line-height: 86rpx;
+    border-bottom: 1rpx solid #e6e6e6;
+    padding-left: 30rpx;
+    color: #222;
+    font-size: 32rpx;
+}
+
+.comment-box {
+    position: fixed;
+    z-index: 6666;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100rpx;
+    padding: 15rpx 30rpx;
+    box-sizing: border-box;
+    border-top: 1rpx solid #e6e6e6;
+}
+
+.title {
+    font-size: 30rpx;
+    color: #222;
+    flex: 0 0 90rpx;
+}
+
+.comment-input {
+    height: 70rpx;
+    line-height: 70rpx;
+    background-color: #f3f3f3;
+    border-radius: 34rpx;
+    font-size: 30rpx;
+    margin-left: 30rpx;
+    flex: 1;
+    padding: 0 30rpx;
+}
+
+.like-container {
+    position: relative;
+    margin-top: 20rpx;
+    padding-top: 30rpx;
+    text-align: center;
+}
+
+.like-thumb-container {
+    margin-top: 10rpx;
+    padding: 0 80rpx;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 30rpx;
+}
+
+.like-thumb-container .avtar {
+    display: block;
+    background-color: #ccc;
+    width: 50rpx;
+    height: 50rpx;
+    margin: 10rpx 8rpx 0 0;
+    border-radius: 100%;
+}
+
+.no-comment {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200rpx;
+}
+
+.no-comment image {
+    height: 280rpx;
+    margin-bottom: 30rpx;
+}
+
+.no-comment text {
+    color: #888;
+}
+
+.empty {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 100rpx;
+    width: 100%;
+    background-color: transparent;
+    z-index: 1;
+}

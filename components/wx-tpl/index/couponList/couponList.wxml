@@ -1,0 +1,6 @@
+<view class="find_list_coupon" wx:if="{{couponList.length>0}}">
+    <colours_title hasLine="{{true}}" showAll="{{couponList.length>2}}" title="优惠券" type="{{1}}" url="/subPackage/business/pages/more_coupon/more_coupon?orgId={{orgId}}"></colours_title>
+    <view class="find_list_coupon_content">
+        <coupon_item bind:receivecoupon="receiveCoupon" couponList="{{couponList}}" fromHome="{{true}}"></coupon_item>
+    </view>
+</view>

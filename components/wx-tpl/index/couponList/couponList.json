@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "colours_title": "/components/wx-tpl/index/coloursTitle/coloursTitle",
+        "coupon_item": "/components/wx-tpl/coupon_item/coupon_item"
+    }
+}

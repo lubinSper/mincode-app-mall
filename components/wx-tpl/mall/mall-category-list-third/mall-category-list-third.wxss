@@ -1,0 +1,450 @@
+page {
+    height: auto;
+    background-color: #fff;
+}
+
+.fixed-while {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -9999;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+}
+
+.nav {
+    white-space: nowrap;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 333;
+    background-color: #fff;
+    border-bottom: 1rpx solid #e2e2e2;
+}
+
+.search {
+    margin-left: 30rpx;
+    margin-top: 10rpx;
+    margin-bottom: 20rpx;
+    width: 690rpx;
+    height: 64rpx;
+    border-radius: 50rpx;
+    background: #f4f4f4 url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/find_icon.png) no-repeat 20rpx center / 28rpx 28rpx;
+}
+
+.search input {
+    font-size: 26rpx;
+    margin-left: 60rpx;
+    line-height: 64rpx;
+    height: 64rpx;
+}
+
+.main {
+    background-color: white;
+    min-height: 860rpx;
+}
+
+.tabs {
+    height: 100%;
+    position: fixed;
+    top: 94rpx;
+    bottom: 0;
+    width: 160rpx;
+    padding-bottom: 84rpx;
+    overflow-x: hidden;
+    background-color: #F4F4F4;
+    box-sizing: border-box;
+}
+
+.tabs .item {
+    height: 100rpx;
+    padding: 0 10rpx;
+    font-size: 26rpx;
+    color: #555;
+}
+
+.tabs .item.select {
+    background-color: white;
+    color: #FF7726;
+}
+
+.tabs .item .text {
+    width: 100%;
+    height: 100%;
+    border-bottom: 1rpx solid #E2E2E2;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tabs .item .text.no_border {
+    border: none;
+}
+
+.content {
+    padding: 20rpx;
+    margin-left: 160rpx;
+    height: 100%;
+}
+
+.content .item {
+    padding: 20rpx 0;
+    display: flex;
+}
+
+.content .item .left {
+    width: 160rpx;
+    height: 160rpx;
+    position: relative;
+}
+
+.content .item .left image {
+    width: 100%;
+    height: 100%;
+}
+
+.content .item .left .activity_bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40rpx;
+    font-size: 22rpx;
+    line-height: 40rpx;
+    background: #ff3892;
+    overflow: hidden;
+    text-align: center;
+    opacity: 0.85;
+    color: white;
+}
+
+.content .item .left .pintuan {
+    background: #ff3651;
+}
+
+.content .item .left .kanjia {
+    background: #ff7800;
+}
+
+.content .item .left .count_down .count_down_l_1 {
+    width: 24rpx;
+    height: 24rpx;
+    float: left;
+    margin: 4rpx 5rpx 0 20rpx;
+}
+
+.content .item .left .count_down .count_down_l_2 {
+    margin-left: 14rpx;
+}
+
+.content .item .left .count_down .count_down_l_1 image {
+    width: 24rpx;
+    height: 24rpx;
+}
+
+.content .item .left .count_down .count_down_r {
+    float: left;
+}
+
+.content .item .left .count_down .count_down_r text {
+    color: #fff;
+    font-size: 22rpx;
+}
+
+.content .item .right {
+    flex: 1;
+    margin-left: 10rpx;
+    padding-right: 10rpx;
+}
+
+.content .item .right .first {
+    font-size: 28rpx;
+    height: 64rpx;
+    line-height: 33rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    white-space: normal;
+    word-break: break-all;
+    overflow: hidden;
+    color: #222;
+}
+
+.content .item .right .first text {
+    background-color: #ff7800;
+    border-radius: 4rpx;
+    display: inline-block;
+    width: 30rpx;
+    height: 30rpx;
+    color: #fff;
+    font-size: 22rpx;
+    text-align: center;
+    line-height: 30rpx;
+    margin-right: 6rpx;
+    vertical-align: top;
+    margin-top: 0rpx;
+}
+
+.content .item .right .second {
+    padding-top: 15rpx;
+    position: relative;
+}
+
+.content .item .right .second .second-left {
+    height: 40rpx;
+    line-height: 40rpx;
+    font-size: 30rpx;
+    color: #FF7726;
+    font-weight: 500;
+    overflow: hidden;
+}
+
+.content .item .right .second .second-left .text-price {
+    font-weight: 500;
+}
+
+.content .item .right .second .second-left .old_price {
+    margin-left: 10rpx;
+    font-size: 22rpx;
+    color: #aaaaaa;
+    text-decoration: line-through;
+}
+
+.content .item .right .second .second-left .icon-vip {
+    display: inline-block;
+    width: 50rpx;
+    height: 24rpx;
+    background-size: cover;
+    margin-left: 10rpx;
+}
+
+.member_icon {
+    font-size: 18rpx;
+    margin-left: 10rpx;
+    display: inline-block;
+    width: 56rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+    background-color: #deb567;
+    border-radius: 8rpx;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    top: -4rpx;
+}
+
+.content .item .right .second .second-right {
+    position: absolute;
+    z-index: 99;
+    top: 0;
+    right: -30rpx;
+    width: 100rpx;
+    height: 55rpx;
+    text-align: right;
+}
+
+.content .item .right .second .second-right image {
+    width: 40rpx;
+    height: 40rpx;
+    margin-top: 15rpx;
+    margin-right: 30rpx;
+}
+
+.content .item .right .third {
+    margin-top: 8rpx;
+    height: 30rpx;
+}
+
+.content .item .right .third .text {
+    float: left;
+    margin-right: 6rpx;
+    padding: 0 6rpx;
+    box-sizing: border-box;
+    line-height: 30rpx;
+    text-align: center;
+    font-size: 22rpx;
+    color: #60cb25;
+    border: 1rpx solid #60cb25;
+    border-radius: 2rpx;
+}
+
+.content .item .right .third .text.xianshi {
+    color: #ff9a02;
+    border-color: #ff9a02;
+}
+
+.content .item .right .third .text.yuyue {
+    color: #b482ff;
+    border-color: #b482ff;
+}
+
+.content .item .right .third .text.hot {
+    color: #f95341;
+    border-color: #f95341;
+}
+
+.content .item .right .third .text.clearanceSale {
+    color: #6cbd03;
+    border-color: #6cbd03;
+}
+
+.content .item .right .third .text.preSale {
+    color: #2b99f1;
+    border-color: #2b99f1;
+}
+
+.content .item .right .third .text.promotion {
+    color: #5CC0C0;
+    border-color: #5CC0C0;
+}
+
+.content .item .right .third .text.new {
+    color: #f95341;
+    border-color: #f95341;
+}
+
+.content .item .right .third .text.cut_price {
+    color: #ff588b;
+    border-color: #ff588b;
+}
+
+.content .item .right .third .text.dztj {
+    color: #ff9a02;
+    border-color: #ff9a02;
+}
+
+.content .item .right .third .reduce_price {
+    background: #fff0f7;
+    color: #ff698e;
+    display: inline-block;
+    height: 34rpx;
+    line-height: 34rpx;
+    font-size: 24rpx;
+    border-radius: 17rpx;
+    padding: 0 20rpx;
+    margin: 0;
+}
+
+.loading {
+    text-align: center;
+    position: relative;
+    background-color: #f4f4f4;
+    width: 100%;
+    height: 90rpx;
+    line-height: 90rpx;
+}
+
+.loading image {
+    width: 32rpx;
+    height: 32rpx;
+    animation: circle 1s infinite linear;
+    position: absolute;
+    top: 50%;
+    margin-top: -16rpx;
+}
+
+.loading text {
+    font-size: 26rpx;
+    color: #222;
+    padding-left: 42rpx;
+}
+
+@-webkit-keyframes circle {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.no_data {
+    left: 160rpx;
+    top: 0;
+    height: 100%;
+    padding: 330rpx 0 300rpx 0;
+    background-color: #fff;
+}
+
+.no_data .no_data_img,.no_data .no_data_text {
+    text-align: center;
+}
+
+.no_data .no_data_img {
+    line-height: 1rpx;
+    margin-bottom: 14rpx;
+}
+
+.no_data .no_data_img image {
+    width: 401rpx;
+    height: 239rpx;
+}
+
+.no_data .no_data_text {
+    line-height: 30rpx;
+}
+
+.no_data .no_data_text text {
+    color: #555;
+    font-size: 30rpx;
+}
+
+.loading_failure {
+    position: fixed;
+    left: 160rpx;
+    padding-top: 300rpx;
+    height: 100%;
+    width: 590rpx;
+    background-color: #fff;
+}
+
+.loading_failure .loading_failure_img {
+    width: 100%;
+    text-align: center;
+    padding-top: 60rpx;
+}
+
+.loading_failure .loading_failure_img image {
+    width: 100rpx;
+    height: 118rpx;
+    display: block;
+    margin: 0 auto;
+}
+
+.loading_failure .loading_failure_text {
+    width: 100%;
+    text-align: center;
+    color: #bababa;
+    font-size: 25rpx;
+    height: 44rpx;
+    line-height: 44rpx;
+}
+
+.loading_failure .loading_failure_text text {
+    color: #888;
+    font-weight: bold;
+}
+
+.scy_number {
+    font-size: 20rpx;
+    color: #aaa;
+}
+
+.scy_yuyue {
+    font-size: 30rpx;
+    color: #ff7800;
+}
+
+.copyright_main {
+    justify-content: right!important;
+    flex-direction: row-reverse!important;
+}

@@ -1,0 +1,98 @@
+var formatMoney = (function(money) {
+    if (!money) return ('0');;
+    money = money / 100;
+    money = (+money).toString();
+    return (money)
+});
+var formatMoney2 = (function(money) {
+    if (!money) return ('0.00');;
+    money = money / 100;
+    money = (+money).toFixed(2);
+    return (money)
+});
+var encode = (function(_map, content) {
+    content = '' + content;
+    if (!_map || !content) {
+        return (content || '')
+    };
+    var reg = getRegExp('\x5cbyyyy|yy|MM|cM|eM|M|dd|d|HH|H|mm|ms|ss|m|s|w|ct|et\x5cb', 'g');
+    return (content.replace(reg, (function(cc) {
+        var _result = _map[((nt_0 = (!_map.i ? cc.toLowerCase() : cc), null == nt_0 ? undefined : 'number' === typeof nt_0 ? nt_0 : "" + nt_0))];
+        return (_result != null ? _result : cc)
+    })))
+});
+var transTime = ((function() {
+    var getDayPoint = (function(time) {
+        time.setMinutes(0);
+        time.setSeconds(0);
+        time.setMilliseconds(0);
+        time.setHours(0);
+        var today = time.getTime();
+        time.setMonth(1);
+        time.setDate(1);
+        var yearDay = time.getTime();
+        return ([today, yearDay])
+    });
+    return ((function(time, format) {
+        var check = getDayPoint(getDate());
+        if (format) {
+            return (dateFormat(time, format))
+        };
+        if (time >= check[(0)]) {
+            return (dateFormat(time, "HH:mm"))
+        } else if (time < check[(0)] && time >= check[(1)]) {
+            return (dateFormat(time, "MM-dd HH:mm"))
+        } else {
+            return (dateFormat(time, "yyyy-MM-dd HH:mm"))
+        }
+    }))
+}))();
+var dateFormat = ((function() {
+    var _map = ({
+        i: !0,
+    });
+    var _12cc = ['上午', '下午'];
+    var _12ec = ['A.M.', 'P.M.'];
+    var _week = ['日', '一', '二', '三', '四', '五', '六'];
+    var _cmon = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二'];
+    var _emon = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+    var _fmtnmb = (function(_number) {
+        _number = parseInt(_number) || 0;
+        return (_number < 10 ? '0' : '') + _number
+    });
+    var _fmtclc = (function(_hour) {
+        return (_hour < 12 ? 0 : 1)
+    });
+    return ((function(_time, _format, _12time) {
+        if (!_time || !_format) return ('');;
+        _time = getDate(_time);
+        _map.yyyy = _time.getFullYear();
+        _map.yy = ('' + _map.yyyy).substring(2);
+        _map.M = _time.getMonth() + 1;
+        _map.MM = _fmtnmb(_map.M);
+        _map.eM = _emon[((nt_4 = (_map.M - 1), null == nt_4 ? undefined : 'number' === typeof nt_4 ? nt_4 : "" + nt_4))];
+        _map.cM = _cmon[((nt_5 = (_map.M - 1), null == nt_5 ? undefined : 'number' === typeof nt_5 ? nt_5 : "" + nt_5))];
+        _map.d = _time.getDate();
+        _map.dd = _fmtnmb(_map.d);
+        _map.H = _time.getHours();
+        _map.HH = _fmtnmb(_map.H);
+        _map.m = _time.getMinutes();
+        _map.mm = _fmtnmb(_map.m);
+        _map.s = _time.getSeconds();
+        _map.ss = _fmtnmb(_map.s);
+        _map.ms = _time.getMilliseconds();
+        _map.w = _week[((nt_6 = (_time.getDay()), null == nt_6 ? undefined : 'number' === typeof nt_6 ? nt_6 : "" + nt_6))];
+        var _cc = _fmtclc(_map.H);
+        _map.ct = _12cc[((nt_7 = (_cc), null == nt_7 ? undefined : 'number' === typeof nt_7 ? nt_7 : "" + nt_7))];
+        _map.et = _12ec[((nt_8 = (_cc), null == nt_8 ? undefined : 'number' === typeof nt_8 ? nt_8 : "" + nt_8))];
+        if (!!_12time) {
+            _map.H = _map.H % 12
+        };
+        return (encode(_map, _format))
+    }))
+}))();
+module.exports = ({
+    formatMoney: formatMoney,
+    formatMoney2: formatMoney2,
+    transTime: transTime,
+});

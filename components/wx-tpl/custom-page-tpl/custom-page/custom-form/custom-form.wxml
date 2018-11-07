@@ -1,0 +1,10 @@
+<view class="{{i==0?'custom_form nonMarginTop':'custom_form'}}">
+    <view class="submit_title" wx:if="{{form[0].title}}">{{form[0].title}}</view>
+    <view class="submit_row" wx:for="{{form}}" wx:key="{{index}}">
+        <text class="submit_desc {{numStyleMap[numStyle]}}">{{item.field}}</text>
+        <input bindinput="formInput" class="submit_input" data-type="{{index}}" maxlength="100" placeholder="请填写{{item.field}}" placeholderStyle="color:#b6b8bd" value="{{item.fieldValue}}"></input>
+    </view>
+    <view class="warp_btn">
+        <button catchtap="submitApply" class="submit_btn" loading="{{btnLoading}}">提交</button>
+    </view>
+</view>

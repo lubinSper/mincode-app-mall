@@ -1,0 +1,29 @@
+<view class="coupon_banner">
+    <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/coupon_banner_new.png"></image>
+</view>
+<view>
+    <view class="coupon-list">
+        <coupon_item catch:receivecoupon="receiveCoupon" couponList="{{couponList}}"></coupon_item>
+        <view class="more-coupon" wx:if="{{noMoreCoupon}}">
+        没有更多优惠券了
+      </view>
+    </view>
+    <view bindtap="goMyCoupon" class="coupon-enter" wx:if="{{couponList.length>0}}"></view>
+    <view class="loading" style="background-color:#f4f4f4;" wx:if="{{pageLoading}}">
+        <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/one-shop-one-mini-app/loading.png"></image>
+        <text>加载中...</text>
+    </view>
+</view>
+<view class="loading_failure" wx:if="{{loading_failure==true}}">
+    <view bindtap="reLoadEvent">
+        <view class="loading_failure_img">
+            <image alt="" src="/page/message/images/jiazaishibai.png"></image>
+        </view>
+        <view class="loading_failure_text">加载失败<text>点击重试</text>
+        </view>
+    </view>
+</view>
+<view class="no_ordering" wx:if="{{couponListHas==true}}">
+    <NoData imageSrcNumber="7" noDataText="暂时没有优惠券哦"></NoData>
+</view>
+<return_index wx:if="{{showReturnIndexBtn}}"></return_index>

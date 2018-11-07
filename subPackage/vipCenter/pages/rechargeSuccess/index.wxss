@@ -1,0 +1,56 @@
+.top {
+    border-top: 2rpx solid #e2e2e2;
+    background: #fff;
+    text-align: center;
+    padding-top: 80rpx;
+    padding-bottom: 80rpx;
+}
+
+.text {
+    font-size: 30rpx;
+    line-height: 30rpx;
+    color: #09bb07;
+    margin-top: 8rpx;
+}
+
+.money {
+    font-size: 67rpx;
+    color: #222;
+    margin-top: 40rpx;
+    line-height: 67rpx;
+}
+
+.detail {
+    margin-top: 20rpx;
+    background: #fff;
+    padding: 15rpx 30rpx;
+    color: #555;
+}
+
+.item {
+    display: flex;
+    padding: 15rpx 0;
+    font-size: 26rpx;
+    line-height: 26rpx;
+    justify-content: space-between;
+    text-align: right;
+}
+
+.button {
+    text-align: center;
+}
+
+.button button {
+    background: #ff7800;
+    margin-top: 100rpx;
+    font-size: 32rpx;
+    width: 630rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    border-radius: 45rpx;
+    color: #fff;
+}
+
+.button button::after {
+    border: none;
+}

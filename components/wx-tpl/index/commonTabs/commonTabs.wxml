@@ -1,0 +1,9 @@
+<view class="classify_tab">
+    <view catchtap="chooseTab" class="item" data-sort="{{item.id}}" wx:for="{{tabs}}" wx:key="item">
+        <view class="text {{sort==item.id?'select':''}}">{{item.name}}</view>
+        <view class="arrow" wx:if="{{item.id==4}}">
+            <view class="top_icon {{collation==1?'select':''}}"></view>
+            <view class="bottom_icon {{collation==2?'select':''}}"></view>
+        </view>
+    </view>
+</view>

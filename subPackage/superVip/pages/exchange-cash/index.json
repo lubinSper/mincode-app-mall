@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "金币兑换 ",
+    "usingComponents": {
+        "ExchangeBottom": "../../components/exchange-bottom/index"
+    }
+}

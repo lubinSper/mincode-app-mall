@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "小程序开发",
+    "component": true,
+    "usingComponents": {
+        "Product-attr-show": "/components/wx-tpl/product-attr/product-attr-show/product-attr-show"
+    }
+}

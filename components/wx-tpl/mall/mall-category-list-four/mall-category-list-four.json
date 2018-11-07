@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "line-goods-view": "/components/wx-tpl/index/lineGoodsView/lineGoodsView",
+        "show_dialog": "/components/wx-tpl/show_dialog/show_dialog"
+    }
+}

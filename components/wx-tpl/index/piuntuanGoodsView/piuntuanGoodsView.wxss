@@ -1,0 +1,140 @@
+view {
+    box-sizing: border-box;
+}
+
+.item {
+    padding: 30rpx;
+    background: white;
+}
+
+.item.index {
+    padding-top: 20rpx;
+}
+
+.item.first {
+    padding-top: 0;
+}
+
+.item .cover {
+    height: 400rpx;
+    width: 100%;
+}
+
+.item .cover image {
+    height: 100%;
+    width: 100%;
+    background: #eee;
+}
+
+.item .title {
+    font-size: 32rpx;
+    color: #222222;
+    height: 80rpx;
+    line-height: 80rpx;
+    width: 100%;
+}
+
+.item .number {
+    height: 50rpx;
+    line-height: 50rpx;
+}
+
+.item .number image {
+    width: 56rpx;
+    height: 56rpx;
+    border-radius: 28rpx;
+    background: #eee;
+    margin-left: -8rpx;
+    border: 3rpx solid white;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+.item .number image.first {
+    margin-left: 6rpx;
+}
+
+.item .number text {
+    margin-left: 20rpx;
+    color: #888888;
+    font-size: 24rpx;
+    vertical-align: middle;
+}
+
+.item .price_view {
+    display: flex;
+    align-items: center;
+    margin-top: 20rpx;
+}
+
+.item .price_view .l {
+    display: flex;
+    flex: 1;
+    align-items: flex-end;
+    font-size: 26rpx;
+}
+
+.item .price_view .l .price {
+    color: #fe3c3c;
+    display: flex;
+    align-items: flex-end;
+}
+
+.item .price_view .l .price .text {
+    font-size: 24rpx;
+    margin-right: 6rpx;
+}
+
+.item .price_view .l .price .icon {
+    font-weight: 500;
+}
+
+.item .price_view .l .price .int {
+    font-size: 36rpx;
+    font-weight: 500;
+    line-height: 46rpx;
+}
+
+.item .price_view .l .origin_price {
+    color: #888888;
+    margin-left: 10rpx;
+    font-size: 24rpx;
+    text-decoration: line-through;
+}
+
+.item .price_view .form {
+    width: auto;
+}
+
+.item .price_view .button {
+    height: 60rpx;
+    line-height: 60rpx;
+    width: 168rpx;
+    text-align: left;
+    color: white;
+    border-radius: 30rpx;
+    font-size: 28rpx;
+    background: #fe3c3c url(http://xcximg.197.com/xcx/arrow_kj.png) no-repeat;
+    background-position: 126rpx 22rpx;
+    background-size: 10rpx 20rpx;
+    padding-left: 34rpx;
+    margin: 0;
+}
+
+.max_one_line {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    white-space: normal;
+    word-break: break-all;
+    overflow: hidden;
+}
+
+.max_two_line {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    white-space: normal;
+    word-break: break-all;
+    overflow: hidden;
+}

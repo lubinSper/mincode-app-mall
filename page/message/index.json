@@ -1,0 +1,16 @@
+{
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "coupon_modal": "/components/wx-tpl/coupon_modal/coupon_modal",
+        "greeting": "/components/wx-tpl/greeting/greeting",
+        "colours_title": "/components/wx-tpl/index/coloursTitle/coloursTitle",
+        "coupon_list": "/components/wx-tpl/index/couponList/couponList",
+        "limit_shopping": "/components/wx-tpl/index/limitShopping/limitShopping",
+        "recommend": "/components/wx-tpl/index/recommend/recommend",
+        "shop-introduce": "/components/wx-tpl/index/shopIntroduce/shopIntroduce",
+        "custom-classify": "/components/wx-tpl/index/customClassify/customClassify",
+        "copyright": "/components/wx-tpl/copyright/copyright/copyright",
+        "vip_mask_layer": "/components/template/vip_mask_layer/vip_mask_layer",
+        "authorize_dialog": "/components/wx-tpl/authorize_dialog/authorize/authorize"
+    }
+}

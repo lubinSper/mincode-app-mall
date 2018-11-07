@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "colours_title": "/components/wx-tpl/index/coloursTitle/coloursTitle"
+    }
+}

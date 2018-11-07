@@ -1,0 +1,340 @@
+@import "../../components/template/demo/template.wxss";
+
+@import "../../components/template/customer_service/customer_service.wxss";
+
+.contain {
+    width: 100%;
+    display: block;
+    overflow-x: hidden;
+    min-height: 80%;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.clear {
+    clear: both;
+}
+
+.carousel {
+    width: 750rpx;
+    height: 376rpx;
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.carousel swiper {
+    width: 750rpx;
+    height: 376rpx;
+    display: block;
+    overflow: hidden;
+}
+
+.carousel image {
+    width: 750rpx;
+}
+
+.carousel text {
+    font-size: 26rpx;
+    color: #fff;
+    width: 86rpx;
+    height: 56rpx;
+    line-height: 56rpx;
+    text-align: center;
+    background-color: rgba(0,0,0,0.6);
+    position: absolute;
+    right: 0;
+    bottom: 20rpx;
+    z-index: 10;
+}
+
+.shop-address {
+    background: #fff;
+    font-size: 28rpx;
+    margin-bottom: 20rpx;
+    padding: 20rpx 30rpx;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    color: #555;
+    align-content: center;
+    align-items: center;
+}
+
+.shop-address view.content {
+    display: flex;
+    align-items: center;
+    padding-right: 30rpx;
+}
+
+.shop-address .more {
+    width: 26rpx;
+    height: 26rpx;
+    margin-top: 18rpx;
+}
+
+.shop-address .image {
+    width: 25rpx;
+    height: 35rpx;
+    margin-right: 10rpx;
+}
+
+.shop-address .image .icon {
+    width: 25rpx;
+    height: 30rpx;
+    vertical-align: top;
+}
+
+.shop-address .arrow {
+    display: inline-block;
+    width: 15rpx;
+    height: 15rpx;
+    border-top: 4rpx solid #888;
+    border-right: 4rpx solid #888;
+    transform: rotate(45deg);
+}
+
+.openUp {
+    width: 100%;
+    text-align: center;
+    background: #fff;
+}
+
+.openUp image {
+    width: 668rpx;
+    height: 114rpx;
+    padding-bottom: 10rpx;
+}
+
+.org_info {
+    display: flex;
+    height: 90rpx;
+    background: white;
+    border-bottom: 1rpx solid #e2e2e2;
+}
+
+.org_info .name {
+    line-height: 90rpx;
+    color: #000000;
+    font-size: 32rpx;
+    flex: 1;
+    padding-left: 30rpx;
+}
+
+.org_info .name.center {
+    text-align: center;
+}
+
+.org_info .buy_view {
+    width: 220rpx;
+    padding: 20rpx 35rpx;
+    box-sizing: border-box;
+}
+
+.org_info .buy_view .button {
+    width: 150rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    color: white;
+    background: #ff9900;
+    border-radius: 10rpx;
+    text-align: center;
+    font-size: 24rpx;
+}
+
+.addre_tele {
+    width: 100%;
+    padding: 23rpx 0;
+    background-color: #fff;
+    display: table;
+    line-height: 36rpx;
+    max-height: 80rpx;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20rpx;
+}
+
+.addre_tele .address_infor {
+    width: 450rpx;
+    color: #222;
+    font-size: 26rpx;
+    margin-left: 24rpx;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    padding-left: 70rpx;
+    display: table-cell;
+    max-height: 70rpx;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.addre_tele .address_infor image {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin: -15rpx 0 0 24rpx;
+}
+
+.addre_tele .online_service {
+    width: 100rpx;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -48rpx;
+}
+
+.cb {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    display: block;
+    float: left;
+}
+
+.online_service .cb-icon {
+    background-color: white;
+    pointer-events: none;
+    width: 100rpx;
+    position: absolute;
+    right: 0;
+    top: 26rpx;
+}
+
+.online_service .cb-icon image {
+    margin-left: 10rpx;
+}
+
+.addre_tele .telephone_infor {
+    width: 124rpx;
+    display: table-row;
+    vertical-align: middle;
+    min-height: 74rpx;
+    float: left;
+    position: absolute;
+    top: 50%;
+    right: 100rpx;
+    margin-top: -34rpx;
+    text-align: center;
+}
+
+.addre_tele .telephone_infor.single {
+    right: 0;
+}
+
+.addre_tele .telephone_infor image {
+    position: absolute;
+    top: 14rpx;
+    left: 36rpx;
+}
+
+.addre_tele .online_service .contact {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    padding-left: 10rpx;
+    width: 120rpx;
+    height: 100rpx;
+}
+
+.addre_tele .online_service .contact button {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.tsyl {
+    display: flex;
+    width: 100%;
+    background-color: #fff;
+    padding: 20rpx 0;
+    flex-wrap: wrap;
+}
+
+.tsyl .tsyl_li {
+    text-align: center;
+    width: 20%;
+    margin: 10rpx 0;
+}
+
+.tsyl .tsyl_li .tsyl_li_img image {
+    width: 86rpx;
+    height: 86rpx;
+    border-radius: 37rpx;
+}
+
+.tsyl .tsyl_li .tsyl_li_text {
+    font-size: 26rpx;
+    color: #222;
+}
+
+.cb {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    display: block;
+    float: left;
+}
+
+.module {
+    background-color: #fff;
+    margin-top: 20rpx;
+    padding-bottom: 24rpx;
+}
+
+.merchant_pictures {
+    margin: 30rpx 10rpx 20rpx 10rpx;
+    height: 210rpx;
+    width: 100%;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.merchant_pictures image {
+    margin: 0 15rpx;
+    display: inline-block;
+    width: 210rpx;
+    height: 210rpx;
+    background-color: #eeeeee;
+}
+
+.load_more {
+    width: 100%;
+    display: block;
+    position: absolute;
+    text-align: center;
+    height: 90rpx;
+    line-height: 90rpx;
+    border-top: 1rpx solid #dcdcdc;
+    background-color: #fff;
+    margin-top: -2rpx;
+    left: 0;
+    bottom: 2rpx;
+    z-index: 666;
+}
+
+.load_more text {
+    display: inline-block;
+    font-size: 28rpx;
+    color: #848d9a;
+}
+
+.load_more image {
+    display: inline-block;
+    width: 22rpx;
+    height: 12rpx;
+    margin: -8rpx 0 0 10rpx;
+}
+
+.no_price_hide {
+    display: none!important;
+}

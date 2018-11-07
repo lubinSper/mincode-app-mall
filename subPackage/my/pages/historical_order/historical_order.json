@@ -1,0 +1,7 @@
+{
+    "enablePullDownRefresh": true,
+    "navigationBarTitleText": "历史订单",
+    "usingComponents": {
+        "historical": "/subPackage/my/components/wx-tpl/historical/historical"
+    }
+}

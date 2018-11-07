@@ -1,0 +1,97 @@
+<view style="overflow:hidden;">
+    <view class="nav">
+        <view catchtap="goSearch" class="search">
+            <input disabled="true" placeholder="搜索所有商品" placeholderStyle="color:#aaa"></input>
+        </view>
+        <scroll-view class="recommend_scroll_x_box" scrollLeft="{{scrollLeft}}" scrollWithAnimation="true" scrollX="true" wx:if="{{tabList.list.length>0}}">
+            <view bindtap="btnActive" class="recommend_hot_box" data-id="{{item.id}}" data-index="{{i}}" wx:for="{{tabList.list}}" wx:for-index="i" wx:key="item">
+                <view class="recommend_hot_text {{item.active?'recommend_hot_text_active':''}}">{{item.name}}</view>
+            </view>
+        </scroll-view>
+    </view>
+    <view style="height:{{tabList.list.length>0?'154':'84'}}rpx"></view>
+    <view class="goods" wx:if="{{haveData}}">
+        <view class="goods_item" style="overflow: hidden" wx:for="{{shopList}}" wx:for-index="i" wx:key="item">
+            <view bindtap="jumpToNext" class="goods_t" data-id="{{item.id}}">
+                <view class="goods_img">
+                    <image class="{{templateId==2?'bj_img':'bj_img2'}}" mode="aspectFill" src="{{item.coverImage?item.coverImage:item.imgUrls[0]}}"></image>
+                    <view class="countdown {{item.isBargain==2?'cut_price':item.isPintuan==2?'cut_price pintuan':''}}" wx:if="{{item.timeArr&&item.isSpecial!=2}}">
+                        <block wx:if="{{item.isPintuan!=2}}">
+                            <text class="countdown_1">距结束还剩</text>
+                            <text class="countdown_span">{{item.timeArr?item.timeArr[0]:'00'}}</text>
+                            <text class="countdown_3">:</text>
+                            <text class="countdown_span">{{item.timeArr?item.timeArr[1]:'00'}}</text>
+                            <text class="countdown_5">:</text>
+                            <text class="countdown_span">{{item.timeArr?item.timeArr[2]:'00'}}</text>
+                        </block>
+                        <text class="reduce_price" wx:else>
+                            <text class="icon"></text>
+                            <text>{{item.pintuanLimitPeopleNum}}人团 立减￥{{item.reducePrice}}</text>
+                        </text>
+                    </view>
+                    <view class="tag_icon" wx:if="{{item.type==3||item.tagType}}">
+                        <image class="{{tagTypes[item.tagType-1]}}" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/{{tagTypes[item.tagType-1]}}.png" wx:if="{{item.type!=3}}"></image>
+                    </view>
+                </view>
+                <view class="goods_info" wx:if="{{item.top=='1'}}">
+                    <view class="goods_name">
+                        <view style="display:inline;position:relative;padding-left:30rpx;">
+                            <text class="goods_label_recommend">荐</text>
+                        </view>
+                        <text style="margin-left: 10rpx;">{{item.name?item.name:item.goodsDesc}}</text>
+                    </view>
+                </view>
+                <view class="goods_info_2" wx:else>{{item.name?item.name:item.goodsDesc}}</view>
+                <view class="goods_descr">{{item.name?item.goodsDesc:''}}</view>
+                <view class="goods_info_price" style="line-height: 56rpx;" wx:if="{{isApplyNewLogic}}">
+                    <text class="goods_price_l" wx:if="{{item.isSpecial==2&&item.price==0}}"></text>
+                    <block wx:elif="{{item.isSpecial==2&&item.price!=0}}">
+                        <view class="goods_price" style="line-height: 56rpx; margin-left: 0;" wx:if="{{item.type!=2}}">
+                            <text class="goods_price_r">{{item.price1+(item.price2!='.00'?item.price2:'')}}万</text>
+                        </view>
+                    </block>
+                    <view class="scy_yuyue" wx:elif="{{item.price1==0&&!item.price2}}">免费预约</view>
+                    <block wx:else>
+                        <view class="goods_price" style="line-height: 56rpx;" wx:if="{{item.type!=2}}">
+                            <text class="goods_price_l">￥</text>
+                            <text class="goods_price_r">{{item.price1+(item.price2!='.00'?item.price2:'')}}</text>
+                        </view>
+                    </block>
+                    <view class="bargain_price" style="line-height: 48rpx;margin-top: 0; padding-top:8rpx;" wx:if="{{item.enableSupperMemberPrice===2&&item.superMemberPrice}}">￥{{item.salePrice3}}</view>
+                    <view class="bargain_price" style="line-height: 48rpx;margin-top: 0; padding-top:8rpx;" wx:elif="{{item.originalPrice>0&&item.isSpecial!=2}}">￥{{item.originalPrice}}</view>
+                    <view class="bargain_price" style="line-height: 48rpx;margin-top: 0;padding-top:8rpx;" wx:elif="{{item.originalPrice>0&&item.isSpecial==2}}">{{item.originalPrice}}万</view>
+                    <image class="icon-vip" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/icon-svip.png" wx:if="{{item.enableSupperMemberPrice===2&&item.superMemberPrice}}"></image>
+                    <view class="scy_number {{item.isSpecial==2&&item.price==0?'no_price_hide':''}}" wx:if="{{!item.isShowSale||item.isShowSale==1||item.isSpecial==2}}">{{item.viewNum?item.viewNum:0}}浏览</view>
+                    <view class="scy_number {{item.isSpecial==2?'no_price_hide':''}}" wx:else>
+                        <text decode="true" wx:if="{{item.type==3}}">{{item.saleTotal?item.saleTotal:0}}人预约&nbsp;&nbsp;{{item.viewNum?item.viewNum:0}}浏览</text>
+                        <text decode="true" wx:else>{{item.saleTotal?item.saleTotal:0}}人购买&nbsp;&nbsp;{{item.viewNum?item.viewNum:0}}浏览</text>
+                    </view>
+                    <view class="clearfloat"></view>
+                </view>
+                <view class="goods_info_price" wx:else>
+                    <view class="goods_price" wx:if="{{item.type!=2}}">
+                        <text class="goods_price_l">￥</text>
+                        <text class="goods_price_r">{{item.price1+(item.price2!='.00'?item.price2:'')}}</text>
+                    </view>
+                    <view class="bargain_price" wx:if="{{item.enableSupperMemberPrice===2&&item.superMemberPrice}}">￥{{item.salePrice3}}</view>
+                    <view class="bargain_price" wx:elif="{{item.originalPrice>0}}">￥{{item.originalPrice}}</view>
+                    <image class="icon-vip" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/icon-svip.png" wx:if="{{item.enableSupperMemberPrice===2&&item.superMemberPrice}}"></image>
+                    <view catchtap="onAddBuyCar" class="buy_car" data-attribute-id="{{item.attrCombination}}" data-id="{{item.id}}" data-infinite="{{item.isInfiniteInventory}}" data-inventory="{{item.inventory}}" data-isspecial="{{item.isSpecial}}" wx:if="{{item.type==1}}"></view>
+                    <view class="clearfloat"></view>
+                </view>
+            </view>
+            <view class="goods_b">
+                <view bindtap="onJumpToNextShare" class="goods_share" data-id="{{item.id}}">
+                    <text>分享</text>
+                </view>
+                <view bindtap="jumpToNext" class="goods_comment" data-id="{{item.id}}">
+                    <text>{{item.comments.length>0?item.comments.length:'评论'}}</text>
+                </view>
+                <view bindtap="onPraise" class="{{item.likeStatus==1?'goods_praise':'goods_normal'}}" data-id="{{item.id}}" data-index="{{i}}" data-likeId="{{item.likeId}}" data-likeStatus="{{shopList[i].likeStatus}}">
+                    <text>{{item.likes.length>0?item.likes.length:'赞'}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <show_dialog content="{{dialogContent}}" show="{{isShowDialog}}"></show_dialog>
+</view>

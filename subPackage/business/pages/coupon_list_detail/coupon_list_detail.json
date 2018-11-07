@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "详情",
+    "usingComponents": {
+        "return_index": "/components/wx-tpl/return_index/return_index"
+    }
+}

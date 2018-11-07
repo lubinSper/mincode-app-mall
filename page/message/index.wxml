@@ -1,0 +1,137 @@
+<view class="contain" style="overflow:hidden;">
+    <view class="carousel">
+        <swiper autoplay="true" circular="true" current="{{currentIndex}}" duration="500" indicatorActiveColor="#fff" indicatorColor="rgba(255,255,255,.5)" indicatorDots="{{bannerImgInfo.length!=1}}" interval="3000">
+            <swiper-item wx:for="{{bannerImgInfo}}" wx:key="key">
+                <image bindtap="showBannerImg" class="slide-image" data-index="{{index}}" data-jumptype="{{item.type}}" data-jumpurl="{{item.jumpUrl}}" data-productid="{{item.productId}}" mode="widthFix" src="{{item.thumUrl}}" wx:if="{{item.type!=5}}"></image>
+                <navigator appId="{{item.appid}}" hoverClass="none" path="{{item.path}}" target="miniProgram" wx:if="{{item.type==5}}">
+                    <image class="slide-image" mode="widthFix" src="{{item.thumUrl}}"></image>
+                </navigator>
+            </swiper-item>
+        </swiper>
+    </view>
+    <block wx:if="{{templateId==100}}">
+        <view bindtap="openMap" class="shop-address" wx:if="{{item.alias=='shopAddress'}}" wx:for="{{styleList}}" wx:key="{{index}}">
+            <view class="content">
+                <view class="image">
+                    <image class="icon" mode="aspectFit" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/location.png"></image>
+                </view>
+                <text>{{shopInfo.address}}</text>
+            </view>
+            <text class="arrow"></text>
+        </view>
+    </block>
+    <block wx:if="{{xcxType==1}}">
+        <view class="org_info">
+            <view class="name max_one_line {{isOpenPay?'':'center'}}">{{orgName}}</view>
+            <view class="buy_view" wx:if="{{isOpenPay}}">
+                <navigator class="button" hoverClass="none" url="/subPackage/business/pages/pay_page/pay_page">买单</navigator>
+            </view>
+        </view>
+        <view class="addre_tele">
+            <view bindtap="listenerBtnGetLocation" class="address_infor">
+                <image alt="" src="./images/address_ico_04.png" style="width:29rpx; height:34rpx;"></image>
+                <view style="display:table-cell; width:100%; height:50rpx!important; overflow:hidden; vertical-align: middle;">
+                    <view style="width:100%; max-height:68rpx; display:block; overflow:hidden;">{{address}}</view>
+                </view>
+            </view>
+            <view bindtap="makePhone" class="telephone_infor {{enableCs==1?'single':''}}" wx:if="{{phone.length>0}}">
+                <image alt="" src="./images/telephone_ico02.png" style="width:42rpx; height:42rpx;"></image>
+            </view>
+            <view class="online_service" wx:if="{{enableCs==2}}">
+                <view class="contact">
+                    <button class="kefu" openType="contact"></button>
+                </view>
+                <view class="cb-icon">
+                    <image src="./images/kefu.png" style="width:52rpx;height:42rpx;"></image>
+                </view>
+            </view>
+            <view style="clear:both;"></view>
+        </view>
+    </block>
+    <view class="tsyl" wx:if="{{xcxType==3}}">
+        <block wx:for="{{navList}}" wx:key="key">
+            <view class="tsyl_li" wx:if="{{item.type==1}}">
+                <navigator hoverClass="none" url="{{systomIcon[item.categoryId-1]}}&&iconName={{item.iconName}}">
+                    <view class="tsyl_li_img">
+                        <image alt="" mode="aspectFill" src="{{item.iconUrl}}"></image>
+                    </view>
+                    <view class="tsyl_li_text">{{item.iconName}}</view>
+                </navigator>
+            </view>
+            <view class="tsyl_li" wx:elif="{{item.type==3||item.type==2}}">
+                <navigator hoverClass="none" url="/subPackage/index/pages/category-list/category-list?tagType={{item.type==3?item.categoryId:''}}&&iconName={{item.iconName}}&&categoryId={{item.type==2?item.categoryId:''}}">
+                    <view class="tsyl_li_img">
+                        <image alt="" mode="aspectFill" src="{{item.iconUrl}}"></image>
+                    </view>
+                    <view class="tsyl_li_text">{{item.iconName}}</view>
+                </navigator>
+            </view>
+            <view class="tsyl_li" wx:elif="{{item.type==4}}">
+                <navigator hoverClass="none" url="{{activityIcon[item.categoryId-1]}}&&iconName={{item.iconName}}">
+                    <view class="tsyl_li_img">
+                        <image alt="" mode="aspectFill" src="{{item.iconUrl}}"></image>
+                    </view>
+                    <view class="tsyl_li_text">{{item.iconName}}</view>
+                </navigator>
+            </view>
+            <view class="tsyl_li" wx:elif="{{item.type==5}}">
+                <navigator hoverClass="none" url="/subPackage/business/pages/custom_page/custom_page?id={{item.categoryId}}&pageTitle={{item.iconName}}&type=99">
+                    <view class="tsyl_li_img">
+                        <image alt="" mode="aspectFill" src="{{item.iconUrl}}"></image>
+                    </view>
+                    <view class="tsyl_li_text">{{item.iconName}}</view>
+                </navigator>
+            </view>
+            <view bindtap="goVipCenter" class="tsyl_li" wx:if="{{item.type==6}}">
+                <view class="tsyl_li_img">
+                    <image alt="" mode="aspectFill" src="{{item.iconUrl}}"></image>
+                </view>
+                <view class="tsyl_li_text">{{item.iconName||'会员中心'}}</view>
+            </view>
+        </block>
+    </view>
+    <view class="openUp" wx:if="{{showOpenUp==2&&(!memberCardInfo||memberCardInfo.vip==1)&&superVip==2}}">
+        <image bindtap="openUp" mode="widthFix" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/kthybanner.png"></image>
+    </view>
+    <greeting refresh="{{refresh}}" wx:if="{{xcxType==3}}"></greeting>
+    <block wx:if="{{templateId&&templateId!=100}}">
+        <coupon_list reShow="{{reShow}}" refresh="{{refresh}}"></coupon_list>
+        <limit_shopping hideTime="{{hideTime}}" refresh="{{refresh}}" refreshCountdown="{{refreshCountdown}}"></limit_shopping>
+        <recommend appointmentCopy="{{appointmentCopy}}" appointmentZeroCopy="{{appointmentZeroCopy}}" hideTime="{{hideTime}}" purchaseCopy="{{purchaseCopy}}" refresh="{{refresh}}" refreshCountdown="{{refreshCountdown}}" templateId="{{templateId}}"></recommend>
+        <shop-introduce refresh="{{refresh}}" xcxType="{{xcxType}}"></shop-introduce>
+        <view class="module" style=" padding-bottom:0rpx;" wx:if="{{imgList.length>0}}">
+            <colours_title hasLine="{{true}}" showAll="true" title="商户图片" type="{{2}}" url="/subPackage/business/pages/imglist/imglist?orgId={{orgId}}"></colours_title>
+            <view class="merchant_pictures">
+                <image bindtap="showImg" data-src="{{item}}" mode="aspectFill" src="{{item}}" wx:if="{{idx<=2}}" wx:for="{{imgList}}" wx:for-index="idx" wx:key="key"></image>
+            </view>
+        </view>
+    </block>
+    <block wx:elif="{{templateId==100}}">
+        <block wx:for="{{styleList}}" wx:for-item="v" wx:key="alias">
+            <coupon_list reShow="{{reShow}}" refresh="{{refresh}}" wx:if="{{v.alias=='coupon'}}"></coupon_list>
+            <limit_shopping hideTime="{{hideTime}}" refresh="{{refresh}}" refreshCountdown="{{refreshCountdown}}" wx:elif="{{v.alias=='seckill'}}"></limit_shopping>
+            <recommend appointmentCopy="{{appointmentCopy}}" appointmentZeroCopy="{{appointmentZeroCopy}}" hideTime="{{hideTime}}" purchaseCopy="{{purchaseCopy}}" refresh="{{refresh}}" refreshCountdown="{{refreshCountdown}}" templateId="{{v.templateId}}" wx:elif="{{v.alias=='recommand'}}"></recommend>
+            <shop-introduce refresh="{{refresh}}" xcxType="{{xcxType}}" wx:elif="{{v.alias=='shopIntroduce'}}"></shop-introduce>
+            <block wx:elif="{{v.alias=='shopImages'}}">
+                <view class="module" style="padding-bottom:0rpx;" wx:if="{{imgList.length>0}}">
+                    <colours_title hasLine="{{true}}" showAll="true" title="商户图片" type="{{2}}" url="/subPackage/business/pages/imglist/imglist?orgId={{orgId}}"></colours_title>
+                    <view class="merchant_pictures">
+                        <image bindtap="showImg" data-src="{{item}}" mode="aspectFill" src="{{item}}" wx:if="{{idx<=2}}" wx:for="{{imgList}}" wx:for-index="idx" wx:key="item"></image>
+                    </view>
+                </view>
+            </block>
+            <block wx:elif="{{v.alias=='shopAddress'}}"></block>
+            <custom-classify alias="{{v.alias}}" appointmentCopy="{{appointmentCopy}}" hideTime="{{hideTime}}" maxLen="{{v.maxCount}}" name="{{v.name}}" purchaseCopy="{{purchaseCopy}}" refresh="{{refresh}}" refreshCountdown="{{refreshCountdown}}" templateId="{{v.templateId}}" wx:else></custom-classify>
+        </block>
+    </block>
+</view>
+<view class="{{copyRightShow?'':'no_price_hide'}}">
+    <copyright onPullDownRefresh="{{onPullDownRefresh}}" onShow="{{onShow}}"></copyright>
+</view>
+<block wx:if="{{showTipData.show}}">
+    <import src="../../components/template/show_dialog/show_dialog.wxml"></import>
+    <template is="showDialog" data="{{showTipData:showTipData}}"></template>
+</block>
+<coupon_modal wx:if="{{showCouponModal}}"></coupon_modal>
+<vip_mask_layer layerType="1" reShow="{{reShow}}" wx:if="{{memberCardInfo}}"></vip_mask_layer>
+<authorize_dialog bind:backhandle="backHandle" onHide="{{onAuthHide}}" onShow="{{onAuthShow}}" params="{{authParam}}"></authorize_dialog>

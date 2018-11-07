@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "我的优惠券",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "NoData": "/components/wx-tpl/nodata/index",
+        "coupon_item": "/components/wx-tpl/coupon_item/coupon_item"
+    }
+}

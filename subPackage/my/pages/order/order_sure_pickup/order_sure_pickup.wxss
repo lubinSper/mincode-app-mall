@@ -1,0 +1,644 @@
+.dialog_warp {
+    position: fixed;
+    top: 50%;
+    width: 100%;
+    margin-top: -34rpx;
+    z-index: 999999999999999999999999;
+    text-align: center;
+}
+
+.dialog {
+    background: rgba(0,0,0,0.8);
+    line-height: 40rpx;
+    text-align: center;
+    border-radius: 8rpx;
+    display: inline-block;
+    padding: 14rpx 30rpx;
+    color: #fff;
+    font-size: 30rpx;
+}
+
+view {
+    padding: 0;
+    margin: 0;
+}
+
+.clear {
+    clear: both;
+    height: 0;
+}
+
+ul,li {
+    margin: 0;
+    padding: 0;
+}
+
+.plColor {
+    color: #aaa;
+    font-size: 28rpx;
+}
+
+.order_sure_box {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.order_product_list {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #f8f8f8;
+}
+
+.order_product_list .order_product_list_ul {
+    width: 100%;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.order_product_list .order_product_list_li {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    border-bottom: 10rpx solid #fff;
+    background-color: #f8f8f8;
+    padding: 20rpx 0;
+    height: 150rpx;
+}
+
+.order_product_list .order_product_list_li:last-child {
+    border-bottom: 0rpx solid #f8f8f8;
+}
+
+.order_product_list .order_product_list_li dl {
+    float: left;
+    width: 100%;
+}
+
+.order_product_list .order_product_list_li dl dt image {
+    width: 150rpx;
+    height: 150rpx;
+    display: block;
+    background-color: #eee;
+}
+
+.order_product_list .order_product_list_li dl dt {
+    margin-left: 20rpx;
+}
+
+.order_product_list .order_product_list_li dl dt,.order_product_list .order_product_list_li dl dd {
+    float: left;
+}
+
+.order_product_list .order_product_list_li dl .opll_mid {
+    margin-left: 20rpx;
+    max-width: 380rpx;
+    display: table-row;
+    vertical-align: top;
+}
+
+.order_product_list .order_product_list_li dl .opll_mid .opll_mid_title {
+    max-height: 64rpx;
+    line-height: 32rpx;
+    overflow: hidden;
+    width: 100%;
+    font-size: 26rpx;
+    color: #222;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.order_product_list .order_product_list_li dl .opll_mid .opll_mid_price {
+    font-size: 26rpx;
+    height: 50rpx;
+    line-height: 32rpx;
+    width: 100%;
+    margin-top: 10rpx;
+}
+
+.order_product_list .order_product_list_li dl .opll_mid .opll_mid_price ABCD {
+    color: #888;
+    float: left;
+    margin-right: 20rpx;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+}
+
+.order_product_list .order_product_list_li dl .opll_ri {
+    float: right;
+    line-height: 38rpx;
+    font-size: 26rpx;
+    text-align: right;
+    margin-right: 20rpx;
+}
+
+.order_product_list .order_product_list_li dl .opll_ri .opll_ri_grey {
+    color: #888;
+}
+
+.order_product_list .order_product_list_li dl .opll_ri .opll_originalPrice {
+    text-decoration: line-through;
+}
+
+.pull {
+    width: 100%;
+    display: inline-block;
+    margin: 0 auto;
+    height: 90rpx;
+    line-height: 90rpx;
+    font-size: 26rpx;
+    text-align: center;
+    color: #555;
+}
+
+.pull abcd {
+    padding-right: 32rpx;
+}
+
+.open_retract {
+    background-color: #fff;
+    margin-top: -12rpx;
+    border-bottom: 1rpx solid #e2e2e2;
+}
+
+.retract abcd {
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/one-shop-one-mini-app/up.png) no-repeat right 11rpx;
+    background-size: 22rpx 12rpx;
+}
+
+.pull_open abcd {
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/one-shop-one-mini-app/down.png) no-repeat right 13rpx;
+    background-size: 22rpx 12rpx;
+}
+
+.leaving_message {
+    background-color: #fff;
+    position: relative;
+    height: 70rpx;
+    padding-top: 20rpx;
+}
+
+.leaving_message .button {
+    display: block;
+    width: 100%;
+    height: 40rpx;
+    background: none;
+    margin: 0;
+    padding: 0;
+}
+
+.leaving_message .button::after {
+    border: none;
+}
+
+.leaving_message input {
+    margin: 0 30rpx;
+    width: 690rpx;
+    line-height: 40rpx;
+    height: 40rpx;
+    color: #555;
+    font-size: 28rpx;
+    text-align: left;
+}
+
+.distribution_mode {
+    width: 100%;
+    display: inline-block;
+    margin-top: 20rpx;
+    font-size: 28rpx;
+}
+
+.distribution_mode .distribution_mode_tab {
+    width: 100%;
+    display: flex;
+    height: 90rpx;
+    background-color: #fff;
+    border-bottom: 1rpx solid #e2e2e2;
+    font-size: 28rpx;
+}
+
+.distribution_mode .distribution_mode_tab view {
+    float: left;
+    flex: 1;
+    display: block;
+    height: 90rpx;
+    text-align: center;
+}
+
+.distribution_mode .distribution_mode_tab .form {
+    width: auto;
+}
+
+.distribution_mode .distribution_mode_tab .form .button {
+    display: inline;
+    background: none;
+    margin: 0;
+    padding: 0;
+}
+
+.distribution_mode .distribution_mode_tab .form .button::after {
+    border: none;
+}
+
+.distribution_mode .distribution_mode_tab view text {
+    display: inline-block;
+    height: 88rpx;
+    line-height: 88rpx;
+    padding-bottom: 0rpx;
+    color: #222;
+    font-size: 28rpx;
+}
+
+.distribution_mode .distribution_mode_tab view .current {
+    border-bottom: 4rpx solid #ff7800;
+    color: #ff7800;
+}
+
+.dmc_content_infor {
+    background-color: #fff;
+    color: #222222;
+}
+
+.dmc_content_infor ul li {
+    width: 100%;
+    display: table;
+    height: 88rpx;
+    line-height: 96rpx;
+    border-bottom: 1rpx solid #e2e2e2;
+}
+
+.dmc_content_infor ul li:last-child {
+    border-bottom: 1rpx solid #fff;
+}
+
+.dmc_content_infor ul li text {
+    float: left;
+    margin-left: 30rpx;
+    width: 192rpx;
+    height: 90rpx;
+    display: block;
+    font-size: 30rpx;
+}
+
+.dmc_content_infor ul li input {
+    float: left;
+    width: 500rpx;
+    height: 90rpx;
+    line-height: 100rpx;
+    color: #555;
+}
+
+.dmc_name_address {
+    display: block;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30rpx 0 30rpx 78rpx;
+    color: #222222;
+    background-image: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/one-shop-one-mini-app/addres_ico.jpg);
+    background-repeat: no-repeat;
+    background-position: 30rpx 35rpx;
+    background-size: 690rpx 32rpx;
+}
+
+.dmc_name_address .button {
+    display: block;
+    background: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dmc_name_address .dmc_text {
+    text-align: left;
+}
+
+.dmc_name_address .dmc_name {
+    width: 560rpx;
+    font-size: 30rpx;
+    font-weight: 500;
+}
+
+.dmc_name_address .dmc_name abcd {
+    margin-left: 32rpx;
+    font-weight: 500;
+}
+
+.dmc_name_address .dmc_address {
+    width: 560rpx;
+    font-size: 26rpx;
+    line-height: 30rpx;
+    max-height: 60rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    margin-top: 5rpx;
+}
+
+.dmc_money {
+    background-color: #fff;
+    padding: 20rpx 0 16rpx 0;
+    margin-top: 8rpx;
+}
+
+.dmc_money .dmc_money_ul {
+    margin: 0 30rpx;
+    width: 690rpx;
+}
+
+.dmc_money .dmc_money_ul .dmc_money_li {
+    display: inline-block;
+    width: 690rpx;
+    line-height: 40rpx;
+}
+
+.dmc_money .dmc_money_ul .dmc_money_li abcd {
+    float: left;
+    color: #222222;
+    font-size: 30rpx;
+}
+
+.dmc_money .dmc_money_ul .dmc_money_li text {
+    float: right;
+}
+
+.dmc_money .dmc_money_ul .dmc_money_li .sure_money {
+    color: #ff7800;
+}
+
+.dmc_money .gai_payfor {
+    height: 40rpx;
+    line-height: 40rpx;
+    display: inline-block;
+    margin-top: 24rpx;
+}
+
+.payment {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20rpx;
+    background-color: #fff;
+    display: inline-block;
+    height: 90rpx;
+    line-height: 90rpx;
+    color: #222222;
+}
+
+.payment text {
+    float: left;
+    margin-left: 30rpx;
+    font-size: 30rpx;
+    line-height: 90rpx;
+}
+
+.payment .payment_right {
+    float: right;
+    width: 528rpx;
+    display: block;
+    height: 90rpx;
+    line-height: 90rpx;
+}
+
+.payment .payment_right image {
+    float: right;
+}
+
+.payment_mode_title text {
+    float: right;
+    background-image: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/one-shop-one-mini-app/weixin_next.jpg);
+    background-repeat: no-repeat;
+    background-size: 12rpx 22rpx;
+    background-position: right center;
+    margin-right: 30rpx;
+    padding-right: 34rpx;
+}
+
+.payment .payment_right text {
+    float: right;
+    font-size: 30rpx;
+    background-image: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/one-shop-one-mini-app/weixin_next.jpg);
+    background-repeat: no-repeat;
+    background-size: 12rpx 22rpx;
+    background-position: right center;
+    margin-right: 30rpx;
+    padding-right: 34rpx;
+}
+
+.payment_mode {
+    width: 528rpx;
+    display: block;
+    height: 90rpx;
+    line-height: 90rpx;
+    position: relative;
+}
+
+.payment_mode .payment_mode_li {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.payment_mode_li text {
+    margin-left: 10rpx;
+}
+
+.payment_mode_li image {
+    width: 44rpx;
+    height: 40rpx;
+    margin: 26rpx 0 0 0;
+}
+
+.card_icon image {
+    width: 42rpx;
+    height: 30rpx;
+    margin: 33rpx 0 0 0;
+}
+
+.linkus {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+    height: 100rpx;
+    line-height: 100rpx;
+    display: flex;
+    width: 100%;
+    border-top: 1rpx solid #e6e6e6;
+    background-color: rgba(221,221,221,1.0);
+}
+
+.linkus .form {
+    display: block;
+    height: 100%;
+}
+
+.linkus .form .button {
+    display: block;
+    height: 100%;
+}
+
+.linkus .linkus_le {
+    flex: 1;
+    background: white;
+    position: relative;
+}
+
+.linkus .linkus_le .contactus {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-top: 0rpx;
+    border: none;
+    width: 100%;
+    height: 99rpx;
+    opacity: 0;
+}
+
+.linkus .linkus_le image {
+    width: 52rpx;
+    height: 41rpx;
+    margin-top: 16rpx;
+}
+
+.linkus .linkus_ri {
+    flex: 3;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    font-weight: bold;
+    font-size: 36rpx;
+    color: #fff;
+    background-color: #ff7800;
+}
+
+.linkus .linkus_ri .button {
+    font-size: 36rpx;
+    color: #fff;
+    background-color: #ff7800;
+    height: 100rpx;
+    line-height: 100rpx;
+}
+
+.linkus .linkus_ri_gray {
+    flex: 3;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    font-weight: bold;
+    font-size: 36rpx;
+    color: #fff;
+    background-color: #ddd;
+}
+
+.linkus .linkus_ri_gray .button {
+    font-size: 36rpx;
+    color: #fff;
+    background-color: #ddd;
+    height: 100rpx;
+    line-height: 100rpx;
+}
+
+.order_sure_warn {
+    background-color: #fff6d4;
+    font-size: 24rpx;
+    color: #d78d23;
+    padding: 15rpx 20rpx;
+    box-sizing: border-box;
+}
+
+.pintuan_warn {
+    font-size: 24rpx;
+    color: #d78d23;
+    line-height: 30rpx;
+    display: table;
+}
+
+.pintuan_warn text {
+    display: table-cell;
+}
+
+.pay-way-modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.7);
+    transition: opacity .3s;
+    opacity: 0;
+    z-index: 9998;
+}
+
+.pay-way-dialog {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: #f4f4f4;
+    width: 100%;
+    transform: translateY(10000px);
+    z-index: 9999;
+}
+
+.way-item,.cancel-dialog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 1rpx solid #e2e2e2;
+    font-size: 32rpx;
+    line-height: 40rpx;
+    background-color: white;
+    padding: 30rpx 0;
+    box-sizing: border-box;
+}
+
+.vip {
+    padding: 23rpx 0;
+}
+
+.item-icon {
+    max-width: 44rpx;
+    max-height: 40rpx;
+    margin-right: 10rpx;
+}
+
+.item-icon-card {
+    width: 42rpx;
+    height: 30rpx;
+}
+
+.item-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.balance {
+    width: 100%;
+    text-align: center;
+    font-size: 24rpx;
+    color: #888;
+    line-height: 24rpx;
+    margin-top: 10rpx;
+}
+
+.way-item:last-child {
+    border-bottom: none;
+}
+
+.cancel-dialog {
+    margin-top: 20rpx;
+}
+
+.s-vip-icon {
+    width: 50rpx;
+    height: 26rpx;
+}

@@ -1,0 +1,73 @@
+<view style="overflow:hidden;" wx:if="{{isOpenPay==1||showVipPay}}">
+    <view class="buy_top_tip">
+        买单仅限于到店支付，请确认金额后提交
+      </view>
+    <view class="form">
+        <form>
+            <view class="input_content pay-money">
+                <view class="txt_pay">支付金额</view>
+                <view class="input_item moeny_item">￥
+                <input bindinput="inputPayNum" class="input_amount1" focus="{{enterFocus}}" maxlength="10" placeholderClass="input_amount_place_hoder" type="digit" value="{{textValue}}"></input>
+                </view>
+            </view>
+            <view class="input_content pay_way_cnt">
+                <view class="input_item ">
+                    <view class="txt_pay">备注</view>
+                    <input bindinput="bindRemark" class="input_amount2 {{hasFocus?'has-focus':''}}" maxlength="20" placeholder="给商家的备注，最多20个字" placeholderClass="input_amount_place_hoder" type="text" value="{{remark}}"></input>
+                </view>
+                <view bindtap="showPayWayDialog" class="input_item">
+                    <text>支付方式</text>
+                    <view class="pay-way">
+                        <image class="item-icon" mode="widthFix" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/{{payWayList[curPayWay].iconPath}}.png"></image>
+                        <text class="pay-way-text">{{payWayList[curPayWay].title}}</text>
+                        <image class="pay-way-arrow" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/turn-right.png"></image>
+                    </view>
+                </view>
+            </view>
+            <form bindsubmit="bindButtonTap" class="confirm_button_content" reportSubmit="true">
+                <button class="btn_confirm" disabled="{{disabled}}" formType="submit" hoverClass="button_hover" type="submit">{{confirmBtnText}}</button>
+            </form>
+        </form>
+    </view>
+    <view class="zf_buy_recorder you">
+        <view bindtap="openBuyRecord" class="buy_text">买单记录</view>
+    </view>
+</view>
+<view class="zf_no_container" wx:if="{{isOpenPay==2&&!showVipPay}}">
+    <Nodata imageSrcNumber="1" noDataText="本店暂不支持到店买单"></Nodata>
+    <view class="zf_buy_recorder wu">
+        <view bindtap="openBuyRecord" class="buy_text">买单记录</view>
+    </view>
+</view>
+<view animation="{{animationData1}}" bindtap="closePayWayDialog" class="pay-way-modal" wx:if="{{isShowPayWayDialog}}"></view>
+<view animation="{{animationData2}}" class="pay-way-dialog" wx:if="{{isShowPayWayDialog}}">
+    <view class="way-container">
+        <view bindtap="checkPayWay" class="way-item" data-iconpath="{{item.iconPath}}" data-index="{{index}}" wx:for="{{payWayList}}" wx:key="{{index}}">
+            <view class="item-box">
+                <image class="item-icon" mode="widthFix" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/{{item.iconPath}}.png"></image>
+                <text class="item-text">{{item.title}}</text>
+            </view>
+            <view class="balance" wx:if="{{index==1}}">
+        (余额：￥{{filters.toFix( (memberCardInfo&&memberCardInfo.balance||0)/100 )}})
+      </view>
+        </view>
+    </view>
+    <view bindtap="closePayWayDialog" class="cancel-dialog">取消</view>
+</view>
+<view class="member-recommend-dialog" wx:if="{{isShowMrDialog}}">
+    <view catchtap="closeMrDialog" class="mr-dialog-modal"></view>
+    <view class="mr-dialog-body">
+        <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/receivebg.png"></image>
+        <view class="mr-body-desc">
+            <text wx:if="{{!enableReturnGive}}">充值送好礼，各种优惠享不停！</text>
+            <text wx:else>{{dialogRemark}}</text>
+        </view>
+        <view catchtap="toGetMemberCard" class="mr-body-btn">马上登录领取</view>
+        <view catchtap="closeMrDialog" class="close-mr">
+            <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/guanbi.png"></image>
+        </view>
+    </view>
+</view>
+<paySixDialog bind:closeDialog="closeDialog" focus="{{focus}}" isShowPayInput="{{isShowPayInput}}" remark="{{remark}}" totalFee="{{textValue}}"></paySixDialog>
+<return_index wx:if="{{showReturnIndexBtn}}"></return_index>
+<wxs module="filters" src="pay_page.wxs" />

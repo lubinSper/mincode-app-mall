@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "NoData": "/components/wx-tpl/nodata/index",
+        "return_index": "/components/wx-tpl/return_index/return_index",
+        "coupon_item": "/components/wx-tpl/coupon_item/coupon_item"
+    }
+}

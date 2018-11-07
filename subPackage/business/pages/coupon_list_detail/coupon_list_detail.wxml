@@ -1,0 +1,52 @@
+<view class="coupon_ldetial_logo">
+    <view class="coupon-bg">
+        <image alt="" src="../../../../page/message/images/coupon_bg.png" style="width:100%; height:446rpx;"></image>
+    </view>
+    <view class="coupon_ldetial_logo_content">
+        <view class="discount">
+            <view class="discount_logo">
+                <image alt="" class="img" src="{{logo}}"></image>
+            </view>
+            <view class="total">
+                <view class="coupon_name">{{orgName}}</view>
+                <view style="font-size:48rpx; height:72rpx;  width:98%; display:block; overflow:hidden;text-overflow:ellipsis;white-space:nowrap; margin-top:-6rpx;">{{name}}</view>
+                <view style="clear:both;"></view>
+                <view class="fllc_time">{{validTypeName}}</view>
+            </view>
+        </view>
+        <view class="coupon_introduce_container">
+            <view class="coupon-flex-item coupon_introduce_name" wx:if="{{phone}}">
+                <image alt="" src="../../../../page/message/images/telephone_ico.jpg" style="width:26rpx; height:24rpx;  margin:6rpx 8rpx 0 -10rpx; float:left;"></image>{{phone}}</view>
+            <view class="coupon-flex-item coupon_introduce_name" wx:else>
+                <image alt="" src="../../../../page/message/images/telephone_ico.jpg" style="width:26rpx; height:24rpx;  margin:6rpx 8rpx 0 -10rpx; float:left;"></image> - </view>
+            <view class="coupon-flex-item coupon_introduce_address" wx:if="{{address}}">
+                <image alt="" src="../../../../page/message/images/address_ico_name.png" style="width:21rpx;height:24rpx;  margin:6rpx 8rpx 0 -30rpx;float:left;"></image>
+                <text>{{address}}</text>
+            </view>
+            <view class="coupon-flex-item coupon_introduce_address" wx:else>
+                <image alt="" src="../../../../page/message/images/address_ico_name.png" style="width:21rpx;height:24rpx;  margin:6rpx 8rpx 0 -30rpx; float:left;"></image>
+                   -</view>
+        </view>
+        <view class="coupon_expired_ico" wx:if="{{status==2}}">
+            <image alt="" class="img" src="../../../../page/message/images/expired.png"></image>
+        </view>
+        <view style="clear:both;"></view>
+    </view>
+</view>
+<block wx:if="{{status==1}}">
+    <view class="receive_infor" wx:if="{{isReceive==1}}">
+        <view class="receive_infor_num">{{count}}人已领取</view>
+        <view bindtap="clickReceive" class="receive_click" data-couponId="{{couponId}}" data-id="{{id}}" data-status="{{isReceive}}" wx:if="{{isReceive==1}}">领取</view>
+    </view>
+    <view class="recevie_infor_prompt" wx:if="{{isReceive==2}}">
+        <button class="share" openType="share">
+            <image alt="" src="../../../../page/message/images/piquan.png"></image>
+        </button>
+    </view>
+</block>
+<view class="use-introduce">
+    <view class="use-introduce-title">使用说明</view>
+    <text style="color:#555; font-size:26rpx;">{{instructions}}</text>
+</view>
+<view style="height:80rpx;"></view>
+<return_index wx:if="{{showReturnIndexBtn}}"></return_index>

@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "优惠券",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "MoreCoupon": "/components/wx-tpl/more_coupon/more_coupon",
+        "authorize_dialog": "/components/wx-tpl/authorize_dialog/authorize/authorize"
+    }
+}

@@ -1,0 +1,124 @@
+.mall-introduce {
+    display: flex;
+    flex-direction: column;
+}
+
+.intro-top {
+    width: 100%;
+    height: 420rpx;
+}
+
+.intro-top image {
+    width: 100%;
+    height: 100%;
+}
+
+.intro-form {
+    display: flex;
+    flex-direction: column;
+    height: 800rpx;
+    width: 100%;
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/introduce_01_04.png) no-repeat center;
+    background-size: cover;
+}
+
+.submit_view {
+    width: 100%;
+    height: 800rpx;
+    margin-top: 205rpx;
+    box-sizing: border-box;
+}
+
+.submit_title {
+    margin-bottom: 45rpx;
+}
+
+.submit_title image {
+    display: block;
+    width: 228rpx;
+    height: 38rpx;
+    margin: 0 auto;
+}
+
+.submit_row {
+    height: 67rpx;
+    line-height: 67rpx;
+    margin-top: 32rpx;
+    margin-bottom: 32rpx;
+    clear: both;
+}
+
+.submit_row .submit_desc {
+    font-size: 32rpx;
+    margin-left: 80rpx;
+    float: left;
+    width: 100rpx;
+}
+
+.submit_desc_r {
+    margin-left: 30rpx;
+}
+
+.submit_row input {
+    float: left;
+    width: 420rpx;
+    height: 67rpx;
+    line-height: 67rpx;
+    border: 1rpx solid #e5e5e5;
+    background-color: #fff;
+    font-size: 28rpx;
+    margin-left: 30rpx;
+    padding-left: 30rpx;
+}
+
+.submit_btn {
+    margin: 50rpx auto 0;
+    width: 262rpx;
+    height: 74rpx;
+    line-height: 70rpx;
+    text-align: center;
+    font-size: 34rpx;
+    color: #fff;
+    letter-spacing: 10rpx;
+    background-color: #ff7800;
+    border-radius: 8rpx;
+}
+
+.remindText {
+    text-align: center;
+    font-size: 24rpx;
+    color: red;
+    line-height: 20rpx;
+    height: 20rpx;
+}
+
+.form-title {
+    margin-top: 46rpx;
+    color: #eb6100;
+    font-size: 30rpx;
+    font-weight: 800;
+    width: 100%;
+    text-align: center;
+}
+
+.form-title text {
+    color: #ff2400;
+    font-size: 46rpx;
+    font-weight: bold;
+}
+
+.flexclass {
+    height: 230rpx;
+    width: 100%;
+    background-color: #fffaf5;
+    margin-top: -19rpx;
+}
+
+.to_top {
+    position: fixed;
+    bottom: 124rpx;
+    right: 30rpx;
+    width: 95rpx;
+    height: 95rpx;
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/call.png) left top / 95rpx 95rpx;
+}

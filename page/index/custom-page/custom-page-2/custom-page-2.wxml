@@ -1,0 +1,1 @@
+<custom-page-tpl onHide="{{onCustomHide}}" onPullDownRefresh="{{onPullDownRefresh}}" onReachBottom="{{onReachBottom}}" onShow="{{onShow}}" params="{{customParams}}"></custom-page-tpl>

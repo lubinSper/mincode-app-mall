@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "购物车",
+    "component": true,
+    "usingComponents": {
+        "buy-car-dialog": "/components/wx-tpl/order/buy-car-dialog/buy-car-dialog/buy-car-dialog",
+        "NoData": "/components/wx-tpl/nodata/index"
+    }
+}

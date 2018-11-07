@@ -1,0 +1,49 @@
+<view wx:if="{{isOpenPay==1}}">
+    <view class="set_Account_module">
+        <view class="set_Account_module_top">
+            <span class="sam_shopname">
+                <image src="{{logoUrl}}"></image>
+                <span class="sam_shopname_title">{{orgName}}</span>
+            </span>
+        </view>
+        <view class="account_collected">收款金额</view>
+        <view class="input_amount">
+            <span class="input_amount_span">￥</span>
+            <input autoFocus bindinput="inputPayNum" class="input_amount_text" maxlength="10" placeholder="" type="digit" value="{{inputValue}}"></input>
+        </view>
+        <view class="sa_payfor">
+            <button bindtap="bindButtonTap" class="btn_payfor" disabled="{{disabled}}" type="primary"> 微信支付 </button>
+        </view>
+    </view>
+    <view class="ico_set">
+        <view class="ico_set_li">
+            <view class="ico_set_li_img">
+                <image alt="" src="../../../../page/message/images/quick_payment.jpg" style="width:27rpx; height:30rpx;"></image>
+            </view>
+            <view class="ico_set_li_text">快捷支付</view>
+        </view>
+        <view class="ico_set_li">
+            <view class="ico_set_li_img">
+                <image alt="" src="../../../../page/message/images/danger_payment.jpg" style="width:26rpx; height:29rpx;"></image>
+            </view>
+            <view class="ico_set_li_text">安全交易</view>
+        </view>
+        <view class="ico_set_li">
+            <view class="ico_set_li_img">
+                <image alt="" src="../../../../page/message/images/hui.jpg" style="width:28rpx; height:28rpx;"></image>
+            </view>
+            <view class="ico_set_li_text">尽享优惠</view>
+        </view>
+    </view>
+</view>
+<view class="zf_no_container" wx:if="{{isOpenPay==2}}">
+    <view class="zf_no_img">
+        <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/pay.png"></image>
+    </view>
+    <view class="zf_no_desc">
+        <view>本店暂不支持到店买单</view>
+    </view>
+    <view class="zf_buy_recorder">
+        <view class="buy_text">买单记录</view>
+    </view>
+</view>

@@ -1,0 +1,166 @@
+<view class="main mainCotent" wx:if="{{info}}">
+    <view class="header">
+        <view class="goods">
+            <view class="left">
+                <image mode="aspectFill" src="{{info.productCoverImage}}"></image>
+            </view>
+            <view class="right">
+                <view class="first max_one_line">{{info.productName}}</view>
+                <view class="third">当前价格
+                    <text class="price">¥{{u.formatMoney2(info.currentPrice)}}</text>
+                </view>
+                <view class="limit">
+                    <text>{{limitArr[0]}}</text>
+                    <i>:</i>
+                    <text>{{limitArr[1]}}</text>
+                    <i>:</i>
+                    <text>{{limitArr[2]}}</text>
+                </view>
+                <view class="second">
+                    <text>帮砍后底价:</text>
+                    <text class="price">¥{{u.formatMoney2(info.minPrice)}}</text>
+                    <text class="old_price" wx:if="{{1==2}}">原价 ¥{{u.formatMoney2(info.originalPrice)}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="needs" wx:if="{{isEnd||isFull}}">{{isFull||isBuy?'砍价成功':'砍价结束'}}，有<text class="number">{{info.currentPeopleNum}}</text>位好友帮忙砍价</view>
+        <view class="needs" wx:else>
+            <view class="bargin-line" style="margin-right: 25rpx"></view>还需<text class="number">{{info&&info.peopleNum-info.currentPeopleNum}}</text>位好友帮忙砍价<view class="bargin-line" style="margin-left: 25rpx"></view>
+        </view>
+    </view>
+    <view class="content">
+        <view class="helpers-view">
+            <view class="helpers">
+                <image class="{{headerStyle==1?'helpersImg1':'helpersImg'}}" src="{{item}}" wx:for="{{showHeaders}}" wx:key="item"></image>
+            </view>
+        </view>
+        <view bindtap="showOrHide" class="control-image-content" wx:if="{{info.currentPeopleNum>20&&info.currentPeopleNum!=info.peopleNum}}">
+            <view class="control-image-txt">{{imageActionText}}</view>
+            <image src="{{imageActionImage}}"></image>
+        </view>
+        <view class="reminder">
+            <view class="mian">
+                <view class="left">
+                    <image src="{{info.avatarUrl&&info.avatarUrl||defaultHeader}}"></image>
+                </view>
+                <view class="right ">
+                    <view class="name" style="text-align: left;">{{info.nickName}}</view>
+                    <view class="text max_one_line">帮砍一刀也是爱,能不能拿下Ta，就看你了！</view>
+                </view>
+                <view class="icon">
+                    <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/cut_price_arrow.png"></image>
+                </view>
+            </view>
+        </view>
+        <block wx:if="{{isSelf}}">
+            <button class="button end" wx:if="{{isBuy}}">已购买</button>
+            <button class="button end" wx:elif="{{isEnd}}">未能在活动时间内完成购买</button>
+            <button catchtap="toPayOrder" class="button" wx:elif="{{isFull}}">
+                <text style="padding-right: 10rpx;">￥{{u.formatMoney(info.currentPrice)}}</text>
+                <text>立即购买</text>
+            </button>
+            <form bindsubmit="collectFormId" class="form" data-type="2" reportSubmit="true" wx:else>
+                <button class="button" formType="submit" openType="share">邀请好友来砍价</button>
+            </form>
+        </block>
+        <block wx:else>
+            <button class="button end" wx:if="{{isHelp}}">已帮Ta砍过</button>
+            <button class="button end" wx:elif="{{isBuy||isFull}}">砍价已成功</button>
+            <button class="button end" wx:elif="{{isEnd}}">砍价已结束</button>
+            <form bindsubmit="doCutPrice" class="form" data-type="2" reportSubmit="true" wx:else>
+                <button class="button" formType="submit">帮Ta砍价</button>
+            </form>
+        </block>
+    </view>
+    <view class="bargin-content" wx:if="{{info.userBargainRecordDtos.length>0}}">
+        <view class="cutprice">
+            <view class="title">
+                <view class="bargin-line" style="margin-right: 25rpx;width: 184rpx"></view>
+                <view class="text">砍价帮</view>
+                <view class="bargin-line" style="margin-left: 25rpx;width: 184rpx"></view>
+            </view>
+            <view class="item {{index==info.userBargainRecordDtos.length-1?'last':''}}" wx:for="{{info.userBargainRecordDtos}}" wx:key="id">
+                <view class="left">
+                    <image src="{{item.avatarUrl&&item.avatarUrl||defaultHeader}}"></image>
+                </view>
+                <view class="right">
+                    <view class="first">
+                        <view class="name">{{item.nickName}}</view>
+                        <view class="price">帮砍{{u.formatMoney(item.price)}}元</view>
+                    </view>
+                    <view class="second">{{item.createTime}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="button_view">
+        <form bindsubmit="toDetail" class="form" data-type="2" reportSubmit="true">
+            <button class="button-none button" formType="submit" hoverClass="none">
+                <view class="detail">查看商品详情</view>
+            </button>
+        </form>
+        <block wx:if="{{isSelf}}">
+            <view class="pay end" wx:if="{{isBuy}}">已购买</view>
+            <view class="pay end" wx:elif="{{isEnd}}">砍价已结束</view>
+            <form catchtap="toPayOrder" class="form" data-type="2" reportSubmit="true" wx:else>
+                <button class="button-none button" formType="submit" hoverClass="none">
+                    <view class="pay">￥{{u.formatMoney(info.currentPrice)}} 立即购买</view>
+                </button>
+            </form>
+        </block>
+        <view catchtap="toDetail" class="pay" wx:else>我也要参与</view>
+    </view>
+</view>
+<block wx:if="{{showModal}}">
+    <view catchtap="closeCutPriceModal" class="drawer_screen cut_screen"></view>
+    <view class="cut_price_box">
+        <view class="main">
+            <view class="content" wx:if="{{isSelf}}">
+                <view class="icon">
+                    <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/success_icon.png"></image>
+                </view>
+                <view class="success">恭喜，发起成功</view>
+                <view class="price_view">该商品最低可砍到<text class="price">{{u.formatMoney(info.minPrice)}}</text>元</view>
+                <form bindsubmit="collectFormId" class="form" data-type="2" reportSubmit="true">
+                    <button class="box_button" formType="submit" openType="share">邀请好友来砍价</button>
+                </form>
+            </view>
+            <block wx:else>
+                <view class="content" wx:if="{{!isEnd&&!isFull&&!isHelp}}">
+                    <view class="icon helper">
+                        <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/chopper_icon.png"></image>
+                    </view>
+                    <view class="success">帮他砍价</view>
+                    <view class="price_view">该商品最低可砍到<text class="price">{{u.formatMoney(info.minPrice)}}</text>元</view>
+                    <form bindsubmit="doCutPrice" class="form" data-type="2" reportSubmit="true">
+                        <button class="box_button" formType="submit">帮Ta砍价</button>
+                    </form>
+                </view>
+                <view class="success_content" wx:else>
+                    <view class="first">
+                        <block wx:if="{{isHelp}}">
+                            <view class="text cut_info">你成功帮<view class="text_nickname">{{info.nickName}}</view>砍掉了</view>
+                            <view class="cut_price">{{u.formatMoney(helpCutItem.price)}}元</view>
+                        </block>
+                        <view wx:else>砍价已成功，无需再砍</view>
+                    </view>
+                    <view class="second">
+                        <text>砍后价格:</text>
+                        <text class="price">￥{{u.formatMoney(info.currentPrice)}}</text>
+                    </view>
+                    <view class="third">单独购买价：￥{{u.formatMoney(info.originalPrice)}}</view>
+                    <form bindsubmit="toDetail" class="form" data-type="2" reportSubmit="true">
+                        <button class="button" formType="submit">我也要参与</button>
+                    </form>
+                </view>
+            </block>
+            <view catchtap="closeSuccessModal" class="close">
+                <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/guanbi.png"></image>
+            </view>
+        </view>
+    </view>
+</block>
+<show_dialog content="{{dialogContent}}" show="{{isShowDialog}}"></show_dialog>
+<return_index wx:if="{{showReturnIndexBtn}}"></return_index>
+<authorize_dialog bind:backhandle="backHandle" onHide="{{onAuthHide}}" onShow="{{onAuthShow}}" params="{{authParam}}"></authorize_dialog>
+<wxs module="u" src="../../../../util/util.wxs" />

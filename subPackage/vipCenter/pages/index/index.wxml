@@ -1,0 +1,40 @@
+<view class="vip-home" wx:if="{{memberCardInfo}}">
+    <view class="home-header">
+        <view class="home-bg">
+            <view class="header-top">
+                <view class="t-left">
+                    <image mode="aspectFill" src="{{memberCardInfo.avatarUrl}}"></image>
+                    <view>
+                        <view class="t-left-nickname">{{memberCardInfo.nickName}}</view>
+                        <view class="t-left-userinfo">{{memberCardInfo.phone}}<text class="id-text">(ID:{{memberCardInfo.showId}})</text>
+                        </view>
+                    </view>
+                </view>
+                <view bindtap="toSecurity" class="t-right">
+                    <image mode="aspectFill" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/SecuritySettings.png"></image>
+                </view>
+            </view>
+            <view class="header-bottom">
+                <view class="b-left">
+                    <view>￥{{filters.toFix(memberCardInfo.balance/100||0)}}</view>
+                    <view>账户余额</view>
+                </view>
+                <view bindtap="rechargeMoney" class="b-right" wx:if="{{enableMemberCard}}">充值</view>
+            </view>
+        </view>
+    </view>
+    <view class="home-body" wx:if="{{isLoaded&&recordList.length}}">
+        <view class="body-header">
+            <text class="header-recent">最近交易记录</text>
+            <view bindtap="viewMore" class="view-more" wx:if="{{false}}">查看更多<image mode="aspectFill" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/next123.png"></image>
+            </view>
+        </view>
+        <view class="body-list">
+            <ListView isShowViewMore="{{true}}" recordList="{{recordList}}"></ListView>
+        </view>
+    </view>
+    <NoData wx:if="{{isLoaded&&!recordList.length}}"></NoData>
+</view>
+<PayDialog bind:closePayDialog="closePayDialog" bind:paySuccess="paySuccess" bind:setRechargeValue="setRechargeValue" isShowPayDialog="{{isShowPayDialog}}" memberCardInfo="{{memberCardInfo}}" rechargeValue="{{rechargeValue}}"></PayDialog>
+<vipCardPrivilege bind:closePrivilege="closePrivilegeLayer" bind:goRecharge="goRechargeMoney" showVipCardPrivilege="{{firstLogin==2}}"></vipCardPrivilege>
+<wxs module="filters" src="index.wxs" />

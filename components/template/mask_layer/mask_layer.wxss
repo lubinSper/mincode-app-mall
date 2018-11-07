@@ -1,0 +1,37 @@
+.layer_bg {
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.layer-content {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.layer-content .layer-banner {
+    background: #fff;
+    border-radius: 20rpx;
+    min-width: 450rpx;
+    min-height: 600rpx;
+    padding: 20rpx;
+    margin-bottom: 20rpx;
+}
+
+.layer-close {
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/guanbi.png) no-repeat left center / 60rpx 60rpx;
+    width: 60rpx;
+    height: 60rpx;
+}

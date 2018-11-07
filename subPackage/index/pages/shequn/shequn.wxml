@@ -1,0 +1,5 @@
+<Dy-circle-friends-css bind:setparentdata="setParentData" onHide="{{onHide}}" onPullDownRefresh="{{onPullDownRefresh}}" onReachBottom="{{onReachBottom}}" onShow="{{onShow}}" type="{{type}}"></Dy-circle-friends-css>
+<return_index wx:if="{{showReturnIndexBtn}}"></return_index>
+<view class="no_price_hide" style="{{copyRightStyle}}">
+    <copyright onPullDownRefresh="{{onPullDownRefresh}}" onShow="{{onShow}}" wx:if="{{xcxType==1}}"></copyright>
+</view>

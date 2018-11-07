@@ -1,0 +1,10 @@
+.recommend {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20rpx;
+    background-color: #fff;
+}
+
+.recommend::after {
+    clear: both;
+}

@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "详情",
+    "usingComponents": {
+        "coupon_modal": "/components/wx-tpl/coupon_modal/coupon_modal",
+        "greeting": "/components/wx-tpl/greeting/greeting",
+        "buy-car-dialog": "/components/wx-tpl/order/buy-car-dialog/buy-car-dialog/buy-car-dialog",
+        "return_index": "/components/wx-tpl/return_index/return_index",
+        "copyright": "/components/wx-tpl/copyright/copyright/copyright",
+        "discuss": "/components/wx-tpl/discuss/discuss"
+    }
+}

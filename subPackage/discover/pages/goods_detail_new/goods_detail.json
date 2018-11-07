@@ -1,0 +1,15 @@
+{
+    "navigationBarTitleText": "详情",
+    "navigationBarBackgroundColor": "#f8f8f8",
+    "usingComponents": {
+        "coupon_modal": "/components/wx-tpl/coupon_modal/coupon_modal",
+        "greeting": "/components/wx-tpl/greeting/greeting",
+        "buy-car-dialog": "/components/wx-tpl/order/buy-car-dialog/buy-car-dialog/buy-car-dialog",
+        "return_index": "/components/wx-tpl/return_index/return_index",
+        "copyright": "/components/wx-tpl/copyright/copyright/copyright",
+        "ProductDetailDesc": "/components/wx-tpl/product-detail/product-detail-desc/index",
+        "ProductDetailComment": "/components/wx-tpl/product-detail/product-detail-comment/index",
+        "dongtai": "../../components/wx-tpl/dongtai-detail/dongtai",
+        "authorize_dialog": "/components/wx-tpl/authorize_dialog/authorize/authorize"
+    }
+}

@@ -1,0 +1,44 @@
+<common-tabs activityType="1" bindchooseTab="chooseTab"></common-tabs>
+<view class="special_selling" style="padding-top: 78rpx;" wx:if="{{haveData}}">
+    <view class="cutprice_header" wx:if="{{activityType==1}}">
+        <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/kj_baner.png"></image>
+    </view>
+    <block wx:for="{{shopList}}" wx:key="item">
+        <cutprice-goods-view item="{{item}}" wx:if="{{activityType==1}}"></cutprice-goods-view>
+        <block wx:elif="{{activityType==2}}">
+            <pintuan-goods-view item="{{item}}"></pintuan-goods-view>
+            <view style="height: 20rpx; background: #f4f4f4" wx:if="{{index!=shopList.length-1}}"></view>
+        </block>
+        <line-goods-view appointmentCopy="{{appointmentCopy}}" appointmentZeroCopy="{{appointmentZeroCopy}}" isApplyNewLogic="true" isLast="{{index==shopList.length-1}}" isShowTag="{{tagType==null}}" item="{{item}}" purchaseCopy="{{purchaseCopy}}" wx:else></line-goods-view>
+    </block>
+    <view class="loading" wx:if="{{showLoading}}">
+        <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/one-shop-one-mini-app/loading.png"></image>
+        <text>加载中...</text>
+    </view>
+    <block wx:if="{{showTipData.show}}">
+        <import src="../../../components/template/show_dialog/show_dialog.wxml"></import>
+        <template is="showDialog" data="{{showTipData:showTipData}}"></template>
+    </block>
+</view>
+<view wx:if="{{noData}}">
+    <view class="no_data" style="margin-bottom: 207rpx">
+        <view class="images">
+            <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/one-shop-one-mini-app/wushangpin.png" style="background: none"></image>
+        </view>
+        <view class="text">该分类暂无内容</view>
+    </view>
+</view>
+<block wx:if="{{showTipData.show}}">
+    <import src="../../../components/template/show_dialog/show_dialog.wxml"></import>
+    <template is="showDialog" data="{{showTipData:showTipData}}"></template>
+</block>
+<view class="loading_failure" wx:if="{{loading_fail}}">
+    <view bindtap="onLoad">
+        <view class="loading_failure_img">
+            <image alt="" src="../../../image/xuanzhuan.png"></image>
+        </view>
+        <view class="loading_failure_text">加载失败<text>点击重试</text>
+        </view>
+    </view>
+</view>
+<return_index wx:if="{{showReturnIndexBtn}}"></return_index>

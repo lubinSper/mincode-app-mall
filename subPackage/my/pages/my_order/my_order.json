@@ -1,0 +1,8 @@
+{
+    "enablePullDownRefresh": true,
+    "navigationBarTitleText": "我的订单",
+    "backgroundColor": "#f4f4f4",
+    "usingComponents": {
+        "NoData": "/components/wx-tpl/nodata/index"
+    }
+}

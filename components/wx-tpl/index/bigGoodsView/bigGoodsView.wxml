@@ -1,0 +1,61 @@
+<navigator class="item {{template==1?'full_screen':''}}" hoverClass="none" url="/subPackage/discover/pages/{{xcxType==3&&item.type!=2?'goods_detail_new':'goods_detail'}}/goods_detail?id={{item.id}}">
+    <view class="img {{template==1?'more_height':''}} {{templateId==3?'height3':''}}">
+        <image mode="aspectFill" src="{{item.mainImagesUrl.length?item.mainImagesUrl[0]:item.coverImage}}"></image>
+        <view class="limit_view cut_price" wx:if="{{item.isPintuan==2&&item.timeArr&&item.isSpecial!=2}}">
+            <image src="https://xcximg.197.com/xcx/pintuan141.png"></image>
+            <view class="limit pintuan">
+                <text class="reduce_price">
+                    <text class="icon"></text>
+                    <text>{{item.pintuanLimitPeopleNum}}人团 立减￥{{item.reducePrice}}</text>
+                </text>
+            </view>
+        </view>
+        <view class="limit_view cut_price" wx:elif="{{item.isBargain==2&&item.timeArr&&item.isSpecial!=2}}">
+            <image src="https://xcximg.197.com/xcx/{{template==1?'kanjia141':'kanjia141'}}.png"></image>
+            <view class="limit">
+                <text style="margin-right: 26rpx">距结束还剩</text>
+                <text class="number">{{item.timeArr?item.timeArr[0]:'00'}}</text>
+                <text class="colon">:</text>
+                <text class="number">{{item.timeArr?item.timeArr[1]:'00'}}</text>
+                <text class="colon">:</text>
+                <text class="number">{{item.timeArr?item.timeArr[2]:'00'}}</text>
+            </view>
+        </view>
+        <view class="limit_view teshu" wx:elif="{{item.isBargain!=2&&item.isPintuan!=2&&item.timeArr&&item.isSpecial!=2}}">
+            <view class="limit">
+                <text style="margin-right: 26rpx">距结束还剩</text>
+                <text class="number">{{item.timeArr?item.timeArr[0]:'00'}}</text>
+                <text class="colon">:</text>
+                <text class="number">{{item.timeArr?item.timeArr[1]:'00'}}</text>
+                <text class="colon">:</text>
+                <text class="number">{{item.timeArr?item.timeArr[2]:'00'}}</text>
+            </view>
+        </view>
+        <view class="tag_icon" wx:if="{{isShowTag&&(item.type==3||item.tagType)&&!isHideHot}}">
+            <image class="{{tagTypes[item.tagType-1]}}" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/{{tagTypes[item.tagType-1]}}.png?a=3" wx:if="{{item.type!=3}}"></image>
+        </view>
+    </view>
+    <view style="height: 150rpx; padding-top: 20rpx; box-sizing: border-box;">
+        <block wx:if="{{item.type==1||item.type==3}}">
+            <view class="title">{{item.name}}</view>
+            <view class="price" wx:if="{{item.isSpecial==2&&item.price[0]==0&&item.price.length==1}}"></view>
+            <view class="price" wx:elif="{{item.isSpecial==2}}">
+                <text style="font-size: 40rpx;">{{item.price[0]}}</text>
+                <text style="font-size: 40rpx;" wx:if="{{item.price[1]&&item.price[1]!='00'}}">.{{item.price[1]}}</text>
+                <text style="font-size: 40rpx;">万</text>
+                <text class="old_price" wx:if="{{item.originalPrice>0}}">{{item.originalPrice}}万</text>
+            </view>
+            <view class="price" wx:else>
+                <text style="font-size: 30rpx;">￥</text>
+                <text style="font-size: 40rpx;">{{item.price[0]}}</text>
+                <text style="font-size: 26rpx;" wx:if="{{item.price[1]&&item.price[1]!='00'}}">.{{item.price[1]}}</text>
+                <text class="old_price" wx:if="{{item.enableSupperMemberPrice===2&&item.superMemberPrice}}">￥{{item.salePrice3}}</text>
+                <text class="old_price" wx:elif="{{item.originalPrice>0}}">￥{{item.originalPrice}}</text>
+                <image class="icon-vip" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/icon-svip.png" wx:if="{{item.enableSupperMemberPrice===2&&item.superMemberPrice}}"></image>
+            </view>
+        </block>
+        <view class="r_big_content_new_title" wx:if="{{item.type==2}}">
+            {{item.name?item.name:item.goodsDesc}}
+        </view>
+    </view>
+</navigator>

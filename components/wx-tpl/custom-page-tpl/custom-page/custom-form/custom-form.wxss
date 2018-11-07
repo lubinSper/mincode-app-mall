@@ -1,0 +1,97 @@
+.custom_form {
+    width: 100%;
+    box-sizing: border-box;
+    background: #f8f8f8;
+    margin-top: 10rpx;
+    padding-bottom: 40rpx;
+    padding-top: 40rpx;
+}
+
+.submit_title {
+    height: 50rpx;
+    line-height: 50rpx;
+    text-align: center;
+    font-size: 32rpx;
+    color: #222;
+    margin-bottom: 20rpx;
+}
+
+.submit_row {
+    height: 70rpx;
+    line-height: 70rpx;
+    margin-bottom: 26rpx;
+    clear: both;
+}
+
+.submit_row .submit_desc {
+    font-size: 28rpx;
+    color: #222;
+    margin-left: 15rpx;
+    float: left;
+    width: 145rpx;
+    text-align: right;
+}
+
+.submit_desc_r {
+    margin-left: 30rpx;
+}
+
+.submit_row .submit_input {
+    float: left;
+    width: 486rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    border: 1rpx solid #d6d6d6;
+    background-color: #fff;
+    font-size: 28rpx;
+    margin-left: 20rpx;
+    padding: 0 30rpx;
+    border-radius: 4rpx;
+    color: #222;
+}
+
+.submit_btn {
+    clear: both;
+    margin: 0 auto;
+    width: 362rpx;
+    height: 82rpx;
+    line-height: 82rpx;
+    text-align: center;
+    font-size: 32rpx;
+    color: #fff;
+    letter-spacing: 2rpx;
+    background-color: #ff7521;
+    border-radius: 50rpx;
+}
+
+.submit_btn::after {
+    border: none;
+}
+
+.remindText {
+    text-align: center;
+    font-size: 24rpx;
+    color: red;
+    line-height: 20rpx;
+    height: 20rpx;
+}
+
+.warp_btn {
+    padding-top: 14rpx;
+}
+
+.submit_row .two {
+    width: 107rpx;
+}
+
+.submit_row .three {
+    width: 116rpx;
+}
+
+.submit_row .four {
+    width: 128rpx;
+}
+
+.submit_row .five {
+    width: 145rpx;
+}

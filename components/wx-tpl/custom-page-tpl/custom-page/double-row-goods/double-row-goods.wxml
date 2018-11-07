@@ -1,0 +1,5 @@
+<view class="goods" style="background:#fff; overflow:hidden; " wx:if="{{shopArr.length>0}}">
+    <block-title title="{{goodsData.title}}"></block-title>
+    <view style="height:{{goodsData.title?'16rpx':'30rpx'}}"></view>
+    <common-goods-view alia="{{alias}}" appointmentCopy="{{appointmentCopy}}" appointmentZeroCopy="{{appointmentZeroCopy}}" isApplyNewLogic="{{isApplyNewLogic}}" isLast="{{index==shopArr.length-1}}" item="{{item}}" page="discover" purchaseCopy="{{purchaseCopy}}" wx:for="{{shopArr}}" wx:key="item"></common-goods-view>
+</view>

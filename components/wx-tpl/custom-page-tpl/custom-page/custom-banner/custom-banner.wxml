@@ -1,0 +1,10 @@
+<view class="{{i==0?'carousel nonMarginTop':'carousel'}}" wx:if="{{sowingList.length}}">
+    <swiper autoplay="{{autoplay}}" circular="{{circular}}" current="{{currentIndex}}" duration="{{duration}}" indicatorActiveColor="#fff" indicatorColor="rgba(255,255,255,.5)" indicatorDots="{{sowingList.length!=1}}" interval="{{interval}}">
+        <swiper-item wx:for="{{sowingList}}" wx:for-index="idx" wx:key="key">
+            <image bindtap="showBannerImg" class="slide-image" data-index="{{idx}}" data-item="{{item}}" data-jumptype="{{item.jumpType}}" data-jumpurl="{{item.jumpUrl}}" data-productid="{{item.productId}}" data-src="{{item.pictureUrl}}" mode="widthFix" src="{{item.pictureUrl}}" wx:if="{{item.jumpType!=5}}"></image>
+            <navigator appId="{{item.appid}}" hoverClass="none" path="{{item.path}}" target="miniProgram" version="trial" wx:else>
+                <image class="slide-image" mode="widthFix" src="{{item.pictureUrl}}"></image>
+            </navigator>
+        </swiper-item>
+    </swiper>
+</view>

@@ -1,0 +1,17 @@
+<view class="mask-layer" wx:if="{{showLayer}}">
+    <view class="layer_bg"></view>
+    <view class="layer-content">
+        <view class="layer-banner">
+            <slot wx:if="{{layerType==99}}"></slot>
+            <view wx:else>
+                <block wx:if="{{layerType==1}}">
+          888888888
+        </block>
+                <block wx:if="{{layerType==2}}">
+          999999999
+        </block>
+            </view>
+        </view>
+        <view bindtap="_closeLayer" class="layer-close"></view>
+    </view>
+</view>

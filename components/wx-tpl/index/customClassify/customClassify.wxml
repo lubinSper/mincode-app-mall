@@ -1,0 +1,11 @@
+<view class="recommend" style="margin-top: {{isUser?'0':'20rpx'}}" wx:if="{{goodsList.length>0}}">
+    <colours_title bindopenall="toCategorylist" isSegmentationTitle="{{categoryId==''}}" showAll="{{!isUser?true:false}}" title="{{name}}" type="{{2}}" wx:if="{{!isUser||isUser&&name}}"></colours_title>
+    <block wx:for="{{goodsList}}" wx:key="id">
+        <cutprice-goods-view item="{{item}}" wx:if="{{alias=='bargain'}}"></cutprice-goods-view>
+        <pintuan-goods-view isFirst="{{index==0}}" item="{{item}}" page="index" wx:if="{{alias=='pintuan'}}"></pintuan-goods-view>
+        <common-goods-view isShowTag="{{categoryId!=''||alias=='hot'}}" isindex="1" item="{{item}}" wx:elif="{{templateId==1}}"></common-goods-view>
+        <line-goods-view appointmentCopy="{{appointmentCopy}}" appointmentZeroCopy="{{appointmentZeroCopy}}" isLast="{{index==goodsList.length-1}}" isShowTag="{{categoryId!=''||alias=='hot'}}" item="{{item}}" purchaseCopy="{{purchaseCopy}}" wx:elif="{{templateId==2}}"></line-goods-view>
+        <big-goods-view isHideHot="true" isShowTag="{{categoryId!=''||alias=='hot'}}" item="{{item}}" template="3" templateId="{{templateId}}" wx:elif="{{templateId==3||templateId==4}}"></big-goods-view>
+    </block>
+    <view style="clear:both"></view>
+</view>

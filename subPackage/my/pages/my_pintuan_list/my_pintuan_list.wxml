@@ -1,0 +1,51 @@
+<view class="header">
+    <view bindtap="chooseTab" class="item {{status==1?'selected':''}}" data-status="1">待拼成</view>
+    <view bindtap="chooseTab" class="item {{status==2?'selected':''}}" data-status="2">已拼成</view>
+    <view bindtap="chooseTab" class="item {{status==3?'selected':''}}" data-status="3">拼团失败</view>
+</view>
+<view>
+    <view class="content" wx:if="{{!noData}}">
+        <view bindtap="toPintuanDetail" class="cpld_li" data-id="{{item.id}}" wx:for="{{list}}" wx:key="id">
+            <view class="cpld_li_top">
+                <span class="fl cpld_li_top_time">剩余: {{item.timeArr?item.timeArr[0]+':'+item.timeArr[1]+':'+item.timeArr[2]:'00:00:00'}}</span>
+                <span class="fr cpld_li_top_right cpld_li_top_right_cur">{{item.limitPeopleNum!=item.currentPeopleNum?'正在拼团':'已拼成'}}</span>
+            </view>
+            <view class="dl">
+                <view class="dt">
+                    <image alt="" mode="aspectFill" src="{{item.productCoverImage}}"></image>
+                </view>
+                <view class="dd">
+                    <view class="cpld_li_title max_two_line">{{item.productName}}</view>
+                    <view class="cpld_li_current_price">
+                        <view class="price">￥{{u.formatMoney(item.pintuanPrice)}}</view>
+                        <view class="number">
+                            <view class="icon"></view>
+                            <text>{{item.limitPeopleNum}}人团</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="cpld_li_top">
+                <image class="fl jioninger {{index==0?'first':''}}" src="{{item}}" wx:if="{{index<5}}" wx:for="{{item.joinAvatarUrls}}" wx:key="item"></image>
+                <text class="text" style="padding-left: 12rpx">等<text class="number">{{item.currentPeopleNum}}</text>人已经参团</text>
+                <block wx:if="{{item.limitPeopleNum!=item.currentPeopleNum}}">，<text class="text">还差<text class="number">{{item.limitPeopleNum-item.currentPeopleNum}}</text>人</text>
+                </block>
+                <text class="text" wx:else>,拼团成功</text>
+                <span class="fr cpld_li_top_right">
+                    <a catchtap="goOrderDetail" class="look_order button" data-order-id="{{item.orderId}}" data-order-type="{{item.orderType}}" href="javascript:void(0)">查看订单</a>
+                </span>
+            </view>
+            <view class="clearfix"></view>
+        </view>
+    </view>
+    <view class="loading" wx:if="{{loadMore}}">
+        <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/one-shop-one-mini-app/loading.png"></image>
+        <text>加载中...</text>
+    </view>
+</view>
+<view class="no_data" wx:if="{{noData}}">
+    <NoData imageSrcNumber="12" noDataText="暂无拼团"></NoData>
+</view>
+<show_dialog content="{{dialogContent}}" show="{{isShowDialog}}"></show_dialog>
+<return_index wx:if="{{showReturnIndexBtn}}"></return_index>
+<wxs module="u" src="../../../../util/util.wxs" />

@@ -1,0 +1,134 @@
+<view style="overflow:hidden;">
+    <view class="nav">
+        <view catchtap="goSearch" class="search">
+            <input disabled="true" placeholder="搜索所有商品" placeholderStyle="color:#aaa"></input>
+        </view>
+    </view>
+    <view style="height:94rpx;"></view>
+    <view class="main">
+        <scroll-view class="tabs" scrollTop="{{scrollTop}}" scrollWithAnimation="true" scrollY="{{true}}">
+            <view bindtap="onBtnActiveTow" class="item {{item.active?'select':''}}" data-id="{{item.id}}" data-index="{{i}}" wx:for="{{tabList.list}}" wx:for-index="i" wx:key="item">
+                <view class="text {{item.active?'no_border':''}}">{{item.name}}</view>
+            </view>
+        </scroll-view>
+        <view class="fixed-while"></view>
+        <view class="content">
+            <block wx:if="{{haveData}}">
+                <view bindtap="jumpToNext" class="item" data-id="{{item.id}}" style="overflow: hidden" wx:for="{{shopList}}" wx:key="item">
+                    <view class="left">
+                        <image mode="aspectFill" src="{{item.mainImagesUrl.length?item.mainImagesUrl[0]:item.imgUrls[0]}}"></image>
+                        <view class="activity_bg pintuan" wx:if="{{item.isPintuan==2&&item.isSpecial!=2}}">拼团中</view>
+                        <view class="activity_bg kanjia" wx:elif="{{item.isBargain==2&&item.isSpecial!=2}}">砍价进行中</view>
+                        <view class="activity_bg count_down" wx:elif="{{item.isPintuan!=2&&item.isBargain!=2&&item.toEndTime&&item.isSpecial!=2}}">
+                            <view class="count_down_l_1 {{item.timeArr[0]>99?'count_down_l_2':''}}">
+                                <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/time24.png"></image>
+                            </view>
+                            <view class="count_down_r">
+                                <text>{{item.timeArr?item.timeArr[0]:'00'}}:{{item.timeArr?item.timeArr[1]:'00'}}:{{item.timeArr?item.timeArr[2]:'00'}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="right" wx:if="{{isApplyNewLogic}}">
+                        <view class="first">
+                            <text wx:if="{{item.top=='1'}}">荐</text>{{item.name?item.name:item.goodsDesc}}</view>
+                        <view class="second">
+                            <view class="second-left">
+                                <block wx:if="{{item.isSpecial==2&&item.price==0}}">
+                                    <text wx:if="{{item.type!=2}}"></text>
+                                </block>
+                                <block wx:elif="{{item.isSpecial==2&&item.price!=0}}">
+                                    <text wx:if="{{item.type!=2}}">{{item.price1}}{{item.price2!='.00'?item.price2:''}}万</text>
+                                    <text class="old_price" wx:if="{{item.originalPrice}}">{{item.originalPrice}}万</text>
+                                </block>
+                                <text class="scy_yuyue" wx:elif="{{item.price1==0&&!item.price2}}">免费预约</text>
+                                <block wx:else>
+                                    <text>￥</text>
+                                    <text class="text-price" wx:if="{{item.type!=2}}">{{item.price1}}{{item.price2!='.00'?item.price2:''}}</text>
+                                    <text class="old_price" wx:if="{{item.superMemberPrice&&item.enableSupperMemberPrice==2}}">￥{{item.salePrice3}}</text>
+                                    <text class="old_price" wx:elif="{{item.originalPrice}}">￥{{item.originalPrice}}</text>
+                                    <image class="icon-vip" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/icon-svip.png" wx:if="{{item.superMemberPrice&&item.enableSupperMemberPrice==2}}"></image>
+                                </block>
+                            </view>
+                            <view catchtap="onAddBuyCar" class="second-right" data-attribute-id="{{item.attrCombination}}" data-enableSupperMemberPrice="{{item.enableSupperMemberPrice}}" data-id="{{item.id}}" data-index="{{index}}" data-infinite="{{item.isInfiniteInventory}}" data-inventory="{{item.inventory}}" data-isspecial="{{item.isSpecial}}" data-superMemberPrice="{{item.superMemberPrice}}" wx:if="{{item.type==1&&item.isSpecial!=2}}">
+                                <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/add.png"></image>
+                            </view>
+                        </view>
+                        <view class="third" style="height: auto;">
+                            <block wx:if="{{item.isPintuan!=2}}">
+                                <view class="text cut_price" wx:if="{{item.isBargain==2&&item.isSpecial!=2}}">砍价</view>
+                                <view class="text xianshi" wx:elif="{{item.toEndTime&&item.isSpecial!=2}}">限时</view>
+                                <view class="text yuyue" wx:elif="{{item.type==3&&item.isSpecial!=2}}">预约</view>
+                                <view class="text {{tagTypes[item.tagType-1]}}" wx:if="{{item.tagType}}">{{tagTypeNames[item.tagType-1]}}</view>
+                            </block>
+                            <view style="line-height: 0" wx:else>
+                                <text class="reduce_price">{{item.pintuanLimitPeopleNum}}人团  立减￥{{item.reducePrice}}</text>
+                            </view>
+                            <view class="scy_number" wx:if="{{item.isShowSale==2&&item.isSpecial!=2}}">
+                                <text decode="true">{{item.saleTotal?item.saleTotal:0}}人{{item.type==3?'预约':'购买'}}&nbsp;&nbsp;{{item.viewNum?item.viewNum:0}}浏览</text>
+                            </view>
+                            <view class="scy_number" wx:else>
+                                <text decode="true">{{item.viewNum?item.viewNum:0}}浏览&nbsp;&nbsp;{{item.likes.length>0?item.likes.length:0}}赞&nbsp;&nbsp;{{item.comments.length>0?item.comments.length:0}}评论</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="right" wx:else>
+                        <view class="first">
+                            <text wx:if="{{item.top=='1'}}">荐</text>{{item.name?item.name:item.goodsDesc}}</view>
+                        <view class="second">
+                            <view class="second-left">
+                                <block wx:if="{{item.isSpecial==2&&item.price==0}}">
+                                    <text wx:if="{{item.type!=2}}"></text>
+                                </block>
+                                <block wx:elif="{{item.isSpecial==2&&item.price!=0}}">
+                                    <text wx:if="{{item.type!=2}}">{{item.price1}}{{item.price2!='.00'?item.price2:''}}万</text>
+                                    <text class="old_price" wx:if="{{item.originalPrice}}">{{item.originalPrice}}万</text>
+                                </block>
+                                <block wx:else>
+                                    <text>￥</text>
+                                    <text class="text-price" wx:if="{{item.type!=2}}">{{item.price1}}{{item.price2!='.00'?item.price2:''}}</text>
+                                    <text class="old_price" wx:if="{{item.enableSupperMemberPrice===2&&item.superMemberPrice}}">￥{{item.salePrice3}}</text>
+                                    <text class="old_price" wx:elif="{{item.originalPrice}}">￥{{item.originalPrice}}</text>
+                                    <image class="icon-vip" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/icon-svip.png" wx:if="{{item.enableSupperMemberPrice===2&&item.superMemberPrice}}"></image>
+                                </block>
+                            </view>
+                            <view catchtap="onAddBuyCar" class="second-right" data-attribute-id="{{item.attrCombination}}" data-id="{{item.id}}" data-index="{{index}}" data-infinite="{{item.isInfiniteInventory}}" data-inventory="{{item.inventory}}" data-isspecial="{{item.isSpecial}}" data-superMemberPrice="{{item.superMemberPrice}}" wx:if="{{item.type==1&&item.isSpecial!=2}}">
+                                <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/add.png"></image>
+                            </view>
+                        </view>
+                        <view class="third">
+                            <block wx:if="{{item.isPintuan!=2}}">
+                                <view class="text cut_price" wx:if="{{item.isBargain==2&&item.isSpecial!=2}}">砍价</view>
+                                <view class="text xianshi" wx:elif="{{item.toEndTime&&item.isSpecial!=2}}">限时</view>
+                                <view class="text yuyue" wx:elif="{{item.type==3&&item.isSpecial!=2}}">预约</view>
+                                <view class="text {{tagTypes[item.tagType-1]}}" wx:if="{{item.tagType}}">{{tagTypeNames[item.tagType-1]}}</view>
+                            </block>
+                            <view style="line-height: 0" wx:else>
+                                <text class="reduce_price">{{item.pintuanLimitPeopleNum}}人团  立减￥{{item.reducePrice}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+            <view class="no_data" wx:if="{{noData}}">
+                <view class="no_data_img">
+                    <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/qq3-2.png"></image>
+                </view>
+                <view class="no_data_text">
+                    <text>该分类暂无内容</text>
+                </view>
+            </view>
+            <view bindtap="onClickRetry" class="loading_failure" wx:if="{{loadingFail}}">
+                <view class="loading_failure_img">
+                    <image src="../../../../image/xuanzhuan.png"></image>
+                </view>
+                <view class="loading_failure_text">加载失败<text>点击重试</text>
+                </view>
+            </view>
+            <view class="loading" wx:if="{{showLoading}}">
+                <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/one-shop-one-mini-app/loading.png"></image>
+                <text>加载中...</text>
+            </view>
+        </view>
+    </view>
+    <show_dialog content="{{dialogContent}}" show="{{isShowDialog}}"></show_dialog>
+</view>

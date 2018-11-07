@@ -1,0 +1,4 @@
+<view class="nodata">
+    <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/q1.png"></image>
+    <text>暂无交易记录</text>
+</view>

@@ -1,0 +1,23 @@
+.nodata {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    margin-top: -48rpx;
+}
+
+.nodata-image {
+    display: block;
+    margin: 0 auto;
+    width: 750rpx;
+    height: 280rpx;
+}
+
+.nodata-text {
+    display: block;
+    text-align: center;
+    font-size: 30rpx;
+    color: #555;
+    margin-top: -20rpx;
+}

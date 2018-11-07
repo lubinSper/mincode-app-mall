@@ -1,0 +1,16 @@
+{
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "mall-category-list-first": "/components/wx-tpl/mall/mall-category-list-first/mall-category-list-first",
+        "mall-category-list-second": "/components/wx-tpl/mall/mall-category-list-second/mall-category-list-second",
+        "mall-category-list-third": "/components/wx-tpl/mall/mall-category-list-third/mall-category-list-third",
+        "mall-category-list-four": "/components/wx-tpl/mall/mall-category-list-four/mall-category-list-four",
+        "coupon_modal": "/components/wx-tpl/coupon_modal/coupon_modal",
+        "show_dialog": "/components/wx-tpl/show_dialog/show_dialog",
+        "buy-car-dialog": "/components/wx-tpl/order/buy-car-dialog/buy-car-dialog/buy-car-dialog",
+        "return_index": "/components/wx-tpl/return_index/return_index",
+        "copyright": "/components/wx-tpl/copyright/copyright/copyright",
+        "NoData": "/components/wx-tpl/nodata/index",
+        "vip_mask_layer": "/components/template/vip_mask_layer/vip_mask_layer"
+    }
+}

@@ -1,0 +1,56 @@
+.record {
+    border-top: 1rpx solid #e6e6e6;
+}
+
+.record-select {
+    background-color: white;
+    padding: 0 30rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    border-bottom: 1rpx solid #e6e6e6;
+}
+
+.select-btn {
+    display: flex;
+    align-items: center;
+    max-width: 200rpx;
+    color: #555;
+    font-size: 28rpx;
+}
+
+.select-btn image {
+    width: 26rpx;
+    height: 15rpx;
+    margin-left: 12rpx;
+}
+
+.record-total {
+    padding: 60rpx 24rpx;
+    background-color: white;
+}
+
+.record-total .number {
+    font-size: 36rpx;
+    color: #222;
+    font-weight: 500;
+}
+
+.line {
+    display: flex;
+    justify-content: space-around;
+    font-size: 24rpx;
+    color: rgba(136,136,136,0.6);
+}
+
+.record-total .line:nth-child(2) {
+    margin-top: -2rpx;
+}
+
+.line text {
+    flex: 1;
+    text-align: center;
+}
+
+.record-list {
+    margin-top: 20rpx;
+}

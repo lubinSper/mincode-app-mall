@@ -1,0 +1,40 @@
+<view class="reservation_listes" style="overflow-x:hidden;">
+    <view class="rl_content" wx:if="{{item.xcxOrderProductDtoList.length>0}}" wx:for="{{arrList}}" wx:for-index="i" wx:key="{{i}}">
+        <view catchtap="jumpFunc" data-id="{{item.id}}" data-status="{{item.status}}">
+            <view class="reservation_listes_top">
+                <text class="fl rlt_times">{{item.buyTime}}</text>
+                <text class="fr rlt_sure">{{item.status==5?'待确认':''}}{{item.status==6?'已完成':''}}{{item.status==7?'买家已取消':''}}{{item.status==8?'卖家已关闭':''}}</text>
+            </view>
+            <view class="reservation_listes_li" wx:for="{{item.xcxOrderProductDtoList}}" wx:for-index="j" wx:for-item="item02">
+                <view class="rll_block rll_img">
+                    <image alt="" mode="aspectFill" src="{{item02.imageUrl}}"></image>
+                </view>
+                <view class="rll_block rll_middle">
+                    <view class="r_title">{{item02.productName}}</view>
+                    <view class="r_shape">预约时间：{{item.reserveTime}}</view>
+                </view>
+                <view class="rll_block rll_right">
+                    <text wx:if="{{item02.productOriginalPrice>0}}">￥{{item02.productOriginalPrice}}</text>
+                    <text>￥{{item02.productPrice}}</text>
+                    <text wx:if="{{item.type==1}}">x{{item02.productCount}}</text>
+                </view>
+            </view>
+            <view class="sure_price">
+                <view>合计:<text class="integer_price">￥{{item.price}}</text>
+                </view>
+                <view class="weixin" wx:if="{{item.payMethod==1&&item.price>0}}">微信支付</view>
+                <view wx:if="{{item.payMethod==2}}">到店支付</view>
+                <view class="vipcard" wx:if="{{item.payMethod==3}}">会员卡支付</view>
+            </view>
+            <view catchtap="confirmCompletion" class="confirm_completion" data-customerRemark="{{customerRemark}}" data-id="{{item.id}}" data-index="{{i}}" wx:if="{{item.status==5&&(item.payMethod!=2||item.price==0)}}">
+                <text>确认完成</text>
+            </view>
+            <view catchtap="searchOrderCode" class="confirm_completion search_code" data-order-id="{{item.id}}" wx:if="{{item.status==5}}">
+                <text>查看订单码</text>
+            </view>
+            <view class="flatClear"></view>
+        </view>
+    </view>
+</view>
+<import src="../../../../../components/template/order_code/order_code.wxml"></import>
+<template is="orderCode" data="{{...orderCode}}"></template>

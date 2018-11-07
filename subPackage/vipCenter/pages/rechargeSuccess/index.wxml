@@ -1,0 +1,39 @@
+<view class="rechargeSuccess">
+    <view class="top">
+        <icon size="55" type="success"></icon>
+        <view class="text">恭喜，支付成功</view>
+        <view class="money">￥{{util.formatMoney2(payAmount)}}</view>
+    </view>
+    <view class="detail">
+        <view class="item">
+            <view class="left">购买项目</view>
+            <view class="right">{{productName}}</view>
+        </view>
+        <view class="item">
+            <view class="left">交易时间</view>
+            <view class="right">{{util.transTime(dealTime,'yyyy-MM-dd HH:mm:ss')}}</view>
+        </view>
+        <view class="item">
+            <view class="left">交易单号</view>
+            <view class="right">{{orderNo}}</view>
+        </view>
+        <view class="item" wx:if="{{returnGiftAmount}}">
+            <view class="left">返赠</view>
+            <view class="right">￥{{util.formatMoney2(returnGiftAmount)}}</view>
+        </view>
+        <view class="item" wx:if="{{balance}}">
+            <view class="left">当前余额</view>
+            <view class="right">￥{{util.formatMoney2(balance)}}</view>
+        </view>
+        <view class="item" wx:if="{{expirationDate}}">
+            <view class="left">会员有效期至</view>
+            <view class="right">{{util.transTime(expirationDate,'yyyy-MM-dd')}}</view>
+        </view>
+    </view>
+    <view class="button">
+        <navigator hoverClass="none" openType="redirect" url="/subPackage/superVip/pages/index/index?popType={{payType}}">
+            <button>返回</button>
+        </navigator>
+    </view>
+</view>
+<wxs module="util" src="../../../../util/util.wxs" />

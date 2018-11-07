@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "authorize_dialog": "/components/wx-tpl/authorize_dialog/authorize/authorize"
+    }
+}

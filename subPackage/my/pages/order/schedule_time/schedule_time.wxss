@@ -1,0 +1,56 @@
+.dmc_content_infor {
+    background-color: #fff;
+    margin-top: 20rpx;
+}
+
+.dmc_content_infor ul li {
+    width: 100%;
+    display: inline-block;
+    height: 80rpx;
+    line-height: 90rpx;
+    border-top: 1rpx solid #e2e2e2;
+}
+
+.dmc_content_infor ul li:first-child {
+    border-top: 1rpx solid #fff;
+}
+
+.dmc_content_infor ul li text {
+    float: left;
+    margin-left: 30rpx;
+    width: 192rpx;
+    height: 90rpx;
+}
+
+.dmc_content_infor ul li abcd {
+    height: 90rpx;
+    width: 440rpx;
+    display: block;
+    float: right;
+    text-align: right;
+    padding-right: 30rpx;
+    color: #888;
+    background-image: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/one-shop-one-mini-app/weixin_next.jpg);
+    background-repeat: no-repeat;
+    background-size: 12rpx 22rpx;
+    background-position: right 36rpx;
+    margin-right: 30rpx;
+}
+
+.dmc_save {
+    width: 690rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    display: block;
+    margin: 0 auto;
+    font-size: 34rpx;
+    margin-top: 100rpx;
+    background-color: #ff7800;
+    border-radius: 60rpx;
+    color: #fff;
+    text-align: center;
+}
+
+.gray_dmc_save {
+    background-color: #ffdab9;
+}

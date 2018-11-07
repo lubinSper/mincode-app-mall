@@ -1,0 +1,69 @@
+<view class="module">
+    <colours_title hasLine="{{true}}" title="{{title}}" type="{{3}}" wx:if="{{!isContactPage}}"></colours_title>
+    <view class="link_us_head" wx:else>
+        <view class="logo">
+            <image alt="" src="{{logo}}"></image>
+        </view>
+        <view class="content">
+            <view class="name">{{orgName}}</view>
+            <view class="distance">
+                <image src="/page/message/images/ico_distance.jpg"></image>
+                <text>{{distance}}</text>
+            </view>
+        </view>
+        <view class="wechat">
+            <view class="wechat_view">
+                <image mode="aspectFill" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/weixin.png"></image>
+            </view>
+            <view class="text">联系商家</view>
+            <button class="contact" openType="contact"></button>
+        </view>
+    </view>
+    <view style="height:24rpx"></view>
+    <view class="detailed_infor" wx:if="{{isContactPage}}">
+        <view bindtap="openMap" class="detailed_infor_li" wx:if="{{orgInfo.address}}">
+            <image alt="" class="dil_ico" src="/page/message/images/ico/ico_address.jpg" style="width:24rpx; height:29rpx;"></image>
+            <text>{{orgInfo.address}}</text>
+            <image alt="" class="next_ico" src="/page/message/images/next.png"></image>
+        </view>
+        <view bindtap="makePhoneCall" class="detailed_infor_li" data-phone="{{phone}}" wx:if="{{orgInfo.phone}}">
+            <image alt="" class="dil_ico" src="/page/message/images/ico/ico_tel.jpg" style="width:26rpx; height:26rpx; margin:10rpx 15rpx 0 30rpx;"></image>
+            <text>{{orgInfo.phone}}</text>
+            <image alt="" class="next_ico" src="/page/message/images/next.png"></image>
+        </view>
+    </view>
+    <view class="serve">
+        <view class="time" wx:if="{{orgInfo.businessHours}}">
+            <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/time.png"></image>
+            <text>{{orgInfo.businessHours}}</text>
+        </view>
+        <view class="facilities" wx:if="{{orgInfo.orgFacilities.length>0}}">
+            <view class="img">
+                <image src="../../../../page/message/images/ico/ico_shebei.jpg"></image>
+            </view>
+            <view class="text" wx:for="{{orgInfo.orgFacilities}}" wx:key="item">{{serveArr[item-1]}}</view>
+        </view>
+    </view>
+    <view class="infor_introduce" wx:if="{{troduce_list.length>0}}">
+        <block wx:for="{{troduce_list}}" wx:for-index="i" wx:key="key">
+            <text class="infor_introduce_text" selectable="true" style="{{item.divPageModuleTextDto.style}}" wx:if="{{item.type==5}}">{{item.divPageModuleTextDto.content}}</text>
+            <view class="infor_introduce_img" wx:if="{{item.type==3}}">
+                <image bindtap="previewImage" data-src="{{item.showImgs[0]}}" mode="widthFix" src="{{item.showImgs[0]}}"></image>
+                <view class="clear"></view>
+            </view>
+            <view bindtap="videoPlay" class="infor_introduce_video" data-index="{{i}}" wx:if="{{item.type==4}}">
+                <video autoplay="true" controls="true" customCache="false" id="video-{{i}}" objectFit="fill" src="{{item.videoUrl}}" wx:if="{{curr_id&&curr_id==i+1}}"></video>
+                <view class="replace-video" wx:else>
+                    <image class="model-img" mode="aspectFill" src="{{item.poster.length>0?item.poster:defaultPoster}}"></image>
+                    <view class="mask-img"></view>
+                    <view class="play-icon"></view>
+                </view>
+                <view class="clear"></view>
+            </view>
+            <view class="{{i==0?'custom_btn nonMarginTop paddingTop40':'custom_btn'}}" wx:if="{{item.type==6}}">
+                <button class="c_btn" openType="contact" style="{{item.divPageModuleButtonDto.style}}" wx:if="{{item.divPageModuleButtonDto.functionType==1}}">{{item.divPageModuleButtonDto.name}}</button>
+                <button bindtap="makePhoneCall" class="c_btn" data-phone="{{item.divPageModuleButtonDto.phone}}" style="{{item.divPageModuleButtonDto.style}}" wx:else>{{item.divPageModuleButtonDto.name}}</button>
+            </view>
+        </block>
+    </view>
+</view>

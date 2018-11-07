@@ -1,0 +1,23 @@
+<input adjustPosition="{{false}}" bindfocus="getBoardHeight" bindinput="setPayPass" class="hiddenInput" focus="{{focus}}" maxlength="6" type="number" value="{{password}}"></input>
+<view class="pay-input-dialog" wx:if="{{isShowPayInput}}">
+    <view catchtouchmove="true" class="pay-input-modal"></view>
+    <view class="pay-input-body" style="transform:translateY(calc({{translateY}}px - 100%));">
+        <view class="body-header">
+            <view catchtap="emptyBoardHeight" class="back-icon">
+                <text></text>
+            </view>
+            <text>输入支付密码</text>
+        </view>
+        <view bindtap="setFocus" class="body-content">
+            <view class="body-content-tip">使用会员卡余额支付需要验证身份，验证通过后才可进行支付。</view>
+            <view class="password-container">
+                <view class="password-item" wx:for="{{6}}" wx:key="{{index}}">
+                    <view class="pass-fill-point" wx:if="{{index<password.length}}"></view>
+                </view>
+            </view>
+            <text catchtap="forgetPass" class="forget-pass">
+                <text>忘记密码</text>
+            </text>
+        </view>
+    </view>
+</view>

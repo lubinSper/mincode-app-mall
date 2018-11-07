@@ -1,0 +1,7 @@
+<view class="{{i==0?'custom_btn nonMarginTop paddingTop40':'custom_btn'}}">
+    <button class="c_btn" openType="contact" style="{{buttonStyle}}" wx:if="{{button.jumpType==6}}">{{button.buttonWords}}</button>
+    <navigator appId="{{openId}}" hoverClass="none" path="{{path}}" target="miniProgram" version="trial" wx:elif="{{button.jumpType==5}}">
+        <button class="c_btn" style="{{buttonStyle}}">{{button.buttonWords}}</button>
+    </navigator>
+    <button bindtap="clickButton" class="c_btn" style="{{buttonStyle}}" wx:else>{{button.buttonWords}}</button>
+</view>

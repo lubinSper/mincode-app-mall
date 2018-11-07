@@ -1,0 +1,91 @@
+<page>
+    <view wx:if="{{hasData}}">
+        <view class="product_infor">
+            <dl>
+                <dt>
+                    <image alt="" mode="aspectFill" src="{{goodsz.coverImage?goodsz.coverImage:'http://oss.197.com/xcx/org/default/logo.png'}}"></image>
+                </dt>
+                <dd>
+                    <view class="product_title">{{goodsz.name}}</view>
+                    <view class="product_price">
+                        <abcd wx:if="{{goodsz.price>=0}}">￥{{isSuperVip&&goodsz.superMemberPrice&&goodsz.enableSupperMemberPrice==2?goodsz.superMemberPrice:goodsz.price}}<image class="s-vip-icon" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/SVIP.png" wx:if="{{isSuperVip&&goodsz.superMemberPrice&&goodsz.enableSupperMemberPrice==2}}"></image>
+                        </abcd>
+                        <text wx:if="{{goodsz.originalPrice>0}}">{{isSuperVip&&goodsz.superMemberPrice&&goodsz.enableSupperMemberPrice==2?goodsz.superMemberPrice:goodsz.originalPrice}}</text>
+                    </view>
+                </dd>
+            </dl>
+            <view class="clear"></view>
+            <view class="leaving_message">
+                <input bindblur="bindTextAreaBlur" bindinput="bindTextAreaBlur" maxLength="200" placeholder="给商家留言" placeholderClass="plColor" type="text" value="{{textAreaValue}}"></input>
+            </view>
+        </view>
+        <view class="subscribe">
+            <view class="dmc_content_infor">
+                <ul>
+                    <li>
+                        <text>预约人</text>
+                        <input bindblur="bindKeycarrier" bindinput="bindKeycarrier" confirmType="done" maxLength="18" placeholder="请输入姓名" placeholderClass="plColor" type="text" value=""></input>
+                        <view class="clear"></view>
+                    </li>
+                    <li>
+                        <text>联系电话</text>
+                        <input bindblur="bindKeyContactTel" bindinput="bindKeyContactTel" confirmType="done" placeholder="请输入手机号" placeholderClass="plColor" type="number" value=""></input>
+                        <view class="clear"></view>
+                    </li>
+                    <li bindtap="changeDateTime">
+                        <text>预约时间</text>
+                        <span wx:if="{{isOrderTime==1}}"></span>
+                        <abcd>{{dateTime}}</abcd>
+                        <view class="clear"></view>
+                    </li>
+                </ul>
+                <view class="clear"></view>
+            </view>
+            <view class="payment" wx:if="{{goodsz.price>0}}">
+                <text>付款方式</text>
+                <view catchtap="showPayWayDialog" class="payment_right">
+                    <view class="payment_mode">
+                        <view class="payment_mode_li {{payIndex==1?'card_icon':''}}">
+                            <text>{{payList[payIndex].name}}</text>
+                            <image mode="widthFix" src="{{payList[payIndex].icon}}" wx:if="{{payList[payIndex].icon}}"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="dmc_money">
+            <view class="dmc_money_ul gai_payfor">
+                <view class="dmc_money_li">
+                    <abcd>应付金额</abcd>
+                    <text class="sure_money">￥{{isSuperVip&&goodsz.superMemberPrice?goodsz.superMemberPrice:goodsz.price}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="linkus">
+            <view class="linkus_le">
+                <button class="contactus" openType="contact" plain="true">客服</button>
+            </view>
+            <view bindtap="confirmPayment" class="linkus_ri" wx:if="{{canPayFor==0}}">立即预约</view>
+            <view class="linkus_ri_gray" wx:if="{{canPayFor==1}}">立即预约</view>
+        </view>
+    </view>
+    <block wx:if="{{showTipData.show}}">
+        <import src="../../../../../components/template/show_dialog/show_dialog.wxml"></import>
+        <template is="showDialog" data="{{showTipData:showTipData}}"></template>
+    </block>
+    <view animation="{{animationData1}}" bindtap="closePayWayDialog" class="pay-way-modal" wx:if="{{isShowPayWayDialog}}"></view>
+    <view animation="{{animationData2}}" class="pay-way-dialog" wx:if="{{isShowPayWayDialog}}">
+        <view class="way-container">
+            <view bindtap="checkPayWay" class="way-item" data-index="{{index}}" data-use="{{item.use}}" wx:if="{{item.use||index==1&&memberCardInfo}}" wx:for="{{payList}}" wx:key="item">
+                <view class="item-box">
+                    <image class="item-icon {{index==1?'item-icon-card':''}}" mode="widthFix" src="{{item.icon}}"></image>
+                    <text class="item-text">{{item.name}}</text>
+                </view>
+                <view class="balance" wx:if="{{index==1}}">(余额：￥{{u.formatMoney2(balance)}})</view>
+            </view>
+        </view>
+        <view bindtap="closePayWayDialog" class="cancel-dialog">取消</view>
+    </view>
+    <paySixDialog bind:closeDialog="closePayInputDialog" bind:inputComplete="pwdInputComplete" focus="{{focus}}" isShowPayInput="{{isShowPayInput}}"></paySixDialog>
+</page>
+<wxs module="u" src="../../../../../util/util.wxs" />

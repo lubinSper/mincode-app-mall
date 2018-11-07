@@ -1,0 +1,19 @@
+.block-title {
+    text-align: center;
+}
+
+.block-title .gap-line,.block-title .title {
+    display: inline-block;
+    font-size: 34rpx;
+    line-height: 55rpx;
+    padding-top: 20rpx;
+    color: #222222;
+}
+
+.block-title .gap-line {
+    display: none;
+}
+
+.block-title .title {
+    margin: 0 10rpx;
+}

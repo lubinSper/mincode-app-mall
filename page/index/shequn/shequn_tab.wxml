@@ -1,0 +1,2 @@
+<Dy-circle-friends-css onHide="{{onHide}}" onPullDownRefresh="{{onPullDownRefresh}}" onReachBottom="{{onReachBottom}}" onShow="{{onShow}}" type="{{type}}"></Dy-circle-friends-css>
+<return_index wx:if="{{showReturnIndexBtn}}"></return_index>

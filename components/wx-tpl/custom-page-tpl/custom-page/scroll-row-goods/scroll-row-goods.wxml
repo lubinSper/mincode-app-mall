@@ -1,0 +1,45 @@
+<view class="goods_shopping" style="background:#fff; overflow:hidden;" wx:if="{{shopArr.length>0}}">
+    <block-title title="{{goodsData.title}}"></block-title>
+    <view class="scroll_view" style="margin-top:{{goodsData.title?'20rpx':'30rpx'}}">
+        <scroll-view class="scroll" scrollX="true">
+            <navigator class="goods {{isLast?'last':''}} {{isUser?'userLimit':''}}" hoverClass="none" url="/subPackage/discover/pages/goods_detail_new/goods_detail?id={{item.id}}" wx:for="{{shopArr}}" wx:key="item">
+                <view class="img_view">
+                    <image mode="aspectFill" src="{{item.coverImage?item.coverImage:item.imgUrls[0]}}"></image>
+                    <view class="activity_bg" wx:if="{{item.isPintuan==2&&item.isSpecial!=2}}">拼团中</view>
+                    <view class="activity_bg" wx:elif="{{item.isBargain==2&&item.isSpecial!=2}}">砍价进行中</view>
+                    <view class="limit" wx:if="{{item.isPintuan!=2&&item.isBargain!=2&&item.toEndTime&&item.isSpecial!=2}}">
+                        <view class="content {{item.timeArr&&item.timeArr[0]>99?'more':''}}">
+                            <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/time24.png"></image>
+                            <view class="time">{{item.timeArr?item.timeArr[0]+':'+item.timeArr[1]+':'+item.timeArr[2]:'00:00:00'}}</view>
+                        </view>
+                    </view>
+                    <view class="tag_icon" wx:if="{{isShowTag&&(item.type==3||item.tagType)}}">
+                        <image class="{{tagTypes[item.tagType-1]}}" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/{{tagTypes[item.tagType-1]}}.png?a=3" wx:if="{{item.type!=3}}"></image>
+                    </view>
+                </view>
+                <view class="userInfo">
+                    <view class="name">{{item.name}}</view>
+                    <view class="price">
+                        <text class="integer_num" style="color:#fff" wx:if="{{item.isSpecial==2&&item.price==0}}">0</text>
+                        <block wx:elif="{{item.isSpecial==2&&item.price!=0}}">
+                            <text class="integer_num" style="font-size: 28rpx;">{{item.price[0]}}</text>
+                            <text class="remainder" style="font-size: 28rpx;" wx:if="{{item.price[1]}}">.{{item.price[1]}}</text>
+                            <i style="font-size: 28rpx;">万</i>
+                            <abcd class="old_price" wx:if="{{item.originalPrice>0}}">{{item.originalPrice}}万</abcd>
+                        </block>
+                        <view wx:elif="{{item.type==3&&item.price[0]==0&&!item.price[1]}}">
+                            <text class="integer_num">免费预约</text>
+                        </view>
+                        <view wx:else>
+                            <text style="font-size: 28rpx;">￥{{item.price[0]}}</text>
+                            <text style="font-size: 28rpx;" wx:if="{{item.price[1]&&item.price[1]!='00'}}">.{{item.price[1]}}</text>
+                            <text class="old_price" wx:if="{{item.enableSupperMemberPrice===2&&item.superMemberPrice}}">￥{{item.salePrice3}}</text>
+                            <text class="old_price" wx:elif="{{item.originalPrice>0}}">￥{{item.originalPrice}}</text>
+                            <image class="icon-vip" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/icon-svip.png" wx:if="{{item.enableSupperMemberPrice===2&&item.superMemberPrice}}"></image>
+                        </view>
+                    </view>
+                </view>
+            </navigator>
+        </scroll-view>
+    </view>
+</view>

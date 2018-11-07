@@ -1,0 +1,36 @@
+.product-detail-comment-item {
+    padding: 30rpx 0;
+    margin: 0 30rpx;
+    border-bottom: 1rpx solid #e6e6e6;
+    display: flex;
+}
+
+.item-l {
+    flex: 0 0 70rpx;
+    margin-right: 20rpx;
+    padding-top: 10rpx;
+}
+
+.item-l image {
+    width: 70rpx;
+    height: 70rpx;
+    display: block;
+    border-radius: 100%;
+    background-color: #e6e6e6;
+}
+
+.item-r .r-title {
+    font-size: 30rpx;
+    color: #667494;
+}
+
+.item-r .r-date {
+    color: #888;
+    font-size: 24rpx;
+}
+
+.item-r .r-content {
+    color: #222;
+    font-size: 28rpx;
+    line-break: 39rpx;
+}

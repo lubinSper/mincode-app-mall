@@ -1,0 +1,60 @@
+.goods {
+    background-color: white;
+    padding-top: 30rpx;
+}
+
+.clearfloat {
+    clear: both;
+}
+
+.nav {
+    white-space: nowrap;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 333;
+    background-color: #fff;
+    border-bottom: 1rpx solid #e2e2e2;
+}
+
+.search {
+    margin-left: 30rpx;
+    margin-top: 10rpx;
+    margin-bottom: 10rpx;
+    width: 690rpx;
+    height: 64rpx;
+    border-radius: 50rpx;
+    background: #f4f4f4 url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/find_icon.png) no-repeat 20rpx center / 28rpx 28rpx;
+}
+
+.search input {
+    font-size: 26rpx;
+    margin-left: 60rpx;
+    line-height: 64rpx;
+    height: 64rpx;
+}
+
+.recommend_scroll_x_box {
+    width: 750rpx;
+    height: 70rpx;
+}
+
+.recommend_hot_box {
+    display: inline-block;
+    text-align: center;
+}
+
+.recommend_hot_box .recommend_hot_text {
+    font-size: 14px;
+    color: #555;
+    display: inline-block;
+    padding-top: 19rpx;
+    margin: 0 30rpx;
+    line-height: 27rpx;
+}
+
+.recommend_hot_box .recommend_hot_text_active {
+    color: #ff7800;
+    font-weight: 500;
+}

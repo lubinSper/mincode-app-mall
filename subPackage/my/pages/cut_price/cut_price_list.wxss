@@ -1,0 +1,254 @@
+@import "../../../../__wuBaseWxss__/0.wxss";
+
+page {
+    padding-top: 80rpx;
+    height: auto;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.cut_price_list_data {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.cut_price_list_data .cpld_li {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20rpx;
+    background-color: #fff;
+}
+
+.cut_price_list_data .cpld_li .cpld_li_top {
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 26rpx;
+}
+
+.cut_price_list_data .cpld_li .cpld_li_top_time {
+    color: #888888;
+    margin-left: 10px;
+}
+
+.cut_price_list_data .cpld_li .cpld_li_top_right {
+    color: #888;
+    margin-right: 10px;
+}
+
+.cut_price_list_data .cpld_li .cpld_li_top_right.end {
+    color: #888888;
+}
+
+.cpld_li_top_right_cur {
+    color: #ff7800!important;
+}
+
+.cpld_li .dl {
+    width: 100%;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+    display: flex;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #f8f8f8;
+}
+
+.cpld_li .dl.end {
+    border-bottom: 1rpx solid #e5e5e5;
+}
+
+.cpld_li .dl .dt {
+    flex: 1;
+    float: left;
+}
+
+.cpld_li .dl .dt image {
+    width: 150rpx;
+    height: 150rpx;
+    background-color: #eee;
+    margin: 30rpx 10px 16rpx 0;
+}
+
+.cpld_li .dl .dd {
+    flex: 3;
+    display: block;
+    float: left;
+    font-size: 26rpx;
+    max-width: 540rpx;
+}
+
+.cpld_li .dl .dd .cpld_li_title {
+    width: 100%;
+    margin: 30rpx 0 25rpx 0;
+    display: block;
+    height: 28rpx;
+    line-height: 28rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.cpld_li .dl .dd .cpld_li_current_price {
+    color: #888;
+    height: 30px;
+    line-height: 28px;
+}
+
+.cpld_li .dl .dd .cpld_li_current_price text {
+    color: #ff7800;
+}
+
+.cpld_li .dl .dd .cpld_li_original_price {
+    color: #888;
+    display: inline-block;
+    width: 100%;
+}
+
+.cpld_li .dl .dd .cpld_li_original_price text {
+}
+
+.cpld_li .buy_now {
+    background-color: #ff7800;
+    display: inline-block;
+    color: white;
+}
+
+.cpld_li .look_order {
+    background-color: white;
+    display: inline-block;
+    color: #3e3e3e;
+    border: 1rpx solid #3e3e3e;
+}
+
+.cpld_li .button {
+    width: 132rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    text-align: center;
+    font-size: 24rpx;
+    border-radius: 25rpx;
+}
+
+.clop_orgigianl_price {
+    width: 300rpx;
+    display: block;
+    float: left;
+}
+
+.cut_price_list_no_data {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.cplnd_img {
+    display: block;
+    margin: 0 auto;
+    padding-top: 294rpx;
+}
+
+.cplnd_img image {
+    width: 750rpx;
+    height: 280rpx;
+}
+
+.cplnd_text {
+    width: 100%;
+    font-size: 27rpx;
+    color: #555;
+    text-align: center;
+    display: inline-block;
+}
+
+.no_ordering {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.no_ordering .no_ordering_img {
+    margin-top: 275rpx;
+    width: 100%;
+}
+
+.no_ordering .no_ordering_img image {
+    width: 231rpx;
+    height: 309rpx;
+    margin: 0 auto;
+}
+
+.no_ordering .no_ordering_text {
+    height: 124rpx;
+    line-height: 124rpx;
+    width: 100%;
+    color: #555;
+    font-size: 30rpx;
+}
+
+.loading_failure {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    background-color: none;
+    height: 345rpx;
+    padding-top: 200rpx;
+}
+
+.loading_failure .loading_failure_img {
+    width: 100%;
+    text-align: center;
+    padding-top: 60rpx;
+}
+
+.loading_failure .loading_failure_img image {
+    width: 100rpx;
+    height: 118rpx;
+    display: block;
+    margin: 0 auto;
+}
+
+.loading_failure .loading_failure_text {
+    width: 100%;
+    text-align: center;
+    color: #bababa;
+    font-size: 25rpx;
+    height: 44rpx;
+    line-height: 44rpx;
+}
+
+.loading_failure .loading_failure_text text {
+    color: #888;
+    font-weight: bold;
+}
+
+.header {
+    height: 80rpx;
+    line-height: 80rpx;
+    width: 100%;
+    display: flex;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.header .item {
+    flex: 1;
+    text-align: center;
+    font-size: 28rpx;
+    color: #555;
+}
+
+.header .item.selected {
+    color: #ff7800;
+    font-weight: 500;
+}

@@ -1,0 +1,11 @@
+{
+    "enablePullDownRefresh": true,
+    "navigationBarTitleText": "",
+    "usingComponents": {
+        "common-tabs": "/components/wx-tpl/index/commonTabs/commonTabs",
+        "line-goods-view": "/components/wx-tpl/index/lineGoodsView/lineGoodsView",
+        "cutprice-goods-view": "/components/wx-tpl/index/cutpriceGoodsView/cutpriceGoodsView",
+        "pintuan-goods-view": "/components/wx-tpl/index/piuntuanGoodsView/piuntuanGoodsView",
+        "return_index": "/components/wx-tpl/return_index/return_index"
+    }
+}

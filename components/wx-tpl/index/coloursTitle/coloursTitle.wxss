@@ -1,0 +1,55 @@
+.colours_title {
+    position: relative;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    margin: 0 30rpx;
+}
+
+.colours_title .text {
+    color: #222222;
+    font-size: 32rpx;
+    margin: auto 20rpx;
+}
+
+.colours_title image {
+    width: 24rpx;
+    height: 20rpx;
+}
+
+.colours_title .point {
+    display: inline-block;
+    background-color: #D1BAF8;
+    width: 6rpx;
+    height: 6rpx;
+    border-radius: 3rpx;
+    margin: 0 4rpx;
+    margin-bottom: 10rpx;
+}
+
+.colours_title .point.point2 {
+    background-color: #fcabd4;
+}
+
+.colours_title .point.point3 {
+    background-color: #FDACB5;
+}
+
+.colours_title .all {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #555555;
+    font-size: 24rpx;
+}
+
+.colours_title .all text {
+    margin-right: 10rpx;
+    vertical-align: middle;
+}
+
+.colours_title .all image {
+    width: 26rpx;
+    height: 26rpx;
+    vertical-align: middle;
+}

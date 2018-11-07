@@ -1,0 +1,94 @@
+<view bindtap="startMovePage" bindtouchmove="startMovePage" style="height:81%;">
+    <view class="carousel">
+        <swiper autoplay="{{autoplay}}" circular="{{circular}}" current="{{currentIndex}}" duration="{{duration}}" indicatorActiveColor="#fff" indicatorColor="rgba(255,255,255,.5)" indicatorDots="{{bannerImgInfo.length!=1}}" interval="{{interval}}">
+            <swiper-item wx:for="{{bannerImgInfo}}" wx:key="key">
+                <image bindtap="showBannerImg" class="slide-image" data-index="{{index}}" data-jumptype="{{item.type}}" data-jumpurl="{{item.jumpUrl}}" data-productid="{{item.productId}}" data-src="{{item.thumUrl}}" mode="scaleToFill" src="{{item.thumUrl}}" wx:if="{{item.type!=5}}"></image>
+                <navigator appId="{{item.appid}}" hoverClass="none" path="{{item.path}}" target="miniProgram" wx:if="{{item.type==5}}">
+                    <image class="slide-image" mode="widthFix" src="{{item.thumUrl}}"></image>
+                </navigator>
+            </swiper-item>
+        </swiper>
+    </view>
+    <view wx:if="{{haveData&&!overtime}}">
+        <view class="goods" wx:for="{{shopList}}" wx:for-index="i" wx:key="item">
+            <view class="goods_row">
+                <view bindtap="discuss" class="goods_left">
+                    <image alt="" src="{{item.thumLogo}}"></image>
+                </view>
+                <view bindtap="jumpToNext" class="goods_right" data-id="{{item.id}}">
+                    <view class="goods_right_a">{{item.orgName}}</view>
+                    <view class="goods_right_b" style="margin-top:6rpx; font-size:22rpx; color:#888;line-height:34rpx;" wx:if="item.goodsDesc != ''">
+                        <text>{{u.transTime(item.publishTime)}}</text>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="jumpToNext" data-id="{{item.id}}" style="margin-top:10rpx;">
+                <view class="goods_mid">
+                    <view class="goods_right_b" style="margin: 24rpx 0;" wx:if="item.goodsDesc != ''">
+                        <text class="goods_title_des ico_title_recommend" wx:if="{{item.top=='1'}}">{{item.goodsDesc}}</text>
+                        <text class="goods_title_des" wx:if="{{item.top=='2'}}">{{item.goodsDesc}}</text>
+                    </view>
+                    <view class="goods_right_c" wx:if="{{item.imgUrls.length>0}}">
+                        <block wx:if="{{item.imgUrls.length>1}}">
+                            <image catchtap="previewImage" class="goods_images" data-index="{{i}}" data-src="{{item}}" mode="aspectFill" src="{{item}}" wx:for="{{item.imgUrls}}" wx:key="id"></image>
+                        </block>
+                        <block wx:else>
+                            <image catchtap="previewImage" class="goods_image" data-index="{{i}}" data-src="{{item}}" mode="aspectFill" src="{{item}}" wx:for="{{item.imgUrls}}" wx:key="id"></image>
+                        </block>
+                    </view>
+                    <view style="clear:both;"></view>
+                    <view class="singleGoodInfo" wx:if="{{item.type==1}}">
+                        <view class="dl">
+                            <view class="dt">
+                                <image alt="" mode="aspectFill" src="{{item.coverImage}}"></image>
+                            </view>
+                            <view class="dd">
+                                <view class="sgi_title">{{item.name}}</view>
+                                <view class="sgi_price">￥{{u.formatMoney(item.price)}}</view>
+                                <view class="sgi_orgitialPrice">
+                                    <span wx:if="{{item.originalPrice}}">￥{{u.formatMoney(item.originalPrice)}}</span>
+                                    <a href="javascript:void(0)">{{purchaseCopy}}</a>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="floatFix"></view>
+                    <view class="browse_num">浏览{{item.viewNum}}次</view>
+                </view>
+                <view class="discuss_view" style="margin-right:20rpx">
+                    <discuss animationData="{{item.animationData}}" bind:setDiscussValue="setDiscussValue" comments="{{item.comments}}" discussInfo="{{discussInfo}}" goodsId="{{item.id}}" i="{{i}}" likeId="{{item.likeId}}" likeStatus="{{item.likeStatus}}" likes="{{item.likes}}" seeNum="0" shopList="{{shopList}}" showBlock="discussList"></discuss>
+                </view>
+            </view>
+        </view>
+        <view class="loading" wx:if="{{showLoading}}">
+            <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/one-shop-one-mini-app/loading.png"></image>
+            <text>加载中...</text>
+        </view>
+        <view class="new_order_prompt" style="display:{{visiable}}">
+            <view class="new_order_prompt_le"></view>
+            <view class="new_order_prompt_ri">
+                <view class="btn_new_order_prompt_ri">
+                    <image alt="" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/one-shop-one-mini-app/%E6%96%B0%E8%AE%A2%E5%8D%9502.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <block wx:if="{{showTipData.show}}">
+        <import src="../../../template/show_dialog/show_dialog.wxml"></import>
+        <template is="showDialog" data="{{showTipData:showTipData}}"></template>
+    </block>
+    <view wx:if="{{overtime}}">
+        <view bindtap="retry">
+            <image class="xz_img" src="../../../../image/xuanzhuan.png"></image>
+            <view class="bind_click">加载失败<text>点击重试</text>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{noData}}">
+        <view class="no_data">
+            <NoData customClass="custom-class" imageSrcNumber="3" noDataText="商家还没有发布任何动态"></NoData>
+        </view>
+    </view>
+</view>
+<authorize_dialog onHide="{{onAuthHide}}" onShow="{{onAuthShow}}" params="{{authParams}}"></authorize_dialog>
+<wxs module="u" src="../../../../util/util.wxs" />

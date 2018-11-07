@@ -1,0 +1,201 @@
+page {
+    background-color: #f4f4f4;
+}
+
+.special_selling {
+    background-color: #fff;
+}
+
+.special_selling .special_selling_item_a {
+    padding: 0rpx 30rpx;
+    border-bottom: 1rpx solid #e2e2e2;
+    padding-top: 30rpx;
+    padding-bottom: 35rpx;
+}
+
+.special_selling .special_selling_item_aspecial_selling_praise .special_selling_item_a_1 {
+    font-size: 34rpx;
+    color: #222;
+    line-height: 44rpx;
+    margin-bottom: 14rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    font-weight: 500;
+}
+
+.special_selling .special_selling_item_a .special_selling_item_a_2 {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 28rpx;
+    flex-wrap: wrap;
+}
+
+.special_selling .special_selling_item_a .special_selling_item_a_2 image {
+    width: 226rpx;
+    height: 226rpx;
+    margin: 0 3rpx;
+}
+
+.special_selling .special_selling_item_a .special_selling_item_a_3 {
+    color: #888;
+    font-size: 26rpx;
+    display: table;
+    width: 100%;
+}
+
+.special_selling .special_selling_item_a .special_selling_item_a_3 .special_selling_item_a_l {
+    float: left;
+    line-height: 26rpx;
+}
+
+.special_selling .special_selling_item_a .special_selling_item_a_3 .special_selling_item_a_r {
+    float: right;
+    line-height: 34rpx;
+    font-size: 34rpx;
+}
+
+.special_selling .special_selling_item_a .special_selling_item_a_3 .special_selling_item_a_l .special_selling_comment {
+    margin-right: 22rpx;
+}
+
+.special_selling_praise {
+    margin-right: 20rpx;
+}
+
+.special_selling .special_selling_item_a .special_selling_item_a_3 .special_selling_item_a_r .special_selling_price {
+    color: #ff7800;
+    font-family: "WeChatNumber-151125";
+}
+
+.special_selling_original_price {
+    color: #aaaaaa;
+    font-size: 22rpx;
+    text-decoration: line-through;
+    margin-left: 18rpx;
+}
+
+.member_icon {
+    font-size: 18rpx;
+    margin-left: 10rpx;
+    display: inline-block;
+    width: 56rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+    background-color: #deb567;
+    border-radius: 8rpx;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    top: -4rpx;
+}
+
+.special_selling .special_selling_item_b {
+    border-bottom: 1rpx solid #e2e2e2;
+    padding: 40rpx 30rpx;
+    display: flex;
+    flex-direction: row;
+}
+
+.special_selling .special_selling_item_b .special_selling_item_b_l {
+    margin-right: 16rpx;
+}
+
+.special_selling .special_selling_item_b .special_selling_item_b_l image {
+    width: 226rpx;
+    height: 226rpx;
+    vertical-align: bottom;
+}
+
+.special_selling .special_selling_item_b .special_selling_item_b_r {
+    width: 448rpx;
+    position: relative;
+}
+
+image {
+    background: #eee;
+}
+
+.special_selling .special_selling_item_b .special_selling_item_b_r .special_selling_item_b_t {
+    font-size: 30rpx;
+    line-height: 38rpx;
+    color: #222;
+    margin-top: 20rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.special_selling .special_selling_item_b .special_selling_item_b_r .special_selling_item_b_b {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 6rpx;
+}
+
+.special_selling .special_selling_item_b .special_selling_item_b_r .special_selling_item_b_b .special_selling_item_b_1 {
+    float: left;
+    font-size: 26rpx;
+    color: #888;
+    line-height: 26rpx;
+    width: 100%;
+}
+
+.special_selling .special_selling_item_b .special_selling_item_b_r .special_selling_item_b_b .special_selling_item_b_1 .special_selling_comment {
+    margin-right: 21rpx;
+}
+
+.special_selling .special_selling_item_b .special_selling_item_b_r .special_selling_item_b_2 {
+    position: absolute;
+    left: 0;
+    bottom: 60rpx;
+    font-family: "WeChatNumber-151125";
+    color: #ff7800;
+    font-size: 34rpx;
+    line-height: 34rpx;
+}
+
+.loading_failure {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    background-color: none;
+    height: 345rpx;
+    padding-top: 200rpx;
+}
+
+.loading_failure .loading_failure_img {
+    width: 100%;
+    text-align: center;
+    padding-top: 60rpx;
+}
+
+.loading_failure .loading_failure_img image {
+    width: 100rpx;
+    height: 118rpx;
+    display: block;
+    margin: 0 auto;
+    background: none;
+}
+
+.loading_failure .loading_failure_text {
+    width: 100%;
+    text-align: center;
+    color: #bababa;
+    font-size: 25rpx;
+    height: 44rpx;
+    line-height: 44rpx;
+}
+
+.loading_failure .loading_failure_text text {
+    color: #888;
+    font-weight: bold;
+}
+
+.icon-vip {
+    width: 50rpx;
+    height: 24rpx;
+    margin-left: 10rpx;
+}

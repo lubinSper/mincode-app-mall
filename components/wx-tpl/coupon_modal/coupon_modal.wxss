@@ -1,0 +1,163 @@
+.box view,.drawer_screen view {
+    box-sizing: border-box;
+}
+
+.drawer_screen {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: #000;
+    opacity: 0.5;
+    overflow: hidden;
+}
+
+.box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.drawer_box {
+    width: 622rpx;
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.drawer_box .header {
+    width: 100%;
+    height: 402rpx;
+}
+
+.drawer_box .header image {
+    width: 100%;
+    height: 100%;
+}
+
+.drawer_box .content {
+    margin: 0 27rpx;
+    padding: 12rpx 20rpx;
+    background-image: linear-gradient(to top,#fb005b,#fe5b16);
+    border-bottom-left-radius: 20rpx;
+    border-bottom-right-radius: 20rpx;
+}
+
+.drawer_box .content .item {
+    display: flex;
+    height: 130rpx;
+    width: 100%;
+    margin-bottom: 20rpx;
+    padding: 30rpx 15rpx;
+    background-image: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/quan.png);
+    background-size: 100% 100%;
+}
+
+.drawer_box .content .item .left {
+    flex: 1;
+    margin-left: 5rpx;
+}
+
+.drawer_box .content .item .left .name {
+    margin-top: 6rpx;
+    font-size: 32rpx;
+    height: 32rpx;
+    line-height: 32rpx;
+    color: #742a01;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    white-space: normal;
+    word-break: break-all;
+    overflow: hidden;
+}
+
+.drawer_box .content .item .left .str {
+    font-size: 24rpx;
+    line-height: 24rpx;
+    color: #ff2a21;
+    margin-top: 10rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    white-space: normal;
+    word-break: break-all;
+    overflow: hidden;
+}
+
+.drawer_box .content .item .right {
+    width: 150rpx;
+}
+
+.drawer_box .content .item .right .button {
+    font-size: 24rpx;
+    color: white;
+    float: right;
+    text-align: center;
+    width: 124rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    border-radius: 25rpx;
+    background-image: linear-gradient(to top,#fb025a,#ff7701);
+    margin: 0;
+    padding: 0;
+}
+
+.drawer_box .content .item .right .button::after {
+    border: none;
+}
+
+.drawer_box .content .item .right .button.received {
+    background-image: none;
+    border: 2rpx solid #de6762;
+    color: #de6762;
+}
+
+.drawer_box .content .item .right .number {
+    width: 124rpx;
+    text-align: center;
+    margin-top: 10rpx;
+    float: right;
+    font-size: 20rpx;
+    height: 20rpx;
+    line-height: 20rpx;
+    color: #ff2a21;
+}
+
+.drawer_box .content .more {
+    font-size: 26rpx;
+    color: white;
+    text-align: center;
+    margin-bottom: 10rpx;
+}
+
+.form {
+    width: auto;
+}
+
+.close {
+    position: absolute;
+    top: 30rpx;
+    right: 30rpx;
+    background: none;
+    margin: 0;
+    padding: 0;
+}
+
+.close image {
+    margin: auto;
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.close::after {
+    border: none;
+}

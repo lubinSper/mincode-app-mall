@@ -1,0 +1,19 @@
+<view class="mask-layer" wx:if="{{showLayer}}">
+    <view class="layer_bg"></view>
+    <view class="layer-content">
+        <view class="layer-banner">
+            <slot wx:if="{{layerType==99}}"></slot>
+            <view wx:else>
+                <view class="vip_mask_layer" wx:if="{{layerType==1}}">
+                    <image bindtap="goVipCenter" class="vipImg" mode="widthFix" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/zssvip.png"></image>
+                    <view class="time">有效期至：{{util.transTime(validityTime,'yyyy-MM-dd')}}</view>
+                </view>
+                <block wx:if="{{layerType==2}}">
+          999999999
+        </block>
+            </view>
+            <view bindtap="_closeLayer" class="layer-close"></view>
+        </view>
+    </view>
+</view>
+<wxs module="util" src="../../../util/util.wxs" />

@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "分享",
+    "usingComponents": {
+        "masklayer": "/components/template/mask_layer/mask_layer"
+    }
+}

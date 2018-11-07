@@ -1,0 +1,46 @@
+<view bindtap="closeDialog" class="{{buyCarDialogInfo.showCheckGoodsTypeBg?'check_goods_type_bg ':'hide'}}{{buyCarDialogInfo.showCheckGoodsTypeBg?buyCarDialogInfo.checkGoodsTypeBg:''}}"></view>
+<view animation="{{animationData}}" class="{{buyCarDialogInfo.showCheckGoodsType?'check_goods_type':'check_goods_type hide'}}" id="buycar-box">
+    <view class="check_goods_warp">
+        <view class="goods_info">
+            <view class="goods_info_l">
+                <image mode="aspectFill" src="{{goodInfos.previewImg}}"></image>
+            </view>
+            <view class="goods_info_c">
+                <view class="goods_price">
+                    <text class="text-price" wx:if="{{isSuperVip&&!!goodInfos.superMemberPrice}}">￥{{goodInfos.superMemberPrice}}</text>
+                    <text class="text-price" wx:else>￥{{goodInfos.price}}</text>
+                    <image class="icon-vip" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/icon-svip.png" wx:if="{{isSuperVip&&!!goodInfos.superMemberPrice}}"></image>
+                </view>
+                <view class="goods_orgin_price" wx:if="{{isSuperVip&&!!goodInfos.superMemberPrice}}">￥{{goodInfos.price}}</view>
+                <view class="goods_orgin_price" wx:elif="{{goodInfos.originalPrice}}">￥{{goodInfos.originalPrice}}</view>
+                <view wx:else></view>
+                <view class="goods_surplus" wx:if="{{isShowInventory}}">库存{{goodInfos.stock}}件</view>
+            </view>
+            <view bindtap="closeDialog" class="goods_info_r"></view>
+        </view>
+        <Product-attr-show bind:setreadyselectattr="setReadySelectAttr" bind:setselectprices="setSelectPrices" commodityAttr="{{commodityAttr}}" isSetDefaultSelect="{{isSetDefaultSelect}}" isSetFirstUserSelect="{{isSetFirstUserSelect}}" onHide="{{onAttrHide}}" onPullDownRefresh="{{onAttrPullDownRefresh}}" onReachBottom="{{onAttrReachBottom}}" onShow="{{onAttrShow}}" selectGoods="{{selectGoods}}" showSelectAttr="{{showSelectAttr}}" wx:if="{{commodityAttr.length>0}}"></Product-attr-show>
+        <view class="goods_check_num">
+            <view class="goods_check_num_l">数量</view>
+            <view class="goods_check_num_r">
+                <view bindtap="removeNum" class="goods_num_l" wx:if="{{goodInfos.count!=1&&!isNonSelectAll}}">
+                    <view></view>
+                </view>
+                <view class="goods_num_l goods_num_l_disable" wx:else>
+                    <view></view>
+                </view>
+                <view class="goods_num_c">
+                    <view>{{goodInfos.count}}</view>
+                </view>
+                <view bindtap="addNum" class="goods_num_r" wx:if="{{goodInfos.count<goodInfos.stock&&!isNonSelectAll}}">
+                    <view></view>
+                </view>
+                <view class="goods_num_r goods_num_r_disable" wx:else>
+                    <view></view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="addBuyCar" class="goods_sure" wx:if="{{goodInfos.stock&&!isNonSelectAll}}">确定</view>
+    <view class="goods_out" wx:elif="{{isNonSelectAll}}">确定</view>
+    <view class="goods_out" wx:else>已售罄</view>
+</view>

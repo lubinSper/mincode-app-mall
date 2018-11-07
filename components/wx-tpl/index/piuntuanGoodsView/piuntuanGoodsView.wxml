@@ -1,0 +1,24 @@
+<navigator class="item {{isFirst?'first':page=='index'?'index':''}}" hoverClass="none" url="/subPackage/discover/pages/{{xcxType==3?'goods_detail_new':'goods_detail'}}/goods_detail?id={{item.id}}">
+    <view class="cover">
+        <image mode="aspectFill" src="{{item.coverImage?item.coverImage:item.imgUrls[0]}}"></image>
+    </view>
+    <view class="title max_one_line">{{item.name}}</view>
+    <view class="number">
+        <image class="{{index==0?'first':''}}" src="{{item}}" wx:for="{{item.pintuanJoinAvatarUrls}}" wx:key="item"></image>
+        <text>等{{item.pintuanTotalJoinNum}}人正在参加</text>
+    </view>
+    <view class="price_view">
+        <view class="l">
+            <view class="price">
+                <text class="text">拼团价</text>
+                <text class="icon">￥</text>
+                <text class="int">{{item.price[0]}}</text>
+                <text wx:if="{{item.price[1]}}">.{{item.price[1]}}</text>
+            </view>
+            <view class="origin_price" wx:if="{{item.originalPrice}}">￥{{item.originalPrice}}</view>
+        </view>
+        <form bindsubmit="jumpPin" class="form" reportSubmit="true">
+            <button class="button-none button" formType="submit" hoverClass="none">马上拼</button>
+        </form>
+    </view>
+</navigator>

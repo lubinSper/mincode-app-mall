@@ -1,0 +1,8 @@
+{
+    "navigationBarBackgroundColor": "#dfb741",
+    "navigationBarTitleText": "技术支持",
+    "navigationBarTextStyle": "#fff",
+    "usingComponents": {
+        "return_index": "/components/wx-tpl/return_index/return_index"
+    }
+}

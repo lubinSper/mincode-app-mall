@@ -1,0 +1,23 @@
+<view class="coupon-segment">
+    <view bindtap="clickSegement" class="segement-item {{couponType==item.status?'item-click':''}}" data-status="{{item.status}}" wx:for="{{couponSegment}}" wx:key="{{item}}">{{item.tabName}}({{item.number}})</view>
+</view>
+<view class="coupon-cnt">
+    <coupon_item bind:receivecoupon="receiveCoupon" couponList="{{couponList}}"></coupon_item>
+    <view class="more-coupon" wx:if="{{noMoreCoupon}}">
+    没有更多优惠券了
+  </view>
+</view>
+<view class="loading_failure" wx:if="{{loading_failure==true}}">
+    <view bindtap="reLoadEvent">
+        <view class="loading_failure_img">
+            <image alt="" src="../../../../page/message/images/jiazaishibai.png"></image>
+        </view>
+        <view class="loading_failure_text">加载失败<text>点击重试</text>
+        </view>
+    </view>
+</view>
+<view class="loading" wx:if="{{pageLoading}}">
+    <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/one-shop-one-mini-app/loading.png"></image>
+    <text>加载中...</text>
+</view>
+<NoData imageSrcNumber="7" noDataText="{{NoDataText}}" wx:if="{{NodataTip==true}}"></NoData>

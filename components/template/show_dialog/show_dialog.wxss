@@ -1,0 +1,19 @@
+.dialog_warp {
+    position: fixed;
+    top: 50%;
+    width: 100%;
+    margin-top: -34rpx;
+    z-index: 999999999999999999999999;
+    text-align: center;
+}
+
+.dialog {
+    background: rgba(0,0,0,0.8);
+    line-height: 40rpx;
+    text-align: center;
+    border-radius: 8rpx;
+    display: inline-block;
+    padding: 14rpx 30rpx;
+    color: #fff;
+    font-size: 30rpx;
+}

@@ -1,0 +1,72 @@
+.pay-way-modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.7);
+    transition: opacity .3s;
+    opacity: 0;
+    z-index: 9998;
+}
+
+.pay-way-dialog {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: #f4f4f4;
+    width: 100%;
+    transform: translateY(10000px);
+    z-index: 9999;
+}
+
+.way-item,.cancel-dialog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 1rpx solid #e2e2e2;
+    font-size: 32rpx;
+    line-height: 40rpx;
+    background-color: white;
+    padding: 30rpx 0;
+    box-sizing: border-box;
+}
+
+.vip {
+    padding: 23rpx 0;
+}
+
+.item-icon {
+    max-width: 44rpx;
+    max-height: 40rpx;
+    margin-right: 10rpx;
+}
+
+.item-icon-card {
+    width: 42rpx;
+    height: 30rpx;
+}
+
+.item-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.balance {
+    width: 100%;
+    text-align: center;
+    font-size: 24rpx;
+    color: #888;
+    line-height: 24rpx;
+    margin-top: 10rpx;
+}
+
+.way-item:last-child {
+    border-bottom: none;
+}
+
+.cancel-dialog {
+    margin-top: 20rpx;
+}

@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "小程序开发咨询",
+    "usingComponents": {
+        "introduce-tpl": "/subPackage/my/components/wx-tpl/introduce-tpl/introduce",
+        "return_index": "/components/wx-tpl/return_index/return_index"
+    }
+}

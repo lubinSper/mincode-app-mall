@@ -1,0 +1,723 @@
+@import "../more_coupon/more_coupon.wxss";
+
+.pay-success {
+    background-color: #f4f4f4;
+}
+
+.shop-welfare {
+    margin: 0 30rpx 0;
+    padding: 30rpx 20rpx 10rpx;
+    border-radius: 20rpx;
+    background-color: #fff;
+    box-shadow: 0 4rpx 10rpx rgba(168,168,168,0.2);
+}
+
+.our-shop {
+    margin: -50rpx 30rpx 20rpx;
+    padding-bottom: 20rpx;
+}
+
+.our-shop .activity-theme {
+    background: url("http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/bendian_banner.png") no-repeat;
+}
+
+.shop-up-move {
+    margin-top: -50rpx;
+}
+
+.go-shop .activity-theme {
+    background: url("http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/daodian_banner.png") no-repeat;
+}
+
+.shop-welfare .activity-theme {
+    width: 294rpx;
+    height: 59rpx;
+    margin: 0 0 23rpx 174rpx;
+    text-align: center;
+    background-size: 100%;
+    font-size: 34rpx;
+    color: #ff8400;
+}
+
+.activity-goods {
+    display: flex;
+    margin-bottom: 20rpx;
+}
+
+.activity-goods .avatar {
+    margin-left: 8rpx;
+    margin-right: 30rpx;
+    width: 204rpx;
+    height: 204rpx;
+}
+
+.activity-goods .desc {
+    width: 406rpx;
+    line-height: 34rpx;
+    font-weight: bold;
+    font-size: 32rpx;
+    color: #222;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.activity-goods .price .key,.shop-welfare .activity-goods .person-nums {
+    font-size: 26rpx;
+    color: #888;
+}
+
+.activity-goods .price .value {
+    font-weight: bold;
+    font-size: 42rpx;
+}
+
+.collage-goods .price .value {
+    color: #fe3c3c;
+}
+
+.cut-price .price .value {
+    color: #ff7800;
+}
+
+.cut-price .person-nums {
+    display: none;
+}
+
+.activity-goods .other-export {
+    margin-right: 6rpx;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 22rpx;
+}
+
+.cut-price .other-export {
+    margin-top: 60rpx;
+}
+
+.activity-goods .other-export .time-wrap {
+    display: flex;
+    font-size: 22rpx;
+    color: #222;
+}
+
+.activity-goods .other-export .time-wrap .time {
+    padding: 0 6rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    text-align: center;
+    background-color: #222;
+    font-size: 26rpx;
+    border-radius: 6rpx;
+    color: #fff;
+}
+
+.activity-goods .other-export .time-wrap text {
+    display: inline-block;
+    padding: 0 10rpx;
+}
+
+.activity-goods .other-export .enter-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: -12rpx;
+    width: 156rpx;
+    height: 56rpx;
+    line-height: 56rpx;
+    text-align: center;
+    border-radius: 28rpx;
+    font-size: 26rpx;
+    color: #fff;
+}
+
+.collage-goods .enter-btn {
+    background-color: #fe3c3c;
+}
+
+.cut-price .enter-btn {
+    background-color: #ff7800;
+}
+
+.activity-goods .other-export .enter-btn .icon-right {
+    margin: 16rpx 0 0 10rpx;
+    width: 15rpx;
+    height: 27rpx;
+    background: url("http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/white-arrow-right.png") no-repeat;
+    background-size: contain;
+}
+
+.show-more-box {
+    margin: auto;
+    width: 200rpx;
+}
+
+.show-more-top {
+    padding-top: 10rpx;
+}
+
+.show-more {
+    display: flex;
+    justify-content: center;
+    height: 26rpx;
+    font-size: 24rpx;
+    color: #555;
+}
+
+.icon {
+    margin: 14rpx 10rpx;
+    width: 22rpx;
+    height: 12rpx;
+}
+
+.icon-arrow-up {
+    background: url("http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/icon-zhankai.png") no-repeat;
+    background-size: cover;
+}
+
+.icon-arrow-down {
+    background: url("http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/icon-shouqi.png") no-repeat;
+    background-size: cover;
+}
+
+.get-coupon-btn {
+    margin: 30rpx 0 20rpx;
+    padding: 26rpx 0 0 120rpx;
+    width: 650rpx;
+    height: 114rpx;
+    font-weight: bold;
+    color: #fff;
+    background: url("http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/collect-coupon.png") no-repeat;
+    background-size: 100%;
+}
+
+.coupon-list-box {
+    height: 500rpx;
+    overflow: hidden;
+}
+
+.hidden-item {
+    height: 275rpx;
+    overflow: hidden;
+}
+
+.payinfo-view {
+    border-top: 1rpx solid #eeeeee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    flex-direction: column;
+    padding: 40rpx 40rpx;
+}
+
+.width-full {
+    width: 100%;
+}
+
+.success-tip {
+    margin-top: 10rpx;
+    font-size: 30rpx;
+    color: #09bb07;
+}
+
+.price-txts {
+    font-size: 66rpx;
+    color: #222222;
+    display: flex;
+    align-items: flex-end;
+}
+
+.price-txts view:first-child {
+    font-size: 46rpx;
+    margin-bottom: 13rpx;
+    font-weight: 500;
+}
+
+.price-txts view:last-child {
+    font-weight: 500;
+}
+
+.complete-btn {
+    margin-top: 10rpx;
+    width: 220rpx;
+    height: 60rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30rpx;
+    font-size: 30rpx;
+    color: #666666;
+    border: solid 2rpx #888888;
+    margin-bottom: 40rpx;
+}
+
+.line {
+    width: 670rpx;
+    height: 1rpx;
+    background-color: #eeeeee;
+}
+
+.flex1 {
+    display: flex;
+    flex: 1;
+}
+
+.flex-row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.mt-30 {
+    margin-top: 30rpx;
+}
+
+.mt-10 {
+    margin-top: 10rpx;
+}
+
+.extro-txt {
+    font-size: 26rpx;
+    color: #555555;
+}
+
+.recom-welfare {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20rpx;
+    padding: 30rpx;
+}
+
+.recom-welfares {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 30rpx;
+}
+
+.mt-26 {
+    margin-top: 26rpx;
+}
+
+.welfare-title {
+    display: flex;
+    align-items: center;
+}
+
+.welfare-txt {
+    font-size: 26rpx;
+    color: #888888;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.title-line {
+    width: 230rpx;
+    height: 1rpx;
+    background-color: #eeeeee;
+}
+
+.coupon-view {
+    margin-top: 22rpx;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.coupon-view .ml {
+    margin-left: 30rpx;
+}
+
+.coupon-item {
+    width: 330rpx;
+    height: 180rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16rpx;
+}
+
+.red-bg {
+    background-image: linear-gradient(90deg,#ff7894 0%,#ff3959 100%),linear-gradient(#ffffff,#ffffff);
+    background-blend-mode: normal,normal;
+}
+
+.yellow-bg {
+    background-image: linear-gradient(90deg,#ffcc00 0%,#ff860f 100%),linear-gradient(#ffffff,#ffffff);
+    background-blend-mode: normal,normal;
+}
+
+.blue-bg {
+    background-image: linear-gradient(90deg,#87b9f9 0%,#4072f6 100%),linear-gradient(#ffffff,#ffffff);
+    background-blend-mode: normal,normal;
+}
+
+.tow-col {
+    height: 140rpx;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.price-txt {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-weight: 500;
+}
+
+.price-txt view:first-child {
+    font-size: 42rpx;
+    color: #ffffff;
+    margin-bottom: 9rpx;
+}
+
+.price-txt view:last-child,.discount-txt {
+    font-size: 56rpx;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.coupon-type {
+    font-size: 20rpx;
+    color: #ffffff;
+    margin-top: -20rpx;
+}
+
+.center-line {
+    width: 330rpx;
+    border: dashed 1rpx rgba(255,255,255,0.3);
+}
+
+.coupon-btn {
+    width: 150rpx;
+    height: 40rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20rpx;
+    font-size: 20rpx;
+    margin-top: 10rpx;
+    border: 0rpx;
+}
+
+.receive-btn-red {
+    background-color: #ffffff;
+    color: #ff4463;
+}
+
+.receive-btn-yellow {
+    background-color: #ffffff;
+    color: #ff860f;
+}
+
+.receive-btn-blue {
+    background-color: #ffffff;
+    color: #4072f6;
+}
+
+.form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.use-btn-red {
+    background-color: #e54661;
+    color: #ffffff;
+}
+
+.use-btn-yellow {
+    background-color: #eb8d1f;
+    color: #ffffff;
+}
+
+.use-btn-blue {
+    background-color: rgba(18,77,217,0.3);
+    color: #ffffff;
+}
+
+.justify-cen {
+    justify-content: center;
+}
+
+.goods-view {
+    margin-top: 26rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.goods-image {
+    width: 690rpx;
+    height: 518rpx;
+}
+
+.goods-view .goods-title {
+    margin-top: 30rpx;
+    width: 690rpx;
+    font-size: 30rpx;
+    color: #222222;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.number {
+    height: 50rpx;
+    line-height: 50rpx;
+    width: 100%;
+}
+
+.number image {
+    width: 56rpx;
+    height: 56rpx;
+    border-radius: 28rpx;
+    background: #eee;
+    margin-left: -8rpx;
+    border: 3rpx solid white;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+.number image.first {
+    margin-left: 6rpx;
+}
+
+.number text {
+    margin-left: 20rpx;
+    color: #888888;
+    font-size: 24rpx;
+    vertical-align: middle;
+}
+
+.goods-view .goods-price-view {
+    width: 100%;
+    display: flex;
+    margin-top: 15rpx;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.goods-view .goods-price-view .price-key {
+    font-size: 24rpx;
+    color: #ff7800;
+    margin-top: 5rpx;
+}
+
+.price-value {
+    display: flex;
+    margin-right: 20rpx;
+    font-weight: 900;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.price-value view:first-child {
+    font-size: 30rpx;
+    color: #ff7800;
+    font-family: PingFang-SC-Bold;
+    margin-bottom: 3rpx;
+    margin-left: 10rpx;
+}
+
+.price-value view:last-child {
+    font-size: 36rpx;
+    color: #ff7800;
+    font-family: PingFang-SC-Bold;
+    margin-right: 35rpx;
+}
+
+.origin-price {
+    font-size: 24rpx;
+    color: #888888;
+    text-decoration: line-through;
+    margin-top: 8rpx;
+}
+
+.goods-btn {
+    width: 156rpx;
+    height: 56rpx;
+    background-color: #ff7800;
+    border-radius: 28rpx;
+    font-size: 26rpx;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.next {
+    margin: 4rpx 0 0 10rpx;
+    width: 11rpx;
+    height: 18rpx;
+    background: url("http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/white-arrow-right.png") no-repeat;
+    background-size: contain;
+}
+
+.remcomend-view {
+    width: 100%;
+    display: flex;
+    margin-top: 20rpx;
+    background-color: #fff;
+}
+
+.welfare-item {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20rpx;
+}
+
+.welfare-item .welfare-card {
+    width: 164rpx;
+    height: 110rpx;
+    border-radius: 16rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.welfare-item .welfare-card .two-row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    color: #ffffff;
+    height: 68rpx;
+    border-bottom: 2rpx dashed rgba(255,255,255,0.3);
+}
+
+.welfare-item .welfare-card .two-row view:first-child {
+    font-size: 30rpx;
+    margin-bottom: 6rpx;
+}
+
+.welfare-item .welfare-card .two-row view:last-child {
+    font-size: 40rpx;
+}
+
+.welfare-require {
+    color: #ffffff;
+    font-size: 20rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+}
+
+.welfare-center-info {
+    display: flex;
+    flex: 1;
+    margin-left: 10rpx;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.welfare-item-title {
+    font-size: 30rpx;
+    color: #333333;
+    width: 280rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.welfare-item-owner {
+    margin-top: 12rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10rpx;
+}
+
+.welfare-item-owner image {
+    width: 28rpx;
+    height: 28rpx;
+    border-radius: 14rpx;
+    margin-right: 12rpx;
+}
+
+.welfare-item-owner view {
+    font-size: 22rpx;
+    color: #888888;
+    width: 279rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.welfare-right-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.right-btn-normal {
+    width: 150rpx;
+    height: 60rpx;
+    background-color: #ffffff;
+    border-radius: 30rpx;
+    border: solid 2rpx #888888;
+    font-size: 24rpx;
+    color: #555555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-btn-disable {
+    width: 150rpx;
+    height: 60rpx;
+    background-color: #f8f8f8;
+    border-radius: 30rpx;
+    border: solid 2rpx #dddddd;
+    font-size: 24rpx;
+    color: #aaaaaa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.send-count {
+    font-size: 20rpx;
+    color: #aaaaaa;
+    margin-top: -10rpx;
+}
+
+.bottom-btn {
+    margin-top: 10rpx;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100rpx;
+    background-image: linear-gradient(90deg,rgba(179,129,83,0.7) 0%,rgba(217,177,130,0.7) 0%,rgba(255,224,177,0.7) 0%,rgba(255,187,81,0.7) 100%),linear-gradient(rgba(255,241,220,0.7),rgba(255,241,220,0.7));
+    background-blend-mode: normal,normal;
+    border-radius: 49rpx;
+    opacity: 0.7;
+    font-size: 36rpx;
+    color: #935000;
+    margin-bottom: 60rpx;
+}
+
+.no-border {
+    border: 0rpx;
+}
+
+button::after {
+    border: none;
+}
+
+.top-border {
+    border-top: 2rpx dashed rgba(255,255,255,0.3);
+}

@@ -1,0 +1,409 @@
+.nav {
+    white-space: nowrap;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 333;
+    background-color: #fff;
+    border-bottom: 1rpx solid #e2e2e2;
+}
+
+.search {
+    margin-left: 30rpx;
+    margin-top: 10rpx;
+    margin-bottom: 10rpx;
+    width: 690rpx;
+    height: 64rpx;
+    border-radius: 50rpx;
+    background: #f4f4f4 url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/find_icon.png) no-repeat 20rpx center / 28rpx 28rpx;
+}
+
+.search input {
+    font-size: 26rpx;
+    margin-left: 60rpx;
+    line-height: 64rpx;
+    height: 64rpx;
+}
+
+.recommend_scroll_x_box {
+    width: 750rpx;
+    height: 70rpx;
+}
+
+.recommend_hot_box {
+    display: inline-block;
+    text-align: center;
+}
+
+.recommend_hot_box .recommend_hot_text {
+    font-size: 14px;
+    color: #555;
+    display: inline-block;
+    padding-top: 19rpx;
+    margin: 0 30rpx;
+    line-height: 27rpx;
+}
+
+.recommend_hot_box .recommend_hot_text_active {
+    color: #ff7800;
+    font-weight: 500;
+}
+
+.goods {
+    background-color: #f4f4f4;
+    padding-bottom: 20rpx;
+}
+
+.goods_item {
+    background-color: #fff;
+    margin-bottom: 20rpx;
+    padding-top: 30rpx;
+}
+
+.goods_item:last-of-type {
+    margin-bottom: 0;
+}
+
+.goods_item:last-of-type {
+    margin-bottom: 0;
+}
+
+.goods_item .goods_t {
+    border-bottom: 1rpx solid #e2e2e2;
+    padding: 0 30rpx;
+}
+
+.goods_item .goods_t .goods_img {
+    margin-bottom: 14rpx;
+    width: 100%;
+    display: block;
+    background-color: #eee;
+    position: relative;
+}
+
+.goods_item .goods_t .goods_img .bj_img {
+    width: 690rpx;
+    height: 517.5rpx;
+    display: block;
+}
+
+.goods_item .goods_t .goods_img .bj_img2 {
+    width: 690rpx;
+    height: 690rpx;
+    display: block;
+}
+
+.goods_item .goods_t .goods_img .goods_label_special,.goods_item .goods_t .goods_img .goods_label_appointment {
+    width: 70rpx;
+    height: 40rpx;
+    font-size: 24rpx;
+    line-height: 40rpx;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #f95341;
+}
+
+.goods_item .goods_t .goods_img .goods_label_appointment {
+    background-color: #60cb25;
+}
+
+.goods_item .goods_t .goods_img .countdown {
+    position: absolute;
+    bottom: 0rpx;
+    left: 0rpx;
+    color: #fff;
+    background: linear-gradient(90deg,#ff3988 0%,#b423d4 100%);
+    height: 80rpx;
+    width: 100%;
+    font-size: 24rpx;
+}
+
+.goods_item .goods_t .goods_img .countdown.cut_price {
+    background: url(https://xcximg.197.com/xcx/kanjia141.png) center center / 100% 100% no-repeat;
+    height: 94rpx;
+}
+
+.goods_item .goods_t .goods_img .countdown.pintuan {
+    background: url(https://xcximg.197.com/xcx/pintuan141.png) center center / 100% 100% no-repeat;
+    padding-top: 35rpx;
+    box-sizing: border-box;
+    height: 94rpx;
+}
+
+.goods_item .goods_t .goods_img .countdown .countdown_1 {
+    margin-left: 30rpx;
+    line-height: 80rpx;
+    margin-right: 20rpx;
+}
+
+.goods_item .goods_t .goods_img .countdown.cut_price .countdown_1 {
+    margin-left: 130rpx;
+    line-height: 107rpx;
+}
+
+.reduce_price {
+    height: 36rpx;
+    line-height: 36rpx;
+    color: red;
+    background-color: #fbf000;
+    border-radius: 6rpx;
+    font-size: 24rpx;
+    padding: 0 14rpx;
+    position: relative;
+    margin-left: 151rpx;
+}
+
+.reduce_price .icon {
+    position: absolute;
+    top: 10rpx;
+    left: -6rpx;
+    border-top: 8rpx solid transparent;
+    border-right: 8rpx solid #fbf000;
+    border-bottom: 8rpx solid transparent;
+}
+
+.goods_item .goods_t .goods_img .countdown .countdown_span {
+    color: #fc4d34;
+    display: inline-block;
+    min-width: 30rpx;
+    height: 38rpx;
+    line-height: 38rpx;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 4rpx;
+    font-weight: 500;
+    padding: 0 4rpx;
+}
+
+.goods_item .goods_t .goods_img .countdown.pintuan .countdown_span {
+    color: white;
+    background-color: transparent;
+}
+
+.goods_item .goods_t .goods_img .countdown .countdown_3,.goods_item .goods_t .goods_img .countdown .countdown_5 {
+    display: inline-block;
+    height: 38rpx;
+    width: 19rpx;
+    text-align: center;
+    line-height: 38rpx;
+}
+
+.goods_item .goods_t .goods_info_2 {
+    font-size: 32rpx;
+    color: #222;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    line-height: 40rpx;
+    word-break: break-all;
+}
+
+.goods_item .goods_t .goods_info_price {
+    margin-bottom: 18rpx;
+    position: relative;
+}
+
+.goods_item .goods_t .goods_info .goods_label_recommend {
+    color: #fff;
+    background-color: #ff7800;
+    border-radius: 4rpx;
+    text-align: center;
+    font-size: 22rpx;
+    position: absolute;
+    left: 0;
+    top: 6rpx;
+    z-index: 111;
+    width: 32rpx;
+    height: 32rpx;
+    line-height: 32rpx;
+}
+
+.goods_item .goods_t .goods_info .goods_name {
+    font-size: 32rpx;
+    color: #222;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    line-height: 40rpx;
+    word-break: break-all;
+}
+
+.goods_item .goods_t .goods_info_price .goods_price {
+    color: #ff7800;
+    font-family: 'WeChatNumber-151125';
+    font-size: 36rpx;
+    margin-right: 9rpx;
+    line-height: 40rpx;
+    float: left;
+    font-weight: 500;
+    margin-left: -8rpx;
+}
+
+.goods_item .goods_t .goods_info_price .goods_price .goods_price_l {
+    font-size: 26rpx;
+}
+
+.goods_info_price .bargain_price {
+    float: left;
+    color: #aaa;
+    text-decoration: line-through;
+    font-size: 24rpx;
+    margin-top: 8rpx;
+    line-height: 28rpx;
+}
+
+.goods_info_price .icon-vip {
+    float: left;
+    display: block;
+    width: 50rpx;
+    height: 24rpx;
+    background-size: cover;
+    margin-left: 10rpx;
+    margin-top: 18rpx;
+}
+
+.goods_info_price .buy_car {
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/wds-xcx/add.png) center center / 40rpx no-repeat;
+    width: 120rpx;
+    height: 120rpx;
+    position: absolute;
+    right: -40rpx;
+    top: -40rpx;
+    z-index: 2;
+}
+
+.member_icon {
+    font-size: 18rpx;
+    margin-left: 10rpx;
+    display: inline-block;
+    width: 56rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+    background-color: #deb567;
+    border-radius: 8rpx;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    top: -4rpx;
+}
+
+.goods_item .goods_t .goods_descr {
+    font-size: 24rpx;
+    color: #888;
+    margin-bottom: 10rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: break-all;
+    margin-top: 10rpx;
+}
+
+.goods_item .goods_b {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    height: 90rpx;
+}
+
+.goods_item .goods_b .goods_share,.goods_item .goods_b .goods_comment,.goods_item .goods_b .goods_normal,.goods_item .goods_b .goods_praise {
+    display: inline-block;
+    width: 33%;
+    text-align: center;
+}
+
+.goods_item .goods_b .goods_share text,.goods_item .goods_b .goods_comment text,.goods_item .goods_b .goods_normal text,.goods_item .goods_b .goods_praise text {
+    font-size: 26rpx;
+    color: #888;
+    padding-left: 40rpx;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.goods_item .goods_b .goods_share text {
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/one-shop-one-mini-app/fenxiang.png) left center / 40rpx no-repeat;
+}
+
+.goods_item .goods_b .goods_comment text {
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/one-shop-one-mini-app/pinglun.png) left center / 40rpx no-repeat;
+}
+
+.goods_item .goods_b .goods_normal text {
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/one-shop-one-mini-app/zan_normal.png) left center / 40rpx no-repeat;
+}
+
+.goods_item .goods_b .goods_praise text {
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/one-shop-one-mini-app/zan_press.png) left center / 40rpx no-repeat;
+    color: #ff7800;
+}
+
+.clearfloat {
+    clear: both;
+}
+
+.tag_icon {
+    position: absolute;
+    top: 10rpx;
+    right: 10rpx;
+}
+
+.tag_icon image {
+    background: transparent;
+}
+
+.tag_icon image.new {
+    width: 155rpx;
+    height: 173rpx;
+}
+
+.tag_icon image.hot {
+    width: 153rpx;
+    height: 163rpx;
+}
+
+.tag_icon image.promotion {
+    width: 137rpx;
+    height: 162rpx;
+}
+
+.tag_icon image.clearanceSale {
+    width: 125rpx;
+    height: 148rpx;
+}
+
+.tag_icon image.yuyue {
+    width: 160rpx;
+    height: 160rpx;
+}
+
+.tag_icon image.preSale {
+    width: 135rpx;
+    height: 115rpx;
+}
+
+.tag_icon image.dztj {
+    width: 168rpx;
+    height: 136rpx;
+}
+
+.scy_yuyue {
+    font-weight: 500;
+    font-size: 36rpx;
+    color: #ff7800;
+    float: left;
+}
+
+.scy_number {
+    float: right;
+    font-size: 23rpx;
+    color: #888;
+}
+
+.no_price_hide {
+    display: none!important;
+}

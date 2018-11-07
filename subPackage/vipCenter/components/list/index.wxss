@@ -1,0 +1,50 @@
+.list-container {
+    padding: 0 40rpx;
+    background-color: white;
+}
+
+.list-item {
+    padding: 28rpx 0;
+    border-bottom: 1rpx solid #e2e2e2;
+}
+
+.list-item:last-child {
+    border-bottom: none;
+}
+
+.line {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    font-size: 24rpx;
+    color: #888;
+    align-items: center;
+}
+
+.line .desc {
+    font-size: 28rpx;
+    color: #222;
+}
+
+.line .price {
+    font-size: 34rpx;
+    color: #ff7800;
+    font-weight: 500;
+}
+
+.line:first-child {
+    height: 26rpx;
+}
+
+.line:last-child {
+    height: 19rpx;
+    margin-top: 19rpx;
+}
+
+.view-more {
+    height: 90rpx;
+    line-height: 90rpx;
+    text-align: center;
+    color: #d3a95a;
+    font-size: 32rpx;
+}

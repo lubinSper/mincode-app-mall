@@ -1,0 +1,14 @@
+<view class="list-container">
+    <view class="list-item" wx:for="{{recordList}}" wx:key="{{index}}">
+        <view class="line">
+            <text class="desc">{{item.transactionType==1?'充值':''||item.transactionType==2?'充值返赠':''||item.transactionType==3?'会员卡消费':''||item.transactionType==4?'会员卡到店买单':''}}</text>
+            <text class="price" style="color:{{item.transactionType==1||item.transactionType==2?'#ff7800':'#888888'}}">{{item.transactionType==1||item.transactionType==2?'+':'-'}}{{dateFr.toFix(item.amount/100)}}</text>
+        </view>
+        <view class="line">
+            <text>{{dateFr.getDate(item.transactionTime,':')}}</text>
+            <text>余额：{{dateFr.toFix(item.afterSum/100)}}</text>
+        </view>
+    </view>
+    <view bindtap="viewMore" class="view-more" wx:if="{{recordList.length>4&&isShowViewMore}}">查看更多</view>
+</view>
+<wxs module="dateFr" src="index.wxs" />

@@ -1,0 +1,4 @@
+<view class="{{i==0?'custom_text nonMarginTop paddingTop40':'custom_text'}}" style="text-align:{{styleMap[text.textStyle]}}">
+    <text class="{{textStyle}}" decode="{{true}}" selectable="true" style="font-size:{{sizeMap[text.wordSize]}};color:{{colorMap[text.textColor]}};" wx:if="{{!oldData}}">{{text.textWords}}</text>
+    <text decode="{{true}}" selectable="true" style="font-size:{{text.textWords.size}}rpx;{{text.textWords.fontStyle}}color:{{text.textWords.color}};text-align:{{text.textWords.align}}" wx:if="{{oldData}}">{{text.textWords.content}}</text>
+</view>

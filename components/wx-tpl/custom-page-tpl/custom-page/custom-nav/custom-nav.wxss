@@ -1,0 +1,100 @@
+.tsyl {
+    display: flex;
+    width: 100%;
+    background-color: #fff;
+    padding: 20rpx 15rpx;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+.tsyl .tsyl_li {
+    text-align: center;
+    margin: 10rpx 0;
+}
+
+.tsyl .tsyl_li .tsyl_li_img {
+    overflow: hidden;
+}
+
+.tsyl .tsyl_li .tsyl_li_img {
+    width: 86rpx;
+    height: 86rpx;
+}
+
+.tsyl .tsyl_li .tsyl_li_img image {
+    height: 100%;
+}
+
+.tsyl .tsyl_li .tsyl_li_text {
+    font-size: 24rpx;
+    color: #222;
+    margin-top: 10rpx;
+}
+
+.tsyl .one .tsyl_li_text {
+    font-size: 30rpx;
+}
+
+.tsyl .two .tsyl_li_text {
+    font-size: 30rpx;
+}
+
+.tsyl .width .tsyl_li_img {
+    height: 64.5rpx;
+}
+
+.tsyl .height .tsyl_li_img {
+    width: 64.5rpx;
+}
+
+.tsyl .tsyl_li .one {
+    width: 690rpx;
+    height: 690rpx;
+}
+
+.tsyl .tsyl_li .two {
+    width: 330rpx;
+    height: 330rpx;
+}
+
+.tsyl .tsyl_li .three {
+    width: 210rpx;
+    height: 210rpx;
+}
+
+.tsyl .tsyl_li .four {
+    width: 140rpx;
+    height: 140rpx;
+}
+
+.tsyl .width .four {
+    height: 105rpx;
+}
+
+.tsyl .width .three {
+    height: 157.5rpx;
+}
+
+.tsyl .width .two {
+    height: 247.5rpx;
+}
+
+.tsyl .width .one {
+    height: 517.5rpx;
+}
+
+.tsyl .height .four {
+    width: 105rpx;
+}
+
+.tsyl .height .three {
+    width: 157.5rpx;
+}
+
+.tsyl .height .two {
+    width: 247.5rpx;
+}
+
+.tsyl .height .one {
+    width: 517.5rpx;
+}

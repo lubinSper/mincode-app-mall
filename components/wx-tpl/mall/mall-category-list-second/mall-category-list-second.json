@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "show_dialog": "/components/wx-tpl/show_dialog/show_dialog"
+    }
+}

@@ -1,0 +1,67 @@
+<view style="position:relative; width:100%; height:100%; z-index:0; display:block;">
+    <view class="link_us_head">
+        <view class="logo">
+            <image alt="" src="{{logo}}"></image>
+        </view>
+        <view class="content">
+            <view class="name">{{orgName}}</view>
+            <view class="distance">
+                <image src="../../../message/images/ico_distance.jpg"></image>
+                <text>{{distance}}</text>
+            </view>
+        </view>
+        <view class="wechat">
+            <view class="wechat_view">
+                <image mode="aspectFill" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/weixin.png"></image>
+            </view>
+            <view class="text">联系商家</view>
+            <button class="contact" openType="contact"></button>
+        </view>
+    </view>
+    <view class="detailed_infor">
+        <view bindtap="openMap" class="detailed_infor_li" wx:if="{{address}}">
+            <image alt="" class="dil_ico" src="../../../message/images/ico/ico_address.jpg" style="width:24rpx; height:29rpx;"></image>
+            <text>{{address}}</text>
+            <image alt="" class="next_ico" src="../../../message/images/next.png"></image>
+        </view>
+        <view bindtap="makePhoneCall" class="detailed_infor_li" data-tel="{{phone}}" wx:if="{{phone}}">
+            <image alt="" class="dil_ico" src="../../../message/images/ico/ico_tel.jpg" style="width:26rpx; height:26rpx; margin:10rpx 15rpx 0 30rpx;"></image>
+            <text>{{phone}}</text>
+            <image alt="" class="next_ico" src="../../../message/images/next.png"></image>
+        </view>
+        <view class="detailed_infor_li" wx:if="{{businessHours}}">
+            <image alt="" class="dil_ico" src="../../../message/images/ico/ico_timer.jpg" style="width:26rpx; height:26rpx; margin:10rpx 15rpx 0 30rpx;"></image>
+            <text>{{businessHours}}</text>
+        </view>
+        <view class="detailed_infor_li" wx:if="{{extInfo&&extInfo.length>0}}">
+            <image alt="" class="dil_ico" src="../../../message/images/ico/ico_shebei.jpg" style="width:26rpx; height:26rpx; margin:18rpx 15rpx 0 30rpx;"></image>
+            <view wx:for="{{extInfo}}" wx:for-item="i" wx:key="{{i}}">
+                <span>{{i}} {{item}}</span>
+            </view>
+        </view>
+        <view class="detailed_infor_li" style="margin-top:8rpx;" wx:if="{{orgImages}}">
+            <view class="linkus_troduce_des" style="clear: both;">
+                <block wx:for="{{orgImages}}" wx:for-index="i" wx:key="key">
+                    <view wx:if="{{item.type==5}}">
+                        <view class="intr-text" selectable="true" style="{{item.divPageModuleTextDto.style}}">{{item.divPageModuleTextDto.content}}</view>
+                    </view>
+                    <view wx:if="{{item.type==3}}">
+                        <image alt="" bindtap="seeBigPic" data-src="{{item.showImgs[0]}}" mode="widthFix" src="{{item.showImgs[0]}}"></image>
+                    </view>
+                    <view class="linkus_troduce_des_video" wx:if="{{item.type==4}}">
+                        <video controls="true" customCache="false" danmuList="{{danmuList}}" loop="true" objectFit="fill" poster="{{item.poster.length>0?item.poster:defaultPoster}}" src="{{item.videoUrl}}"></video>
+                    </view>
+                    <view class="{{i==0?'custom_btn nonMarginTop':'custom_btn'}}" wx:if="{{item.type==6}}">
+                        <button class="c_btn" openType="contact" style="{{item.divPageModuleButtonDto.style}}" wx:if="{{item.divPageModuleButtonDto.functionType==1}}">{{item.divPageModuleButtonDto.name}}</button>
+                        <button bindtap="makePhoneCall" class="c_btn" data-tel="{{item.divPageModuleButtonDto.phone}}" style="{{item.divPageModuleButtonDto.style}}" wx:else>{{item.divPageModuleButtonDto.name}}</button>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </view>
+</view>
+<block wx:if="{{showTipData.show}}">
+    <import src="../../../../components/template/show_dialog/show_dialog.wxml"></import>
+    <template is="showDialog" data="{{showTipData:showTipData}}"></template>
+</block>
+<return_index wx:if="{{showReturnIndexBtn}}"></return_index>

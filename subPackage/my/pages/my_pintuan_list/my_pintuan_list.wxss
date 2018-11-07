@@ -1,0 +1,203 @@
+page {
+    padding-top: 80rpx;
+    height: auto;
+}
+
+.header {
+    height: 80rpx;
+    line-height: 80rpx;
+    width: 100%;
+    display: flex;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+.header .item {
+    flex: 1;
+    text-align: center;
+    font-size: 28rpx;
+    color: #555;
+}
+
+.header .item.selected {
+    color: #ff7800;
+    font-weight: 500;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.content {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.content .cpld_li {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20rpx;
+    background-color: #fff;
+}
+
+.content .cpld_li .cpld_li_top {
+    height: 90rpx;
+    line-height: 90rpx;
+    font-size: 26rpx;
+}
+
+.content .cpld_li .cpld_li_top .jioninger {
+    width: 50rpx;
+    height: 50rpx;
+    border-radius: 25rpx;
+    background: #eee;
+    margin-top: 21rpx;
+    margin-left: -18rpx;
+    border: 1rpx solid white;
+    box-sizing: border-box;
+}
+
+.content .cpld_li .cpld_li_top .jioninger.first {
+    margin-left: 30rpx;
+}
+
+.content .cpld_li .cpld_li_top .text {
+    font-size: 26rpx;
+    color: #888888;
+}
+
+.content .cpld_li .cpld_li_top .text .number {
+    color: #ff7800;
+}
+
+.content .cpld_li .cpld_li_top_time {
+    color: #888888;
+    margin-left: 10px;
+}
+
+.content .cpld_li .cpld_li_top_right {
+    color: #888;
+    margin-right: 10px;
+}
+
+.cpld_li_top_right_cur {
+    color: #ff7800!important;
+    font-size: 28rpx;
+}
+
+.cpld_li .dl {
+    width: 100%;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+    display: flex;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #f8f8f8;
+}
+
+.cpld_li .dl .dt {
+    flex: 1;
+    float: left;
+}
+
+.cpld_li .dl .dt image {
+    width: 150rpx;
+    height: 150rpx;
+    background-color: #eee;
+    margin: 20rpx 10px 10rpx 0;
+}
+
+.cpld_li .dl .dd {
+    flex: 3;
+    display: block;
+    float: left;
+    font-size: 26rpx;
+    max-width: 540rpx;
+}
+
+.cpld_li .dl .dd .cpld_li_title {
+    width: 100%;
+    margin-top: 20rpx;
+    display: block;
+    height: 60rpx;
+    line-height: 30rpx;
+    font-size: 28rpx;
+}
+
+.cpld_li .dl .dd .cpld_li_current_price {
+    color: #888;
+    height: 90rpx;
+    display: flex;
+    align-items: center;
+}
+
+.cpld_li .dl .dd .cpld_li_current_price .price {
+    color: #222;
+    font-size: 28rpx;
+}
+
+.cpld_li .dl .dd .cpld_li_current_price .number {
+    height: 34rpx;
+    line-height: 34rpx;
+    background-color: #ffaa24;
+    border-radius: 6rpx;
+    font-size: 24rpx;
+    padding: 0 12rpx;
+    position: relative;
+    margin-left: 22rpx;
+    color: white;
+}
+
+.cpld_li .dl .dd .cpld_li_current_price .number .icon {
+    position: absolute;
+    top: 10rpx;
+    left: -6rpx;
+    border-top: 8rpx solid transparent;
+    border-right: 8rpx solid #ffaa24;
+    border-bottom: 8rpx solid transparent;
+}
+
+.cpld_li .buy_now {
+    background-color: #ff7800;
+    display: inline-block;
+    color: white;
+}
+
+.cpld_li .look_order {
+    background-color: white;
+    display: inline-block;
+    color: #3e3e3e;
+    border: 1rpx solid #222222;
+}
+
+.cpld_li .button {
+    width: 132rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    text-align: center;
+    font-size: 24rpx;
+    border-radius: 25rpx;
+}
+
+.no_data {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 210rpx;
+}
+
+.no_data .cplnd_text {
+    font-size: 30rpx;
+    color: #555;
+    margin-top: 30rpx;
+}

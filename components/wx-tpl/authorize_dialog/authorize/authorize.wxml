@@ -1,0 +1,24 @@
+<view class="{{isClose?'show popup_box':'hide'}}">
+    <view class="popup_bg"></view>
+    <view class="popup_cont">
+        <view class="popup_warp">
+            <view catchtap="showPopup" class="popup_warp_bg">
+                <view class="head">
+                    <text class="text">需要您的授权</text>
+                </view>
+                <view class="body">
+                    <view class="text1">
+                        <text>为了提供更好的服务</text>
+                        <text>请在稍后的提示框中点击“允许”</text>
+                    </view>
+                    <view class="image_box">
+                        <image class="img" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/main-authorize3.png"></image>
+                    </view>
+                </view>
+                <view class="btn_box">
+                    <button bindgetuserinfo="getUserInfo" class="button-none sure-btn" lang="zh_CN" openType="getUserInfo">我知道了</button>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

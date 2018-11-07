@@ -1,0 +1,32 @@
+<view class="greeting {{page=='detail'?'detail':''}}" wx:if="{{isOpen}}">
+    <block wx:if="{{page!='detail'}}">
+        <view class="left">
+            <image class="head_img" mode="aspectFill" src="{{headImg}}"></image>
+            <view class="icon">
+                <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/24hr.png"></image>
+            </view>
+        </view>
+        <view class="content {{page=='detail'?'detail':''}}">
+            <view class="first max_one_line">{{headline}}</view>
+            <view class="second max_two_line">{{content}}</view>
+        </view>
+        <view class="right">
+            <view bindtap="makePhoneCall">
+                <image mode="aspectFill" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/phone.png"></image>
+            </view>
+            <view class="wechat_view">
+                <image mode="aspectFill" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/wechat.png"></image>
+                <view class="contact">
+                    <button class="kefu" openType="contact"></button>
+                </view>
+            </view>
+        </view>
+    </block>
+    <view class="pageDetail" wx:if="{{page=='detail'}}">
+        <view animation="{{animationData1}}" bindtap="hideText" class="text" wx:if="{{textShow}}">欢迎光临本店，有问题可以联系我哦</view>
+        <view bindtap="hideText" class="wechat_view">
+            <image mode="aspectFill" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/zhaodianzhu.png"></image>
+            <button class="kefu" openType="contact"></button>
+        </view>
+    </view>
+</view>

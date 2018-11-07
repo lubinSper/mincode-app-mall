@@ -1,0 +1,349 @@
+.coupon-item.coupon-item-success {
+    margin-bottom: 10rpx;
+}
+
+.coupon-item-success .item-info-wrap {
+    width: 650rpx;
+    height: 191rpx;
+}
+
+.coupon-item-success .item-info-wrap .cnt-left .desc {
+    font-size: 34rpx;
+}
+
+.coupon-item-success .item-info-wrap .cnt-left .date,.coupon-item-success .item-info-wrap .cnt-right .desc {
+    font-size: 22rpx;
+}
+
+.coupon-item-success .item-info-wrap .cnt-right .price {
+    font-size: 40rpx;
+}
+
+.coupon-item-success .item-info-wrap .cnt-right .btn {
+    margin: 0;
+    padding: 0;
+    width: 136rpx;
+    height: 46rpx;
+    line-height: 46rpx;
+    font-size: 22rpx;
+    border-radius: 23rpx;
+}
+
+.coupon-item-success .item-info-wrap .cnt-left {
+    padding: 20rpx 10rpx 0 30rpx;
+}
+
+.coupon-item-success .item-info-wrap .cnt-left .desc {
+    width: 400rpx;
+}
+
+.coupon-item-success .item-info-wrap .cnt-right {
+    padding: 20rpx 0 0 30rpx;
+}
+
+.coupon-item-success .item-info-wrap .cnt-left .line {
+    width: 384rpx;
+}
+
+.coupon-item-success .item-info-wrap .center-line {
+    height: 134rpx;
+}
+
+.coupon-item-success .no-desc-rgiht .price {
+    padding: 17rpx 0 22rpx;
+}
+
+.coupon-item {
+    margin-bottom: 20rpx;
+}
+
+.coupon-item .shop-info {
+    padding: 0 8rpx 15rpx;
+    display: flex;
+    justify-content: space-between;
+    font-size: 26rpx;
+    color: #888;
+}
+
+.coupon-item .shop-info .logo text {
+    color: #555;
+}
+
+.coupon-item .shop-info .logo image {
+    margin: 0 10rpx -3rpx 0;
+    width: 29rpx;
+    height: 28rpx;
+    border-radius: 50%;
+}
+
+.item-info-wrap {
+    position: relative;
+    width: 690rpx;
+    height: 203rpx;
+}
+
+.item-bg-blue .item-info-wrap {
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/bg_daijinquan.png) no-repeat;
+    background-size: 100%;
+}
+
+.item-bg-red .item-info-wrap {
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/bg_manjianquan.png) no-repeat;
+    background-size: 100%;
+}
+
+.item-bg-yellow .item-info-wrap {
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/bg_zhekouquan.png) no-repeat;
+    background-size: 100%;
+}
+
+.item-bg-grey .item-info-wrap {
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/bg_guoqiquan.png) no-repeat;
+    background-size: 100%;
+}
+
+.item-info-wrap .item-cnt {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.item-info-wrap .cnt-left {
+    flex: 1;
+    padding: 30rpx 14rpx 0 34rpx;
+}
+
+.item-info-wrap .center-line {
+    margin-top: 26rpx;
+    height: 142rpx;
+    border-right: 1px dashed #fff;
+}
+
+.item-info-wrap .cnt-left .desc {
+    width: 418rpx;
+    line-height: 38rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 38rpx;
+}
+
+.item-info-wrap .cnt-left .date {
+    padding: 20rpx 0 36rpx;
+    line-height: 24rpx;
+    font-size: 24rpx;
+    color: rgba(255,255,255,.8);
+}
+
+.item-info-wrap .cnt-left .line {
+    margin-bottom: 4rpx;
+    width: 406rpx;
+    height: 1rpx;
+    background-color: rgba(255,255,255,.5);
+}
+
+.item-info-wrap .cnt-left .person-nums {
+    font-size: 20rpx;
+    color: rgba(255,255,255,.5);
+}
+
+.item-info-wrap .cnt-left .other-info {
+    display: flex;
+    justify-content: space-between;
+    width: 98%;
+    font-size: 20rpx;
+}
+
+.item-info-wrap .cnt-left .other-info .logo {
+    padding-top: 2rpx;
+}
+
+.item-info-wrap .cnt-left .other-info text {
+    display: inline-block;
+    width: 224rpx;
+    line-height: 20rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #fefefe;
+    opacity: 0.6;
+}
+
+.item-info-wrap .cnt-left .other-info .name {
+    color: #ffffff;
+    opacity: 0.6;
+}
+
+.item-info-wrap .cnt-left .other-info image {
+    margin: 3rpx 10rpx 0rpx 0;
+    vertical-align: top;
+    width: 24rpx;
+    height: 24rpx;
+    border-radius: 50%;
+}
+
+.item-info-wrap .cnt-right {
+    position: relative;
+    padding: 25rpx 35rpx 0;
+}
+
+.item-info-wrap .cnt-right .price {
+    line-height: 40rpx;
+    text-align: center;
+    font-size: 40rpx;
+}
+
+.item-info-wrap .cnt-right .desc {
+    padding: 8rpx 0 20rpx 0;
+    text-align: center;
+    line-height: 24rpx;
+    font-size: 24rpx;
+}
+
+.item-info-wrap .cnt-right .btn {
+    margin: 0;
+    padding: 0;
+    width: 150rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    text-align: center;
+    background-color: #fff;
+    font-size: 24rpx;
+    border-radius: 25rpx;
+    border: 0;
+}
+
+.item-info-wrap .no-desc-rgiht .price {
+    padding-top: 15rpx;
+}
+
+.btn:after {
+    border: none;
+}
+
+.item-bg-blue .cnt-right .btn {
+    color: #5994fe;
+}
+
+.item-bg-red .cnt-right .btn {
+    color: #ff7c92;
+}
+
+.item-bg-yellow .cnt-right .btn {
+    color: #fda33f;
+}
+
+.item-bg-grey .cnt-right .btn {
+    color: #b9b8b8;
+    background-color: #949494;
+}
+
+.item-bg-blue .cnt-right .btn.has-click {
+    color: #5994fe;
+    background-color: #2169eb;
+}
+
+.item-bg-red .cnt-right .btn.has-click {
+    color: #ff7c92;
+    background-color: #e73552;
+}
+
+.item-bg-yellow .cnt-right .btn.has-click {
+    color: #fda33f;
+    background-color: #e07903;
+}
+
+.home-coupon-item {
+    display: flex;
+    width: 691rpx;
+    height: 110rpx;
+    margin-bottom: 40rpx;
+}
+
+.home-coupon-item .left {
+    text-align: center;
+    width: 164rpx;
+    color: #fff;
+    border-radius: 10rpx;
+}
+
+.home-bg-red .left {
+    background: linear-gradient(to right,rgb(255,120,148),rgb(255,57,89));
+}
+
+.home-bg-blue .left {
+    background: linear-gradient(to right,rgb(120,187,255),rgb(43,116,255));
+}
+
+.home-bg-yellow .left {
+    background: linear-gradient(to right,rgb(255,204,0),rgb(255,134,15));
+}
+
+.home-coupon-item .left .price {
+    height: 68rpx;
+    line-height: 68rpx;
+    font-size: 40rpx;
+}
+
+.home-coupon-item .left .line {
+    border-top: 2rpx dashed rgba(255,255,255,0.3);
+}
+
+.home-coupon-item .left .type {
+    height: 40rpx;
+    line-height: 40rpx;
+    font-size: 20rpx;
+}
+
+.home-coupon-item .center {
+    padding: 16rpx 30rpx 27rpx;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.home-coupon-item .center .desc {
+    line-height: 30rpx;
+    font-size: 30rpx;
+    color: #222;
+}
+
+.home-coupon-item .center .date {
+    line-height: 22rpx;
+    font-size: 22rpx;
+    color: #888;
+}
+
+.home-coupon-item .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10rpx 0 2rpx;
+    text-align: center;
+}
+
+.home-coupon-item .right .btn {
+    margin: 0;
+    padding: 0;
+    width: 150rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    border: 2rpx solid #222;
+    background-color: #fff;
+    border-radius: 30rpx;
+    font-size: 26rpx;
+    color: #222;
+}
+
+.home-coupon-item .right .has-click {
+    border: 2rpx solid #888;
+    color: #888;
+    background-color: #f8f8f8;
+}
+
+.home-coupon-item .right .receive-num {
+    font-size: 20rpx;
+    color: #aaa;
+}

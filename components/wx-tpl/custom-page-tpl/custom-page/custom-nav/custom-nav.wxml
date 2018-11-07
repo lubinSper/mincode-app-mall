@@ -1,0 +1,18 @@
+<view class="tsyl">
+    <block wx:for="{{navList}}" wx:key="key">
+        <view bindtap="clickButton" class="tsyl_li {{iconMap[item.iconRatio]}} {{numClass[navList.length]}}" data-item="{{item}}" data-jumptype="{{item.jumpType}}" data-jumpurl="{{item.jumpUrl}}" data-productid="{{item.productId}}" wx:if="{{item.jumpType!=5}}">
+            <view class="tsyl_li_img {{numClass[navList.length]}}">
+                <image alt="" mode="aspectFill" src="{{item.iconUrl}}"></image>
+            </view>
+            <view class="tsyl_li_text">{{item.iconWords}}</view>
+        </view>
+        <view class="tsyl_li {{iconMap[item.iconRatio]}} {{numClass[navList.length]}}" wx:else>
+            <navigator appId="{{item.appid}}" hoverClass="none" path="{{item.path}}" target="miniProgram" version="trial">
+                <view class="tsyl_li_img {{numClass[navList.length]}}">
+                    <image alt="" mode="aspectFill" src="{{item.iconUrl}}"></image>
+                </view>
+                <view class="tsyl_li_text">{{item.iconWords}}</view>
+            </navigator>
+        </view>
+    </block>
+</view>

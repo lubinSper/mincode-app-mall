@@ -1,0 +1,111 @@
+<view class="coupon-wrap" wx:if="{{showW=='none'}}">
+    <view class="header-tip">
+    本券为非本店优惠券，需到指定的店铺核销使用
+  </view>
+    <view class="coupon-ctn {{couponInfo.bgClass}}">
+        <view class="cnt-header">
+            <view class="text">
+                <image class="img" src="{{orgInfo.logo}}"></image>
+                <text>{{orgInfo.orgName}}</text>
+            </view>
+            <image bindtap="getOrgCode" class="qr-code" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/xiaochengxuma.png"></image>
+        </view>
+        <view class="cnt-middle">
+            <view class="middle-info">
+                <view class="title">{{couponInfo.couponName}}</view>
+                <view class="desc">
+                    <view class="line"></view>
+                    <text>{{couponInfo.userDesc}}</text>
+                    <view class="line"></view>
+                </view>
+                <view catchtap="handleBtn" class="export-btn {{couponInfo.btnClass}}">{{couponInfo.statusName}}</view>
+                <image catchtap="goMyCouponList" class="enter-link" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/coupon-detial-link.png" wx:if="{{!(couponInfo.isReceive==1)&&!hideCoupEnter}}"></image>
+            </view>
+            <view class="cnt-middle-line"></view>
+            <view class="avatar-box" wx:if="{{couponInfo.userInfoDtoList.length>0}}">
+                <view class="avatar-wrap {{showAvatarBox?'avatar-height':''}}">
+                    <image class="avatar" src="{{item.avatarUrl?item.avatarUrl:'http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/defualt_avatar.jpg'}}" wx:for="{{couponInfo.userInfoDtoList}}"></image>
+                </view>
+                <view class="receive-nums">
+                    <view class="nums">{{couponInfo.count}}人已领</view>
+                    <view catchtap="showAvatar" wx:if="{{couponInfo.userInfoDtoList.length>20}}">
+                        <view class="icon-wrap" wx:if="{{showAvatarBox}}">展开<view class="icon icon-arrow-up"></view>
+                        </view>
+                        <view class="icon-wrap" wx:else>隐藏<view class="icon icon-arrow-down"></view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="avatar-empty" wx:else>
+          还没有人领取哦，快把我带走吧！
+          </view>
+            <view class="limit-date other-info-wrap">
+                <view class="left-date">
+                    <view class="topic">有效期</view>
+                    <view class="date-section cnt-info">{{couponInfo.validTypeName}}</view>
+                </view>
+            </view>
+            <view class="shop-info other-info-wrap">
+                <view class="topic">店铺信息</view>
+                <view class="cnt-info">
+                    <view class="org-info">
+                        <view catchtap="openMap" class="address">
+                  {{orgInfo.address}}
+                </view>
+                        <view class="work-hours" wx:if="{{orgInfo.businessHours}}">{{orgInfo.businessHours}}</view>
+                    </view>
+                    <view class="concat no-same">
+                        <button bindtap="makePhoneCall" class="button-none tel" data-phone="{{orgInfo.phone}}">
+                            <text class="icon-tel"></text>拨打电话</button>
+                    </view>
+                </view>
+            </view>
+            <view class="user-rule other-info-wrap">
+                <view class="topic">使用规则</view>
+                <view class="tip">本优惠券仅适用于线下门店消费时使用，请到店后出示券码给店员核销，如有疑问请咨询商家客服。
+          </view>
+                <view class="rule-wrap">
+                    <view class="goods_des_parent" wx:if="{{couponInfo.imgTextHybr.length>0}}">
+                        <view wx:for="{{couponInfo.imgTextHybr}}" wx:for-index="idx" wx:key="idx">
+                            <view class="goods_right_c" style="line-height: 0; margin-bottom: 16rpx;" wx:if="{{item.img}}">
+                                <image catchtap="previewGoodsImage" class="goods_images" data-src="{{item.img}}" mode="widthFix" src="{{item.img}}" style="height: auto;"></image>
+                            </view>
+                            <view class="clear"></view>
+                            <view class="goods_right_b" style="margin-bottom:24rpx;{{imgTextHybr[idx-1]&&imgTextHybr[idx-1].img?'margin-top:24rpx;':''}}" wx:if="{{item.text}}">
+                                <text class="rule-text">{{item.text}}</text>
+                            </view>
+                            <view class="clear"></view>
+                            <view bindtap="videoPlay" class="goods_right_a" data-index="{{idx}}" style="margin-bottom:16rpx; height:410rpx;" wx:if="{{item.video}}">
+                                <video controls="true" customCache="false" id="video-{{idx}}" objectFit="fill" src="{{item.video}}" wx:if="{{curr_id&&curr_id==idx+1}}"></video>
+                                <view class="replace-video" wx:else>
+                                    <image class="model-img" mode="aspectFill" src="{{item.videoVoverImage.length>0?item.videoVoverImage:defaultPoster}}"></image>
+                                    <view class="mask-img"></view>
+                                    <view class="play-icon"></view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view catchtap="hideMask" class="show-code-mask" wx:if="{{couponQrCode}}">
+    <view catchtap="getCoupCode" class="code-box">
+        <image catchtap="recogCode" class="code-img" data-src="{{locationurlz}}/xcx/qrCode/coupon/{{couponInfo.id}}" src="{{locationurlz}}/xcx/qrCode/coupon/{{couponInfo.id}}"></image>
+        <view class="desc">券码用于到店扫码核销</view>
+    </view>
+</view>
+<view catchtap="hideMask" class="show-code-mask" wx:if="{{shopQrCode}}">
+    <view catchtap="getOrgCode" class="code-box small-program-box">
+        <view class="name">
+            <image class="img" src="{{orgInfo.logo}}"></image>
+            <text>{{orgInfo.orgName}}</text>
+        </view>
+        <image catchtap="recogCode" class="code-img" data-src="{{orgInfo.qrcodeUrl}}" src="{{orgInfo.qrcodeUrl}}"></image>
+        <view class="desc">长按小程序码进入店铺</view>
+    </view>
+</view>
+<view class="coupon_del" style="{{'display:'+showW}}">该优惠券已下架</view>
+<return_index wx:if="{{showReturnIndexBtn}}"></return_index>
+<authorize_dialog bind:backhandle="backHandle" onHide="{{onAuthHide}}" onShow="{{onAuthShow}}" params="{{authParams}}"></authorize_dialog>

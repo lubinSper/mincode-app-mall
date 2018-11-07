@@ -1,0 +1,93 @@
+<template name="discussDetail">
+    <view class="detail-discuss-box">
+        <view class="discuss-box-bg" style="margin-top:-30rpx;position: relative">
+            <view class="detail_browse_num">浏览{{seeNum}}次</view>
+            <view class="discuss-box">
+                <view class="discuss-btn-list">
+                    <view class="discuss-btn-list-box">
+                        <view catchtap="clickToLick" class="discuss-btn-list-item discuss-icon-dz" data-d="{{likeStatus}}" data-goodsId="{{goodsId}}" data-likeId="" data-nowclickid="{{i}}" wx:if="{{likeStatus==2}}"></view>
+                        <view catchtap="clickToCancelLick" class="discuss-btn-list-item discuss-icon-qxdz" data-likeId="{{likeId}}" data-nowclickid="{{i}}" wx:if="{{likeStatus==1}}"></view>
+                        <view catchtap="showDiscussInput" class="discuss-btn-list-item discuss-icon-pl" data-goodsId="{{goodsId}}" data-nowid="{{i}}"></view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="discuss-container">
+            <view class="discuss-block">
+                <view class="like-list" wx:if="{{likes.length>0}}">
+                    <view class="like-item like-icon">
+                        <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/one-shop-one-mini-app/3bei_like.png"></image>
+                    </view>
+                    <view class="like-item like-image-view like-list-view-detail">
+                        <image src="{{item.avatar}}" wx:for="{{likes}}" wx:for-index="jj" wx:key="item"></image>
+                    </view>
+                </view>
+                <view class="discuss-list" wx:if="{{comments.length>0}}">
+                    <view wx:for="{{comments}}" wx:for-index="j" wx:key="item">
+                        <view catchtap="delDiscuss" class="discuss-item discuss-list-item-detail" data-belongto="{{item.belongTo}}" data-id="{{item.id}}" data-outindex="{{i}}" data-selfindex="{{j}}" wx:if="{{item.belongTo==1}}">
+                            <text class="discuss-name">{{item.nickName&&item.nickName.length>0?item.nickName:'微信用户'}}</text>：<text>{{item.comment}}</text>
+                        </view>
+                        <view class="discuss-item discuss-list-item-detail" data-belongto="{{item.belongTo}}" data-id="{{item.id}}" data-outindex="{{i}}" data-selfindex="{{j}}" wx:if="{{item.belongTo==2}}">
+                            <text class="discuss-name">{{item.nickName&&item.nickName.length>0?item.nickName:'微信用户'}}</text>：<text selectable="true">{{item.comment}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="discuss-right"></view>
+        </view>
+    </view>
+</template>
+<template name="discussInput">
+    <view bindtap="hideDiscussInput" catchtouchmove="noMove" class="discuss-input-box-bg" wx:if="{{inputShow}}">
+        <view class="discuss-input-box">
+            <view class="discuss-input-padding">
+                <input autoFocus autoHeight="{{true}}" bindconfirm="sendDiscuss" bindinput="DiscussInputState" catchtap="showDiscussInput" class="discuss-input" confirmType="send" cursorSpacing="20" data-goodsId="{{goodsId}}" data-nowid="{{shopListIndex}}" maxlength="200" placeholder="{{placeHolder}}" placeholderStyle="color:#c0c0c0"></input>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="discussList">
+    <view class="discuss-box-bg" style="margin-top:-60rpx;">
+        <view class="discuss-box">
+            <view class="discuss-btn-list">
+                <view class="discuss-btn-list-box">
+                    <view data GoodsId="{{goodsId}}" catchtap="clickToLick" class="discuss-btn-list-item discuss-icon-dz" data-d="{{likeStatus}}" data-likeId="" data-nowclickid="{{i}}" wx:if="{{likeStatus==2}}"></view>
+                    <view catchtap="clickToCancelLick" class="discuss-btn-list-item discuss-icon-qxdz" data-likeId="{{likeId}}" data-nowclickid="{{i}}" wx:if="{{likeStatus==1}}"></view>
+                    <view catchtap="showDiscussInput" class="discuss-btn-list-item discuss-icon-pl" data-goodsId="{{goodsId}}" data-nowid="{{i}}"></view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view style="display:block; height:14rpx;"></view>
+    <view class="discuss-container">
+        <view class="discuss-block">
+            <view class="like-list" wx:if="{{likes.length>0}}">
+                <view class="like-item like-icon">
+                    <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/one-shop-one-mini-app/3bei_like.png"></image>
+                </view>
+                <view class="like-item like-image-view like-list-view">
+                    <image src="{{item.avatar}}" wx:if="{{jj<8}}" wx:for="{{likes}}" wx:for-index="jj" wx:key="item"></image>
+                </view>
+                <view class="like-item like-count" wx:if="{{likes.length>7}}">等{{likes.length}}人赞</view>
+            </view>
+            <view class="discuss-list" wx:if="{{comments.length>0}}">
+                <view wx:for="{{comments}}" wx:for-index="j" wx:key="item">
+                    <view catchtap="delDiscuss" class="discuss-item discuss-list-item" data-belongto="{{item.belongTo}}" data-id="{{item.id}}" data-outindex="{{i}}" data-selfindex="{{j}}" wx:if="{{item.belongTo==1&&j<4}}">
+                        <text class="discuss-name">{{item.nickName&&item.nickName.length>0?item.nickName:'微信用户'}}</text>：<text>{{item.comment}}</text>
+                    </view>
+                    <view class="discuss-item discuss-list-item" data-belongto="{{item.belongTo}}" data-id="{{item.id}}" data-outindex="{{i}}" data-selfindex="{{j}}" wx:if="{{item.belongTo==2&&j<4}}">
+                        <text class="discuss-name">{{item.nickName&&item.nickName.length>0?item.nickName:'微信用户'}}</text>：<text selectable="true">{{item.comment}}</text>
+                    </view>
+                </view>
+                <view catchtap="delDiscuss" class="discuss-item discuss-list-item" data-belongto="{{comments[comments.length-1].belongTo}}" data-id="{{comments[comments.length-1].id}}" data-outindex="{{i}}" data-selfindex="{{comments.length-1}}" wx:if="{{comments.length>4}}">
+                    <text class="discuss-name">{{comments[comments.length-1].nickName&&comments[comments.length-1].nickName.length>0?comments[comments.length-1].nickName:''}}</text>：<text>{{comments[comments.length-1].comment}}</text>
+                </view>
+                <view class="discuss-item discuss-item-result" wx:if="{{comments.length>5}}">查看所有{{comments.length}}条评论</view>
+            </view>
+        </view>
+        <view class="discuss-right"></view>
+    </view>
+    <view catchtap="showDiscussInput" class="discuss_reply" data-goodsId="{{goodsId}}" data-nowid="{{i}}">
+          回复
+      </view>
+</template>

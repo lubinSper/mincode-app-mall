@@ -1,0 +1,10 @@
+{
+    "enablePullDownRefresh": true,
+    "navigationBarTitleText": "预约",
+    "usingComponents": {
+        "common-tabs": "/components/wx-tpl/index/commonTabs/commonTabs",
+        "return_index": "/components/wx-tpl/return_index/return_index",
+        "copyright": "/components/wx-tpl/copyright/copyright/copyright",
+        "NoData": "/components/wx-tpl/nodata/index"
+    }
+}

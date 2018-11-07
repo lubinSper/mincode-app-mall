@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "会员中心 ",
+    "usingComponents": {
+        "ListView": "../../components/list/index",
+        "PayDialog": "/components/wx-tpl/order/pay-dialog/index",
+        "NoData": "../../components/nodata/index",
+        "vipCardPrivilege": "../../components/vip_card_privilege/vip_card_privilege"
+    }
+}

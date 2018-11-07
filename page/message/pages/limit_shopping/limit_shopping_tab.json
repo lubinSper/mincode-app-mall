@@ -1,0 +1,8 @@
+{
+    "enablePullDownRefresh": true,
+    "navigationBarTitleText": "",
+    "usingComponents": {
+        "common-tabs": "/components/wx-tpl/index/commonTabs/commonTabs",
+        "return_index": "/components/wx-tpl/return_index/return_index"
+    }
+}

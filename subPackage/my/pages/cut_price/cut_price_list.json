@@ -1,0 +1,7 @@
+{
+    "enablePullDownRefresh": true,
+    "navigationBarTitleText": "我发起的砍价",
+    "usingComponents": {
+        "NoData": "/components/wx-tpl/nodata/index"
+    }
+}

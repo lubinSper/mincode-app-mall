@@ -1,0 +1,28 @@
+<view class="drawer_screen" wx:if="{{showModalStatus&&list.length>0}}"></view>
+<view class="box" wx:if="{{showModalStatus&&list.length>0}}">
+    <form bindsubmit="close" class="form" reportSubmit="true">
+        <button class="button-none close" formType="submit" hoverClass="none">
+            <image mode="aspectFill" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/guanbi.png"></image>
+        </button>
+    </form>
+    <view class="drawer_box">
+        <view class="header">
+            <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/youhuiquan.png"></image>
+        </view>
+        <view class="content">
+            <view class="item" wx:if="{{index<3}}" wx:for="{{list}}" wx:key="item">
+                <view class="left">
+                    <view class="name">{{item.couponName}}</view>
+                    <view class="str">{{item.name}}</view>
+                </view>
+                <view class="right">
+                    <form bindsubmit="clickReceive" class="form" data-index="{{index}}" reportSubmit="true">
+                        <button class="button-none button {{item.status==2?'received':''}}" formType="submit" hoverClass="none">{{item.status==2?'已领取':'领券'}}</button>
+                    </form>
+                    <view class="number">{{item.count}}人已领</view>
+                </view>
+            </view>
+            <view bindtap="toMoreCoupon" class="more" wx:if="{{list.length>3}}">更多></view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,59 @@
+{
+    "extEnable": true,
+    "extAppid": "wxd46d17ca63a249dd",
+    "ext": {
+        "name": "繁花一一同城花店送货",
+        "attr": {
+            "xcxId": 2522,
+            "codeVersion": "v1.4.6",
+            "shopMHost": "https://mmis.197.com/",
+            "pcisHost": "https://pcis.197.com/",
+            "newsHost": "https://news.197.com/",
+            "host": "https://x1.197.com/",
+            "tabBar": {
+                "color": "#222",
+                "selectedColor": "#ff7800",
+                "backgroundColor": "#fff",
+                "borderStyle": "#e6e6e6",
+                "list": [
+                    {
+                        "pagePath": "page/message/index",
+                        "text": "繁花",
+                        "iconPath": "image/cpjs_normal.png",
+                        "selectedIconPath": "image/cpjs_press.png"
+                    },
+                    {
+                        "pagePath": "page/discover/discover",
+                        "text": "花城",
+                        "iconPath": "image/discovery_normal.png",
+                        "selectedIconPath": "image/discovery_press.png"
+                    },
+                    {
+                        "pagePath": "page/index/custom-page/custom-page-4/custom-page-4",
+                        "text": "会员+",
+                        "iconPath": "image/shejiao_normal.png",
+                        "selectedIconPath": "image/shejiao_press.png"
+                    },
+                    {
+                        "pagePath": "page/index/shequn/shequn_tab",
+                        "text": "随手拍",
+                        "iconPath": "image/new_normal.png",
+                        "selectedIconPath": "image/new_press.png"
+                    },
+                    {
+                        "pagePath": "page/my/my",
+                        "text": "我的",
+                        "iconPath": "image/me_normal.png",
+                        "selectedIconPath": "image/me_press.png"
+                    }
+                ]
+            },
+            "orgId": 16774
+        },
+        "ald_config": {
+            "app_key": "ff2e1153e9a99e537eeeb803a33d6c60",
+            "getLocation": 1,
+            "getUserinfo": 1
+        }
+    }
+}

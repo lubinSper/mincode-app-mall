@@ -1,0 +1,4 @@
+<view class="nodata custom-class">
+    <image class="nodata-image" mode="aspectFill" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/qq{{imageSrcNumber}}.png"></image>
+    <text class="nodata-text" wx:if="{{noDataText}}">{{noDataText}}</text>
+</view>

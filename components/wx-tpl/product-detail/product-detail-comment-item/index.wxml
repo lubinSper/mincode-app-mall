@@ -1,0 +1,11 @@
+<view class="product-detail-comment-item" style="border-bottom:{{nobottom?'none':'1rpx solid #e6e6e6'}}">
+    <view class="item-l">
+        <image mode="aspectFill" src="{{commentItem.avatar}}"></image>
+    </view>
+    <view class="item-r">
+        <view class="r-title">{{commentItem.nickName}}</view>
+        <view class="r-date">{{commentItem.createTime}}</view>
+        <view class="r-content">{{commentItem.comment}}</view>
+    </view>
+</view>
+<wxs module="dateFr" src="index.wxs" />

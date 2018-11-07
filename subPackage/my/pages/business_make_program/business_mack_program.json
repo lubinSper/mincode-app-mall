@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "小程序开发咨询",
+    "usingComponents": {
+        "make-program-tpl": "/subPackage/my/components/wx-tpl/business_make_program/make-program-tpl",
+        "return_index": "/components/wx-tpl/return_index/return_index"
+    }
+}

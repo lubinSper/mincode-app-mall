@@ -1,0 +1,142 @@
+.loading_failure {
+    position: relative;
+    width: 100%;
+    height: 600rpx;
+}
+
+.loading_failure .loading_wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    height: 176rpx;
+}
+
+.loading_failure .loading_failure_img {
+    text-align: center;
+}
+
+.loading_failure image {
+    width: 100rpx;
+    height: 118rpx;
+}
+
+.loading_failure .loading_failure_text {
+    text-align: center;
+    font-size: 25rpx;
+    color: #bababa;
+}
+
+.loading_failure .loading_failure_text text {
+    font-weight: bold;
+    color: #888;
+}
+
+.goods {
+    background-color: #f4f4f4;
+    padding-bottom: 10rpx;
+    padding-top: 80rpx;
+}
+
+.nav {
+    white-space: nowrap;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 80rpx;
+    z-index: 333;
+    background-color: #fff;
+}
+
+.recommend_scroll_x_box {
+    width: 750rpx;
+    height: 80rpx;
+}
+
+.recommend_hot_box {
+    display: inline-block;
+    text-align: center;
+}
+
+.recommend_hot_box .recommend_hot_text {
+    font-size: 14px;
+    padding-bottom: 18rpx;
+    padding-top: 32rpx;
+    color: #222;
+    display: block;
+    margin: 0 30rpx;
+    line-height: 27rpx;
+}
+
+.recommend_hot_box:first-of-type .recommend_hot_text {
+    margin-left: 33rpx;
+}
+
+.recommend_hot_box:last-of-type .recommend_hot_text {
+    margin-right: 33rpx;
+}
+
+.recommend_hot_box .recommend_hot_text_active {
+    border-bottom: 4rpx solid #ff7800;
+    color: #ff7800;
+}
+
+.loading {
+    height: auto;
+    padding-bottom: 20rpx;
+    line-height: normal;
+}
+
+.loading image {
+    margin-top: -24rpx;
+}
+
+.buy_car_warp {
+    position: fixed;
+    bottom: 10rpx;
+    right: 0;
+    width: 560rpx;
+    z-index: 1;
+    text-align: center;
+}
+
+.buy_car_warp .buy_car_prompt {
+    padding: 0 14rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    background-color: #ff5500;
+    border-radius: 30rpx;
+    color: #fff;
+    font-size: 30rpx;
+    display: inline-block;
+}
+
+.buy_car_warp .buy_car_prompt .buy_car_border {
+    top: 44rpx;
+    border-color: #ff5500 transparent transparent transparent;
+    position: absolute;
+    left: 50%;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    border-width: 8rpx;
+    margin-left: -8rpx;
+    border-style: solid dashed dashed dashed;
+}
+
+.no_data {
+    margin-bottom: 340rpx;
+}
+
+.no_price_hide {
+    display: none!important;
+}
+
+.copyright-fixed {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}

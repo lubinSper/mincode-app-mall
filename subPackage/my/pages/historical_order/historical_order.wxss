@@ -1,0 +1,29 @@
+@import "../../../../__wuBaseWxss__/0.wxss";
+
+page {
+    height: auto;
+}
+
+.header {
+    height: 80rpx;
+    line-height: 80rpx;
+    width: 100%;
+    display: flex;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+.header .item {
+    flex: 1;
+    text-align: center;
+    font-size: 28rpx;
+    color: #555;
+}
+
+.header .item.selected {
+    color: #ff7800;
+    font-weight: 500;
+}

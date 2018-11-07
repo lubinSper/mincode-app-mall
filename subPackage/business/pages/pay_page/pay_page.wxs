@@ -1,0 +1,9 @@
+var filters = ({
+    toFix: (function(value, point) {
+        console.log(value);
+        return (value.toFixed(2))
+    }),
+});
+module.exports = ({
+    toFix: filters.toFix,
+});

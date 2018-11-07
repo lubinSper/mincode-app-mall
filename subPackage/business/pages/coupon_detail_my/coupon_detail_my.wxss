@@ -1,0 +1,567 @@
+page {
+    height: auto;
+}
+
+.box-hide {
+    display: none;
+}
+
+.header-tip {
+    line-height: 60rpx;
+    text-align: center;
+    font-size: 24rpx;
+    color: #d78d23;
+    background-color: #fff6d4;
+}
+
+.coupon-ctn.bg-red {
+    background: linear-gradient(rgb(255,57,89),rgb(255,130,156));
+}
+
+.coupon-ctn.bg-blue {
+    background: linear-gradient(rgb(43,116,255),rgb(135,194,255));
+}
+
+.coupon-ctn.bg-yellow {
+    background: linear-gradient(rgb(255,126,0),rgb(255,186,0));
+}
+
+.coupon-ctn {
+    padding: 30rpx;
+}
+
+.cnt-header {
+    padding: 20rpx 0;
+    position: relative;
+    text-align: center;
+    font-size: 30rpx;
+    border-radius: 20rpx 20rpx 0 0;
+    background-color: #fafafa;
+    box-shadow: 0 4rpx 20rpx rgba(72,72,72,0.1) inset;
+    color: #555;
+}
+
+.cnt-header .text {
+    height: 50rpx;
+}
+
+.cnt-header .img {
+    margin-right: 19rpx;
+    width: 50rpx;
+    height: 50rpx;
+    vertical-align: top;
+    border-radius: 50%;
+}
+
+.cnt-header .qr-code {
+    position: absolute;
+    top: 24rpx;
+    right: 30rpx;
+    width: 44rpx;
+    height: 42rpx;
+}
+
+.cnt-header::before {
+    content: '';
+    position: absolute;
+    bottom: -15rpx;
+    left: -15rpx;
+    width: 30rpx;
+    height: 30rpx;
+    transform: rotate(45deg);
+}
+
+.cnt-header::after {
+    content: '';
+    position: absolute;
+    bottom: -15rpx;
+    right: -15rpx;
+    width: 30rpx;
+    height: 30rpx;
+    transform: rotate(45deg);
+}
+
+.bg-blue .cnt-header::before,.bg-blue .cnt-header::after {
+    background: #3079FF;
+}
+
+.bg-red .cnt-header::before,.bg-red .cnt-header::after {
+    background: #FF3E5D;
+}
+
+.bg-yellow .cnt-header::before,.bg-yellow .cnt-header::after {
+    background: #FF7E0A;
+}
+
+.cnt-middle {
+    background-color: #fff;
+    border-radius: 0 0 20rpx 20rpx;
+}
+
+.middle-info {
+    position: relative;
+    margin: 0 40rpx;
+    padding: 58rpx 0 50rpx;
+}
+
+.cnt-middle-line {
+    margin: 0 30rpx;
+    border-bottom: 2rpx dashed #ccc;
+}
+
+.middle-info .title {
+    line-height: 50rpx;
+    text-align: center;
+    font-size: 50rpx;
+    color: #222;
+}
+
+.middle-info .desc {
+    display: flex;
+    justify-content: center;
+    padding: 27rpx 0 58rpx;
+}
+
+.middle-info .desc .line {
+    margin-top: 18rpx;
+    border-top: 2rpx solid #555;
+    width: 70rpx;
+    height: 0;
+}
+
+.middle-info .desc text {
+    padding: 0 29rpx;
+    line-height: 38rpx;
+    font-size: 38rpx;
+    color: #555;
+}
+
+.middle-info .enter-link {
+    position: absolute;
+    top: 70rpx;
+    right: -39rpx;
+    width: 90rpx;
+    height: 80rpx;
+}
+
+.middle-info .export-btn {
+    margin: 0 auto;
+    width: 100%rpx;
+    line-height: 84rpx;
+    text-align: center;
+    font-size: 32rpx;
+    color: #fff;
+    border-radius: 42rpx;
+}
+
+.bg-blue .query-code {
+    width: 500rpx;
+    background-color: #3c82ff;
+}
+
+.bg-red .query-code {
+    width: 500rpx;
+    background-color: #ff4464;
+}
+
+.bg-yellow .query-code {
+    width: 500rpx;
+    background-color: #ff8800;
+}
+
+.bg-blue .receive-btn {
+    height: 95rpx;
+    line-height: 84rpx;
+    background: url("http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/blue-receive-btn.png") no-repeat;
+    background-size: 610rpx 95rpx;
+}
+
+.bg-red .receive-btn {
+    height: 95rpx;
+    line-height: 84rpx;
+    background: url("http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/red-receive-btn.png") no-repeat;
+    background-size: cover;
+}
+
+.bg-yellow .receive-btn {
+    height: 95rpx;
+    line-height: 84rpx;
+    background: url("http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/yellow-receive-btn.png") no-repeat;
+    background-size: cover;
+}
+
+.coupon-ctn .has-click {
+    width: 500rpx;
+    color: #888;
+    background-color: #e8e8e8;
+}
+
+.avatar-box {
+    padding: 50rpx 30rpx 40rpx;
+}
+
+.avatar-box .avatar-wrap {
+    text-align: center;
+    overflow: hidden;
+    font-size: 0;
+}
+
+.avatar-box .avatar-height {
+    height: 112rpx;
+}
+
+.avatar-box .avatar {
+    margin: 0 6rpx 12rpx;
+    width: 50rpx;
+    height: 50rpx;
+    border-radius: 50%;
+}
+
+.avatar-empty {
+    padding: 45rpx 0;
+    text-align: center;
+    font-size: 24rpx;
+    color: #888;
+}
+
+.avatar-box .receive-nums {
+    font-size: 24rpx;
+    color: #222;
+}
+
+.avatar-box .receive-nums .nums {
+    padding-top: 15rpx;
+    text-align: center;
+}
+
+.icon-wrap {
+    display: flex;
+    justify-content: center;
+    color: #555;
+}
+
+.avatar-box .receive-nums .icon {
+    margin: 14rpx 10rpx;
+    width: 22rpx;
+    height: 12rpx;
+}
+
+.avatar-box .receive-nums .icon-arrow-up {
+    background: url("http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/icon-zhankai.png") no-repeat;
+    background-size: cover;
+}
+
+.avatar-box .receive-nums .icon-arrow-down {
+    background: url("http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/icon-shouqi.png") no-repeat;
+    background-size: cover;
+}
+
+.coupon-ctn .topic {
+    margin-bottom: 30rpx;
+    line-height: 28rpx;
+    font-family: "PingFang-SC-Heavy";
+    font-size: 28rpx;
+    color: #222;
+}
+
+.left-date .topic {
+    margin-bottom: 28rpx;
+}
+
+.user-rule .topic {
+    margin-bottom: 22rpx;
+}
+
+.other-info-wrap {
+    padding: 0 30rpx 10rpx;
+}
+
+.coupon-ctn .cnt-info {
+    font-size: 26rpx;
+    color: #888;
+}
+
+.limit-date {
+    position: relative;
+}
+
+.limit-date .date-section {
+    line-height: 26rpx;
+}
+
+.limit-date .right-share {
+    position: absolute;
+    top: 0;
+    right: 30rpx;
+    font-size: 22rpx;
+    color: #555;
+}
+
+.limit-date .right-share .button-none {
+    position: absolute;
+    right: -10rpx;
+    width: 64rpx;
+    height: 74rpx;
+    background-color: transparent;
+}
+
+.limit-date .right-share .image {
+    margin-left: 4rpx;
+    width: 34rpx;
+    height: 36rpx;
+    background: url("http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/icon-share2.png") no-repeat;
+    background-size: cover;
+}
+
+.limit-date .right-share .share-text {
+    padding-top: 16rpx;
+}
+
+.shop-info.other-info-wrap {
+    padding: 30rpx 0 37rpx;
+}
+
+.shop-info .topic {
+    padding-left: 30rpx;
+    margin-bottom: 24rpx;
+}
+
+.shop-info .org-info {
+    padding: 0 30rpx 0;
+}
+
+.shop-info .address,.shop-info .work-hours {
+    position: relative;
+    padding-left: 32rpx;
+}
+
+.shop-info .address {
+    padding-left: 24rpx;
+    padding-right: 30rpx;
+    width: 570rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.shop-info .work-hours {
+    padding-top: 4rpx;
+}
+
+.shop-info .address::before {
+    content: '';
+    position: absolute;
+    top: 6rpx;
+    left: 0;
+    width: 22rpx;
+    height: 26rpx;
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/location-address.png);
+    background-size: contain;
+}
+
+.shop-info .address::after {
+    content: '';
+    position: absolute;
+    top: 8rpx;
+    right: 0;
+    width: 12rpx;
+    height: 22rpx;
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/turn-right.png);
+    background-size: contain;
+}
+
+.shop-info .work-hours::before {
+    content: '';
+    position: absolute;
+    top: 13rpx;
+    left: 0;
+    width: 22rpx;
+    height: 22rpx;
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/time.png);
+    background-size: contain;
+}
+
+.shop-info .concat {
+    font-size: 26rpx;
+}
+
+.shop-info .concat .button-none {
+    flex: 1;
+    position: relative;
+    padding: 0;
+    line-height: 32rpx;
+    font-size: 26rpx;
+    color: #888;
+}
+
+.shop-info .same-btn {
+    display: flex;
+    justify-content: center;
+    padding-top: 30rpx;
+    width: 100%;
+}
+
+.shop-info .same-btn .button-none {
+    flex: 1;
+    padding: 0;
+}
+
+.shop-info .same-btn .line {
+    border-right: 2rpx solid #888;
+}
+
+.shop-info .concat .icon-tel {
+    margin: 0rpx 10rpx -6rpx 0;
+    display: inline-block;
+    width: 32rpx;
+    height: 32rpx;
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/icon-tel.png);
+    background-size: contain;
+}
+
+.shop-info .concat .icon-wechat {
+    margin: 0rpx 10rpx -6rpx 0;
+    display: inline-block;
+    width: 32rpx;
+    height: 32rpx;
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/icon-wechat.png);
+    background-size: contain;
+}
+
+.concat.no-same {
+    padding-top: 16rpx;
+}
+
+.no-same .tel {
+    display: inline-block;
+    width: auto;
+    margin-left: 30rpx;
+}
+
+.user-rule {
+    padding-bottom: 20rpx;
+}
+
+.user-rule .tip {
+    line-height: 36rpx;
+    font-size: 24rpx;
+    color: #ff210f;
+}
+
+.show-code-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.7);
+}
+
+.show-code-mask .code-box {
+    margin: 360rpx auto;
+    padding: 82rpx 0;
+    width: 500rpx;
+    border-radius: 20rpx;
+    background: #fff;
+}
+
+.show-code-mask .small-program-box {
+    padding: 60rpx 0 50rpx;
+}
+
+.show-code-mask .code-box .code-img {
+    margin: 0 100rpx 40rpx;
+    width: 300rpx;
+    height: 300rpx;
+}
+
+.show-code-mask .code-box .desc {
+    line-height: 28rpx;
+    font-size: 28rpx;
+    color: #222;
+    text-align: center;
+}
+
+.show-code-mask .code-box .name {
+    margin-bottom: 15rpx;
+    text-align: center;
+    font-size: 30rpx;
+}
+
+.show-code-mask .code-box .name .img {
+    margin-right: 10rpx;
+    width: 50rpx;
+    height: 50rpx;
+    vertical-align: top;
+    border-radius: 50%;
+}
+
+.goods_des_parent image {
+    width: 100%;
+}
+
+.goods_right_text {
+    padding-top: 20rpx;
+}
+
+.goods_right_c:first-of-type {
+    padding-top: 18rpx;
+}
+
+.goods_right_a image,.goods_right_a video {
+    width: 100%;
+    height: 410rpx!important;
+}
+
+.goods_des_parent .goods_right_b {
+    width: 100%;
+    font-size: 32rpx;
+    color: #222;
+    word-break: break-all;
+    margin-bottom: 16rpx;
+}
+
+.goods_des_parent .goods_right_b .rule-text {
+    display: inline-block;
+    line-height: 36rpx;
+    font-size: 26rpx;
+    color: #888;
+}
+
+.replace-video {
+    position: relative;
+    height: 410rpx;
+}
+
+.mask-img {
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 410rpx;
+}
+
+.play-icon {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    width: 80rpx;
+    height: 80rpx;
+    margin-left: -60rpx;
+    margin-top: -46rpx;
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/player.png) no-repeat center center;
+    background-size: 100% 100%;
+}
+
+.coupon_del {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    padding-top: 45%;
+    font-size: 36rpx;
+    color: #555;
+}

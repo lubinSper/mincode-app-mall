@@ -1,0 +1,5 @@
+<template name="showDialog">
+    <view class="dialog_warp">
+        <view class="dialog">{{showTipData.content}}</view>
+    </view>
+</template>

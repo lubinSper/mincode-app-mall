@@ -1,0 +1,14 @@
+<view class="pay-dialog" wx:if="{{isShowPayDialog}}">
+    <view bindtap="closeDialog" class="pay-dialog-modal"></view>
+    <view class="pay-dialog-body" wx:if="{{isShowPayDialog}}">
+        <view class="body-title">会员卡充值</view>
+        <view class="body-input">
+            <input bindfocus="bindfocus" bindinput="setRechargeValue" focus="{{focus}}" maxlength="7" placeholder="请输入充值金额" placeholderClass="placeholder-class" type="number" value="{{rechargeValue}}" wx:if="{{isShowInput}}"></input>
+            <text class="unit">元</text>
+        </view>
+        <view bindtap="surePrice" class="recharge-btn {{!rechargeValue?'disabled':''}}">确定</view>
+        <view bindtap="closeDialog" class="close-dialog">
+            <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/guanbi.png"></image>
+        </view>
+    </view>
+</view>

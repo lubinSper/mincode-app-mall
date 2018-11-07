@@ -1,0 +1,5 @@
+<view class="block-title" wx:if="{{title!=''}}">
+    <span class="gap-line">-</span>
+    <text class="title">{{title}}</text>
+    <span class="gap-line">-</span>
+</view>

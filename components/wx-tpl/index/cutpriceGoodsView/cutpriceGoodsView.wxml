@@ -1,0 +1,22 @@
+<navigator class="item" hoverClass="none" url="/subPackage/discover/pages/{{xcxType==3?'goods_detail_new':'goods_detail'}}/goods_detail?id={{item.id}}">
+    <view class="left">
+        <image mode="aspectFill" src="{{item.coverImage}}"></image>
+    </view>
+    <view class="right">
+        <view class="title max_two_line">{{item.name}}</view>
+        <view class="number">
+            <text>{{item.bargainTotalJoinNum}}人</text>参与砍价</view>
+        <view class="origin_price" wx:if="{{item.originalPrice>0}}">¥ {{item.originalPrice}}</view>
+        <view class="price_view">
+            <view class="l">
+                <view class="icon">砍价后</view>
+                <view class="price">
+                    <text class="symbol">￥</text>
+                    <text class="int">{{item.price[0]}}</text>
+                    <text class="flo" wx:if="{{item.price[1]&&item.price[1]!='00'}}">.{{item.price[1]}}</text>
+                </view>
+            </view>
+            <view class="button">马上砍</view>
+        </view>
+    </view>
+</navigator>

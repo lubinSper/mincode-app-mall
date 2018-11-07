@@ -1,0 +1,229 @@
+@import "../../../../components/template/show_dialog/show_dialog.wxss";
+
+page {
+    background-color: #f4f4f4;
+}
+
+.coupon_banner {
+    width: 100%;
+    height: 230rpx;
+}
+
+.coupon_banner image {
+    width: 100%;
+    height: 230rpx;
+}
+
+.find_list_li {
+    margin: 10rpx 20rpx;
+    width: 710rpx;
+    height: 198rpx;
+    position: relative;
+}
+
+.find_list_li .find_list_li_bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 710rpx;
+    height: 198rpx;
+    z-index: 1;
+}
+
+.find_list_li .find_list_li_bg image {
+    width: 710rpx;
+    height: 198rpx;
+}
+
+.find_list_li .find_list_li_content {
+    position: relative;
+    width: 710rpx;
+    height: 155rpx;
+    z-index: 10;
+    padding: 30rpx 0 0 0;
+    display: inline-block;
+}
+
+.find_list_li .find_list_li_content .fllc_left {
+    width: 110rpx;
+    display: block;
+    float: left;
+    text-align: center;
+    position: absolute;
+    top: 35rpx;
+    left: 0;
+}
+
+.find_list_li .find_list_li_content .fllc_left image {
+    width: 86rpx;
+    height: 64rpx;
+    display: block;
+    float: left;
+    margin: 24rpx 0 0 24rpx;
+}
+
+.find_list_li .find_list_li_content .fllc_middle {
+    width: 390rpx;
+    float: left;
+    margin-left: 130rpx;
+}
+
+.find_list_li .find_list_li_content .fllc_middle .fllc_middle_title {
+    font-size: 26rpx;
+    color: #555;
+    width: 350rpx;
+    height: 30rpx;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+}
+
+.find_list_li .find_list_li_content .fllc_middle .fllc_condition {
+    margin-top: 10rpx;
+    color: #000;
+    font-size: 38rpx;
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.find_list_li .find_list_li_content .fllc_middle .fllc_time {
+    color: #222;
+    font-size: 28rpx;
+}
+
+.find_list_li .find_list_li_content .fllc_right {
+    width: 178rpx;
+    height: 144rpx;
+    position: relative;
+    float: right;
+    text-align: center;
+}
+
+.find_list_li .find_list_li_content .fllc_right .fllc_right_count {
+    height: 32rpx;
+    display: inline-block;
+    font-size: 22rpx;
+    color: #888;
+    width: 140rpx;
+    text-align: center;
+    position: absolute;
+    right: 12%;
+    top: 14rpx;
+}
+
+.find_list_li .find_list_li_content .fllc_right .receive {
+    width: 124rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    background-color: #ff7800;
+    color: #fff;
+    display: inline-block;
+    text-align: center;
+    font-size: 24rpx;
+    border-radius: 25rpx;
+    position: absolute;
+    bottom: 38rpx;
+    right: 12%;
+}
+
+.find_list_li .find_list_li_content .fllc_right .already_receive {
+    width: 124rpx;
+    background-color: #fff;
+    color: #ff7800;
+    border: 1rpx solid #ff7800;
+    position: absolute;
+    bottom: 28rpx;
+    right: 12%;
+}
+
+.copyright {
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    margin: 40rpx 0 56rpx 0;
+}
+
+.copyright .copyright_img {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+}
+
+.copyright .copyright_img image {
+    width: 110rpx;
+    height: 84rpx;
+    display: block;
+    margin: 0 auto;
+}
+
+.copyright .copyright_text {
+    font-size: 24rpx;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    color: #b3b5b7;
+}
+
+.no_ordering {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.no_ordering .no_ordering_img {
+    padding-top: 275rpx;
+    width: 100%;
+}
+
+.no_ordering .no_ordering_img image {
+    width: 231rpx;
+    height: 309rpx;
+    margin: 0 auto;
+}
+
+.no_ordering .no_ordering_text {
+    height: 124rpx;
+    line-height: 124rpx;
+    width: 100%;
+    color: #555;
+    font-size: 30rpx;
+}
+
+.loading_failure {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    background-color: none;
+    height: 345rpx;
+    padding-top: 200rpx;
+}
+
+.loading_failure .loading_failure_img {
+    width: 100%;
+    text-align: center;
+    padding-top: 60rpx;
+}
+
+.loading_failure .loading_failure_img image {
+    width: 100rpx;
+    height: 118rpx;
+    display: block;
+    margin: 0 auto;
+}
+
+.loading_failure .loading_failure_text {
+    width: 100%;
+    text-align: center;
+    color: #bababa;
+    font-size: 25rpx;
+    height: 44rpx;
+    line-height: 44rpx;
+}
+
+.loading_failure .loading_failure_text text {
+    color: #888;
+    font-weight: bold;
+}

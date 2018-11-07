@@ -1,0 +1,3 @@
+<template name="demo">
+    <view bindtap="tapName" class="demo-show-css">小程序使用模板的demo</view>
+</template>

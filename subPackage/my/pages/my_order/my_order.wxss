@@ -1,0 +1,240 @@
+@import "../../../../__wuBaseWxss__/0.wxss";
+
+@import "../../../../__wuBaseWxss__/1.wxss";
+
+page {
+    font-size: 28rpx;
+}
+
+view {
+    box-sizing: border-box;
+}
+
+.c-8 {
+    color: #888;
+}
+
+.order-segment {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 998;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+}
+
+.order-segment .segment-button {
+    flex: 1;
+    line-height: 80rpx;
+    font-size: 28rpx;
+    color: #555;
+    text-align: center;
+}
+
+.order-segment .segment-button.active {
+    font-weight: 500;
+    color: #ff7800;
+}
+
+.has-head {
+    padding-top: 80rpx;
+    padding-bottom: 52rpx;
+}
+
+.order-list {
+    margin-top: 21rpx;
+    background-color: #fff;
+    color: #222;
+}
+
+.order-list .list-head {
+    display: flex;
+    justify-content: space-between;
+    height: 88rpx;
+    line-height: 88rpx;
+    padding: 0 30rpx 0 29rpx;
+}
+
+.order-list .list-head .order-date {
+    color: #222;
+}
+
+.order-list .list-head .order-status {
+    color: #ff7800;
+}
+
+.order-list .list-head .order-status .c-grey {
+    color: #aaa;
+}
+
+.order-list .list-cnt .list-item {
+    display: flex;
+    padding: 21rpx 30rpx 22rpx 20rpx;
+    position: relative;
+    margin-bottom: 6rpx;
+    height: 193rpx;
+    background-color: #f8f8f8;
+    color: #222;
+}
+
+.order-list .list-cnt .list-item .activity .activity-logo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 78rpx;
+    height: 78rpx;
+}
+
+.order-list .list-cnt .list-item .item-img {
+    width: 150rpx;
+    height: 150rpx;
+    margin-right: 19rpx;
+}
+
+.order-list .list-cnt .list-item .item-img image {
+    width: 150rpx;
+    height: 150rpx;
+}
+
+.order-list .list-cnt .list-item .item-info {
+    flex: 1;
+}
+
+.order-list .list-cnt .list-item .item-info .title {
+    width: 353rpx;
+    line-height: 30rpx;
+    max-height: 60rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    word-break: break-all;
+}
+
+.order-list .list-cnt .list-item .item-info .sku {
+    line-height: 30rpx;
+    height: 90rpx;
+    margin-top: 10rpx;
+    font-size: 26rpx;
+    color: #888;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    word-break: break-all;
+}
+
+.order-list .list-cnt .list-item .item-pay {
+    width: 179rpx;
+    text-align: right;
+}
+
+.order-list .list-cnt .list-item .item-pay .del-price {
+    text-decoration: line-through;
+    margin-top: 18rpx;
+}
+
+.order-list .list-cnt .list-item .item-pay .price,.order-list .list-cnt .list-item .item-pay .del-price {
+    line-height: 28rpx;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.order-list .list-cnt .list-item .item-pay .nums {
+    margin-top: 22rpx;
+    line-height: 28rpx;
+    text-align: right;
+}
+
+.order-list .order-total-price {
+    padding: 29rpx 30rpx 26rpx 0;
+    background-color: #fff;
+}
+
+.order-list .order-total-price .space {
+    padding-left: 8rpx;
+}
+
+.order-list .order-total-price .price {
+    display: flex;
+    justify-content: flex-end;
+    line-height: 36rpx;
+    font-size: 26rpx;
+}
+
+.order-list .order-total-price .price .fs32 {
+    font-size: 32rpx;
+}
+
+.order-list .order-total-price .pay-way {
+    padding-top: 12rpx;
+    line-height: 26rpx;
+    font-size: 26rpx;
+    color: #222;
+    text-align: right;
+}
+
+.order-list .order-total-price .pay-way.c-green {
+    color: #22ac38;
+}
+
+.order-list .order-total-price .pay-way.c-yellow {
+    color: #c7a566;
+}
+
+.order-list .order-tab-btn {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 30rpx;
+    padding: 16rpx 0;
+    border-top: 1rpx solid #eee;
+    background-color: #fff;
+}
+
+.order-list .order-tab-btn .btn {
+    padding: 16rpx 29rpx;
+    line-height: 26rpx;
+    border: 1rpx solid #ff7800;
+    text-align: center;
+    font-size: 26rpx;
+    border-radius: 28rpx;
+    color: #ff7800;
+}
+
+.order-list .order-tab-btn .btn.btn-black {
+    border: 1rpx solid #222;
+    color: #222222;
+}
+
+.order-list .order-tab-btn .btn.btn-space {
+    margin-right: 20rpx;
+}
+
+.order-empty {
+    display: flex;
+    justify-content: center;
+    line-height: 30rpx;
+    color: #555;
+    font-size: 30rpx;
+}
+
+.order-empty .img {
+    margin-top: 342rpx;
+    width: 202rpx;
+    height: 269rpx;
+}
+
+.order-empty .desc {
+    margin-top: 30rpx;
+    text-align: center;
+    font-size: 30rpx;
+    color: #555;
+}
+
+.svip {
+    width: 50rpx;
+    height: 24rpx;
+    margin-top: 5rpx;
+}

@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "金币明细",
+    "usingComponents": {
+        "SelectDialog": "../../components/select-date/index"
+    }
+}

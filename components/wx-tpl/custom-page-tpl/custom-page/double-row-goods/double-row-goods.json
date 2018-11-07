@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "common-goods-view": "/components/wx-tpl/index/commonGoodsView/commonGoodsView",
+        "block-title": "/components/wx-tpl/custom-page-tpl/custom-page/block-title/block-title",
+        "colours_title": "/components/wx-tpl/index/coloursTitle/coloursTitle"
+    }
+}

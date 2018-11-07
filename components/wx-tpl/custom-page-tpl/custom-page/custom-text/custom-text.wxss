@@ -1,0 +1,25 @@
+.custom_text {
+    padding: 30rpx;
+    line-height: 40rpx;
+    font-size: 28rpx;
+    color: #555555;
+    line-height: 50rpx;
+}
+
+.custom_text text {
+    color: inherit;
+    font-size: inherit;
+    font-style: inherit;
+}
+
+.custom_text .bold {
+    font-weight: bold;
+}
+
+.custom_text .italic {
+    font-style: italic;
+}
+
+.custom_text .underline {
+    text-decoration: underline;
+}

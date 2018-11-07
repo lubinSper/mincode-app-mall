@@ -1,0 +1,27 @@
+<view class="record">
+    <view class="record-select">
+        <view bindtap="showSelectDialog" class="select-btn">{{selectList[selectValue].name}}<image mode="aspectFill" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/next456.png"></image>
+        </view>
+    </view>
+    <view class="record-total">
+        <view class="line number">
+            <text wx:for="{{recordSum}}" wx:key="{{index}}">{{filters.toFix(item.sumAmount/100)}}</text>
+        </view>
+        <view class="line">
+            <text>充值(元)</text>
+            <text>返赠(元)</text>
+            <text>消费(元)</text>
+            <text>买单(元)</text>
+        </view>
+    </view>
+    <view class="record-list" wx:if="{{recordList.length}}">
+        <ListView isShowViewMore="{{false}}" recordList="{{recordList}}"></ListView>
+        <view class="loading" wx:if="{{!isLoaded&&!isEnd}}">
+            <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/one-shop-one-mini-app/loading.png"></image>
+            <text>加载中...</text>
+        </view>
+    </view>
+    <NoData wx:if="{{isLoaded&&!recordList.length}}"></NoData>
+    <SelectDialog bind:changeSelectValue="changeSelectValue" bind:closeSelectDialog="closeSelectDialog" isShowSelectDialog="{{isShowSelectDialog}}" selectList="{{selectList}}" selectValue="{{selectValue}}"></SelectDialog>
+</view>
+<wxs module="filters" src="index.wxs" />

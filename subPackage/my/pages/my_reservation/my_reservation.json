@@ -1,0 +1,8 @@
+{
+    "enablePullDownRefresh": true,
+    "navigationBarTitleText": "我的预约",
+    "usingComponents": {
+        "confirmed": "/subPackage/my/components/wx-tpl/confirmed/confirmed",
+        "NoData": "/components/wx-tpl/nodata/index"
+    }
+}

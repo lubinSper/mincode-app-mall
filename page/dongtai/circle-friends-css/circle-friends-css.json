@@ -1,0 +1,9 @@
+{
+    "enablePullDownRefresh": true,
+    "navigationBarTitleText": "动态",
+    "usingComponents": {
+        "Dy-circle-friends-css": "/components/wx-tpl/dongtai/circle-friends-css/circle-friends-css",
+        "return_index": "/components/wx-tpl/return_index/return_index",
+        "copyright": "/components/wx-tpl/copyright/copyright/copyright"
+    }
+}

@@ -1,0 +1,22 @@
+<view class="QRCode_man_head">
+    <view class="QRCode_man_head_pic">
+        <image alt="" src="{{logo}}"></image>
+    </view>
+    <view class="QRCode_man_head_text">{{orgName}}</view>
+</view>
+<view class="QRCode_payfor_pic">
+    <view class="QRCode_payfor_pic_title">
+        <image alt="" src="../../../../page/message/images/sharing_code_icon.png"></image>
+        <span>邀请好友进来挖宝啦</span>
+    </view>
+    <view bindtap="longtap" class="QRCode_payfor_saomao" data-src="{{qrcodeUrl}}">
+        <image src="{{qrcodeUrl}}"></image>
+    </view>
+</view>
+<view class="QRCode_notice">
+    <view>识别图中小程序码即可进入商城</view>
+</view>
+<block wx:if="{{showTipData.show}}">
+    <import src="../../../../components/template/show_dialog/show_dialog.wxml"></import>
+    <template is="showDialog" data="{{showTipData:showTipData}}"></template>
+</block>

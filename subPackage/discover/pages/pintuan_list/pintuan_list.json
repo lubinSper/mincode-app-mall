@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "马上参团",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "show_dialog": "/components/wx-tpl/show_dialog/show_dialog",
+        "return_index": "/components/wx-tpl/return_index/return_index"
+    }
+}

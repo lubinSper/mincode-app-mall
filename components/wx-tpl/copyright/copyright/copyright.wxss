@@ -1,0 +1,64 @@
+.copyright_main {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.copyright_logo {
+    color: #bbb;
+    font-size: 24rpx;
+    display: flex;
+    width: auto;
+    padding-top: 60rpx;
+    justify-content: center;
+}
+
+.copyright_logo view,.copyright_logo text {
+    position: relative;
+}
+
+.copyright_logo text {
+    height: 24rpx;
+}
+
+.copyright_logo image {
+    width: 420rpx!important;
+    height: 80rpx;
+    margin-top: -20rpx;
+}
+
+.copyright_logo text::before {
+    content: '';
+    color: #f4f4f4;
+    border-bottom: 1rpx solid #bbb;
+    position: absolute;
+    width: 42rpx;
+    left: -50rpx;
+    bottom: 4rpx;
+}
+
+.copyright_logo text::after {
+    content: '';
+    color: #f4f4f4;
+    border-bottom: 1rpx solid #bbb;
+    position: absolute;
+    width: 42rpx;
+    right: -50rpx;
+    bottom: 4rpx;
+}
+
+.wantProgram {
+    margin: 24rpx auto 60rpx auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 54rpx;
+    border-radius: 30rpx;
+    border: 2rpx solid #ff7800;
+    font-size: 24rpx;
+    color: #ff7800;
+    text-align: center;
+    padding: 0 20rpx 0 18rpx;
+}

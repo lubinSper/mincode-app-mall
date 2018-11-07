@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "联系我们",
+    "usingComponents": {
+        "return_index": "/components/wx-tpl/return_index/return_index",
+        "shop-introduce": "/components/wx-tpl/index/shopIntroduce/shopIntroduce"
+    }
+}

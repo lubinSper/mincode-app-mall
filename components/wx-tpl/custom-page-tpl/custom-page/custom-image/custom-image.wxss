@@ -1,0 +1,19 @@
+.custom_img {
+    background: #fff;
+}
+
+.custom_img image {
+    display: block;
+    border: none;
+    width: 100%;
+    background-color: #eeeeee;
+    margin: 0 auto;
+}
+
+.gapless {
+    width: 100%;
+}
+
+.interval {
+    padding: 0 30rpx;
+}

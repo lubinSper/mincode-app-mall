@@ -1,0 +1,37 @@
+<view class="mall-introduce" id="j_page">
+    <view class="intro-top">
+        <image mode="scaleToFill" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/01_02.jpg"></image>
+    </view>
+    <view class="intro-form">
+        <view class="form">
+            <view class="form-title"></view>
+            <view class="submit_view">
+                <view class="submit_row">
+                    <text class="submit_desc">
+                        <text>姓</text>
+                        <text class="submit_desc_r">名</text>
+                    </text>
+                    <input bindinput="formInput" class="submit_input" cursorSpacing="100" data-type="1" placeholder="请填写您的真实姓名" placeholderStyle="color:#b6b8bd" value="{{applyInfo.name}}"></input>
+                </view>
+                <view class="remindText" wx:if="{{showRemindType==1}}">请输入您的姓名！</view>
+                <view class="submit_row">
+                    <text class="submit_desc">手机号</text>
+                    <input bindinput="formInput" class="submit_input" cursorSpacing="100" data-type="2" placeholder="请填写您的手机号" placeholderStyle="color:#b6b8bd" type="number" value="{{applyInfo.tel}}"></input>
+                </view>
+                <view class="remindText" wx:if="{{showRemindType==2}}">手机号格式错误！</view>
+                <view class="submit_row">
+                    <text class="submit_desc">
+                        <text>行</text>
+                        <text class="submit_desc_r">业</text>
+                    </text>
+                    <input bindinput="formInput" class="submit_input" cursorSpacing="100" data-type="3" placeholder="请填写您当前从事的行业" placeholderStyle="color:#b6b8bd" value="{{applyInfo.industry}}"></input>
+                </view>
+                <view class="remindText" wx:if="{{showRemindType==3}}">请输入您的行业！</view>
+                <view catchtap="submitApply" class="submit_btn">提交</view>
+            </view>
+        </view>
+    </view>
+    <view class="flexclass"></view>
+    <view catchtap="goTelSupport" class="to_top"></view>
+</view>
+<return_index wx:if="{{showReturnIndexBtn==1}}"></return_index>

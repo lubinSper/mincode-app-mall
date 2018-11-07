@@ -1,0 +1,238 @@
+page {
+    background-color: #fff;
+    position: relative;
+    border-top: 1rpx solid #e6e6e6;
+}
+
+.link_us_head {
+    width: 690rpx;
+    margin: 0 auto;
+    display: flex;
+    border-bottom: 2rpx dashed #adadad;
+    padding: 48rpx 0;
+    box-sizing: border-box;
+}
+
+.link_us_head .logo {
+    width: 80rpx;
+}
+
+.link_us_head .logo image {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 40rpx;
+    background: #eee;
+}
+
+.link_us_head .content {
+    flex: 1;
+    padding-left: 10rpx;
+    box-sizing: border-box;
+}
+
+.link_us_head .content .name {
+    font-size: 34rpx;
+    color: #222222;
+}
+
+.link_us_head .content .distance {
+    font-size: 24rpx;
+    color: #888888;
+    padding-top: 5rpx;
+}
+
+.link_us_head .content .distance image {
+    width: 22rpx;
+    height: 22rpx;
+}
+
+.link_us_head .content .distance text {
+    margin-left: 10rpx;
+}
+
+.link_us_head .wechat {
+    width: 100rpx;
+    position: relative;
+}
+
+.link_us_head .wechat .wechat_view {
+    height: 50rpx;
+    width: 100%;
+    position: relative;
+}
+
+.link_us_head .wechat .wechat_view image {
+    position: absolute;
+    top: 0;
+    left: 25rpx;
+    width: 50rpx;
+    height: 40rpx;
+}
+
+.link_us_head .wechat button {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+}
+
+.link_us_head .wechat button::after {
+    margin: 0;
+}
+
+.link_us_head .wechat .text {
+    color: #888888;
+    font-size: 22rpx;
+}
+
+.detailed_infor {
+    padding: 14rpx 0 100rpx 0;
+}
+
+.detailed_infor .detailed_infor_li {
+    min-height: 50rpx;
+    width: 100%;
+    display: inline-block;
+}
+
+.detailed_infor .detailed_infor_li .dil_ico {
+    float: left;
+    display: block;
+    margin: 14rpx 15rpx 0 30rpx;
+}
+
+.detailed_infor .detailed_infor_li text {
+    width: 594rpx;
+    min-height: 50rpx;
+    line-height: 50rpx;
+    display: block;
+    float: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 28rpx;
+    color: #222;
+}
+
+.detailed_infor .detailed_infor_li .next_ico {
+    float: right;
+    display: block;
+    width: 14rpx;
+    height: 25rpx;
+    margin: 14rpx 30rpx 0 0;
+}
+
+.detailed_infor .detailed_infor_li span {
+    width: 120rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+    text-align: center;
+    display: block;
+    float: left;
+    border-radius: 5rpx;
+    margin: 14rpx 20rpx 0 0;
+    border: 2rpx solid #ff7800;
+    color: #ff7800;
+    font-size: 20rpx;
+}
+
+.detailed_infor .detailed_infor_li .linkus_troduce {
+    width: 652rpx;
+    display: block;
+    float: right;
+    margin-right: 30rpx;
+}
+
+.linkus_troduce_des {
+    margin: 0rpx 30rpx 20rpx 30rpx;
+    color: #656565;
+    font-size: 26rpx;
+}
+
+.linkus_troduce_des image {
+    width: 690rpx;
+    display: block;
+    margin-bottom: 10rpx;
+    min-height: 240rpx;
+}
+
+.linkus_troduce_des view {
+    width: 100%;
+    padding: 5rpx 0;
+}
+
+.linkus_troduce_des .linkus_troduce_des_video {
+    position: relative;
+    width: 690rpx;
+    height: 410rpx;
+    display: block;
+    padding: 0;
+    margin-bottom: 10rpx;
+}
+
+.linkus_troduce_des view video {
+    width: 690rpx;
+    height: 410rpx;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.intr-text {
+    width: 690rpx!important;
+    word-wrap: break-word!important;
+    height: auto;
+    white-space: pre-wrap;
+}
+
+.nonMarginTop {
+    margin-top: 0;
+}
+
+.custom_btn {
+    padding: 30rpx 0!important;
+    text-align: center;
+}
+
+.custom_btn .c_btn {
+    display: inline-block;
+    width: 360rpx;
+    height: 80rpx;
+    background: #ff7800;
+    font-size: 32rpx;
+    color: #fefcfc;
+    border-radius: 50rpx;
+    margin: 0;
+    padding: 0;
+}
+
+.custom_btn .c_btn:after {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.linkus_footer {
+    width: 100%;
+    height: 100rpx;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 99999;
+    background-color: #fff;
+}
+
+.linkus_footer .contact_services {
+    width: 600rpx;
+    height: 80rpx;
+    display: inline-block;
+    background-size: 600rpx 80rpx;
+    margin: 10rpx 0 0 76rpx;
+    border: none;
+}

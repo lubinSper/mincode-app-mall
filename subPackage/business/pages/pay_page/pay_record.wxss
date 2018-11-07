@@ -1,0 +1,132 @@
+.buy_record_item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding-top: 80rpx;
+}
+
+.nopadding {
+    padding-top: 0;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+}
+
+.record_item {
+    padding: 29rpx;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+.top_space {
+    height: 20rpx;
+    background-color: #f4f4f4;
+}
+
+.txt_time_money {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.pay_time {
+    font-size: 26rpx;
+    color: #888888;
+}
+
+.flex1 {
+    flex: 1;
+}
+
+.pay_money {
+    color: #ff7800;
+    font-size: 34rpx;
+    margin-top: -10rpx;
+}
+
+.extra_part {
+    display: flex;
+    flex-direction: column;
+    margin-top: 29rpx;
+}
+
+.top_line {
+    width: 100%;
+    background-color: #f4f4f4;
+    height: 1rpx;
+    margin-bottom: 29rpx;
+}
+
+.pay_extra_info {
+    display: flex;
+    flex-direction: row;
+}
+
+.pay_extra {
+    color: #888888;
+    font-size: 26rpx;
+}
+
+.pay_extra_txt {
+    color: #555555;
+    font-size: 26rpx;
+    margin-left: 12rpx;
+    flex: 1;
+}
+
+.nodata_view {
+    display: block;
+    margin: 0 auto;
+    color: #555;
+    text-align: center;
+}
+
+.nodata_view .img {
+    display: block;
+    margin: 0 auto;
+    width: 750rpx;
+    height: 280rpx;
+}
+
+.nodata_view .desc {
+    color: #555555;
+    font-size: 30rpx;
+    margin-top: 29rpx;
+}
+
+.nodata {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: top;
+    padding-top: 258rpx;
+    box-sizing: border-box;
+}
+
+.record-tab {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 80rpx;
+    background-color: white;
+    border-top: 1rpx solid #e6e6e6;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.record-tab view {
+    color: #555;
+    font-size: 28rpx;
+}
+
+.record-tab .cur {
+    color: #ff7800;
+    font-weight: bold;
+}

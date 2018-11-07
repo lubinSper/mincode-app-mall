@@ -1,0 +1,120 @@
+<view class="pay-success">
+    <view class="payinfo-view" style="padding-bottom:30rpx">
+        <icon size="60" type="success"></icon>
+        <view class="success-tip">恭喜，支付成功</view>
+        <view class="price-txts">
+            <view>¥</view>
+            <view>{{money}}</view>
+        </view>
+        <view bindtap="backHome" class="complete-btn">完成</view>
+        <view class="line"></view>
+        <view class="flex-row mt-30">
+            <view class="extro-txt">付款方式</view>
+            <view class="flex1"></view>
+            <text class="extro-txt">{{payWay}}</text>
+        </view>
+        <view class="flex-row mt-10">
+            <view class="extro-txt">备注</view>
+            <view class="flex1"></view>
+            <view class="extro-txt">{{remark}}</view>
+        </view>
+    </view>
+    <view class="recom-welfare" style="padding-top:24rpx">
+        <view class="welfare-title" wx:if="{{myCouponList.length>0}}">
+            <view class="title-line"></view>
+            <view class="welfare-txt">本次消费获得</view>
+            <view class="title-line"></view>
+        </view>
+        <view class="coupon-view" wx:if="{{myCouponList.length>0}}">
+            <view class="coupon-item {{item.type==1?'red-bg':item.type==3?'yellow-bg':'blue-bg'}} {{myCouponList.length>1&&index==1?'ml':''}}" wx:for="{{myCouponList}}" wx:key="index">
+                <view class="tow-col" wx:if="{{item.type==1||item.type==2}}">
+                    <view class="price-txt">
+                        <view>¥</view>
+                        <view>{{item.discountMoney}}</view>
+                    </view>
+                    <view class="coupon-type" wx:if="{{item.type==1}}">满{{item.minConsumeMoney}}元可用</view>
+                    <view class="coupon-type" wx:if="{{item.type==2}}">代金券</view>
+                </view>
+                <view class="tow-col justify-cen" wx:if="{{item.type==3}}">
+                    <view class="discount-txt">{{item.discount}}折</view>
+                </view>
+                <form bindsubmit="{{item.status==1?'receiveCoupon':'gotoCouponList'}}" class="form top-border" data-couponId="{{item.couponId}}" data-id="{{item.id}}" data-jump-url="{{item.jumpUrl}}" data-orgId="{{orgId}}" data-other-shop="{{item.otherShop}}" data-status="{{item.status}}" reportSubmit="true">
+                    <button class="coupon-btn {{item.type==1?'receive-btn-red':item.type==2?'receive-btn-blue':'receive-btn-yellow'}}" formType="submit" wx:if="{{item.status==1}}">立即领取</button>
+                    <button class="coupon-btn {{item.type==1?'use-btn-red':item.type==2?'use-btn-blue':'use-btn-yellow'}}" formType="submit" wx:if="{{item.status==2}}">去使用</button>
+                </form>
+            </view>
+        </view>
+        <view class="welfare-title {{myCouponList.length>0?'mt-26':''}}" wx:if="{{hasGoodsList&&xcxOrgType==3}}">
+            <view class="title-line"></view>
+            <view class="welfare-txt">　推荐活动　</view>
+            <view class="title-line"></view>
+        </view>
+        <view catchtap="goGoodsDetail" class="goods-view" data-id="{{recomGoodsList.id}}" wx:if="{{hasGoodsList&&xcxOrgType==3}}">
+            <image class="goods-image" mode="aspectFill" src="{{recomGoodsList.coverImage}}"></image>
+            <view class="goods-title">{{recomGoodsList.name}}</view>
+            <view class="goods-price-view">
+                <view class="price-key">{{recomGoodsList.isPintuan?'拼团价':'砍后价'}}</view>
+                <view class="price-value">
+                    <view>¥</view>
+                    <view>{{recomGoodsList.price}}</view>
+                </view>
+                <view class="origin-price">¥ {{recomGoodsList.originPrice}}</view>
+                <view class="flex1"></view>
+                <view class="goods-btn">
+          {{recomGoodsList.isPintuan?'马上拼':'马上砍'}}
+          <view class="next"></view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="recom-welfare" style="margin-bottom:60rpx;padding-top:26rpx" wx:if="{{otherCouponList.length>0}}">
+        <view class="welfare-title" style="margin-bottom:14rpx">
+            <view class="title-line"></view>
+            <view class="welfare-txt">附近优惠推荐</view>
+            <view class="title-line"></view>
+        </view>
+        <view class="{{showMore?'':'hidden-item'}}">
+            <view class="welfare-item " wx:for="{{otherCouponList}}" wx:key="{{index}}">
+                <view class="welfare-card  {{item.type==1?'red-bg':item.type==3?'yellow-bg':'blue-bg'}}">
+                    <view class="two-row" wx:if="{{item.type==1||item.type==2}}">
+                        <view>¥</view>
+                        <view>{{item.discountMoney}}</view>
+                    </view>
+                    <view class="welfare-require" wx:if="{{item.type==1}}">满{{item.minConsumeMoney}}元可用</view>
+                    <view class="welfare-require" wx:if="{{item.type==2}}">代金券</view>
+                    <view class="two-row" wx:if="{{item.type==3}}">
+                        <view>¥</view>
+                        <view>{{item.discount}}折</view>
+                    </view>
+                </view>
+                <view class="welfare-center-info">
+                    <view class="welfare-item-title">
+           {{item.couponName}}
+          </view>
+                    <view class="welfare-item-owner">
+                        <image src="{{item.logo}}"></image>
+                        <view>{{item.orgName}}</view>
+                    </view>
+                </view>
+                <view class="welfare-right-view">
+                    <form bindsubmit="receiveCoupon" class="form " data-couponId="{{item.couponId}}" data-id="{{item.id}}" data-jump-url="{{item.jumpUrl}}" data-orgId="{{orgId}}" data-other-shop="{{item.otherShop}}" data-status="{{item.status}}" reportSubmit="true">
+                        <button class="{{item.status==1?'right-btn-normal':'right-btn-disable'}}" formType="submit" hoverClass="none" style="padding-right:35rpx">
+              {{item.status==1?'领取':'已领取'}}
+            </button>
+                    </form>
+                    <view class="send-count">{{item.count}}人已领</view>
+                </view>
+            </view>
+        </view>
+        <view bindtap="showMoreList" class="show-more-box {{showMore?'':'show-more-top'}}" wx:if="{{otherCouponList.length>2}}">
+            <view class="show-more" wx:if="{{!showMore}}">
+        等{{otherCouponList.length}}张优惠券
+        <view class="icon icon-arrow-up"></view>
+            </view>
+        </view>
+        <view bindtap="receiveAllCoupon" class="bottom-btn" wx:if="{{showMore}}">
+      一键领取价值{{totalPrice}}元礼包
+    </view>
+    </view>
+</view>
+<authorize_dialog bind:backhandle="backHandle" onHide="{{onAuthHide}}" onShow="{{onAuthShow}}" params="{{authParam}}"></authorize_dialog>

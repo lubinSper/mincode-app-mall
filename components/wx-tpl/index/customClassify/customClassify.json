@@ -1,0 +1,11 @@
+{
+    "component": true,
+    "usingComponents": {
+        "colours_title": "/components/wx-tpl/index/coloursTitle/coloursTitle",
+        "big-goods-view": "/components/wx-tpl/index/bigGoodsView/bigGoodsView",
+        "common-goods-view": "/components/wx-tpl/index/commonGoodsView/commonGoodsView",
+        "line-goods-view": "/components/wx-tpl/index/lineGoodsView/lineGoodsView",
+        "cutprice-goods-view": "/components/wx-tpl/index/cutpriceGoodsView/cutpriceGoodsView",
+        "pintuan-goods-view": "/components/wx-tpl/index/piuntuanGoodsView/piuntuanGoodsView"
+    }
+}

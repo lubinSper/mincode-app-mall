@@ -1,0 +1,87 @@
+<view class="r_small {{item.class}}">
+    <navigator hoverClass="none" url="/subPackage/discover/pages/{{xcxType==3&&item.type!=2?'goods_detail_new':'goods_detail'}}/goods_detail?id={{item.id}}">
+        <view class="bg {{alia==1?'bg1':alia==3?'bg3':''}}">
+            <image class="bg_img" mode="aspectFill" src="{{item.coverImage?item.coverImage:item.imgUrls[0]}}"></image>
+            <view class="limit_view cut_price" wx:if="{{item.isPintuan==2&&item.timeArr&&item.isSpecial!=2}}">
+                <image src="https://xcximg.197.com/xcx/pintuan60_.png"></image>
+                <view class="limit">
+                    <view class="time">{{item.pintuanLimitPeopleNum}}人团 立减￥{{item.reducePrice}}</view>
+                </view>
+            </view>
+            <view class="limit_view cut_price" wx:elif="{{item.isBargain==2&&item.timeArr&&item.isSpecial!=2}}">
+                <image src="https://xcximg.197.com/xcx/kanjia360.png"></image>
+                <view class="limit">
+                    <view class="time">距结束{{item.timeArr?item.timeArr[0]+':'+item.timeArr[1]+':'+item.timeArr[2]:'00:00:00'}}</view>
+                </view>
+            </view>
+            <view class="limit_view teshu" wx:elif="{{item.isBargain!=2&&item.isPintuan!=2&&item.timeArr&&item.isSpecial!=2}}">
+                <view class="limit {{item.timeArr[0]>99?'more':''}}">
+                    <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/time24.png"></image>
+                    <view class="time">距结束{{item.timeArr?item.timeArr[0]+':'+item.timeArr[1]+':'+item.timeArr[2]:'00:00:00'}}</view>
+                </view>
+            </view>
+            <view class="tag_icon" wx:if="{{isShowTag&&(item.type==3||item.tagType)}}">
+                <image class="{{tagTypes[item.tagType-1]}}" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/{{tagTypes[item.tagType-1]}}.png?a=3" wx:if="{{item.type!=3}}"></image>
+            </view>
+        </view>
+        <view class="r_content" style="height:{{isindex&&isindex==1?'150rpx':alia?'140rpx':'172rpx'}}" wx:if="{{isApplyNewLogic}}">
+            <view class="name">
+                <text class="goods_recommend_view" wx:if="{{page=='discover'&&item.top=='1'}}">
+                    <text class="goods_label_recommend">荐</text>
+                </text>{{item.name?item.name:item.goodsDesc}}
+                </view>
+            <view class="price" style="margin-bottom: 4rpx;" wx:if="{{item.type==1||item.type==3}}">
+                <block wx:if="{{item.isSpecial==2&&item.price==0}}"></block>
+                <block wx:elif="{{item.isSpecial==2&&item.price!=0}}">
+                    <text class="integer_num">{{item.price[0]}}</text>
+                    <text class="remainder" style="font-size: 32rpx;" wx:if="{{item.price[1]}}">.{{item.price[1]}}</text>
+                    <i style="font-size: 32rpx;">万</i>
+                    <abcd style="float: none;" wx:if="{{item.originalPrice>0}}">{{item.originalPrice}}万</abcd>
+                </block>
+                <view wx:elif="{{item.type==3&&item.price[0]==0&&!item.price[1]}}">
+                    <text class="integer_num">免费预约</text>
+                </view>
+                <view wx:else>
+                    <i>￥</i>
+                    <text class="integer_num">{{item.price[0]}}</text>
+                    <text class="remainder" wx:if="{{item.price[1]}}">.{{item.price[1]}}</text>
+                    <abcd style="float: none;" wx:if="{{item.enableSupperMemberPrice===2&&item.superMemberPrice}}">￥{{item.salePrice3}}</abcd>
+                    <abcd style="float: none;" wx:elif="{{item.originalPrice>0}}">￥{{item.originalPrice}}</abcd>
+                    <image class="icon-vip" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/icon-svip.png" wx:if="{{item.enableSupperMemberPrice===2&&item.superMemberPrice}}"></image>
+                </view>
+            </view>
+            <view catchtap="addCar" class="buy_car" data-attribute-id="{{item.attrCombination}}" data-enableSupperMemberPrice="{{item.enableSupperMemberPrice}}" data-id="{{item.id}}" data-inventory="{{item.inventory}}" data-isInfiniteInventory="{{item.isInfiniteInventory}}" data-superMemberPrice="{{item.superMemberPrice}}" style="bottom:22rpx;" wx:if="{{item.type==1&&hasBuyCar&&item.isSpecial!=2}}"></view>
+            <view class="scy_number" wx:if="{{item.isShowSale==2&&item.isSpecial!=2}}">
+                <text decode="true">{{item.saleTotal?item.saleTotal:0}}人{{item.type==3?'预约':'购买'}}&nbsp;&nbsp;{{item.viewNum?item.viewNum:0}}浏览</text>
+            </view>
+            <view class="scy_number" wx:elif="{{item.isShowSale==1||!item.isShowSale||item.isSpecial==2}}">
+                <text decode="true">{{item.viewNum?item.viewNum:0}}浏览&nbsp;&nbsp;{{item.likes.length>0?item.likes.length:0}}赞&nbsp;&nbsp;{{item.comments.length>0?item.comments.length:0}}评论</text>
+            </view>
+        </view>
+        <view class="r_content" style="height:{{isindex&&isindex==1?'150rpx':alia?'140rpx':'172rpx'}}" wx:else>
+            <view class="name">
+                <text class="goods_recommend_view" wx:if="{{page=='discover'&&item.top=='1'}}">
+                    <text class="goods_label_recommend">荐</text>
+                </text>{{item.name?item.name:item.goodsDesc}}
+                </view>
+            <view class="price" wx:if="{{item.type==1||item.type==3}}">
+                <view wx:if="{{item.isSpecial==2&&item.price==0}}"></view>
+                <view wx:elif="{{item.isSpecial==2&&item.price!=0}}">
+                    <text class="integer_num">{{item.price[0]}}</text>
+                    <text class="remainder" style="font-size: 32rpx;" wx:if="{{item.price[1]}}">.{{item.price[1]}}</text>
+                    <i style="font-size: 32rpx;">万</i>
+                    <abcd style="float: none;" wx:if="{{item.originalPrice>0}}">{{item.originalPrice}}万</abcd>
+                </view>
+                <view wx:else>
+                    <i>￥</i>
+                    <text class="integer_num">{{item.price[0]}}</text>
+                    <text class="remainder" wx:if="{{item.price[1]}}">.{{item.price[1]}}</text>
+                    <abcd style="float: none;" wx:if="{{item.enableSupperMemberPrice===2&&item.superMemberPrice}}">￥{{item.salePrice3}}</abcd>
+                    <abcd style="float: none;" wx:elif="{{item.originalPrice>0}}">￥{{item.originalPrice}}</abcd>
+                    <image class="icon-vip" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/icon-svip.png" wx:if="{{item.enableSupperMemberPrice===2&&item.superMemberPrice}}"></image>
+                </view>
+            </view>
+            <view catchtap="addCar" class="buy_car" data-attribute-id="{{item.attrCombination}}" data-id="{{item.id}}" data-inventory="{{item.inventory}}" wx:if="{{item.type==1&&hasBuyCar&&item.isSpecial!=2}}"></view>
+        </view>
+    </navigator>
+</view>

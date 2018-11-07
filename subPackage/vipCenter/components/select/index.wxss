@@ -1,0 +1,64 @@
+.select-dialog {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.select-dialog-modal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 666;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.select-dialog-body {
+    position: absolute;
+    z-index: 999;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 500rpx;
+    background-color: white;
+}
+
+.item {
+    width: 100%;
+    height: 300px;
+    text-align: center;
+}
+
+.select-item {
+    color: #d3a95a;
+}
+
+.tool {
+    position: absolute;
+    z-index: 99999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 0 20rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    box-sizing: border-box;
+    color: #d3a95a;
+    display: flex;
+    justify-content: space-between;
+    font-size: 28rpx;
+    border-bottom: 1rpx solid #e2e2e2;
+    background-color: white;
+}
+
+.tool text:first-child {
+    color: #ddd;
+}
+
+.column-item {
+    color: #000;
+    line-height: 50px;
+}

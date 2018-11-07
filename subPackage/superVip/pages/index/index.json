@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "会员中心 ",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "Header": "../../components/header/index",
+        "Middle": "../../components/middle/index",
+        "Bottom": "../../components/bottom/index",
+        "PayDialog": "/components/wx-tpl/order/pay-dialog/index",
+        "vip_mask_layer": "/components/template/vip_mask_layer/vip_mask_layer"
+    }
+}

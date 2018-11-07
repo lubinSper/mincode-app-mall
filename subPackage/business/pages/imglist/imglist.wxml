@@ -1,0 +1,8 @@
+<view class="imglist">
+    <view wx:if="{{imageList.length>0}}">
+        <image bindtap="showImg" data-src="{{item}}" mode="aspectFill" src="{{item}}" wx:for="{{imageList}}"></image>
+    </view>
+    <view wx:elif="{{isShowDefault}}">
+        <image src="../../../../page/message/images/mid_default.jpg"></image>
+    </view>
+</view>

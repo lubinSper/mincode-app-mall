@@ -1,0 +1,43 @@
+.limit_shopping {
+    margin-top: 20rpx;
+    padding-bottom: 18rpx;
+    background-color: white;
+}
+
+.limit_shopping .head {
+    height: 90rpx;
+    line-height: 90rpx;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10rpx;
+}
+
+.limit_shopping .head .content .line {
+    font-size: 18rpx;
+    width: 26rpx;
+    overflow: hidden;
+}
+
+.limit_shopping .head .content view {
+    font-size: 30rpx;
+    line-height: 90rpx;
+    color: #FF994C;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 5rpx;
+}
+
+.limit_shopping .head .content image {
+    margin-top: -6rpx;
+    width: 42rpx;
+    height: 42rpx;
+    vertical-align: middle;
+}
+
+.limit_shopping .scroll_view {
+    padding-left: 20rpx;
+}
+
+.limit_shopping .scroll_view .scroll {
+    white-space: nowrap;
+}

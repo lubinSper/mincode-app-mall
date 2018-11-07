@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "购物车",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "buy-car-tpl": "/components/wx-tpl/order/buy-car-tpl/buy-car/buy-car"
+    }
+}

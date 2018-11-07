@@ -1,0 +1,181 @@
+{
+    "pages": [
+        "page/message/index",
+        "page/discover/discover",
+        "page/my/my",
+        "page/index/appointment/appointment_tab",
+        "page/index/category-list/category-list-hot-tab",
+        "page/index/category-list/category-list-new-tab",
+        "page/index/category-list/category-list-promotion-tab",
+        "page/index/category-list/category-list-clear-tab",
+        "page/index/category-list/category-list-dzti-tab",
+        "page/index/category-list/category-list-preSale-tab",
+        "page/index/category-list/category-list-kanjia-tab",
+        "page/index/category-list/category-list-pintuan-tab",
+        "page/index/shequn/shequn_tab",
+        "page/index/custom-page/custom-page-1/custom-page-1",
+        "page/index/custom-page/custom-page-2/custom-page-2",
+        "page/index/custom-page/custom-page-3/custom-page-3",
+        "page/index/custom-page/custom-page-4/custom-page-4",
+        "page/index/custom-page/custom-page-5/custom-page-5",
+        "page/index/custom-page/custom-page-6/custom-page-6",
+        "page/index/custom-page/custom-page-7/custom-page-7",
+        "page/index/custom-page/custom-page-8/custom-page-8",
+        "page/index/custom-page/custom-page-9/custom-page-9",
+        "page/index/custom-page/custom-page-10/custom-page-10",
+        "page/index/custom-page/custom-page-11/custom-page-11",
+        "page/index/custom-page/custom-page-12/custom-page-12",
+        "page/index/custom-page/custom-page-13/custom-page-13",
+        "page/index/custom-page/custom-page-14/custom-page-14",
+        "page/message/pages/more_coupon/more_coupon_tab",
+        "page/my/pages/link_us/link_us_tab",
+        "page/message/pages/special_selling/special_selling_tab",
+        "page/buy_car/buy_car",
+        "page/message/pages/limit_shopping/limit_shopping_tab",
+        "page/dongtai/circle-friends-css/circle-friends-css"
+    ],
+    "window": {
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "小程序",
+        "navigationBarBackgroundColor": "#fff",
+        "backgroundColor": "#f4f4f4",
+        "enablePullDownRefresh": false
+    },
+    "tabBar": {
+        "color": "#333",
+        "selectedColor": "#ff7800",
+        "borderStyle": "#e6e6e6",
+        "backgroundColor": "#fff",
+        "list": [
+            {
+                "pagePath": "page/message/index",
+                "text": "繁花",
+                "iconPath": "image/cpjs_normal.png",
+                "selectedIconPath": "image/cpjs_press.png"
+            },
+            {
+                "pagePath": "page/discover/discover",
+                "text": "花城",
+                "iconPath": "image/discover_normal.png",
+                "selectedIconPath": "image/discover_press.png"
+            },
+            {
+                "pagePath": "page/index/custom-page/custom-page-4/custom-page-4",
+                "text": "会员+",
+                "iconPath": "image/shejiao_normal.png",
+                "selectedIconPath": "image/shejiao_press.png"
+            },
+            {
+                "pagePath": "page/index/shequn/shequn_tab",
+                "text": "随手拍",
+                "iconPath": "image/new_normal.png",
+                "selectedIconPath": "image/new_press.png"
+            },
+            {
+                "pagePath": "page/my/my",
+                "text": "我的",
+                "iconPath": "image/me_normal.png",
+                "selectedIconPath": "image/me_press.png"
+            }
+        ]
+    },
+    "networkTimeout": {
+        "request": 30000,
+        "connectSocket": 10000,
+        "uploadFile": 10000,
+        "downloadFile": 10000
+    },
+    "subPackages": [
+        {
+            "root": "subPackage/business/",
+            "pages": [
+                "pages/coupon_detail_my/coupon_detail_my",
+                "pages/coupon_detail_other/coupon_detail_other",
+                "pages/coupon_list/coupon_list",
+                "pages/coupon_list_detail/coupon_list_detail",
+                "pages/custom_page/custom_page",
+                "pages/find_detail/find_detail",
+                "pages/imglist/imglist",
+                "pages/limit_shopping/limit_shopping",
+                "pages/more_coupon/more_coupon",
+                "pages/pay_page/pay_page",
+                "pages/pay_page/pay_complete",
+                "pages/pay_page/pay_record",
+                "pages/QRCode_collection/QRCode_collection",
+                "pages/set_Account/set_Account",
+                "pages/special_selling/special_selling"
+            ]
+        },
+        {
+            "root": "subPackage/discover/",
+            "pages": [
+                "pages/cut_price/cut_price",
+                "pages/goods_detail/goods_detail",
+                "pages/goods_detail_new/goods_detail",
+                "pages/pintuan_detail/pintuan_detail",
+                "pages/pintuan_list/pintuan_list",
+                "pages/search/search",
+                "pages/search/search_result/search_result",
+                "pages/goods_share/goods_share"
+            ]
+        },
+        {
+            "root": "subPackage/index/",
+            "pages": [
+                "pages/appointment/appointment",
+                "pages/category-list/category-list",
+                "pages/shequn/shequn"
+            ]
+        },
+        {
+            "root": "subPackage/vipCenter/",
+            "pages": [
+                "pages/index/index",
+                "pages/recharge/index",
+                "pages/record/index",
+                "pages/superVip/superVip",
+                "pages/rechargeSuccess/index"
+            ]
+        },
+        {
+            "root": "subPackage/superVip/",
+            "pages": [
+                "pages/index/index",
+                "pages/exchange/index",
+                "pages/exchange-rule/index",
+                "pages/exchange-cash/index",
+                "pages/exchange-underline/index",
+                "pages/special/index",
+                "pages/suerp-vip-guide/index",
+                "pages/exchange-record/index",
+                "pages/gold-detail/index",
+                "pages/gold-rule/index"
+            ]
+        },
+        {
+            "root": "subPackage/my/",
+            "pages": [
+                "pages/business_make_program/business_mack_program",
+                "pages/buy_car/buy_car",
+                "pages/cut_price/cut_price_list",
+                "pages/historical_order/historical_order",
+                "pages/introduce/introduce",
+                "pages/link_us/link_us",
+                "pages/my_order/my_order",
+                "pages/my_pintuan_list/my_pintuan_list",
+                "pages/my_reservation/my_reservation",
+                "pages/new_order_detail/new_order_detail",
+                "pages/order/cancle_order/cancle_order",
+                "pages/order/order_sure_pickup/order_sure_pickup",
+                "pages/order/order_sure_price/order_sure_price",
+                "pages/order/schedule_time/schedule_time",
+                "pages/order_detail/order_detail",
+                "pages/support/support",
+                "pages/login/login",
+                "pages/vip_security_center/vip_security_center",
+                "pages/vip_security_center/set_password/set_password"
+            ]
+        }
+    ],
+    "debug": false
+}

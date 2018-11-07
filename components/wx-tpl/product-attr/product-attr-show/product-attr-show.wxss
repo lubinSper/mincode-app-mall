@@ -1,0 +1,80 @@
+.title {
+    padding: 10rpx 20rpx;
+    margin: 10rpx 0;
+    border-left: 4rpx solid #ccc;
+}
+
+.commodity_attr_list {
+    background: #fff;
+    font-size: 26rpx;
+    overflow: hidden;
+    width: 100%;
+    max-height: 600rpx;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.attr_box {
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1rpx solid #ececec;
+    display: flex;
+    flex-direction: column;
+}
+
+.attr_name {
+    display: block;
+    height: 66rpx;
+    line-height: 66rpx;
+    font-size: 28rpx;
+    color: #888888;
+    text-align: left;
+}
+
+.first_attr {
+    height: 84rpx;
+    line-height: 84rpx;
+}
+
+.attr_value_box {
+    display: block;
+    padding-bottom: 10rpx;
+}
+
+.attr_value {
+    float: left;
+    padding: 16rpx 26rpx;
+    margin-bottom: 20rpx;
+    border: 2rpx solid #888888;
+    border-radius: 50rpx;
+    line-height: 28rpx;
+    font-size: 26rpx;
+    color: #888888;
+    margin-right: 10rpx;
+    text-align: center;
+    min-width: 65rpx;
+    min-height: 28rpx;
+}
+
+.attr_value_active {
+    color: #ff7800;
+    border: 2rpx solid #ff7800;
+}
+
+.attr_value_disabled {
+    color: #aaaaaa;
+    border: 2rpx dashed #e2e2e2;
+    background: #fbfafa;
+}
+
+.weui-btn-area {
+    margin: 1.17647059em 15px 0.3em;
+}
+
+.weui-btn {
+    width: 80%;
+    height: 100rpx;
+    border-radius: 3rpx;
+    background-color: #0089dc;
+    color: #fff;
+}

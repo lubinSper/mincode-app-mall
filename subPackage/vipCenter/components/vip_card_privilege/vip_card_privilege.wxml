@@ -1,0 +1,33 @@
+<view wx:if="{{showVipCardPrivilege}}">
+    <view class="bg_layer"></view>
+    <view class="privilege_main">
+        <view class="privilege_title">
+            <view class="welcome_img">
+                <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/vip_welcome.png"></image>
+            </view>
+            <view class="welcome_str">
+                <text>你已成为本店普通会员</text>
+            </view>
+        </view>
+        <view class="privilege_name">
+            <view class="bg_line"></view>
+            <view class="vip_privilege">会员特权</view>
+        </view>
+        <view class="privilege_list">
+            <view class="privilege_item">
+                <view class="item_icon icon_recharge">
+                    <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/recharge.png"></image>
+                </view>
+                <view class="item_name">充值返赠</view>
+            </view>
+            <view class="privilege_item">
+                <view class="item_icon icon_goods">
+                    <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/commodity.png"></image>
+                </view>
+                <view class="item_name">会员商品</view>
+            </view>
+        </view>
+        <view catchtap="goAddMoney" class="add_money">马上充值</view>
+        <view catchtap="closeLayer" class="wait_view">稍后</view>
+    </view>
+</view>

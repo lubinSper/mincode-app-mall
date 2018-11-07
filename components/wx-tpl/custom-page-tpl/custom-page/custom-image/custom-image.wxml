@@ -1,0 +1,6 @@
+<view class="{{i==0?'custom_img nonMarginTop':'custom_img'}} {{image.pictureSpacing==1?'gapless':'interval'}}" style="text-align: center">
+    <image bindtap="previewImage" mode="widthFix" src="{{image.pictureUrl}}" wx:if="{{image.jumpType!=5}}"></image>
+    <navigator appId="{{openId}}" hoverClass="none" path="{{path}}" target="miniProgram" version="trial" wx:else>
+        <image mode="widthFix" src="{{image.pictureUrl}}"></image>
+    </navigator>
+</view>

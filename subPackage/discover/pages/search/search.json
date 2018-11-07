@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "搜索",
+    "navigationBarBackgroundColor": "#fff",
+    "component": true,
+    "usingComponents": {
+        "colours_title": "/components/wx-tpl/index/coloursTitle/coloursTitle",
+        "mall-category-list-first": "/components/wx-tpl/mall/mall-category-list-first/mall-category-list-first",
+        "show_dialog": "/components/wx-tpl/show_dialog/show_dialog",
+        "buy-car-dialog": "/components/wx-tpl/order/buy-car-dialog/buy-car-dialog/buy-car-dialog"
+    }
+}

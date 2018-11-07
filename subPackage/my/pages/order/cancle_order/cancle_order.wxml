@@ -1,0 +1,21 @@
+<view class="cancle-outter-view">
+    <view style="flex:1">
+        <view class="cancle-top-tip">请选择取消原因</view>
+        <view bindtap="cancleItemClick" class="cancle-item-class" data-title="{{item.title}}" hoverClass="cancle-item-hover" hoverStayTime="60" wx:for="{{reasonArray}}" wx:for-index="i" wx:key="{{item.title}}">
+            <view class="cancle-item-view">
+                <text class="cancle-title">{{item.title}}</text>
+                <view class="placehoder-view"></view>
+                <image class="cancle-click-img" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/danxuan.png" wx:if="{{item.isChoose}}"></image>
+            </view>
+            <view class="cancle-bottom-line" wx:if="{{i!=reasonArray.length-1}}"></view>
+        </view>
+        <form bindsubmit="sureCancleFuc">
+            <view wx:if="{{showTextarea}}">
+                <textarea class="cancle-textarea" focus="{{focus}}" maxlength="40" name="textarea" placeholder="请填写取消订单的原因..." placeholderClass="cancle-placehoder" showConfirmBar="{{false}}"></textarea>
+            </view>
+            <view class="bottom-button">
+                <button class="submit-button" formType="submit" hoverClass="submit-hover-class" hoverStayTime="60"> 确认取消 </button>
+            </view>
+        </form>
+    </view>
+</view>

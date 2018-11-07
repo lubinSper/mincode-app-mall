@@ -1,0 +1,38 @@
+<view class="recharge">
+    <view class="recharge-banner">
+        <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/rech_banner.png"></image>
+    </view>
+    <view class="recharge-total" wx:if="{{rechargeList.length||enableOtherAmount}}">
+        <view>
+            <view class="number line">
+                <text>{{rechargeAmount||rechargeValue||0}}</text>
+                <text>{{returnAmount||0}}</text>
+                <text>{{(rechargeAmount||rechargeValue||0)+returnAmount}}</text>
+                <view class="add-icon">+</view>
+                <view class="equal-icon">=</view>
+            </view>
+            <view class="desc line">
+                <text>充值(元)</text>
+                <text>返赠(元)</text>
+                <text>到账(元)</text>
+            </view>
+        </view>
+        <view class="tip {{isSetPrice&&rechargeValue<minRechargeAmount?'show':''}}">充值大于{{minRechargeAmount}}元才有返赠哦！</view>
+    </view>
+    <view class="recharge-choose" wx:if="{{rechargeList.length||enableOtherAmount}}">
+        <view class="choose-header">请选择充值金额</view>
+        <view class="choose-container">
+            <view bindtap="checkPrice" class="choose-item {{index==curIndex?'cur':''}}" data-id="{{item.id}}" data-index="{{index}}" data-other="{{item.other}}" data-rechargeAmount="{{item.rechargeAmount||''}}" data-returnAmount="{{item.returnAmount}}" wx:for="{{rechargeList}}" wx:key="{{index}}">
+                <view wx:if="{{!item.other}}">{{item.rechargeAmount}}</view>
+                <view class="return" wx:if="{{!item.other}}">返{{item.returnAmount}}</view>
+                <view style="font-size: 32rpx;text-align:center;" wx:if="{{item.other&&!isSetPrice}}">其他金额</view>
+                <view wx:if="{{item.other&&isSetPrice}}">
+                    <view style="text-align:center;font-size:40rpx;height:31rpx;line-height:31rpx;margin-bottom:8rpx;">{{rechargeValue}}</view>
+                    <view style="font-size:26rpx;text-align:center;">其他金额</view>
+                </view>
+            </view>
+        </view>
+        <view bindtap="rechargeHandler" class="recharge-btn">充值</view>
+    </view>
+</view>
+<PayDialog bind:closePayDialog="closePayDialog" bind:setRechargeValue="setRechargeValue" bind:surePrice="surePrice" isShowPayDialog="{{isShowPayDialog}}" recharge="{{false}}" rechargeValue="{{rechargeValue}}"></PayDialog>

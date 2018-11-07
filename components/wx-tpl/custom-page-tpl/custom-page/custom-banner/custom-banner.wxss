@@ -1,0 +1,34 @@
+.carousel {
+    width: 750rpx;
+    height: 376rpx;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    background-color: #eeeeee;
+}
+
+.carousel swiper {
+    width: 750rpx;
+    height: inherit;
+    display: block;
+    overflow: hidden;
+}
+
+.carousel image {
+    width: 750rpx;
+    background-color: #eeeeee;
+}
+
+.carousel text {
+    font-size: 26rpx;
+    color: #fff;
+    width: 86rpx;
+    height: 56rpx;
+    line-height: 56rpx;
+    text-align: center;
+    background-color: rgba(0,0,0,0.6);
+    position: absolute;
+    right: 0;
+    bottom: 20rpx;
+    z-index: 10;
+}

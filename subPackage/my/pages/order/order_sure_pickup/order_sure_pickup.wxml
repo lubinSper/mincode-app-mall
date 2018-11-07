@@ -1,0 +1,193 @@
+<view class="order_sure_box">
+    <view class="order_sure_warn" wx:if="{{currentTab==1&&isFullAmount==2||from==4||isShowwMemberCardTip}}">
+        <view class="member-warning" wx:if="{{isShowwMemberCardTip}}">
+            <text style="padding-right: 16rpx;color:#ff210f;">·</text>
+            <text decode="true" style="color:#ff210f;">部分商品不支持会员卡支付，请选择其他付款方式或联系商家客服</text>
+        </view>
+        <view class="pintuan_warn" wx:if="{{isFullAmount==2&&u.formatMoney(payablePrice-fullAmountPrice)>=0&&currentTab==1}}">
+            <text style="padding-right: 16rpx;">·</text>
+            <text decode="true">本店商品满{{u.formatMoney(fullAmountPrice)}}元包邮，此订单已享运费优惠</text>
+        </view>
+        <view class="pintuan_warn" wx:if="{{isFullAmount==2&&u.formatMoney(fullAmountPrice-payablePrice)>0&&currentTab==1}}">
+            <text style="padding-right: 16rpx;">·</text>
+            <text decode="true">本店商品满{{u.formatMoney(fullAmountPrice)}}元包邮，此订单还差{{u.formatMoney(fullAmountPrice-payablePrice)}}元才能享受运费优惠</text>
+        </view>
+        <view class="pintuan_warn" wx:if="{{from==4}}">
+            <text style="padding-right: 16rpx;">·</text>
+            <text decode="true">该订单为拼团订单，支付成功后才算开团或参团成功。请确认收货地址和商品信息无误后再进行支付。</text>
+        </view>
+    </view>
+    <view class="order_product_list">
+        <view class="order_product_list_ul" style="height:{{osHeight}}">
+            <view class="order_product_list_li" wx:for="{{goodsList}}" wx:for-index="idx" wx:key="idx">
+                <dl>
+                    <dt>
+                        <image alt="" mode="aspectFill" src="{{item.mainImagesUrl.length?item.mainImagesUrl[0]:'http://yamxcx.oss-cn-shenzhen.aliyuncs.com/one-shop-one-mini-app/140.png'}}"></image>
+                    </dt>
+                    <dd class="opll_mid">
+                        <text class="opll_mid_title">{{item.productName?item.productName:item.name}}</text>
+                        <image class="s-vip-icon" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/SVIP.png" wx:if="{{item.superMemberPrice&&isSuperVip&&item.enableSupperMemberPrice==2}}"></image>
+                        <view class="opll_mid_price">
+                            <ABCD>{{item.attrName}}</ABCD>
+                        </view>
+                    </dd>
+                    <dd class="opll_ri">
+                        <view class="opll_ri_black">￥{{u.formatMoney(isSuperVip&&item.superMemberPrice&&item.enableSupperMemberPrice==2?item.superMemberPrice:item.price)}}</view>
+                        <view class="opll_ri_grey opll_originalPrice" wx:if="{{from==3}}">￥{{item.goodsOriginalPrice?u.formatMoney(item.goodsOriginalPrice):u.formatMoney(item.originalPrice)}}</view>
+                        <view class="opll_ri_grey opll_originalPrice" wx:if="{{from!=3&&item.originalPrice>0}}">￥{{u.formatMoney(item.originalPrice)}}</view>
+                        <view class="opll_ri_grey">x{{item.count}}</view>
+                    </dd>
+                </dl>
+            </view>
+        </view>
+        <view class="open_retract" wx:if="{{goodsList.length>3}}">
+            <view catchtap="updateExpand" class="pull retract" data-expand="{{isExpand}}" wx:if="{{!isExpand}}">
+                <abcd>收起</abcd>
+            </view>
+            <view catchtap="updateExpand" class="pull pull_open" data-expand="{{isExpand}}" wx:if="{{isExpand}}">
+                <abcd>显示全部({{goodsList.length}})</abcd>
+            </view>
+        </view>
+    </view>
+    <view class="leaving_message">
+        <form bindsubmit="collectFormId" class="form" data-type="2" reportSubmit="true">
+            <button class="button-none button" formType="submit" hoverClass="none">
+                <input bindblur="bindTextAreaBlur" bindinput="bindTextAreaBlur" maxLength="200" placeholder="给商家留言，例如预约配送或取货时间..." placeholderClass="plColor" type="text" value="{{textAreaValue}}"></input>
+            </button>
+        </form>
+    </view>
+    <view class="distribution_mode">
+        <view class="distribution_mode_tab" wx:if="{{payConfig.delivery==2&&payConfig.selfPickUp==2}}">
+            <view>
+                <form bindsubmit="selectedFuc" class="form" data-tab="1" reportSubmit="true">
+                    <button class="button-none button" formType="submit" hoverClass="none">
+                        <text catchtap="selectedFuc" class="{{currentTab==1?'current':''}}" data-tab="1">店铺配送</text>
+                    </button>
+                </form>
+            </view>
+            <view>
+                <form bindsubmit="selectedFuc" class="form" data-tab="2" reportSubmit="true">
+                    <button class="button-none button" formType="submit" hoverClass="none">
+                        <text catchtap="selectedFuc" class="{{currentTab==2?'current':''}}" data-tab="2">到店自取</text>
+                    </button>
+                </form>
+            </view>
+        </view>
+        <view class="distribution_mode_content">
+            <view class="dmc_content">
+                <form bindsubmit="chooseAddressFuc" class="form dmc_name_address" reportSubmit="true" wx:if="{{currentTab==1}}">
+                    <button class="button-none button" formType="submit" hoverClass="none">
+                        <view class="dmc_text">
+                            <view class="dmc_name" wx:if="{{userName||telNumber>0}}">{{userName}}
+                                <abcd>{{telNumber}}</abcd>
+                            </view>
+                            <view class="dmc_address">{{shippingAddress}}</view>
+                            <view class="clear"></view>
+                        </view>
+                    </button>
+                </form>
+                <view class="dmc_content_infor" wx:else>
+                    <ul>
+                        <li>
+                            <text>取货人</text>
+                            <input bindblur="bindKeycarrier" bindinput="bindKeycarrier" confirmType="done" maxLength="18" placeholder="请输入姓名" placeholderClass="plColor" type="text" value="{{carrier}}"></input>
+                        </li>
+                        <li>
+                            <text>联系电话</text>
+                            <input bindblur="bindKeyContactTel" bindinput="bindKeyContactTel" confirmType="done" maxLength="15" placeholder="请输入手机号" placeholderClass="plColor" type="number" value="{{contact_Tel}}"></input>
+                        </li>
+                    </ul>
+                    <view class="clear"></view>
+                </view>
+                <view class="payment">
+                    <form bindsubmit="collectFormId" class="form" data-type="2" reportSubmit="true">
+                        <button class="button-none button" formType="submit" hoverClass="none">
+                            <text>付款方式</text>
+                            <view catchtap="showPayWayDialog" class="payment_right">
+                                <view class="payment_mode">
+                                    <view class="payment_mode_li {{psPayIndex==1?'card_icon':''}}" wx:if="{{currentTab==1}}">
+                                        <text>{{payList[psPayIndex].name}}</text>
+                                        <image mode="widthFix" src="{{payList[psPayIndex].icon}}" wx:if="{{payList[psPayIndex].icon}}"></image>
+                                    </view>
+                                    <view class="payment_mode_li {{zqPayIndex==1?'card_icon':''}}" wx:else>
+                                        <text>{{payList[zqPayIndex].name}}</text>
+                                        <image mode="widthFix" src="{{payList[zqPayIndex].icon}}" wx:if="{{payList[zqPayIndex].icon}}"></image>
+                                    </view>
+                                </view>
+                            </view>
+                        </button>
+                    </form>
+                </view>
+            </view>
+            <view class="dmc_content">
+                <view class="dmc_money" style="max-height:378rpx;">
+                    <view class="dmc_money_ul" style="border-bottom:1rpx solid #e2e2e2;">
+                        <view class="dmc_money_li">
+                            <abcd>商品总额</abcd>
+                            <text>￥{{u.formatMoney2(totalPrice)}}</text>
+                        </view>
+                        <view class="dmc_money_li" wx:if="{{discounts}}">
+                            <abcd>优惠</abcd>
+                            <text>-￥{{u.formatMoney2(discounts)}}</text>
+                        </view>
+                        <view class="dmc_money_li" wx:if="{{currentTab==1}}">
+                            <abcd>运费</abcd>
+                            <text>￥{{u.formatMoney2(freight)}}</text>
+                        </view>
+                        <view class="dmc_money_li" wx:if="{{currentTab==1}}">
+                            <abcd>运费优惠</abcd>
+                            <text wx:if="{{isFullAmount==2&&u.formatMoney(payablePrice-fullAmountPrice)>=0}}">-￥{{u.formatMoney2(freight)}}</text>
+                            <text wx:else>-￥0.00</text>
+                        </view>
+                    </view>
+                    <view class="dmc_money_ul gai_payfor">
+                        <view class="dmc_money_li">
+                            <abcd>应付金额</abcd>
+                            <text class="sure_money" wx:if="{{currentTab==1&&isFullAmount==2&&u.formatMoney(payablePrice-fullAmountPrice)>=0}}">￥{{u.formatMoney2(payablePrice)}}</text>
+                            <text class="sure_money" wx:elif="{{currentTab==1&&isFullAmount==2&&u.formatMoney(fullAmountPrice-payablePrice)>0}}">￥{{u.formatMoney2(payablePrice+freight)}}</text>
+                            <text class="sure_money" wx:elif="{{currentTab==1&&isFullAmount==1}}">
+                                <text class="text-price" wx:if="{{(memberCardInfo.vip==2||memberCardInfo.vip==3)&&goodsList[0].superMemberPrice&&goodsList[0].enableSupperMemberPrice==2}}">￥{{u.formatMoney2(payablePrice+freight)}}</text>
+                                <text class="text-price" wx:else>￥{{u.formatMoney2(payablePrice+freight)}}</text>
+                            </text>
+                            <text class="sure_money" wx:else>￥{{u.formatMoney2(payablePrice)}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="linkus">
+                    <view class="linkus_le">
+                        <button class="contactus" openType="contact" plain="true"></button>
+                        <view style="height: 50rpx; text-align: center; line-height: 0;">
+                            <image src="http://xcximg.197.com/xcx/order_weixin.png"></image>
+                        </view>
+                        <view style="line-height: 50rpx; font-size: 24rpx; text-align: center; color: #696969">联系客服</view>
+                    </view>
+                    <view class="{{canSubmit?'linkus_ri':'linkus_ri_gray'}}">
+                        <form bindsubmit="submitOrder" class="form" reportSubmit="true">
+                            <button class="button-none button" formType="submit" hoverClass="none">
+                                <text wx:if="{{currentTab==1}}">{{psPayIndex==0||psPayIndex==1?'确认支付':payList[psPayIndex].name}}</text>
+                                <text wx:else>{{zqPayIndex==0||zqPayIndex==1?'确认支付':payList[zqPayIndex].name}}</text>
+                            </button>
+                        </form>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view style="height:100rpx;"></view>
+</view>
+<show_dialog content="{{dialogContent}}" show="{{isShowDialog}}"></show_dialog>
+<view animation="{{animationData1}}" bindtap="closePayWayDialog" class="pay-way-modal" wx:if="{{isShowPayWayDialog}}"></view>
+<view animation="{{animationData2}}" class="pay-way-dialog" wx:if="{{isShowPayWayDialog}}">
+    <view class="way-container">
+        <view bindtap="checkPayWay" class="way-item {{item.key=='vip'?'vip':''}}" data-index="{{index}}" data-key="{{item.key}}" data-use="{{item.use}}" wx:if="{{item.use||index==1&&memberCardInfo}}" wx:for="{{payList}}" wx:key="item">
+            <view class="item-box">
+                <image class="item-icon {{item.key=='vip'?'item-icon-card':''}}" mode="widthFix" src="{{item.icon}}" wx:if="{{item.icon}}"></image>
+                <text class="item-text">{{item.name}}</text>
+            </view>
+            <view class="balance" wx:if="{{item.key=='vip'}}">(余额：￥{{u.formatMoney2(balance)}})</view>
+        </view>
+    </view>
+    <view bindtap="closePayWayDialog" class="cancel-dialog">取消</view>
+</view>
+<paySixDialog bind:closeDialog="closePayInputDialog" bind:inputComplete="pwdInputComplete" focus="{{focus}}" isShowPayInput="{{isShowPayInput}}"></paySixDialog>
+<wxs module="u" src="../../../../../util/util.wxs" />

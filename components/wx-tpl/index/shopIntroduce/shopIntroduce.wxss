@@ -1,0 +1,312 @@
+.module {
+    background-color: #fff;
+    margin-top: 20rpx;
+    padding-bottom: 24rpx;
+}
+
+.infor_introduce {
+    width: 690rpx;
+    margin: 0 auto;
+    padding: 12rpx 0;
+}
+
+.infor_introduce .infor_introduce_text {
+    font-size: 28rpx;
+    margin: 12rpx 0;
+    word-wrap: break-word;
+    display: inline-block;
+    color: #555;
+    text-indent: inherit!important;
+    width: 690rpx;
+}
+
+.infor_introduce .infor_introduce_img {
+    clear: both;
+    margin-top: 10rpx;
+}
+
+.infor_introduce .infor_introduce_img image {
+    width: 100%;
+    background-color: #eee;
+}
+
+.infor_introduce .infor_introduce_video {
+    position: relative;
+    width: 100%;
+    height: 410rpx;
+    margin-bottom: 10rpx;
+}
+
+.infor_introduce .infor_introduce_video video {
+    width: 100%;
+    height: 410rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.nonMarginTop {
+    margin-top: 0!important;
+}
+
+.paddingTop40 {
+    padding-top: 40rpx!important;
+}
+
+.custom_btn {
+    padding: 30rpx 0;
+    text-align: center;
+}
+
+.custom_btn .c_btn {
+    display: inline-block;
+    width: 362rpx;
+    height: 82rpx;
+    line-height: 82rpx;
+    background: #ff7800;
+    font-size: 32rpx;
+    color: #fefcfc;
+    border-radius: 50rpx;
+    margin: 0;
+    padding: 0;
+}
+
+.custom_btn .c_btn:after {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.serve {
+    width: 690rpx;
+    margin: 0 auto;
+}
+
+.serve .time image {
+    width: 28rpx;
+    height: 36rpx;
+    vertical-align: middle;
+}
+
+.serve .time text {
+    vertical-align: middle;
+    color: #222222;
+    font-size: 28rpx;
+    margin-left: 16rpx;
+}
+
+.serve .facilities {
+    display: flex;
+    align-items: center;
+    margin-top: 22rpx;
+}
+
+.serve .facilities .img {
+    line-height: 0;
+}
+
+.serve .facilities image {
+    width: 28rpx;
+    height: 30rpx;
+}
+
+.serve .facilities .text {
+    line-height: 30rpx;
+    width: 110rpx;
+    text-align: center;
+    border: 2rpx solid #ff7800;
+    color: #ff7800;
+    font-size: 20rpx;
+    margin-left: 20rpx;
+    border-radius: 4rpx;
+}
+
+.link_us_head {
+    width: 690rpx;
+    margin: 0 auto;
+    display: flex;
+    border-bottom: 2rpx dashed #adadad;
+    padding: 48rpx 0;
+    box-sizing: border-box;
+}
+
+.link_us_head .logo {
+    width: 85rpx;
+}
+
+.link_us_head .logo image {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 40rpx;
+    background: #eee;
+}
+
+.link_us_head .content {
+    flex: 1;
+    padding-left: 10rpx;
+    box-sizing: border-box;
+}
+
+.link_us_head .content .name {
+    font-size: 34rpx;
+    color: #222222;
+}
+
+.link_us_head .content .distance {
+    font-size: 24rpx;
+    color: #888888;
+    padding-top: 5rpx;
+}
+
+.link_us_head .content .distance image {
+    width: 22rpx;
+    height: 22rpx;
+}
+
+.link_us_head .content .distance text {
+    margin-left: 10rpx;
+}
+
+.link_us_head .wechat {
+    width: 100rpx;
+    position: relative;
+}
+
+.link_us_head .wechat .wechat_view {
+    height: 50rpx;
+    width: 100%;
+    position: relative;
+}
+
+.link_us_head .wechat .wechat_view image {
+    position: absolute;
+    top: 0;
+    left: 25rpx;
+    width: 50rpx;
+    height: 40rpx;
+}
+
+.link_us_head .wechat button {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+}
+
+.link_us_head .wechat button::after {
+    margin: 0;
+}
+
+.link_us_head .wechat .text {
+    color: #888888;
+    font-size: 22rpx;
+}
+
+.detailed_infor {
+    padding: 14rpx 0 0rpx 0;
+}
+
+.detailed_infor .detailed_infor_li {
+    min-height: 50rpx;
+    width: 100%;
+    display: inline-block;
+}
+
+.detailed_infor .detailed_infor_li .dil_ico {
+    float: left;
+    display: block;
+    margin: 14rpx 15rpx 0 30rpx;
+}
+
+.detailed_infor .detailed_infor_li text {
+    width: 594rpx;
+    min-height: 50rpx;
+    line-height: 50rpx;
+    display: block;
+    float: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 28rpx;
+    color: #222;
+}
+
+.detailed_infor .detailed_infor_li .next_ico {
+    float: right;
+    display: block;
+    width: 14rpx;
+    height: 25rpx;
+    margin: 14rpx 30rpx 0 0;
+}
+
+.detailed_infor .detailed_infor_li span {
+    width: 120rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+    text-align: center;
+    display: block;
+    float: left;
+    border-radius: 5rpx;
+    margin: 14rpx 20rpx 0 0;
+    border: 2rpx solid #ff7800;
+    color: #ff7800;
+    font-size: 20rpx;
+}
+
+.detailed_infor .detailed_infor_li .linkus_troduce {
+    width: 652rpx;
+    display: block;
+    float: right;
+    margin-right: 30rpx;
+}
+
+.span {
+    width: 120rpx;
+    text-align: center;
+    display: inline;
+    float: left;
+    border-radius: 5rpx;
+    margin: 14rpx 20rpx 0 0;
+    border: 2rpx solid #ff7800;
+    color: #ff7800;
+    font-size: 20rpx;
+    line-height: 25rpx;
+    padding: 5rpx 0 2rpx 0;
+}
+
+.infor_introduce_video image,.infor_introduce_video video {
+    width: 690rpx;
+    height: 410rpx!important;
+}
+
+.replace-video {
+    position: relative;
+    height: 410rpx;
+}
+
+.mask-img {
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 690rpx;
+    height: 410rpx;
+}
+
+.play-icon {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    width: 93rpx;
+    height: 93rpx;
+    margin-left: -60rpx;
+    margin-top: -46rpx;
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/player.png) no-repeat center center;
+    background-size: 100% 100%;
+}

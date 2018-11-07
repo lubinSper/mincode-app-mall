@@ -1,0 +1,55 @@
+.layer_bg {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.layer-content {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.layer-content .layer-banner {
+    border-radius: 20rpx;
+    min-width: 450rpx;
+    min-height: 600rpx;
+    position: relative;
+}
+
+.layer-close {
+    position: absolute;
+    top: 55rpx;
+    right: 55rpx;
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.vip_mask_layer {
+    position: relative;
+    text-align: center;
+}
+
+.vip_mask_layer .vipImg {
+    width: 700rpx;
+}
+
+.vip_mask_layer .time {
+    position: absolute;
+    bottom: 250rpx;
+    color: #888;
+    width: 100%;
+    font-size: 26rpx;
+    line-height: 38rpx;
+}

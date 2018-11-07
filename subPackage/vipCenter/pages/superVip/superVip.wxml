@@ -1,0 +1,26 @@
+<view class="openSuperVip">
+    <view class="part-one">
+        <image mode="widthFix" src="https://xcximg.197.com/xcx/newquanyi01.png" style="width:100%"></image>
+    </view>
+    <view class="header-btns">
+        <form bindsubmit="openSuperMember" reportSubmit="true" wx:if="{{!memberCardInfo||memberCardInfo.vip===1||memberCardInfo.vip===3}}">
+            <button class="open header-btn openSuper-btn" formType="submit">
+                <view class="btn-title">马上开通</view>
+                <view class="btn-desc" wx:if="{{annualFee===0&&memberCardInfo.vip!==2}}">超级会员特惠 限时免费/年</view>
+                <view class="btn-desc" wx:if="{{annualFee!==0&&memberCardInfo.vip!==2}}">超级会员特惠 ¥{{annualFee}}/年</view>
+                <view class="free-open-icon" wx:if="{{annualFee===0}}">限时免费</view>
+            </button>
+        </form>
+        <form bindsubmit="openSuperMember" reportSubmit="true" wx:if="{{memberCardInfo.vip===2&&memberCardInfo.vipRenewCount===0&&renew}}">
+            <button class="open header-btn" formType="submit">
+                <view class="btn-title">立即续费</view>
+                <view class="btn-desc" wx:if="{{memberCardInfo.vip===2&&annualFee!==0}}">超级会员特惠 ¥{{annualFee}}/年</view>
+                <view class="btn-desc" wx:if="{{memberCardInfo.vip===2&&annualFee===0}}">超级会员特惠 限时免费/年</view>
+                <view class="free-open-icon" wx:if="{{annualFee===0}}">限时免费</view>
+            </button>
+        </form>
+    </view>
+    <view class="part-two">
+        <image mode="widthFix" src="https://xcximg.197.com/xcx/quanyi02.png" style="width:100%"></image>
+    </view>
+</view>

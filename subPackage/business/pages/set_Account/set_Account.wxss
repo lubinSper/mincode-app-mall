@@ -1,0 +1,168 @@
+.set_Account_module {
+    width: 690rpx;
+    margin: 30rpx auto 0 auto;
+    background-color: #fff;
+    padding-bottom: 4rpx;
+}
+
+.set_Account_module .set_Account_module_top {
+    width: 690rpx;
+    height: 98rpx;
+    display: inline-block;
+    border-bottom: 1rpx solid #e2e2e2;
+}
+
+.set_Account_module .set_Account_module_top .sam_shopname {
+    float: left;
+    color: #222;
+    font-size: 32rpx;
+    margin-left: 60rpx;
+    line-height: 98rpx;
+}
+
+.set_Account_module .set_Account_module_top .sam_shopname image {
+    float: left;
+    width: 55rpx;
+    height: 55rpx;
+    margin: 24rpx 16rpx 0 0;
+}
+
+.set_Account_module .set_Account_module_top .sam_shopcode {
+    float: right;
+    font-size: 18rpx;
+    width: 80rpx;
+    text-align: center;
+    padding-top: 6rpx;
+    color: #687ea1;
+}
+
+.set_Account_module .account_collected {
+    height: 120rpx;
+    line-height: 120rpx;
+    padding-left: 60rpx;
+    font-size: 26rpx;
+    color: #222;
+}
+
+.input_amount {
+    width: 568rpx;
+    margin: 0 auto;
+    position: relative;
+    color: #222;
+}
+
+.input_amount .input_amount_span {
+    position: absolute;
+    font-size: 46rpx;
+    color: #222;
+    top: 6rpx;
+    font-family: Arial,Helvetica,sans-serif;
+}
+
+.input_amount .input_amount_text {
+    color: #000;
+    padding-left: 45rpx;
+    font-size: 88rpx;
+    width: 520rpx;
+    height: 120rpx;
+    line-height: 80rpx;
+    border-bottom: 1rpx solid #e2e2e2;
+}
+
+.sa_payfor {
+    width: 570rpx;
+}
+
+.sa_payfor .btn_payfor {
+    width: 570rpx;
+    height: 93rpx;
+    line-height: 93rpx;
+    background-color: #1aad19;
+    color: #fff;
+    border-radius: 8rpx;
+    margin: 58rpx;
+}
+
+.btn_payfor[disabled],.btn_payfor:disabled {
+    border: 1rpx solid #93c893;
+}
+
+.ico_set {
+    width: 690rpx;
+    margin: 0 auto;
+    line-height: 32rpx;
+}
+
+.ico_set .ico_set_li {
+    width: 33%;
+    display: inline-block;
+    margin-top: 20rpx;
+}
+
+.ico_set .ico_set_li .ico_set_li_img {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+}
+
+.ico_set .ico_set_li .ico_set_li_text {
+    color: #c6c7c8;
+    font-size: 26rpx;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+}
+
+.zf_no_container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: #fff;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.zf_no_img image {
+    width: 250rpx;
+    height: 217rpx;
+    align-items: center;
+}
+
+.zf_no_desc {
+    margin-top: 10rpx;
+    text-align: center;
+    font-size: 30rpx;
+    color: #222;
+    align-items: center;
+}
+
+.zf_no_logo {
+    position: absolute;
+    left: 0;
+    bottom: 60rpx;
+    width: 100%;
+}
+
+.zf_no_logo image {
+    width: 110rpx;
+    height: 84rpx;
+}
+
+.zf_no_logo .zf_no_org {
+    font-size: 24rpx;
+    color: #b3b5b7;
+}
+
+.zf_buy_recorder {
+    position: absolute;
+    bottom: 60rpx;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.zf_buy_recorder .buy_text {
+    font-size: 28rpx;
+    color: #616980;
+}

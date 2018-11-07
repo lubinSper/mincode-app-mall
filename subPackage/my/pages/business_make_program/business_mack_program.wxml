@@ -1,0 +1,1 @@
+<make-program-tpl bind:setuserid="setUserId" onHide="{{onHide}}" onPullDownRefresh="{{onPullDownRefresh}}" onReachBottom="{{onReachBottom}}" onShow="{{onShow}}" params="{{params}}" showReturnIndexBtn="{{showReturnIndexBtn}}"></make-program-tpl>

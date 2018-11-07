@@ -1,0 +1,14 @@
+<view class="select-dialog" wx:if="{{isShowSelectDialog}}">
+    <view catchtouchmove="true" class="select-dialog-modal"></view>
+    <view class="select-dialog-body">
+        <view catchtouchmove="true" class="tool">
+            <text catchtap="closeDialog">取消</text>
+            <text catchtap="changeSelectValue">确定</text>
+        </view>
+        <picker-view bindchange="bindChange" class="item" indicatorClass="select-item" indicatorStyle="height: 50px;" value="{{value}}">
+            <picker-view-column>
+                <view class="column-item" style="color:{{index==curIndex?'#d3a95a':''}}" wx:for="{{selectList}}" wx:key="{{index}}">{{item.name}}</view>
+            </picker-view-column>
+        </picker-view>
+    </view>
+</view>

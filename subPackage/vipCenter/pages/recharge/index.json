@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "充值",
+    "usingComponents": {
+        "PayDialog": "/components/wx-tpl/order/pay-dialog/index"
+    }
+}

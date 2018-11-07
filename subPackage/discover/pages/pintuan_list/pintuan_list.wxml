@@ -1,0 +1,22 @@
+<view wx:if="{{list.length>0}}">
+    <view class="header">{{count}}人正在开团，快去参加</view>
+    <view class="content">
+        <view class="item" wx:for="{{list}}" wx:key="id">
+            <view class="img">
+                <image mode="aspectFill" src="{{item.avatarUrl}}"></image>
+            </view>
+            <view class="user">
+                <view class="name max_one_line">{{item.nickName}}</view>
+                <view class="time">剩余{{item.timeArr[0]+':'+item.timeArr[1]+':'+item.timeArr[2]}}</view>
+            </view>
+            <view class="number">还差<text style="color:#ff7800">{{item.limitPeopleNum-item.currentPeopleNum}}人</text>拼成</view>
+            <view catchtap="openPintuan" class="button" data-pintuan-id="{{item.id}}">去参团</view>
+        </view>
+    </view>
+    <view class="loading" wx:if="{{loadMore}}">
+        <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/one-shop-one-mini-app/loading.png"></image>
+        <text>加载中...</text>
+    </view>
+</view>
+<show_dialog content="{{dialogContent}}" show="{{isShowDialog}}"></show_dialog>
+<return_index wx:if="{{showReturnIndexBtn}}"></return_index>

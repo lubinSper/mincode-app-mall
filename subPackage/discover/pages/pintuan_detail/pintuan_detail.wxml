@@ -1,0 +1,147 @@
+<view class="bg">
+    <view class="img"></view>
+    <view class="color"></view>
+</view>
+<form bindsubmit="openRuleModal" class="form" data-type="2" reportSubmit="true">
+    <button class="button-none button rule" formType="submit">活动规则</button>
+</form>
+<view class="main">
+    <view class="detail">
+        <view class="header">
+            <image mode="aspectFill" src="{{info.avatarUrl}}"></image>
+        </view>
+        <view class="nickname">{{info.nickName}}</view>
+        <view class="slogan">
+            <view class="symbol left">
+                <image src="http://xcximg.197.com/xcx/douhao.png"></image>
+            </view>
+            <text>我发现了一件好货，快来和我一起拼团吧！越拼越实惠，越团越划算！</text>
+            <view class="symbol right">
+                <image src="http://xcximg.197.com/xcx/douhao2.png"></image>
+            </view>
+        </view>
+        <form bindsubmit="toDetail" class="form" data-type="2" reportSubmit="true">
+            <button class="button-none button" formType="submit">
+                <view class="goods">
+                    <view class="left">
+                        <image mode="aspectFill" src="{{info.productCoverImage}}"></image>
+                    </view>
+                    <view class="right">
+                        <view class="title max_one_line">{{info.productName}}</view>
+                        <view class="price_view">
+                            <text>拼成价</text>
+                            <text class="price">￥{{u.formatMoney(info.pintuanPrice)}}</text>
+                            <text class="old_price">￥{{u.formatMoney(info.currentPrice)}}</text>
+                        </view>
+                        <view class="reduce">
+                            <view class="reduce_price">
+                                <view class="icon"></view>
+                                <text>立减￥{{info?u.formatMoney(info.currentPrice-info.pintuanPrice):''}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </button>
+        </form>
+        <view class="heads">
+            <view class="item" wx:for="{{info.heads}}" wx:key="id">
+                <image src="{{item.avatarUrl}}"></image>
+                <view class="text commander" wx:if="{{item.isLaunch==2}}">团长</view>
+            </view>
+        </view>
+    </view>
+    <view class="full_text" wx:if="{{isEnd}}">拼团成功，共有{{info.limitPeopleNum}}位好友一起参团</view>
+    <block wx:else>
+        <view class="time">还剩{{time?time:'00:00:00'}}结束，快邀请好友来参团吧</view>
+        <view class="share">
+            <view class="bj"></view>
+            <form bindsubmit="joinPintuan" class="form" data-type="2" reportSubmit="true" wx:if="{{info.isJoinCurrentTuan==1}}">
+                <button class="button" formType="submit">马上参团</button>
+            </form>
+            <form bindsubmit="collectFormId" class="form" data-type="2" reportSubmit="true" wx:else>
+                <button class="button" formType="submit" openType="share">邀请好友来参团</button>
+            </form>
+        </view>
+    </block>
+    <view class="joiner">
+        <view class="joiner_list">
+            <view class="title">
+                <view class="line"></view>
+                <view class="text">拼团帮</view>
+            </view>
+            <view class="item" wx:for="{{info.joinDtos}}" wx:key="id">
+                <view class="left">
+                    <image src="{{item.avatarUrl}}"></image>
+                    <view class="text commander" wx:if="{{item.isLaunch==2}}">团长</view>
+                </view>
+                <view class="right">
+                    <view class="first">
+                        <view class="name max_one_line">{{item.nickName}}</view>
+                        <view class="timer">{{item.createTime}}</view>
+                    </view>
+                    <view class="second">{{item.word}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<block wx:if="{{info&&showModal}}">
+    <view catchtap="closeCutPriceModal" class="drawer_screen cut_screen"></view>
+    <view class="box">
+        <view class="main_modal">
+            <view class="content" wx:if="{{isCommander}}">
+                <view class="icon">
+                    <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/success_icon.png"></image>
+                </view>
+                <view class="success">恭喜，发起拼团成功</view>
+                <view class="time_view">请在<text class="time">{{time?time:'00:00:00'}}</text>内邀请好友完成拼团， 若拼团失败将退款 </view>
+                <form bindsubmit="collectFormId" class="form" data-type="2" reportSubmit="true">
+                    <button class="box_button" formType="submit" openType="share">邀请好友来参团</button>
+                </form>
+            </view>
+            <view class="success_content" wx:else>
+                <view class="first">
+                    <view class="text">参团成功</view>
+                    <view class="number" wx:if="{{isEnd}}">恭喜，该拼团已成功，商家会按照下单顺序依次发货</view>
+                    <view class="number" wx:else>还需要{{info.limitPeopleNum-info.currentPeopleNum}}位好友参团才算拼团成功</view>
+                </view>
+                <view class="second">
+                    <text>拼成价:</text>
+                    <text class="price">￥{{u.formatMoney(info.pintuanPrice)}}</text>
+                </view>
+                <view class="third">单独购买价：￥{{u.formatMoney(info.currentPrice)}}</view>
+                <form bindsubmit="collectFormId" class="form" data-type="2" reportSubmit="true" wx:if="{{isEnd}}">
+                    <button class="button gray" formType="submit">邀请好友来参团</button>
+                </form>
+                <form bindsubmit="collectFormId" class="form" data-type="2" reportSubmit="true" wx:else>
+                    <button class="button" formType="submit" openType="share">邀请好友来参团</button>
+                </form>
+            </view>
+            <view catchtap="closeSuccessModal" class="close">
+                <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/guanbi.png"></image>
+            </view>
+        </view>
+    </view>
+</block>
+<block wx:if="{{ruleModal}}">
+    <view catchtap="closeCutPriceModal" class="drawer_screen cut_screen"></view>
+    <view class="box">
+        <view class="rule_modal">
+            <view class="content">
+                <view class="title">活动规则</view>
+                <view class="line">1. 拼团订单支付成功后视为开团/参团成功</view>
+                <view class="line">2. 必须在活动时间内邀请足够多的好友参团，拼团才算成功 </view>
+                <view class="line">3. 发布的拼团也将同时展示在商品详情页中，其他人也可以参与</view>
+                <view class="line">4. 若未在活动时间内完成拼团，则将自动退款至支付账户 </view>
+                <view class="line">5. 如对活动有任何疑问，请联系本店微信客服或致电咨询 </view>
+            </view>
+            <view catchtap="closeRuleModal" class="close">
+                <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/guanbi.png"></image>
+            </view>
+        </view>
+    </view>
+</block>
+<show_dialog content="{{dialogContent}}" show="{{isShowDialog}}"></show_dialog>
+<return_index wx:if="{{showReturnIndexBtn}}"></return_index>
+<authorize_dialog bind:backhandle="backHandle" onHide="{{onAuthHide}}" onShow="{{onAuthShow}}" params="{{authParam}}"></authorize_dialog>
+<wxs module="u" src="../../../../util/util.wxs" />

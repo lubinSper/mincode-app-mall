@@ -1,0 +1,8 @@
+<view bindtap="videoPlay" class="goods_right_a {{video.marginType==1?'gapless':'interval'}}" data-index="{{indexes}}" wx:if="{{video.videoUrl}}">
+    <video autoplay="true" controls="true" customCache="false" id="video-{{indexes}}" objectFit="fill" src="{{video.videoUrl}}" wx:if="{{thisIndexes==indexes}}"></video>
+    <view class="replace-video" wx:else>
+        <image class="model-img" mode="aspectFill" src="{{video.coverUrl?video.coverUrl:defaultPoster}}"></image>
+        <view class="mask-img"></view>
+        <view class="play-icon"></view>
+    </view>
+</view>

@@ -1,0 +1,17 @@
+.imglist {
+    margin: 30rpx;
+}
+
+.imglist image {
+    width: 335rpx;
+    height: 335rpx;
+    padding-bottom: 30rpx;
+}
+
+.imglist image:nth-child(odd) {
+    float: left;
+}
+
+.imglist image:nth-child(even) {
+    float: right;
+}

@@ -1,0 +1,27 @@
+var DateFr = ({
+    getDate: (function(time, splitStr) {
+        if (!time) return ('');;
+        var date = getDate(time);
+        var M = date.getMonth() + 1;
+        var y = date.getFullYear();
+        var d = date.getDate();
+        var H = date.getHours();
+        var m = date.getMinutes();
+        var s = date.getSeconds();
+        if (M < 10) M = "0" + M;;
+        if (d < 10) d = "0" + d;;
+        if (H < 10) H = "0" + H;;
+        if (m < 10) m = "0" + m;;
+        if (s < 10) s = "0" + s;;
+        console.log(y, M, d);
+        if (splitStr) return (y + '-' + M + '-' + d + ' ' + H + ':' + m + ':' + s);
+        else return (({
+            y: y,
+            M: M,
+            d: d,
+        }))
+    }),
+});
+module.exports = ({
+    getDate: DateFr.getDate,
+});

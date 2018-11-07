@@ -1,0 +1,323 @@
+.floatFix {
+    width: 100%;
+    display: inline-block;
+    clear: both;
+    height: 0;
+}
+
+.discuss-btn-list {
+    width: 140rpx;
+    height: 70rpx;
+    flex: 2;
+    overflow: hidden;
+}
+
+.discuss-btn-list-box {
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    border-radius: 10rpx;
+    height: 70rpx;
+}
+
+.discuss-btn-list-item {
+    flex: 1;
+    padding: 0 3rpx 0 40rpx;
+    font-size: 30rpx;
+    position: relative;
+}
+
+.border {
+    width: 1rpx;
+    height: 50rpx;
+    background: #444749;
+    float: right;
+    position: relative;
+    top: 12rpx;
+    border-radius: 5rpx;
+}
+
+.discuss-btn-line {
+    height: 50rpx;
+    width: 1rpx;
+    background-color: 1px solid #444749;
+}
+
+.discuss-btn {
+    width: 90rpx;
+    height: 200rpx;
+    margin-top: -65rpx;
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/one-shop-one-mini-app/discss-btn.png) no-repeat 20rpx center;
+    background-size: 36rpx 26rpx;
+}
+
+.discuss-box-bg {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.discuss-box {
+    width: 150rpx;
+    height: 70rpx;
+    line-height: 75rpx;
+    text-align: center;
+    color: red;
+    display: flex;
+}
+
+.discuss-icon-pl {
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/pinglun.png) no-repeat 26rpx 24rpx;
+    background-size: 38rpx 32rpx;
+    flex: 1;
+}
+
+.discuss-icon-dz {
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/zan_normal.png?a=1) no-repeat 26rpx 24rpx;
+    background-size: 38rpx 32rpx;
+    flex: 1;
+}
+
+.discuss-icon-qxdz {
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/zan_press.png?a=1) no-repeat 26rpx 24rpx;
+    background-size: 38rpx 32rpx;
+    flex: 1;
+}
+
+.discuss-right {
+    width: 35rpx;
+}
+
+.discuss-block {
+    height: auto;
+    position: relative;
+}
+
+.discuss-container {
+    border-top: 1rpx solid #e2e2e2;
+    margin-top: 5rpx;
+    padding-top: 10rpx;
+}
+
+.s-discuss-block {
+    margin-left: 36rpx;
+}
+
+.like-list {
+    display: flex;
+    justify-content: flex-start;
+    padding: 12rpx 20rpx 10rpx 20rpx;
+    position: relative;
+}
+
+.like-item {
+    display: flex;
+    align-items: center;
+}
+
+.like-icon {
+    margin: 10rpx 20rpx 0 0;
+    align-items: flex-start;
+    margin-top: 20rpx;
+}
+
+.like-icon image {
+    width: 24rpx;
+    height: 22rpx;
+}
+
+.like-list-view {
+    width: 400rpx;
+    overflow: hidden;
+    flex-wrap: wrap;
+    height: 50rpx;
+}
+
+.like-list-view-detail {
+    overflow: hidden;
+    flex-wrap: wrap;
+    min-height: 50rpx;
+}
+
+.like-image-view image {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 10rpx;
+    margin-top: 10rpx;
+    border-radius: 8rpx;
+    background: #ddd url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/one-shop-one-mini-app/mrtx.png) no-repeat left top / 40rpx 40rpx;
+}
+
+.like-count {
+    color: #888;
+    font-size: 24rpx;
+    position: absolute;
+    right: 10rpx;
+    top: 18rpx;
+}
+
+.like-bg {
+    position: absolute;
+    width: 32rpx;
+    height: 11rpx;
+    top: -8rpx;
+    left: 20rpx;
+}
+
+.like-detail-view {
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.line-view {
+    width: 100%;
+    height: 1rpx;
+    background-color: #e2e2e2;
+}
+
+.discuss-list {
+    width: 100%;
+    font-size: 26rpx;
+    color: #222;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 12rpx;
+}
+
+.discuss-name {
+    color: #667494;
+    font-weight: 500;
+}
+
+.discuss-item {
+    padding: 6rpx 20rpx 6rpx 20rpx;
+    line-height: 30rpx;
+}
+
+.discuss-list-item {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.discuss-list-item-detail {
+    overflow: hidden;
+    word-break: break-all;
+}
+
+.discuss-detail-item {
+    word-break: break-all;
+}
+
+.discuss-item-result {
+    color: #7a97da;
+    font-size: 22rpx;
+}
+
+.discuss-input-box-bg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999999;
+    background: rgba(0,0,0,0.5);
+}
+
+.discuss-input-box {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    border-top: 1rpx solid #c1c1c1;
+    left: 0;
+    background-color: #f6f6f6;
+    padding-bottom: 20rpx;
+    padding-top: 5px;
+    z-index: 9999999999999999;
+}
+
+.discuss-input-padding {
+    padding: 10rpx 20rpx 0 20rpx;
+    width: 95%;
+    float: left;
+}
+
+.discuss-btn-padding {
+    width: 18%;
+    height: 72rpx;
+    line-height: 72rpx;
+    margin-right: 2%;
+    float: right;
+    font-size: 30rpx;
+}
+
+.discuss-btn-send {
+    height: 72rpx;
+    line-height: 72rpx;
+    padding: 0;
+    margin: 10rpx 0 0 0;
+}
+
+.discuss-input {
+    line-height: 30rpx;
+    border-radius: 10rpx;
+    z-index: 1000;
+    background-color: #fff;
+    font-size: 30rpx;
+    padding: 19rpx 20rpx;
+    border: 1rpx solid #dddddd;
+}
+
+.discuss-input-btn {
+    width: 140rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    font: 12px;
+    color: rebeccapurple;
+    text-align: center;
+    position: absolute;
+    right: 20rpx;
+    top: 6rpx;
+    z-index: 100000;
+    border: 1px solid #222;
+    border-radius: 10rpx;
+}
+
+.thumbsUp {
+    margin-top: 20px;
+}
+
+.browse_num {
+    font-size: 24rpx;
+    color: #888;
+    margin: -20rpx 0 0 0;
+    text-align: left;
+}
+
+.discuss_reply {
+    width: 690rpx;
+    height: 68rpx;
+    display: inline-block;
+    border: 1rpx solid #e2e2e2;
+    border-radius: 4rpx;
+    line-height: 68rpx;
+    font-size: 26rpx;
+    color: #b0b0b0;
+    text-indent: 22rpx;
+    background-color: #fcfcfc;
+    margin-top: 20rpx;
+}
+
+.detail-discuss-box {
+    padding: 0 30rpx;
+}
+
+.detail_browse_num {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 24rpx;
+    color: #888;
+    height: 70rpx;
+    line-height: 70rpx;
+}

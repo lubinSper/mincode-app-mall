@@ -1,0 +1,150 @@
+.head {
+    margin: 120rpx auto 100rpx auto;
+    width: 300rpx;
+    text-align: center;
+}
+
+.head image {
+    width: 160rpx;
+    height: 160rpx;
+    background-color: #eee;
+    border-radius: 160rpx;
+}
+
+.head .name {
+    font-size: 26rpx;
+    color: #888;
+    margin-top: 10rpx;
+}
+
+.btn_view button {
+    width: 690rpx;
+    height: 88rpx;
+    margin: 0 auto;
+    border-radius: 88rpx;
+    font-size: 34rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn_view .wx {
+    color: #fff;
+    background-color: #d3a95a;
+}
+
+.wx image {
+    width: 34rpx;
+    height: 29rpx;
+    margin-right: 12rpx;
+}
+
+.btn_view .tel {
+    color: #d3a95a;
+    border: 1rpx solid #d3a95a;
+    margin-top: 50rpx;
+}
+
+.tel image {
+    width: 22rpx;
+    height: 36rpx;
+    margin-right: 12rpx;
+}
+
+button::after {
+    border: none;
+}
+
+.layer_bg {
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.login_main {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 99;
+    width: 560rpx;
+    height: 546rpx;
+    margin-top: -280rpx;
+    margin-left: -273rpx;
+    background-color: #fff;
+    border-radius: 10rpx;
+}
+
+.login_title {
+    text-align: center;
+    margin-top: 60rpx;
+    font-size: 36rpx;
+}
+
+.input_view {
+    margin-top: 20rpx;
+}
+
+.input_view .item {
+    width: 500rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    border-radius: 88rpx;
+    border: 1rpx solid #e2e2e2;
+    font-size: 30rpx;
+    margin-top: 30rpx;
+    margin-left: 30rpx;
+}
+
+.input_view .item input {
+    margin-left: 30rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+}
+
+.input_view .item.code {
+    display: flex;
+}
+
+.code .code_def {
+    width: 290rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    color: #d3a95a;
+    font-size: 26rpx;
+    text-align: right;
+    margin-right: 30rpx;
+}
+
+.code .code_sel {
+    color: #888;
+}
+
+.login_btn {
+    width: 500rpx;
+    height: 88rpx;
+    margin: 30rpx auto;
+    border-radius: 88rpx;
+    background-color: #d3a95a;
+    color: #fff;
+    font-size: 34rpx;
+}
+
+.login_btn_no {
+    opacity: 0.4;
+}
+
+.logout_btn {
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/guanbi.png) no-repeat left center / 60rpx 60rpx;
+    width: 60rpx;
+    height: 60rpx;
+    z-index: 999;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -30rpx;
+    margin-top: 350rpx;
+}

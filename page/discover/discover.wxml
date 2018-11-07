@@ -1,0 +1,49 @@
+<view style="overflow:hidden;">
+    <view style="{{isShowCart?setOutBoxStyle:''}}">
+        <mall-category-list-first bindaddbuycar="onAddBuyCar" bindbtnactive="btnActive" bindgoSearchPage="goSearch" bindjumpnext="jumpToNext" haveData="{{haveData}}" isApplyNewLogic="true" shopList="{{shopList}}" tabList="{{tabList}}" wx:if="{{templateId==1}}"></mall-category-list-first>
+        <mall-category-list-second bindaddbuycar="onAddBuyCar" bindbtnactive="btnActive" bindgoSearchPage="goSearch" bindjumpnext="jumpToNext" bindjumptonextshare="onJumpToNextShare" bindpraise="onPraise" haveData="{{haveData}}" isApplyNewLogic="true" shopList="{{shopList}}" tabList="{{tabList}}" templateId="{{templateId}}" wx:if="{{templateId==2||templateId==5}}"></mall-category-list-second>
+        <mall-category-list-third bindaddbuycar="onAddBuyCar" bindbtnactivetow="onBtnActiveTow" bindclickretry="onClickRetry" bindgoSearchPage="goSearch" bindjumpnext="jumpToNext" haveData="{{haveData}}" isApplyNewLogic="true" loadingFail="{{loading_fail}}" noData="{{noData}}" shopList="{{shopList}}" showLoading="{{showLoading}}" tabList="{{tabList}}" wx:if="{{templateId==3}}"></mall-category-list-third>
+        <mall-category-list-four appointmentCopy="{{appointmentCopy}}" appointmentZeroCopy="{{appointmentZeroCopy}}" bindaddbuycar="onAddBuyCar" bindbtnactive="btnActive" bindgoSearchPage="goSearch" bindjumpnext="jumpToNext" haveData="{{haveData}}" isApplyNewLogic="true" purchaseCopy="{{purchaseCopy}}" shopList="{{shopList}}" tabList="{{tabList}}" wx:if="{{templateId==4}}"></mall-category-list-four>
+        <block wx:if="{{templateId!=3}}">
+            <view wx:if="{{haveData}}">
+                <view class="loading" wx:if="{{showLoading}}">
+                    <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/one-shop-one-mini-app/loading.png"></image>
+                    <text>加载中...</text>
+                </view>
+            </view>
+            <view wx:if="{{noData}}">
+                <NoData imageSrcNumber="3" noDataText="该分类暂无内容"></NoData>
+            </view>
+        </block>
+        <view class="loading_failure" wx:if="{{loading_fail&&templateId!=3}}">
+            <view bindtap="onClickRetry" class="loading_wrap">
+                <view class="loading_failure_img">
+                    <image src="../../image/xuanzhuan.png"></image>
+                </view>
+                <view class="loading_failure_text">加载失败<text>点击重试</text>
+                </view>
+            </view>
+        </view>
+        <buy-car-dialog bind:closebuydailog="closeBuyCarDialog" bind:setreadyselectattr="setReadySelectAttr" bind:setselectprices="setSelectPrices" onHide="{{onHide}}" onPullDownRefresh="{{onPullDownRefresh}}" onReachBottom="{{onReachBottom}}" onShow="{{onShow}}" pageParams="{{pageParams}}" wx:if="{{inventory2>0}}"></buy-car-dialog>
+        <block wx:if="{{showTipData.show}}">
+            <import src="../../components/template/show_dialog/show_dialog.wxml"></import>
+            <template is="showDialog" data="{{showTipData:showTipData}}"></template>
+        </block>
+        <view class="buy_car_warp" style="display:none" wx:if="{{buyCarCount!=0}}">
+            <view class="buy_car_prompt">
+                <view>{{buyCarCount}}</view>
+                <view class="buy_car_border"></view>
+            </view>
+        </view>
+        <coupon_modal></coupon_modal>
+        <show_dialog content="{{dialogContent}}" show="{{isShowDialog}}"></show_dialog>
+        <return_index wx:if="{{showReturnIndexBtn}}"></return_index>
+        <view class="{{copyRightShow?'':'no_price_hide'}}" style="display:flex;justify-content:center; flex-direction:row;align-items:center; margin-left:{{templateId==1||templateId==2||templateId==4||templateId==5?'0':'80px'}}" wx:if="{{templateId!=3}}">
+            <copyright class="{{!shopList.length?'copyright-fixed':''}}" onPullDownRefresh="{{onPullDownRefresh}}" onShow="{{onShow}}" wx:if="{{xcxType==3}}"></copyright>
+        </view>
+        <view class="{{copyRightShow?'':'no_price_hide'}}" style="display:flex;justify-content:center; flex-direction:row;align-items:center; margin-left:{{templateId==1||templateId==2||templateId==4||templateId==5?'0':'80px'}}" wx:if="{{templateId==3}}">
+            <copyright onPullDownRefresh="{{onPullDownRefresh}}" onShow="{{onShow}}" style="width:328px;" wx:if="{{xcxType==3}}"></copyright>
+        </view>
+    </view>
+</view>
+<vip_mask_layer layerType="1" reShow="{{onShow}}" wx:if="{{memberCardInfo}}"></vip_mask_layer>

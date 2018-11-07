@@ -1,0 +1,54 @@
+.goods_right_a {
+    width: 100%;
+    margin: 0 auto;
+    height: 410rpx;
+    background: #fff;
+}
+
+.goods_right_a image,.goods_right_a video {
+    width: 100%;
+    height: 100%;
+}
+
+.goods_des_parent .goods_right_b {
+    width: 690rpx;
+    font-size: 32rpx;
+    color: #555;
+    word-break: break-all;
+}
+
+.replace-video {
+    position: relative;
+    height: 410rpx;
+    text-align: center;
+}
+
+.mask-img {
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 410rpx;
+}
+
+.play-icon {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    width: 93rpx;
+    height: 93rpx;
+    margin-left: -60rpx;
+    margin-top: -46rpx;
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/player.png) no-repeat center center;
+    background-size: 100% 100%;
+}
+
+.gapless {
+    width: 100%;
+}
+
+.interval {
+    padding: 0 30rpx;
+}

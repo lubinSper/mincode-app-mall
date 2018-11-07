@@ -1,0 +1,13 @@
+<view class="recommend" wx:if="{{recommend_list.length>0}}">
+    <colours_title title="精品推荐" type="{{2}}"></colours_title>
+    <block wx:for="{{recommend_list}}" wx:key="id">
+        <block wx:if="{{templateId==1}}">
+            <big-goods-view item="{{item}}" template="1" wx:if="{{index%5==0}}"></big-goods-view>
+            <common-goods-view isindex="1" item="{{item}}" wx:else></common-goods-view>
+        </block>
+        <common-goods-view isindex="1" item="{{item}}" wx:elif="{{templateId==2}}"></common-goods-view>
+        <big-goods-view item="{{item}}" template="3" wx:elif="{{templateId==3}}"></big-goods-view>
+        <line-goods-view appointmentCopy="{{appointmentCopy}}" appointmentZeroCopy="{{appointmentZeroCopy}}" isLast="{{index==recommend_list.length-1}}" item="{{item}}" purchaseCopy="{{purchaseCopy}}" wx:elif="{{templateId==4}}"></line-goods-view>
+    </block>
+    <view style="clear:both"></view>
+</view>

@@ -1,0 +1,45 @@
+module.exports = ({
+    addIcon: ['http://yamxcx.oss-cn-shenzhen.aliyuncs.com/wds-xcx/add_normal.png', 'http://yamxcx.oss-cn-shenzhen.aliyuncs.com/wds-xcx/add_bukedian.png'],
+    radio: ({
+        cancel: "http://yamxcx.oss-cn-shenzhen.aliyuncs.com/wds-xcx/gwc_cancel.png",
+        disabled: "http://yamxcx.oss-cn-shenzhen.aliyuncs.com/wds-xcx/gwc_disabled.png",
+        selected: "http://yamxcx.oss-cn-shenzhen.aliyuncs.com/wds-xcx/gwc_selected.png",
+    }),
+    reduceIcon: 'http://yamxcx.oss-cn-shenzhen.aliyuncs.com/wds-xcx/jian_normal.png',
+    substringStr: (function(title, len) {
+        return (title && title.substring(0, len ? len : 25))
+    }),
+    calculateOrderMoney: (function(goods) {
+        var orderMoney = 0;
+        if (goods) {
+            goods.forEach((function(g) {
+                if (((g.inventory != 0) || (g.inventory == 0)) && g.isSelect) orderMoney += getPrice(g) * g.count;
+            }))
+        };
+        return (formatMoney(orderMoney / 100))
+    }),
+    goodsNum: (function(goods) {
+        var number = 0;
+        goods.map((function(g) {
+            if (g.isSelect) number += g.count;
+        }));
+        return (number)
+    }),
+    getPrice: getPrice,
+    formatMoney: formatMoney,
+});
+
+function getPrice(goods) {
+    return (goods.isSuperVip && goods.superMemberPrice && goods.enableSupperMemberPrice == 2) ? goods.superMemberPrice : (goods.price || goods.originalPrice)
+};
+
+function formatMoney(money) {
+    if (money == 0) return ('￥0.00');;
+    money = (+money);
+    return ('￥' + money)
+};
+
+function getLen(str) {
+    var reg = getRegExp("/[^\x5cx00-\x5cxff]/", "g");
+    return (str.replace(reg, "01").length)
+};

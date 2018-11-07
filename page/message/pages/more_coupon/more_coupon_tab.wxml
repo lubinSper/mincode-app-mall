@@ -1,0 +1,2 @@
+<MoreCoupon onLoad="{{onLoad}}" onShow="{{onShow}}" pullDown="{{pullDown}}" pullUp="{{pullUp}}"></MoreCoupon>
+<authorize_dialog bind:backhandle="backHandle" onHide="{{onAuthHide}}" onShow="{{onAuthShow}}" params="{{authParam}}"></authorize_dialog>

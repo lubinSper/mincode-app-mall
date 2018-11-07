@@ -1,0 +1,5 @@
+<view class="goods" style="background:#fff;" wx:if="{{shopArr.length>0}}">
+    <block-title title="{{goodsData.title}}"></block-title>
+    <view style="height:{{goodsData.title?'10rpx':'20rpx'}}"></view>
+    <line-goods-view appointmentCopy="{{appointmentCopy}}" appointmentZeroCopy="{{appointmentZeroCopy}}" isApplyNewLogic="{{true}}" isLast="{{index==shopArr.length-1}}" item="{{item}}" page="discover" purchaseCopy="{{purchaseCopy}}" wx:for="{{shopArr}}" wx:key="item"></line-goods-view>
+</view>

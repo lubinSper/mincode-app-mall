@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "到店买单",
+    "usingComponents": {
+        "coupon_item": "/components/wx-tpl/coupon_item/coupon_item",
+        "authorize_dialog": "/components/wx-tpl/authorize_dialog/authorize/authorize"
+    }
+}

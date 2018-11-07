@@ -1,0 +1,17 @@
+<view class="colours_title {{hasLine?'line':''}}">
+    <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/tittle{{type}}_left.png"></image>
+    <text class="text">
+        <block wx:if="{{isSegmentationTitle}}">
+            <block wx:for="{{title}}" wx:key="item">
+                <text>{{item}}</text>
+                <text class="point point{{type}}" wx:if="{{index!=title.length-1}}"></text>
+            </block>
+        </block>
+        <text wx:else>{{title}}</text>
+    </text>
+    <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/tittle{{type}}_right.png"></image>
+    <view bindtap="openAll" class="all" wx:if="{{showAll}}">
+        <text>全部</text>
+        <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/turn{{type==3||type==2?2:1}}.png"></image>
+    </view>
+</view>

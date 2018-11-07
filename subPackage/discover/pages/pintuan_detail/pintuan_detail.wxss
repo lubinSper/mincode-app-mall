@@ -1,0 +1,565 @@
+page {
+    height: 100%;
+}
+
+view {
+    box-sizing: border-box;
+}
+
+.bg {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.bg .img {
+    width: 100%;
+    height: 540rpx;
+    background-image: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/ptbg.jpg?a=1);
+    background-size: 100% 100%;
+}
+
+.bg .color {
+    flex: 1;
+    width: 100%;
+    background-color: #da0c0f;
+}
+
+.rule {
+    position: absolute;
+    right: 20rpx;
+    top: 30rpx;
+    background: white;
+    height: 40rpx;
+    line-height: 40rpx;
+    border-radius: 20rpx;
+    width: 130rpx;
+    z-index: 2;
+    opacity: 0.7;
+    font-size: 20rpx;
+    color: #730a0c;
+    text-align: center;
+}
+
+.main {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    font-size: 28rpx;
+    height: 100%;
+}
+
+.main .detail {
+    margin: 0 30rpx;
+    margin-top: 148rpx;
+    width: 690rpx;
+    height: 570rpx;
+    background-color: white;
+    border-radius: 16rpx;
+}
+
+.main .detail .header {
+    text-align: center;
+    height: 60rpx;
+}
+
+.main .detail .header image {
+    margin-top: -60rpx;
+    height: 120rpx;
+    width: 120rpx;
+    border-radius: 60rpx;
+    border: 4rpx solid white;
+    box-sizing: border-box;
+}
+
+.main .detail .nickname {
+    width: 100%;
+    height: 66rpx;
+    line-height: 66rpx;
+    text-align: center;
+    font-size: 26rpx;
+    color: #888888;
+}
+
+.main .detail .slogan {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    padding: 4rpx 76rpx;
+    font-size: 32rpx;
+    color: #111;
+}
+
+.main .detail .slogan .symbol {
+    position: absolute;
+    color: #eeeeee;
+}
+
+.main .detail .slogan .symbol image {
+    width: 26rpx;
+    height: 24rpx;
+}
+
+.main .detail .slogan .symbol.left {
+    left: 30rpx;
+    top: -8rpx;
+}
+
+.main .detail .slogan .symbol.right {
+    right: 30rpx;
+    bottom: -8rpx;
+}
+
+.main .detail .slogan .title {
+    font-size: 30rpx;
+    color: #111111;
+    text-align: center;
+}
+
+.main .detail .goods {
+    margin: 20rpx;
+    height: 170rpx;
+    background: #f8f8f8;
+    border-radius: 10rpx;
+    padding: 20rpx 10rpx;
+    display: flex;
+}
+
+.main .detail .goods .left {
+    width: 130rpx;
+    height: 130rpx;
+}
+
+.main .detail .goods .left image {
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+}
+
+.main .detail .goods .right {
+    flex: 1;
+    padding-left: 20rpx;
+}
+
+.main .detail .goods .right .title {
+    font-size: 26rpx;
+    text-align: left;
+    color: #222;
+}
+
+.main .detail .goods .right .price_view {
+    text-align: left;
+    font-size: 28rpx;
+    color: #888888;
+    height: 50rpx;
+    line-height: 50rpx;
+}
+
+.main .detail .goods .right .price_view .price {
+    margin-left: 8rpx;
+    color: #ff7800;
+    font-weight: 700;
+}
+
+.main .detail .goods .right .price_view .old_price {
+    margin-left: 20rpx;
+    text-decoration: line-through;
+}
+
+.main .detail .goods .right .reduce {
+    line-height: 0;
+    margin-top: 8rpx;
+    text-align: left;
+}
+
+.main .detail .goods .right .reduce_price {
+    display: inline-block;
+    height: 34rpx;
+    line-height: 34rpx;
+    color: white;
+    background-color: #ee1b1d;
+    font-size: 24rpx;
+    padding: 0 16rpx;
+    position: relative;
+    margin-left: 6rpx;
+}
+
+.main .detail .goods .right .reduce_price .icon {
+    position: absolute;
+    top: 10rpx;
+    left: -6rpx;
+    border-top: 8rpx solid transparent;
+    border-right: 8rpx solid red;
+    border-bottom: 8rpx solid transparent;
+}
+
+.main .detail .heads {
+    margin-top: 32rpx;
+    display: flex;
+    justify-content: center;
+}
+
+.main .detail .heads .item {
+    width: 80rpx;
+    height: 80rpx;
+    margin-right: 20rpx;
+    position: relative;
+}
+
+.main .detail .heads .item image {
+    width: 100%;
+    height: 100%;
+    border-radius: 40rpx;
+    background-color: #eee;
+}
+
+.main .detail .heads .item .text {
+    position: absolute;
+    bottom: -18rpx;
+    left: 10rpx;
+}
+
+.commander {
+    color: #ce000e;
+    background-color: #ffdb00;
+    font-size: 16rpx;
+    height: 28rpx;
+    width: 58rpx;
+    line-height: 28rpx;
+    border-radius: 14rpx;
+    text-align: center;
+}
+
+.main .time {
+    color: white;
+    text-align: center;
+    height: 70rpx;
+    line-height: 70rpx;
+    margin-top: 8rpx;
+    padding: 0 30rpx;
+}
+
+.main .share {
+    position: relative;
+    height: 98rpx;
+    margin: 0 30rpx;
+}
+
+.main .share .bj {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #e29603;
+    width: 100%;
+    height: 98rpx;
+    border-radius: 16rpx;
+}
+
+.main .share .button {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #ffe002;
+    width: 100%;
+    height: 90rpx;
+    line-height: 90rpx;
+    text-align: center;
+    font-weight: 800rpx;
+    border-radius: 16rpx;
+    color: #d80c0f;
+    font-size: 34rpx;
+    margin: 0;
+}
+
+button::after {
+    border: 0;
+}
+
+.main .full_text {
+    font-size: 34rpx;
+    text-align: center;
+    margin-top: 30rpx;
+    color: white;
+}
+
+.joiner {
+    padding: 30rpx;
+    background-color: #da0c0f;
+}
+
+.joiner_list {
+    padding: 30rpx;
+    color: white;
+    background-color: #e03537;
+    border-radius: 16rpx;
+}
+
+.joiner_list .title {
+    height: 50rpx;
+    width: 100%;
+    position: relative;
+}
+
+.joiner_list .title .line {
+    height: 2rpx;
+    width: 524rpx;
+    background: #f09a9b;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -262rpx;
+    margin-top: -1rpx;
+    z-index: 0;
+}
+
+.joiner_list .title .text {
+    text-align: center;
+    height: 40rpx;
+    line-height: 40rpx;
+    font-size: 24rpx;
+    width: 160rpx;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -80rpx;
+    margin-top: -20rpx;
+    z-index: 99;
+    background-color: #e03537;
+}
+
+.joiner_list .item {
+    padding: 26rpx 0;
+    display: flex;
+}
+
+.joiner_list .left {
+    height: 80rpx;
+    width: 80rpx;
+    vertical-align: middle;
+    position: relative;
+}
+
+.joiner_list .left image {
+    width: 100%;
+    height: 100%;
+    border-radius: 40rpx;
+    background-color: #eee;
+}
+
+.joiner_list .left .text {
+    position: absolute;
+    bottom: -18rpx;
+    left: 10rpx;
+}
+
+.joiner_list .right {
+    padding-left: 26rpx;
+    flex: 1;
+    vertical-align: middle;
+}
+
+.joiner_list .right .first {
+    display: flex;
+    width: 100%;
+    line-height: 38rpx;
+}
+
+.joiner_list .right .first .name {
+    flex: 1;
+    font-size: 28rpx;
+    margin-top: 4rpx;
+}
+
+.joiner_list .right .first .timer {
+    width: 220rpx;
+    font-size: 24rpx;
+    text-align: right;
+}
+
+.joiner_list .right .second {
+    font-size: 26rpx;
+}
+
+.box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box .main_modal {
+    width: 560rpx;
+}
+
+.box .content {
+    width: 100%;
+    height: 420rpx;
+    border-radius: 25rpx;
+    background-color: white;
+    text-align: center;
+    padding: 30rpx 0;
+}
+
+.box .content .icon {
+    padding: 16prx 0;
+}
+
+.box .content .icon image {
+    height: 80rpx;
+    width: 80rpx;
+    border-radius: 40rpx;
+}
+
+.box .content .icon.helper image {
+    width: 110rpx;
+    height: 98rpx;
+    border-radius: 0;
+}
+
+.box .content .success {
+    font-size: 36rpx;
+    font-weight: 800;
+    height: 70rpx;
+    line-height: 70rpx;
+}
+
+.box .content .time_view {
+    margin: 0 70rpx;
+    margin-top: 10rpx;
+    line-height: 100rpx;
+    color: #555;
+    font-size: 26rpx;
+    line-height: 40rpx;
+}
+
+.box .content .time_view .time {
+    color: #ff7800;
+}
+
+.box .content .box_button {
+    font-size: 30rpx;
+    width: 460rpx;
+    margin: 0 auto;
+    height: 80rpx;
+    line-height: 80rpx;
+    border-radius: 40rpx;
+    background-color: #ff7800;
+    color: white;
+    margin-top: 26rpx;
+}
+
+.close {
+    margin-top: 100rpx;
+    text-align: center;
+}
+
+.close image {
+    height: 62rpx;
+    width: 62rpx;
+}
+
+.box .success_content {
+    height: 550rpx;
+    width: 100%;
+    background-image: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/ctcg.png?a=1);
+    background-size: 100% 100%;
+    padding-top: 96rpx;
+    text-align: center;
+    font-size: 30rpx;
+}
+
+.box .success_content .first {
+    height: 140rpx;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15rpx;
+}
+
+.box .success_content .first .text {
+    font-size: 50rpx;
+}
+
+.box .success_content .first .number {
+    font-size: 26rpx;
+    line-height: 30rpx;
+    margin: 0 60rpx;
+}
+
+.box .success_content .second {
+    color: #888;
+    height: 56rpx;
+    line-height: 56rpx;
+    margin-top: 60rpx;
+}
+
+.box .success_content .second .price {
+    color: #ff7800;
+    padding-left: 20rpx;
+}
+
+.box .success_content .third {
+    color: #888;
+    height: 46rpx;
+    line-height: 46rpx;
+    margin-bottom: 30rpx;
+}
+
+.box .success_content .button {
+    background-color: #ff7800;
+    color: white;
+    width: 460rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    margin: auto;
+    border-radius: 40rpx;
+    font-size: 30rpx;
+}
+
+.box .success_content .button.gray {
+    background-color: #CCCCCC;
+    color: white;
+}
+
+.cut_screen {
+    opacity: 0.7;
+}
+
+.rule_modal {
+    width: 590rpx;
+}
+
+.rule_modal .content {
+    width: 100%;
+    background: white;
+    border-radius: 20rpx;
+    padding: 0 50rpx 20rpx 50rpx;
+    height: 550rpx;
+}
+
+.rule_modal .content .title {
+    color: #222;
+    font-size: 34rpx;
+    font-weight: 500;
+    text-align: center;
+    line-height: 86rpx;
+}
+
+.rule_modal .content .line {
+    font-size: 26rpx;
+    line-height: 40rpx;
+    color: #888888;
+    margin-bottom: 20rpx;
+    text-align: left;
+}

@@ -1,0 +1,35 @@
+.recommend {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20rpx;
+    background-color: #fff;
+}
+
+.recommend::after {
+    clear: both;
+}
+
+.recommend .recommend_top {
+    width: 100%;
+    display: inline-block;
+    height: 40rpx;
+    padding: 30rpx 0;
+}
+
+.recommend .recommend_top image {
+    width: 244rpx;
+    height: 40rpx;
+    display: block;
+    margin: 0 auto;
+}
+
+.recommend_list_view {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.recommend_list_view .r_content {
+    max-height: 180rpx;
+    padding: 15rpx 0 20rpx 0;
+    box-sizing: border-box;
+}

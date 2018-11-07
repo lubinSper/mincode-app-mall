@@ -1,0 +1,3 @@
+<view class="{{i==0?'custom_line nonMarginTop':'custom_line'}} {{line.value==4?'maxwidth':''}}" style="text-align: center">
+    <view class="line {{lineMap[line.value]}}"></view>
+</view>

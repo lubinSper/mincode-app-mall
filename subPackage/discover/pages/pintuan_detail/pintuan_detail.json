@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "拼团",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "show_dialog": "/components/wx-tpl/show_dialog/show_dialog",
+        "return_index": "/components/wx-tpl/return_index/return_index",
+        "authorize_dialog": "/components/wx-tpl/authorize_dialog/authorize/authorize"
+    }
+}

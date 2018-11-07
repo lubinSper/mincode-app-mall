@@ -1,0 +1,369 @@
+page {
+    background-color: #f4f4f4;
+}
+
+.flatClear {
+    clear: both;
+}
+
+.goodsState {
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
+    align-content: flex-start;
+    width: 100%;
+    background-color: #fff;
+    padding: 35rpx 0 0 0;
+}
+
+.goodsStateLi {
+    flex: 1;
+    width: 25%;
+    height: 120rpx;
+}
+
+.goodsStateLi label {
+    width: 100%;
+    display: block;
+    position: relative;
+}
+
+.goodsStateLi .gsImg {
+    width: 63rpx;
+    height: 45rpx;
+    display: block;
+    margin: 0 auto;
+}
+
+.goodsStateLi .gsImg .img {
+    display: block;
+    margin: 0 auto;
+    width: 42rpx;
+    height: 37rpx;
+}
+
+.goodsStateLi:nth-child(1)>.gsImg>.img {
+    width: 42rpx;
+    height: 37rpx;
+}
+
+.goodsStateLi:nth-of-type(2)>.gsImg>.img {
+    width: 42rpx;
+    height: 36rpx;
+}
+
+.goodsStateLi:nth-of-type(3)>.gsImg>.img {
+    width: 36rpx;
+    height: 40rpx;
+}
+
+.goodsStateLi:nth-of-type(4)>.gsImg>.img {
+    width: 42rpx;
+    height: 41rpx;
+}
+
+.goodsStateLi text {
+    box-sizing: border-box;
+    position: absolute;
+    min-width: 36rpx;
+    height: 36rpx;
+    display: block;
+    padding: 0 12rpx;
+    background-color: #ff5500;
+    border-radius: 18rpx;
+    text-align: center;
+    z-index: 333;
+    top: -20rpx;
+    right: -20rpx;
+    color: #fff;
+    font-size: 22rpx;
+}
+
+.goodsStateLi .gsText {
+    font-size: 24rpx;
+    text-align: center;
+    color: #555;
+}
+
+.menu_bar_li {
+    display: inline-flex;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.my_order .lookAllBooks {
+    position: absolute;
+    top: 8rpx;
+    right: 0;
+    padding-right: 66rpx;
+    font-size: 24rpx;
+    color: #888;
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/one-shop-one-mini-app/next.png) no-repeat 120rpx center / 14rpx 25rpx;
+}
+
+.user_info {
+    background-color: #fff;
+    position: relative;
+    border-top: 1rpx solid #dedede;
+}
+
+.user_info_vip {
+    background: #fff url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/head_bg.png) no-repeat left top / 100% 398rpx;
+}
+
+.user_info .user_img {
+    margin: 40rpx auto 10rpx auto;
+    width: 136rpx;
+    height: 136rpx;
+}
+
+.user_info .user_img image {
+    width: 136rpx;
+    height: 136rpx;
+    border-radius: 50%;
+    background-color: #eee;
+}
+
+.user_info .user_name {
+    text-align: center;
+    padding-bottom: 20rpx;
+}
+
+.user_info_vip .user_name {
+    padding-bottom: 0;
+}
+
+.user_info .warp_name {
+    display: inline-block;
+    text-align: center;
+    line-height: 28rpx;
+    background: none;
+    margin: 0;
+    padding: 0;
+}
+
+.user_info button::after {
+    border: none;
+}
+
+.user_info .text {
+    font-size: 28rpx;
+    color: #888;
+}
+
+.user_info_vip .text {
+    color: #fff;
+}
+
+.user_info .refresh_btn {
+    display: inline-block;
+    border: none;
+    width: 22rpx;
+    height: 22rpx;
+    margin-left: 10rpx;
+    vertical-align: middle;
+}
+
+.user_vip {
+    width: 100%;
+    height: 295rpx;
+    position: relative;
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/vipbg.png) no-repeat center top / 100% 100%;
+}
+
+.vip_info {
+    color: #d3a95a;
+    font-size: 28rpx;
+    position: relative;
+    top: 100rpx;
+    left: 80rpx;
+}
+
+.vip_title {
+    font-size: 40rpx;
+    line-height: 60rpx;
+}
+
+.vip_info .detail_title {
+    max-width: 395rpx;
+    line-height: 32rpx;
+}
+
+.vip_btn {
+    position: absolute;
+    right: 78rpx;
+    top: 110rpx;
+    width: 200rpx;
+    line-height: 70rpx;
+    background-color: #d3a95a;
+    font-size: 28rpx;
+    font-weight: 500;
+    text-align: center;
+    color: #fff;
+    border-radius: 70rpx;
+}
+
+.vip_btn_recharge {
+    width: 146rpx;
+    top: 90rpx;
+}
+
+.vip_page {
+    position: absolute;
+    right: 78rpx;
+    top: 180rpx;
+    font-size: 26rpx;
+    color: #888;
+    width: 180rpx;
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/one-shop-one-mini-app/next.png) no-repeat right center / 14rpx 25rpx;
+}
+
+.menu_bar {
+    background-color: #fff;
+    padding: 20rpx 30rpx 20rpx 40rpx;
+    padding-right: 0;
+    margin-top: 20rpx;
+}
+
+.my_item {
+    display: flex;
+    flex-direction: row;
+    padding-left: 46rpx;
+    position: relative;
+    font-size: 30rpx;
+    color: #222;
+}
+
+.my_order {
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/wddd.png) left 12rpx / 26rpx 30rpx no-repeat;
+    width: 100%;
+}
+
+.yuyue {
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/wdyy.png) left 10rpx / 30rpx 30rpx no-repeat;
+}
+
+.historicalOrder {
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/lsddreset.png) left 10rpx / 26rpx 30rpx no-repeat;
+}
+
+.my_coupon {
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/wdyh.png) left 14rpx / 30rpx 24rpx no-repeat;
+}
+
+.my_coupon.wds {
+    padding-bottom: 20rpx;
+}
+
+.my_address {
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/shdz.png) left 30rpx / 28rpx 31rpx no-repeat;
+}
+
+.my_support {
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/xcx02.png) left 10rpx / 30rpx 30rpx no-repeat;
+}
+
+.support_hot {
+    width: 50rpx;
+    height: 28rpx;
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/hot.png) no-repeat left top;
+    background-size: 50rpx 28rpx;
+    margin: 10rpx 0 0 20rpx;
+    display: block;
+}
+
+.store_pay {
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/ddmd.png) left 10rpx / 28rpx 28rpx no-repeat;
+}
+
+.kanprice {
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/kanjia.png) left 28rpx / 27.33rpx 30.67rpx no-repeat;
+}
+
+.pintuan {
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/wdpreset.png) left 30rpx / 30rpx 30rpx no-repeat;
+}
+
+.shoppingcar {
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/wo_gouwuche.png) left 10rpx / 27.34rpx 26.67rpx no-repeat;
+}
+
+.my_item span {
+    height: 36rpx;
+    line-height: 36rpx;
+    border-radius: 18rpx;
+    display: block;
+    font-size: 22rpx;
+    background-color: #ff5500;
+    color: #fff;
+    position: absolute;
+    right: 54rpx;
+    top: 4rpx;
+    min-width: 36rpx;
+    text-align: center;
+}
+
+.menu_bar .my_order .my_order_circle {
+    width: 18rpx;
+    height: 18rpx;
+    display: block;
+    position: absolute;
+    top: 18rpx;
+    right: 74rpx;
+    background-color: #ff5500;
+    border-radius: 9rpx;
+}
+
+.menu_bar .my_coupon .coupon_font,.menu_bar .my_order .order_font,.menu_bar .my_address .order_font {
+    line-height: 52rpx;
+    max-height: 104rpx;
+}
+
+.mebu_bar .order_font {
+    color: #222;
+}
+
+.coupon_icon,.order_icon {
+    width: 14rpx;
+    height: 25rpx;
+    margin-right: 28rpx;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -8rpx!important;
+}
+
+.menu_bar .my_order .order_icon,.my_address .order_icon {
+    margin-top: -12rpx;
+}
+
+.my_footer_logo {
+    text-align: center;
+    position: absolute;
+    bottom: 60rpx;
+    left: 50%;
+    margin-left: -102rpx;
+}
+
+.my_footer_logo image {
+    width: 215rpx;
+    height: 121rpx;
+}
+
+.menu_bar .kanprice,.menu_bar .pintuan,.menu_bar .my_address {
+    border-top: 1rpx solid #e2e2e2;
+    padding-top: 20rpx;
+}
+
+.menu_bar .my_coupon .coupon_icon {
+    margin-top: 0;
+}
+
+.order_font_address {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    width: 584rpx;
+    text-overflow: ellipsis;
+}

@@ -1,0 +1,42 @@
+@import "../more_coupon/more_coupon.wxss";
+
+page {
+    background-color: #fff;
+}
+
+view {
+    box-sizing: border-box;
+}
+
+.coupon-segment {
+    display: flex;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    padding: 30rpx 50rpx;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #fff;
+    font-size: 28rpx;
+    color: #555;
+    border-bottom: 1rpx solid #e2e2e2;
+}
+
+.coupon-segment .item-click {
+    color: #ff7800;
+}
+
+.coupon-segment .segement-item {
+    line-height: 28rpx;
+}
+
+.coupon-cnt {
+    padding: 120rpx 28rpx 40rpx;
+    width: 100%;
+}
+
+.coupon-cnt .more-coupon {
+    font-size: 32rpx;
+    color: #888;
+    text-align: center;
+}

@@ -1,0 +1,373 @@
+@import "../../../../template/buy_car_dialog/buy_car_dialog.wxss";
+
+page {
+    height: auto;
+}
+
+.main {
+    background-color: #F4F4F4;
+    width: 100%;
+    padding-bottom: 100rpx;
+    overflow: hidden;
+    margin-top: 0;
+}
+
+.good_block_list .good_block:last-child {
+    border-bottom: 0;
+}
+
+.good_block {
+    display: flex;
+    height: 240rpx;
+    border-bottom: 1rpx solid #E2E2E2;
+    background: white;
+    padding: 30rpx 0;
+    box-sizing: border-box;
+}
+
+.good_block.first {
+    border-top: 1rpx solid #E2E2E2;
+}
+
+.good_block .select {
+    width: 100rpx;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.good_block .radio_view {
+}
+
+.good_block .radio_view image {
+    height: 100%;
+    width: 100%;
+}
+
+.radio_icon {
+    width: 40rpx;
+    height: 40rpx;
+    background-size: cover;
+}
+
+.radio_icon.selected {
+    background-position: 50% 0;
+}
+
+.radio_icon.non_select {
+    background-position: 100% 0;
+}
+
+.good_block .img {
+    width: 160rpx;
+    height: 100%;
+    position: relative;
+}
+
+.good_block .img image {
+    width: 100%;
+    height: 100%;
+}
+
+.good_block .non_data {
+    position: absolute;
+    top: 15rpx;
+    left: 15rpx;
+    width: 130rpx;
+    height: 130rpx;
+}
+
+.good_block .non_data .bj {
+    width: 100%;
+    height: 100%;
+    font-size: 26rpx;
+    border-radius: 65rpx;
+    background-color: black;
+    opacity: 0.5;
+}
+
+.good_block .non_data .text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    left: 0;
+    top: 50%;
+    height: 30rpx;
+    margin-top: -15rpx;
+    color: white;
+    font-size: 26rpx;
+}
+
+.good_block .only_one {
+    width: 100%;
+    height: 34rpx;
+    line-height: 34rpx;
+    position: absolute;
+    bottom: 0;
+    background: #ff7800;
+    color: white;
+    opacity: 0.7;
+    font-size: 22rpx;
+    text-align: center;
+}
+
+.good_block .content {
+    padding: 0 30rpx;
+    flex: 1;
+}
+
+.good_block .content .title {
+    font-size: 30rpx;
+    line-height: 33rpx;
+    height: 64rpx;
+    color: #222222;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    white-space: normal;
+    word-break: break-all;
+    overflow: hidden;
+}
+
+.good_block .content .title.opacity {
+    color: #888;
+}
+
+.good_block .content .reelect_view {
+    height: 50rpx;
+    display: flex;
+    align-items: center;
+    margin: 10rpx 0;
+}
+
+.good_block .content .reelect_view .reelect {
+    display: inline-block;
+    height: 50rpx;
+    line-height: 50rpx;
+    font-size: 24rpx;
+    text-align: center;
+    background-color: #f8f8f8;
+    color: #888888;
+    border-radius: 4rpx;
+    padding: 0rpx 12rpx;
+}
+
+.good_block .content .reelect_view .reelect .text {
+    float: left;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    word-break: break-all;
+    max-width: 350rpx;
+}
+
+.good_block .content .reelect_view .reelect .arrow {
+    margin-left: 8rpx;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    float: left;
+}
+
+.good_block .content .reelect_view .reelect .arrow image {
+    width: 20rpx;
+    height: 10rpx;
+}
+
+.good_block .content .content_b {
+    height: 50rpx;
+    display: flex;
+}
+
+.good_block .content .content_b .price_v {
+    flex: 1;
+    height: 100%;
+    position: relative;
+}
+
+.good_block .content .content_b .price_v .price {
+    display: inline-block;
+    height: 30rpx;
+    line-height: 30rpx;
+    color: #ff7800;
+    font-size: 30rpx;
+    text-align: left;
+    text-indent: -6rpx;
+}
+
+.good_block .content .content_b .price_v .price.vip-price {
+    color: #ff7800;
+}
+
+.good_block .content .content_b .icon-vip {
+    display: inline-block;
+    width: 50rpx;
+    height: 24rpx;
+    background-size: cover;
+    margin-left: 18rpx;
+}
+
+.good_block .content .content_b .price_v .price.opacity {
+    color: #ffb06a;
+}
+
+.good_block .content .content_b .num_group {
+    display: flex;
+    border: 1px solid #E8E8E8;
+    border-radius: 6rpx;
+    width: 180rpx;
+    height: 100%;
+    margin-top: -12rpx;
+}
+
+.good_block .content .content_b .num_group .input {
+    border-left: 1px solid #E8E8E8;
+    border-right: 1px solid #E8E8E8;
+    flex: 1.5;
+    text-align: center;
+    line-height: 50rpx;
+    font-size: 30rpx;
+}
+
+.good_block .num_group .add,.good_block .num_group .reduce {
+    flex: 1;
+    font-size: 32rpx;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.good_block .num_group .add image {
+    width: 20rpx;
+    height: 20rpx;
+}
+
+.good_block .num_group .reduce image {
+    width: 20rpx;
+    height: 2rpx;
+}
+
+.no_goods {
+    width: 100%;
+    text-align: center;
+    margin-top: 250rpx;
+}
+
+.no_goods .car {
+    width: 276rpx;
+    height: 276rpx;
+    margin: auto;
+}
+
+.no_goods .text {
+    font-size: 32rpx;
+    color: #555;
+    line-height: 90rpx;
+}
+
+.button_fixd {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    height: 100rpx;
+    line-height: 100rpx;
+    width: 100%;
+    border-top: 1px solid #f0f0f0;
+    background: white;
+    color: #222;
+    font-size: 30rpx;
+    z-index: 999;
+}
+
+.button_fixd .select {
+    width: 196rpx;
+    display: flex;
+}
+
+.button_fixd .radio_icon {
+    margin: auto 30rpx;
+    display: flex;
+    justify-content: center;
+}
+
+.button_fixd .radio_icon image {
+    height: 100%;
+    width: 100%;
+}
+
+.button_fixd .money {
+    flex: 2;
+}
+
+.button_fixd .money .num {
+    color: #ff7800;
+}
+
+.button_fixd .button {
+    width: 218rpx;
+    background: #ff7800;
+    color: white;
+    text-align: center;
+    font-size: 30rpx;
+}
+
+.dialog_warp {
+    position: fixed;
+    top: 50%;
+    width: 100%;
+    margin-top: -34rpx;
+    z-index: 999999999999999999999999;
+    text-align: center;
+}
+
+.dialog {
+    background: rgba(0,0,0,0.8);
+    line-height: 40rpx;
+    text-align: center;
+    border-radius: 8rpx;
+    display: inline-block;
+    padding: 14rpx 30rpx;
+    color: #fff;
+    font-size: 30rpx;
+}
+
+.loading_failure {
+    position: relative;
+    width: 100%;
+    height: 600rpx;
+}
+
+.loading_failure .loading_wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    height: 176rpx;
+}
+
+.loading_failure .loading_failure_img {
+    text-align: center;
+}
+
+.loading_failure image {
+    width: 100rpx;
+    height: 118rpx;
+}
+
+.loading_failure .loading_failure_text {
+    text-align: center;
+    font-size: 25rpx;
+    color: #bababa;
+}
+
+.loading_failure .loading_failure_text text {
+    font-weight: bold;
+    color: #888;
+}

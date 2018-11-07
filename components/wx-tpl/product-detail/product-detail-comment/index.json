@@ -1,0 +1,9 @@
+{
+    "component": true,
+    "usingComponents": {
+        "ProductCommentItem": "../product-detail-comment-item/index",
+        "NoData": "/components/wx-tpl/nodata/index",
+        "showActionSheet": "/components/template/showActionSheet/index",
+        "authorize_dialog": "/components/wx-tpl/authorize_dialog/authorize/authorize"
+    }
+}

@@ -1,0 +1,38 @@
+<view class="reservation_listes" style="overflow:hidden;">
+    <view catchtap="jumpFunc" data-id="{{item.orderId}}" wx:for="{{arrList}}" wx:for-index="i">
+        <view class="rl_content">
+            <view class="reservation_listes_top">
+                <text class="fl rlt_times">{{item.buyTime}}</text>
+                <text class="fr rlt_sure">待商家处理</text>
+            </view>
+            <view class="reservation_listes_li" wx:for="{{item.product}}" wx:for-index="j" wx:for-item="item02">
+                <view class="goods_icon">
+                    <image alt="拼团" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/ptbq.png" wx:if="{{item02.activityType==3}}"></image>
+                    <image alt="限时购" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/xsgbqre.png" wx:if="{{item02.activityType==1}}"></image>
+                    <image alt="砍价" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/kjbqre.png" wx:if="{{item02.activityType==2}}"></image>
+                </view>
+                <view class="rll_block rll_img">
+                    <image alt="" mode="aspectFill" src="{{item02.imageUrl}}"></image>
+                </view>
+                <view class="rll_block rll_middle">
+                    <view class="r_title">{{item02.productName}}</view>
+                    <view class="r_shape" wx:if="{{type==5}}">预约时间 : {{item02.productPTime}}</view>
+                </view>
+                <view class="rll_block rll_right">
+                    <text>￥{{item02.productPrice}}</text>
+                    <text wx:if="{{item02.productOriginalPrice!='0.00'}}">￥{{item02.productOriginalPrice}}</text>
+                    <text wx:if="{{item.productType==1}}">x{{item02.productCount}}</text>
+                </view>
+            </view>
+            <view class="sure_price">
+                <view>
+                                合计:<text class="integer_price">￥{{item.amount}}</text>
+                </view>
+                <view wx:if="{{item.payMethod==2}}">货到付款</view>
+                <view wx:elif="{{item.payMethod==4}}">到店支付</view>
+                <view class="weixin" wx:else>微信支付</view>
+            </view>
+            <view class="flatClear"></view>
+        </view>
+    </view>
+</view>

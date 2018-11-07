@@ -1,0 +1,7 @@
+<view style="overflow:hidden;">
+    <Dy-circle-friends-css appointmentCopy="{{appointmentCopy}}" bind:setparentdata="setParentData" onHide="{{onHide}}" onPullDownRefresh="{{onPullDownRefresh}}" onReachBottom="{{onReachBottom}}" onShow="{{onShow}}" purchaseCopy="{{purchaseCopy}}" type="{{type}}"></Dy-circle-friends-css>
+    <return_index wx:if="{{showReturnIndexBtn}}"></return_index>
+    <view class="no_price_hide" style="{{copyRightStyle}}">
+        <copyright onPullDownRefresh="{{onPullDownRefresh}}" onShow="{{onShow}}"></copyright>
+    </view>
+</view>

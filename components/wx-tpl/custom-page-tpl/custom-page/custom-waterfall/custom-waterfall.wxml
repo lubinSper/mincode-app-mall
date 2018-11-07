@@ -1,0 +1,99 @@
+<view class="{{i==0?'custom_waterfall nonMarginTop':'custom_waterfall'}}" style="background:#fff; overflow:hidden; " wx:if="{{shopArr.length>0}}">
+    <block-title title="{{goodsData.title}}"></block-title>
+    <view class="free-WaterfallFlow" style="margin-top: {{goodsData.title?'20rpx':'30rpx'}}">
+        <view class="flex-item">
+            <view bindtap="jump" class="flex-wrap image-odd" data-id="{{item.id}}" wx:if="{{(index+1)%2!=0}}" wx:for="{{shopArr}}" wx:key="{{item.id}}">
+                <view class="warp-image">
+                    <image class="coverImage" mode="aspectFill" src="{{item.coverImage}}"></image>
+                    <view class="limit_view cut_price" wx:if="{{item.isPintuan==2&&item.timeArr&&item.isSpecial!=2}}">
+                        <image src="https://xcximg.197.com/xcx/pintuan60_.png"></image>
+                        <view class="limit">
+                            <view class="time" style="margin-left: 14rpx;">多人拼团，更省</view>
+                        </view>
+                    </view>
+                    <view class="limit_view cut_price" wx:elif="{{item.isBargain==2&&item.timeArr&&item.isSpecial!=2}}">
+                        <image src="https://xcximg.197.com/xcx/kanjia360.png"></image>
+                        <view class="limit">
+                            <view class="time">距结束{{item.timeArr?item.timeArr[0]+':'+item.timeArr[1]+':'+item.timeArr[2]:'00:00:00'}}</view>
+                        </view>
+                    </view>
+                    <view class="limit_view teshu" wx:elif="{{item.isBargain==1&&item.isPintuan==1&&item.toEndTime>0&&item.isSpecial!=2}}">
+                        <view class="limit {{item.timeArr[0]>99?'more':''}}">
+                            <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/time24.png"></image>
+                            <view class="time">距结束{{item.timeArr?item.timeArr[0]+':'+item.timeArr[1]+':'+item.timeArr[2]:'00:00:00'}}</view>
+                        </view>
+                    </view>
+                    <view class="tag_icon" wx:if="{{isShowTag&&(item.type==3||item.tagType)}}">
+                        <image class="{{tagTypes[item.tagType-1]}}" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/{{tagTypes[item.tagType-1]}}.png?a=3" wx:if="{{item.type!=3}}"></image>
+                    </view>
+                </view>
+                <view class="goodsInfo">
+                    <view class="name">{{item.name}}</view>
+                    <text class="price" style="color:#fff" wx:if="{{item.isSpecial==2&&item.price==0}}">0</text>
+                    <block wx:elif="{{item.isSpecial==2&&item.price!=0}}">
+                        <text class="price">{{item.price[0]}}</text>
+                        <text class="price" wx:if="{{item.price[1]}}">.{{item.price[1]}}</text>
+                        <text class="price">万</text>
+                        <abcd class="old_price" wx:if="{{item.originalPrice>0}}">{{item.originalPrice}}万</abcd>
+                    </block>
+                    <view wx:elif="{{item.type==3&&item.price[0]==0&&!item.price[1]}}">
+                        <text class="price">免费预约</text>
+                    </view>
+                    <view wx:else>
+                        <text class="price">￥{{item.price[0]}}</text>
+                        <text class="price" wx:if="{{item.price[1]}}">.{{item.price[1]}}</text>
+                        <text class="old_price" wx:if="{{item.originalPrice>0}}">￥{{item.originalPrice}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="flex-item">
+            <view bindtap="jump" class="flex-wrap image-even" data-id="{{item.id}}" wx:if="{{(index+1)%2==0}}" wx:for="{{shopArr}}" wx:key="{{item.id}}">
+                <view class="warp-image">
+                    <image class="coverImage" mode="aspectFill" src="{{item.coverImage}}"></image>
+                    <view class="limit_view cut_price" wx:if="{{item.isPintuan==2&&item.timeArr&&item.isSpecial!=2}}">
+                        <image src="https://xcximg.197.com/xcx/pintuan60_.png"></image>
+                        <view class="limit">
+                            <view class="time" style="margin-left: 14rpx;">多人拼团，更省</view>
+                        </view>
+                    </view>
+                    <view class="limit_view cut_price" wx:elif="{{item.isBargain==2&&item.timeArr&&item.isSpecial!=2}}">
+                        <image src="https://xcximg.197.com/xcx/kanjia360.png"></image>
+                        <view class="limit">
+                            <view class="time">距结束{{item.timeArr?item.timeArr[0]+':'+item.timeArr[1]+':'+item.timeArr[2]:'00:00:00'}}</view>
+                        </view>
+                    </view>
+                    <view class="limit_view teshu" wx:elif="{{item.isBargain==1&&item.isPintuan==1&&item.toEndTime>0&&item.isSpecial!=2}}">
+                        <view class="limit {{item.timeArr[0]>99?'more':''}}">
+                            <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/time24.png"></image>
+                            <view class="time">距结束{{item.timeArr?item.timeArr[0]+':'+item.timeArr[1]+':'+item.timeArr[2]:'00:00:00'}}</view>
+                        </view>
+                    </view>
+                    <view class="tag_icon" wx:if="{{isShowTag&&(item.type==3||item.tagType)}}">
+                        <image class="{{tagTypes[item.tagType-1]}}" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/{{tagTypes[item.tagType-1]}}.png?a=3" wx:if="{{item.type!=3}}"></image>
+                    </view>
+                </view>
+                <view class="goodsInfo">
+                    <view class="name">{{item.name}}</view>
+                    <text class="price" style="color:#fff" wx:if="{{item.isSpecial==2&&item.price==0}}">0</text>
+                    <block wx:elif="{{item.isSpecial==2&&item.price!=0}}">
+                        <text class="price">{{item.price[0]}}</text>
+                        <text class="price" wx:if="{{item.price[1]}}">.{{item.price[1]}}</text>
+                        <text class="price">万</text>
+                        <abcd class="old_price" wx:if="{{item.originalPrice>0}}">{{item.originalPrice}}万</abcd>
+                    </block>
+                    <view wx:elif="{{item.type==3&&item.price[0]==0&&!item.price[1]}}">
+                        <text class="price">免费预约</text>
+                    </view>
+                    <view wx:else>
+                        <text class="price">￥{{item.price[0]}}</text>
+                        <text class="price" wx:if="{{item.price[1]&&item.price[1]!='00'}}">.{{item.price[1]}}</text>
+                        <text class="old_price" wx:if="{{item.enableSupperMemberPrice===2&&item.superMemberPrice}}">￥{{item.salePrice3}}</text>
+                        <text class="old_price" wx:elif="{{item.originalPrice>0}}">￥{{item.originalPrice}}</text>
+                        <image class="icon-vip" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/icon-svip.png" wx:if="{{item.enableSupperMemberPrice===2&&item.superMemberPrice}}"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,69 @@
+view {
+    box-sizing: border-box;
+}
+
+.header {
+    height: 80rpx;
+    width: 100%;
+    line-height: 80rpx;
+    color: #555;
+    font-size: 28rpx;
+    padding: 0 30rpx;
+}
+
+.content .item {
+    background-color: white;
+    border-bottom: 1rpx solid #e5e5e5;
+    height: 130rpx;
+    width: 100%;
+    display: flex;
+    padding: 0 30rpx;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.content .item .img {
+    width: 90rpx;
+    height: 90rpx;
+}
+
+.content .item .img image {
+    width: 100%;
+    height: 100%;
+    border-radius: 45rpx;
+    background-color: #eee;
+}
+
+.content .item .user {
+    margin-left: 16rpx;
+    width: 230rpx;
+}
+
+.content .item .user .name {
+    font-size: 28rpx;
+    color: #222;
+}
+
+.content .item .user .time {
+    font-size: 24rpx;
+    color: #888888;
+}
+
+.content .item .number {
+    width: 230rpx;
+    text-align: right;
+    font-size: 28rpx;
+    color: #222;
+}
+
+.content .item .button {
+    width: 134rpx;
+    text-align: center;
+    height: 50rpx;
+    border-radius: 45rpx;
+    background-color: #ff7800;
+    color: white;
+    font-size: 24rpx;
+    line-height: 50rpx;
+    margin-left: 20rpx;
+}

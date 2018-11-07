@@ -1,0 +1,23 @@
+.custom_btn {
+    padding: 30rpx 0;
+    text-align: center;
+}
+
+.custom_btn .c_btn {
+    display: block;
+    width: 362rpx;
+    height: 82rpx;
+    line-height: 82rpx;
+    background: #ff7800;
+    font-size: 32rpx;
+    color: #fefcfc;
+    border-radius: 50rpx;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.custom_btn .c_btn:after {
+    border: none;
+    margin: 0;
+    padding: 0;
+}

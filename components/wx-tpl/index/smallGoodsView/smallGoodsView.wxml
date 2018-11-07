@@ -1,0 +1,31 @@
+<navigator class="goods {{isLast?'last':''}} {{isUser?'userLimit':''}}" hoverClass="none" url="/subPackage/discover/pages/{{xcxType==3?'goods_detail_new':'goods_detail'}}/goods_detail?id={{item.id}}">
+    <view class="img_view">
+        <image mode="aspectFill" src="{{item.coverImage?item.coverImage:item.imgUrls[0]}}"></image>
+        <view class="limit" wx:if="{{item.timeArr&&item.isSpecial!=2}}">
+            <view class="content {{item.timeArr&&item.timeArr[0]>99?'more':''}}">
+                <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/time24.png"></image>
+                <view class="time">{{item.timeArr?item.timeArr[0]+':'+item.timeArr[1]+':'+item.timeArr[2]:'00:00:00'}}</view>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{!isUser}}">
+        <view class="price 222">
+            <text>￥{{item.price[0]}}</text>
+            <text wx:if="{{item.price[1]}}">.{{item.price[1]}}</text>
+            <image class="icon-vip" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/icon-svip.png" wx:if="{{item.enableSupperMemberPrice===2&&item.superMemberPrice}}"></image>
+        </view>
+        <view class="old_price" wx:if="{{item.enableSupperMemberPrice===2&&item.superMemberPrice}}">￥{{item.salePrice3}}</view>
+        <view class="old_price" wx:elif="{{item.originalPrice>0}}">￥{{item.originalPrice}}</view>
+    </view>
+    <view class="userInfo" wx:else>
+        <view class="name">{{item.name}}</view>
+        <view class="price">
+            <text style="font-size: 24rpx;">￥</text>
+            <text style="font-size: 32rpx;">{{item.price[0]}}</text>
+            <text style="font-size: 22rpx;" wx:if="{{item.price[1]}}">.{{item.price[1]}}</text>
+            <text class="old_price" wx:if="{{item.enableSupperMemberPrice===2&&item.superMemberPrice}}">￥{{item.salePrice3}}</text>
+            <text class="old_price" wx:elif="{{item.originalPrice>0}}">￥{{item.originalPrice}}</text>
+            <image class="icon-vip" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/icon-svip.png" wx:if="{{item.enableSupperMemberPrice===2&&item.superMemberPrice}}"></image>
+        </view>
+    </view>
+</navigator>

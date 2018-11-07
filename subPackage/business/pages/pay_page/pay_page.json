@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "到店买单",
+    "usingComponents": {
+        "paySixDialog": "../../components/pay-six-dialog/index",
+        "return_index": "../../../../components/wx-tpl/return_index/return_index",
+        "Nodata": "../../../../components/wx-tpl/nodata/index"
+    }
+}

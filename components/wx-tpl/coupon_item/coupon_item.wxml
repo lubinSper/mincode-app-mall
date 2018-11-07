@@ -1,0 +1,53 @@
+<view catchtap="jumpDetail" class="coupon-item {{item.bgClass}}" data-jump-url="{{item.jumpUrl}}" wx:if="{{!fromHome}}" wx:for="{{couponList}}">
+    <view class="shop-info" wx:if="{{item.showOrgInfo}}">
+        <view class="logo">
+            <image src="{{item.logo}}"></image>
+            <text>{{item.orgName}}</text>
+        </view>
+        <view class="address">{{item.distance}}</view>
+    </view>
+    <view class="item-info-wrap">
+        <view class="item-cnt">
+            <view class="cnt-left">
+                <view class="desc">{{item.couponName}}</view>
+                <view class="date">{{item.validTypeName}}</view>
+                <view class="line" wx:if="{{!item.myCoupList||item.orgId!=orgId}}"></view>
+                <view class="person-nums" wx:if="{{!item.myCoupList}}">{{item.count}}人已领</view>
+                <view class="other-info" wx:if="{{item.myCoupList&&item.orgId!=orgId}}">
+                    <view class="logo">
+                        <image class="" src="{{item.logo}}"></image>
+                        <text>{{item.orgName}}</text>
+                    </view>
+                    <view class="name">非本店优惠券</view>
+                </view>
+            </view>
+            <view class="center-line"></view>
+            <view class="cnt-right {{item.userDesc?'':'no-desc-rgiht'}}">
+                <view class="price">{{item.userCondition}}</view>
+                <view class="desc">{{item.userDesc}}</view>
+                <form bindsubmit="receiveCoupon" catchtap="stopJump" class="form" data-couponId="{{item.couponId}}" data-id="{{item.id}}" data-jump-url="{{item.jumpUrl}}" data-orgId="{{orgId}}" data-other-shop="{{item.otherShop}}" data-status="{{item.status}}" reportSubmit="true">
+                    <button class="button-none btn {{item.stateClass}}" formType="submit" hoverClass="none">{{item.statusName}}</button>
+                </form>
+            </view>
+        </view>
+    </view>
+</view>
+<view catchtap="jumpDetail" class="home-coupon-item {{item.bgClass}}" data-jump-url="{{item.jumpUrl}}" wx:if="{{fromHome&&index<2}}" wx:for="{{couponList}}">
+    <view class="left left-red">
+        <view class="price">{{item.userCondition}}</view>
+        <view class="line"></view>
+        <view class="type">{{item.userDesc}}</view>
+    </view>
+    <view class="center">
+        <view class="desc">{{item.couponName}}</view>
+        <view class="date">{{item.validTypeName}}</view>
+    </view>
+    <view class="right">
+        <form bindsubmit="receiveCoupon" catchtap="stopJump" class="form" data-couponId="{{item.couponId}}" data-id="{{item.id}}" data-jump-url="{{item.jumpUrl}}" data-orgId="{{orgId}}" data-other-shop="{{item.otherShop}}" data-status="{{item.status}}" reportSubmit="true">
+            <button class="button-none btn {{item.stateClass}}" formType="submit" hoverClass="none">{{item.statusName}}</button>
+        </form>
+        <view class="receive-num">
+        {{item.count}}人已领
+    </view>
+    </view>
+</view>

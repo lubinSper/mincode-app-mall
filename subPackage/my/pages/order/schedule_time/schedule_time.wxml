@@ -1,0 +1,23 @@
+<view>
+    <view class="dmc_content_infor">
+        <ul>
+            <li>
+                <text>请选择日期</text>
+                <picker bindchange="bindDateChange" end="" mode="date" start="{{date?date:date2}}" value="{{date?date:date2}}">
+                    <abcd>{{date?date:'请选择'}}</abcd>
+                </picker>
+                <view class="clear"></view>
+            </li>
+            <li>
+                <text>请选择时间</text>
+                <picker bindchange="bindTimeChange" end="23:59" mode="time" start="{{'00:00'}}" value="{{time?time:time2}}">
+                    <abcd>{{time?time:'请选择'}}</abcd>
+                </picker>
+                <view class="clear"></view>
+            </li>
+        </ul>
+        <view class="clear"></view>
+    </view>
+    <view bindtap="saveChangeTimes" class="dmc_save" wx:if="{{date&&time&&date!='请选择'}}">保存</view>
+    <view class="dmc_save gray_dmc_save" wx:else>保存</view>
+</view>

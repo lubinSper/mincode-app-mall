@@ -1,0 +1,124 @@
+.customerService {
+    width: 690rpx;
+    height: 150rpx;
+    position: fixed;
+    top: 2rpx;
+    left: 30rpx;
+    border-radius: 20rpx;
+    z-index: 999;
+    background-color: #fbfafa;
+    display: flex;
+    box-shadow: 0 8px 55px #000;
+}
+
+.customerService .cs_impor_contact {
+    margin: 30rpx auto;
+    overflow: hidden;
+}
+
+.cs_impor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    z-index: 11111;
+    display: flex;
+    border-radius: 20rpx;
+    background-color: #fbfafa;
+}
+
+.cs_impor .cs_impor_le {
+    flex: 4;
+    margin: 30rpx 0 30rpx 30rpx;
+}
+
+.cs_impor .cs_impor_le .cs_impor_le_title,.cs_impor .cs_impor_le .cs_impor_le_message {
+    max-width: 500rpx;
+    display: inline-block;
+    height: 40rpx;
+}
+
+.cs_impor .cs_impor_le .cs_impor_le_title .title-shop-img {
+    width: 40rpx;
+    height: 40rpx;
+    float: left;
+}
+
+.title-shop-img image {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.cs_impor .cs_impor_le .cs_impor_le_title .title-shop {
+    width: 435rpx;
+    display: inline-block;
+    height: 40rpx;
+    line-height: 30rpx;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 24rpx;
+    margin-left: 10rpx;
+    color: #555;
+}
+
+.cs_impor .cs_impor_le .cs_impor_le_message {
+    font-size: 28rpx;
+}
+
+.cs_impor .cs_impor_le .cs_impor_le_message span {
+    color: #222;
+    float: left;
+}
+
+.cs_impor .cs_impor_le .cs_impor_le_message abcd {
+    color: #ff7800;
+    width: 120rpx;
+    float: left;
+    text-decoration: underline;
+}
+
+.cs_impor .cs_impor_ri {
+    flex: 1;
+    margin: 30rpx 30rpx 30rpx 0;
+}
+
+.cs_impor .cs_impor_ri .cs_impor_ri_time {
+    width: 100%;
+    display: block;
+    float: right;
+    height: 40rpx;
+    line-height: 40rpx;
+    color: #737373;
+    text-align: right;
+    font-size: 24rpx;
+}
+
+.cs_impor .cs_impor_ri image {
+    width: 20rpx;
+    height: 20rpx;
+    display: block;
+    float: right;
+    margin: 24rpx 6rpx 0 0;
+}
+
+.cb {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    display: block;
+    float: left;
+    background-color: #fbfafa;
+}
+
+.title-shop text {
+    position: absolute;
+    left: 0;
+    top: 7rpx;
+}
+
+.biaoqing {
+    padding-left: 40rpx;
+    background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/one-shop-one-mini-app/dit.png) no-repeat 0 center;
+    background-size: 32rpx;
+}

@@ -1,0 +1,9 @@
+{
+    "enablePullDownRefresh": true,
+    "navigationBarTitleText": "限时购",
+    "usingComponents": {
+        "common-tabs": "/components/wx-tpl/index/commonTabs/commonTabs",
+        "return_index": "/components/wx-tpl/return_index/return_index",
+        "NoData": "/components/wx-tpl/nodata/index"
+    }
+}

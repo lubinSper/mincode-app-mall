@@ -1,0 +1,454 @@
+<template name="pintuan">
+    <view class="img">
+        <image mode="aspectFill" src="{{item.avatarUrl}}"></image>
+    </view>
+    <view class="user">
+        <view class="name max_one_line">{{item.nickName}}</view>
+        <view class="time">剩余{{item.timeArr[0]+':'+item.timeArr[1]+':'+item.timeArr[2]}}</view>
+    </view>
+    <view class="number">还差
+              <text style="color:#ff7800">{{item.limitPeopleNum-item.currentPeopleNum}}人</text>拼成</view>
+    <view catchtap="openPintuan" class="button" data-pintuan-id="{{item.id}}">去参团</view>
+</template>
+<block wx:if="{{types==1||types==3}}">
+    <view class="good-detail-new" wx:if="{{showContent&&isShow}}">
+        <view class="member_redmind" wx:if="{{shopList[0].isSupportMemberCardPay==2&&price>0&&0}}">
+            <view>
+                <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/VIPcard.png"></image>
+            </view>
+            <view>本商品支持会员卡支付，请确认会员卡余额充足并在确认订单时选择「会员卡支付」。</view>
+        </view>
+        <greeting page="detail" textShow="{{textShow}}" wx:if="{{orgXcxType==3&&isSpecial==1}}"></greeting>
+        <view class="detail-bannder">
+            <swiper autoplay="{{false}}" bindchange="getCurrentBannerIndex" circular="{{true}}" class="good-img-container" current="{{currentBannerIndex}}" indicatorDots="{{false}}">
+                <swiper-item bindtap="previewProductImage" class="good-item" data-index="{{index}}" wx:for="{{shopList[0].mainImagesUrl.length?shopList[0].mainImagesUrl:[ shopList[0].imgUrls[0] ]}}" wx:key="{{index}}">
+                    <image class="slide-image" mode="aspectFill" src="{{item}}"></image>
+                </swiper-item>
+            </swiper>
+            <view class="cur-page-container" wx:if="{{imgUrls.length}}">{{currentBannerIndex+1}}/{{shopList[0].mainImagesUrl.length||1}}</view>
+        </view>
+        <view class="some-countdown">
+            <view class="kanjia_price" wx:if="{{isBargain==2&&isSpecial!=2}}">
+                <view class="l_price">
+                    <view class="curret_price">
+                        <text style="font-size: 26rpx;">￥</text>{{bargainMinPrice}}
+        </view>
+                    <view class="second">
+                        <view class="reduce_price">
+                            <text>砍后底价</text>
+                        </view>
+                        <view class="origin_price">￥{{price}}</view>
+                    </view>
+                </view>
+                <view class="count_down_kj">
+                    <text>距结束还剩</text>
+                    <view>
+                        <span class="cdr_time">{{timeArr[2]}}</span>
+                        <i>:</i>
+                        <span class="cdr_time">{{timeArr[1]}}</span>
+                        <i>:</i>
+                        <span class="cdr_time">{{timeArr[0]}}</span>
+                    </view>
+                </view>
+            </view>
+            <view class="pintuan_price" wx:elif="{{isPintuan==2&&isSpecial!=2}}">
+                <view class="curret_price">
+                    <text style="font-size: 30rpx;font-weight: 500">￥</text>
+                    <text>{{pintuanPrice}}</text>
+                </view>
+                <view class="origin_price">￥{{price}}</view>
+                <view class="second">
+                    <view class="reduce_price">
+                        <text>{{pintuanLimitPeopleNum}}人团</text>
+                        <text>立省￥{{reducePrice}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="count_down kanjia_price" wx:elif="{{originalPrice&&timeArr&&isSpecial!=2}}">
+                <view class="l_price">
+                    <view class="curret_price">
+                        <text style="font-size: 26rpx;">￥</text>{{cdl_price01}}.{{cdl_price02}}
+        </view>
+                    <view class="second">
+                        <view class="reduce_price">
+                            <text>限时购</text>
+                        </view>
+                        <view class="origin_price">￥{{originalPrice}}</view>
+                    </view>
+                </view>
+                <view class="count_down_kj">
+                    <text>距结束还剩</text>
+                    <view>
+                        <span class="cdr_time">{{timeArr[2]}}</span>
+                        <i>:</i>
+                        <span class="cdr_time">{{timeArr[1]}}</span>
+                        <i>:</i>
+                        <span class="cdr_time">{{timeArr[0]}}</span>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="detaill-good-info">
+            <view class="good-title">{{name}}
+      <view class="detail-share" wx:if="{{memberCardInfo&&(memberCardInfo.vip===2||memberCardInfo.vip===3)&&shopList[0].enableSupperMemberShareGainGold===2}}">
+                    <text bindtap="linkToSharePage" class="desc" style="line-height:86rpx;">分享有礼</text>
+                </view>
+                <view class="detail-share desc-1" wx:else>
+                    <button class="desc " openType="share">分享</button>
+                </view>
+            </view>
+            <view class="good-price {{isSpecial==2?'isSpecial':''}}" wx:if="{{shopList[0].enableSupperMemberPrice==1&&!(isPintuan==2&&isSpecial!=2)&&!(isBargain==2&&isSpecial!=2)&&!(originalPrice&&timeArr)}}">
+                <view class="new-price" wx:if="{{isSpecial!==2}}">
+                    <text class="price-icon">¥</text>{{price}}
+      </view>
+                <view class="new-price" style="font-size: 36rpx;font-weight:500;" wx:if="{{price==0&&isSpecial==2}}">
+                    <text class="price-icon">¥</text>咨询客服
+      </view>
+                <view class="new-price" style="font-size: 36rpx;" wx:if="{{types==1&&isSpecial==2&&price!=0}}">
+                    <text class="price-icon">¥{{price}}万</text>
+                </view>
+                <view class="old-price" wx:if="{{types==1&&originalPrice&&isSpecial!=2}}">
+                    <text class="price-icon">¥</text>{{originalPrice}}
+      </view>
+                <view class="old-price" wx:if="{{types==1&&originalPrice&&isSpecial==2}}">
+                    <text class="price-icon">¥</text>{{originalPrice}}万
+      </view>
+            </view>
+            <view class="good-price-supervip" wx:if="{{shopList[0].enableSupperMemberPrice==2&&shopList[0].superMemberPrice&&isBargain!=2&&isPintuan!=2}}">
+                <view class="price-vip-l">
+                    <view class="vip-l-top">
+                        <view class="price">
+                            <text>¥</text>{{shopList[0].superMemberPrice/100}}</view>
+                        <view class="icon"></view>
+                    </view>
+                    <view class="vip-l-bottom" wx:if="{{!(isPintuan==2&&isSpecial!=2)&&!(isBargain==2&&isSpecial!=2)&&!(originalPrice&&timeArr&&isSpecial!=2)}}">
+                        <view class="title">普通售价：</view>
+                        <view class="price">¥{{shopList[0].price/100}}</view>
+                        <view class="origin-price" wx:if="{{types!==3&&shopList[0].originalPrice}}">¥{{shopList[0].originalPrice/100}}</view>
+                    </view>
+                    <view bindtap="linkToOpenPage" class="open-s-vip" wx:if="{{!(memberCardInfo.vip===2||memberCardInfo.vip===3)&&superVip}}"></view>
+                </view>
+            </view>
+            <view class="detail-sale-info" wx:if="{{types!==3&&isSpecial!==2||types!==3&&shopList[0].isShowSale==2&&isSpecial!==2||types==3&&shopList[0].isShowBook==2&&isSpecial!==2||isSpecial!==2}}">
+                <view wx:if="{{types!==3&&isSpecial!==2}}">运费 ¥{{shopList[0].freight/100}}</view>
+                <view wx:if="{{types!==3&&shopList[0].isShowSale==2&&isSpecial!==2}}">已售{{shopList[0].saleTotal}}件</view>
+                <view wx:if="{{types==3&&shopList[0].isShowBook==2&&isSpecial!==2}}">已有{{shopList[0].saleTotal}}人预约</view>
+                <view wx:if="{{isSpecial!==2}}">浏览{{shopList[0].viewNum}}次</view>
+            </view>
+            <view class="org-service" wx:if="{{( (shopList[0].noReasonReturn==2||shopList[0].qualityAssurance==2||shopList[0].quickRefund==2)&&types!=3||(shopList[0].unsatisfiedRefund==2||shopList[0].onlineWithoutQueuing==2||shopList[0].payAfterService==2)&&types==3 )&&isSpecial!=2}}">
+                <view class="org-title">服务</view>
+                <view class="{{types!=3?shopList[0].noReasonReturn==2&&shopList[0].qualityAssurance==2&&shopList[0].quickRefund==2?'org-content org-content-other':'org-content':shopList[0].unsatisfiedRefund==2&&shopList[0].onlineWithoutQueuing==2&&shopList[0].payAfterService==2?'org-content org-content-other':'org-content'}}">
+                    <view class="org-policy" wx:if="{{types!=3&&shopList[0].noReasonReturn==2}}">七天无理由退货</view>
+                    <view class="org-policy" wx:if="{{types!=3&&shopList[0].qualityAssurance==2}}">100%正品保证</view>
+                    <view class="org-policy" wx:if="{{types!=3&&shopList[0].quickRefund==2}}">48小时快速退款</view>
+                    <view class="org-policy" wx:if="{{types==3&&shopList[0].unsatisfiedRefund==2}}">不满意退款</view>
+                    <view class="org-policy" wx:if="{{types==3&&shopList[0].onlineWithoutQueuing==2}}">线上预约免排队</view>
+                    <view class="org-policy" wx:if="{{types==3&&shopList[0].payAfterService==2}}">先享受服务后付费</view>
+                </view>
+            </view>
+        </view>
+        <view class="org-active-info" wx:if="{{isSpecial!==2}}">
+            <view class="org-active-container" wx:if="{{shopList[0].isSupportMemberCardPay==2&&types==3&&price!=0||shopList[0].isSupportMemberCardPay==2&&types!=3||shopList[0].superVip==2&&shopList[0].salePercentage&&shopList[0].isSpecial!=2&&(memberCardInfo.vip===2||memberCardInfo.vip===3)}}">
+                <view class="member-card-desc" wx:if="{{shopList[0].isSupportMemberCardPay==2&&types==3&&price!=0||shopList[0].isSupportMemberCardPay==2&&types!=3}}">
+                    <view class="org-title">会员卡</view>
+                    <view class="member-card-content">本商品支持会员卡支付，请确认会员卡余额充足并在确认订单时选择「会员卡支付」</view>
+                </view>
+                <view bindtap="superVipHandler" class="vip-card-desc" style="margin-top:{{shopList[0].isSupportMemberCardPay==2&&types==3&&price!=0||shopList[0].isSupportMemberCardPay==2&&types!=3?'40rpx':'0'}};" wx:if="{{shopList[0].superVip==2&&shopList[0].salePercentage&&shopList[0].isSpecial!=2&&(memberCardInfo.vip===2||memberCardInfo.vip===3)&&shopList[0].enableSupperMemberShareGainGold==2}}">
+                    <view class="org-title">超级会员</view>
+                    <view class="vip-card-content" wx:if="{{(memberCardInfo.vip===2||memberCardInfo.vip===3)&&shopList[0].enableSupperMemberShareGainGold==2}}">您是超级会员，分享该商品最高可得 <text class="coin">{{shopList[0].salePercentage?filters.toFloor( (maxPrice?maxPrice:price)*shopList[0].salePercentage/10 ):0}}</text> 金币</view>
+                    <view class="vip-open-card-content" wx:if="{{!(memberCardInfo.vip===2||memberCardInfo.vip===3)}}">开通超级会员，立享超级会员价+分享有礼</view>
+                </view>
+            </view>
+        </view>
+        <view class="some-rule-container">
+            <view class="introduce" wx:if="{{isBargain==2&&isSpecial!=2}}">
+                <view class="title">
+                    <view class="start">砍价玩法</view>
+                    <view catchtap="openKanjiaRule" class="end">详细规则
+          <view class="arrow">
+                            <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/turn_arrow.png"></image>
+                        </view>
+                    </view>
+                </view>
+                <view class="content">
+                    <view class="item">
+                        <view class="number">1</view>
+                        <view class="text">
+                            <view>发起砍价</view>
+                            <view class="info">点击下方“发起砍价”即可开始砍价</view>
+                        </view>
+                    </view>
+                    <view class="item">
+                        <view class="number">2</view>
+                        <view class="text">
+                            <view>邀请好友来砍价</view>
+                            <view class="info">邀请砍价</view>
+                        </view>
+                    </view>
+                    <view class="item">
+                        <view class="number">3</view>
+                        <view class="text">
+                            <view>砍价成功</view>
+                            <view class="info">砍价过程中也可购买，砍价人数满后即可以最低价购买</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="introduce" wx:if="{{isPintuan==2&&isSpecial!=2}}">
+                <view class="title">
+                    <view class="start">拼团玩法</view>
+                    <view catchtap="openPintuanRule" class="end">详细规则
+          <view class="arrow">
+                            <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/turn_arrow.png"></image>
+                        </view>
+                    </view>
+                </view>
+                <view class="content">
+                    <view class="item">
+                        <view class="number">1</view>
+                        <view class="text">
+                            <view>开团/参团</view>
+                            <view class="info">支付成功后才算</view>
+                            <view class="info">开团/参团成功</view>
+                        </view>
+                    </view>
+                    <view class="item">
+                        <view class="number">2</view>
+                        <view class="text">
+                            <view>分享拼团给好友</view>
+                            <view class="info">邀请参团</view>
+                        </view>
+                    </view>
+                    <view class="item">
+                        <view class="number">3</view>
+                        <view class="text">
+                            <view>拼团成功</view>
+                            <view class="info">参团人数达到成</view>
+                            <view class="info">团人数即拼团成</view>
+                            <view class="info">功，拼不成则退款</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="pintuan_content" wx:if="{{pintuanOpenNum>0}}">
+                <view class="title">
+                    <view class="start">{{pintuanOpenNum}}人正在开团，快去参与</view>
+                    <navigator class="end" hoverClass="none" url="/subPackage/discover/pages/pintuan_list/pintuan_list?id={{id}}">更多
+                  <view class="arrow">
+                            <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/turn_arrow.png"></image>
+                        </view>
+                    </navigator>
+                </view>
+                <block wx:if="{{userPintuanDetailDtos.length>0}}">
+                    <view class="content" wx:if="{{userPintuanDetailDtos.length<3}}">
+                        <view class="item" wx:for="{{userPintuanDetailDtos}}" wx:key="id">
+                            <template is="pintuan" data="{{item:item}}"></template>
+                        </view>
+                    </view>
+                    <swiper autoplay="true" circular="true" class="content" displayMultipleItems="2" duration="500" interval="3000" vertical="true" wx:else>
+                        <swiper-item class="item" wx:for="{{userPintuanDetailDtos}}" wx:key="id">
+                            <template is="pintuan" data="{{item:item}}"></template>
+                        </swiper-item>
+                    </swiper>
+                </block>
+            </view>
+        </view>
+        <view class="choose-rule">
+            <view class="warp_user" wx:if="{{types==1&&isShowSelectAttr&&inventory2}}">
+                <view class="appointment_time">
+                    <view class="appointment_time_l">已选</view>
+                    <view bindtap="showCartDialog" class="appointment_time_r appointment_time_r2 {{hasSelectAttrText!=''?'select':''}}" data-attributeId="{{hasSelectAttrCode}}" data-attributeValue="{{hasSelectAttrValue}}" data-type="1">{{hasSelectAttrText!=''?hasSelectAttrText:'请选择'}}</view>
+                </view>
+            </view>
+        </view>
+        <block wx:if="{{types==3}}">
+            <view class="warp_user warp_shop" wx:if="{{reserveTime}}">
+                <view class="appointment_time">
+                    <view class="appointment_time_l">预约时间</view>
+                    <view class="appointment_time_r">{{reserveTime}}</view>
+                </view>
+            </view>
+            <view class="warp_user" wx:else>
+                <navigator hoverClass="none" url="/subPackage/my/pages/order/schedule_time/schedule_time?dateTime={{base64DateTime!=''?base64DateTime:''}}">
+                    <view class="appointment_time">
+                        <view class="appointment_time_l">预约时间</view>
+                        <view class="appointment_time_r {{dateTime?'select':''}}">{{dateTime?dateTime:'请选择'}}</view>
+                    </view>
+                </navigator>
+            </view>
+        </block>
+        <view class="detail-intro">
+            <view class="like-container">
+                <view bindtap="likeThisProduct" class="fav-icon" hoverClass="selected"></view>
+                <view class="fav-num" wx:if="{{shopList[0].likes.length}}">
+                    <text>{{shopList[0].likes.length}}</text>人觉得赞</view>
+                <view class="fav-num" wx:if="{{!shopList[0].likes.length}}">客官，赏个赞呗~</view>
+                <view class="add-num {{show?'show':''}}">+1</view>
+                <view class="like-thumb-container">
+                    <image class="avtar" mode="asdpectFill" src="{{item.avatar}}" wx:for="{{shopList[0].likes}}" wx:key="{{index}}"></image>
+                </view>
+            </view>
+            <view class="detail-intro-body">
+                <view class="detail-intro-tab">
+                    <view bindtap="checkoutTab" class="tab-item {{tabItemIndex==index?'cur':''}}" data-index="{{index}}" wx:for="{{goodDetailTabList}}" wx:key="{{index}}">{{item}}</view>
+                </view>
+                <view class="detail-intro-tab fix" style="display:{{isFixed?'':'none'}}">
+                    <view bindtap="checkoutTab" class="tab-item {{tabItemIndex==index?'cur':''}}" data-index="{{index}}" wx:for="{{goodDetailTabList}}" wx:key="{{index}}">{{item}}</view>
+                </view>
+                <view class="detail-intro-body">
+                    <ProductDetailDesc imgTextHybr="{{imgTextHybr}}" style="display:{{tabItemIndex==0?'block':'none'}}"></ProductDetailDesc>
+                    <ProductDetailComment bind:discussSuccess="discussSuccess" commentList="{{shopList[0].comments}}" goodsId="{{shopList[0].id}}" likeList="{{shopList[0].likes}}" style="display:{{tabItemIndex==1?'block':'none'}}" tabItemIndex="{{tabItemIndex}}"></ProductDetailComment>
+                </view>
+            </view>
+        </view>
+        <view class="footer" style="z-index: 22;" wx:if="{{types!=2}}">
+            <view class="footer_1" wx:if="{{types==3}}">
+                <view class="footer_l">
+                    <view class="footer_kf">
+                        <button openType="contact">客服</button>
+                    </view>
+                    <view bindtap="jumpIndex" class="footer_index">主页</view>
+                </view>
+                <block wx:if="{{reserveTime}}">
+                    <view class="footer_r_disabled footer_r" wx:if="{{inventory==0&&isInfiniteInventory==1||appointmentExpire}}">预约结束</view>
+                    <view class="footer_r" wx:else>
+                        <form bindsubmit="jumpOrderSure" class="form" data-id="{{id}}" reportSubmit="true">
+                            <button class="button-none form-button" formType="submit" hoverClass="none">
+            {{price>0?appointmentCopy:appointmentZeroCopy}}
+            </button>
+                        </form>
+                    </view>
+                </block>
+                <block wx:else>
+                    <view class="footer_r_disabled footer_r" wx:if="{{inventory==0&&isInfiniteInventory==1}}">预约结束</view>
+                    <view class="footer_r" wx:else>
+                        <form bindsubmit="jumpOrderSure" class="form" data-id="{{id}}" reportSubmit="true">
+                            <button class="button-none form-button" formType="submit" hoverClass="none">
+                {{price>0?appointmentCopy:appointmentZeroCopy}}
+              </button>
+                        </form>
+                    </view>
+                </block>
+            </view>
+            <view class="footer_2" wx:elif="{{types==1}}">
+                <view class="footer_contact" wx:if="{{isSpecial!=2}}">
+                    <button openType="contact" plain="true">客服</button>
+                </view>
+                <view bindtap="jumpIndex" class="footer_index">主页</view>
+                <view bindtap="jumpBuyCar" class="footer_buy_car" wx:if="{{isSpecial!=2}}">
+                    <view class="buy_car_num_1 {{buyCarCount>9?'buy_car_num_2':'buy_car_num_1'}}" wx:if="{{buyCarCount!=0}}">{{buyCarCount}}</view>
+                    <view class="buy_car_name">购物车</view>
+                </view>
+                <view catchtap="toCutPrice" class="cut_price_botton" wx:if="{{isBargain==2&&isLaunchBargain==2}}">
+                    <view class="price">￥{{currentBargainPrice}}</view>
+                    <view class="text">查看砍价</view>
+                </view>
+                <view class="cut_price_botton" wx:elif="{{isBargain==2}}">
+                    <form bindsubmit="doCutPrice" class="form" reportSubmit="true">
+                        <button class="button-none form-button" formType="submit" hoverClass="none">
+                            <view class="price">￥{{bargainMinPrice}}</view>
+                            <view class="text">发起砍价</view>
+                        </button>
+                    </form>
+                </view>
+                <view catchtap="toPintuanDetail" class="cut_price_botton" wx:elif="{{isPintuan==2&&isJoinPintuan==2}}">
+                    <view class="price">￥{{pintuanPrice}}</view>
+                    <view class="text">查看拼团</view>
+                </view>
+                <view class="cut_price_botton no_surport_buy" data-type="1" style="background-color: #fff;padding-right: 15rpx" wx:elif="{{isSpecial==2&&price!=0}}">
+                    <button class="contact-service" openType="contact">
+              马上咨询 
+          </button>
+                </view>
+                <view class="cut_price_botton no_surport_buy" data-type="2" style="background-color: #fff;padding-right: 15rpx" wx:elif="{{isSpecial==2&&price==0}}">
+                    <button class="contact-service" openType="contact">
+            马上咨询 
+          </button>
+                </view>
+                <view class="cut_price_botton" wx:elif="{{isPintuan==2}}">
+                    <form bindsubmit="openPintuan" class="form" data-type="kaituan" reportSubmit="true">
+                        <button class="button-none form-button" formType="submit" hoverClass="none">
+                            <view class="price">￥{{pintuanPrice}}</view>
+                            <view class="text">我要开团</view>
+                        </button>
+                    </form>
+                </view>
+                <view bindtap="showCartDialog" class="footer_add_buy_car minor_color" data-attributeId="{{hasSelectAttrCode}}" data-attributeValue="{{hasSelectAttrValue}}" data-type="1" wx:elif="{{inventory2>0}}">加入购物车</view>
+                <view bindtap="showCartDialog" class="footer_add_buy_car buy_disable" data-attributeId="{{hasSelectAttrCode}}" data-attributeValue="{{hasSelectAttrValue}}" data-type="1" wx:else>加入购物车</view>
+                <view class="footer_buy footer_buy_disable" data-in="{{isInfiniteInventory}}" wx:if="{{(inventory2?inventory2:inventory)==0&&isSpecial!=2&&isInfiniteInventory!=2}}">已售罄</view>
+                <view class="cut_price_botton minor_color" style="margin-left:0;" wx:elif="{{isPintuan==2||isBargain==2}}">
+                    <form bindsubmit="showCartDialog" class="form" data-attributeId="{{hasSelectAttrCode}}" data-attributeValue="{{hasSelectAttrValue}}" data-type="2" reportSubmit="true">
+                        <button class="button-none alone-button minor_color" formType="submit" hoverClass="none">
+                            <view class="price">￥{{price}}</view>
+                            <view class="text">{{isPintuan==2?'单独购买':'直接购买'}}</view>
+                        </button>
+                    </form>
+                </view>
+                <view class="footer_buy" wx:elif="{{isSpecial!=2}}">
+                    <form bindsubmit="showCartDialog" class="form" data-attributeId="{{hasSelectAttrCode}}" data-attributeValue="{{hasSelectAttrValue}}" data-type="2" reportSubmit="true">
+                        <button class="button-none form-button" formType="submit" hoverClass="none">
+                  {{timeArr?'马上抢':'立即购买'}}
+                </button>
+                    </form>
+                </view>
+            </view>
+        </view>
+        <view class="copy-right-view {{copyRightShow?'':'no_price_hide'}}" style="padding-bottom: 56px;">
+            <copyright onPullDownRefresh="{{onPullDownRefresh}}" onShow="{{onCopyRightShow}}"></copyright>
+        </view>
+    </view>
+    <buy-car-dialog bind:closebuydailog="closeBuyCarDialog" bind:setreadyselectattr="setReadySelectAttr" bind:setselectprices="setSelectPrices" onHide="{{onHide}}" onPullDownRefresh="{{onPullDownRefresh}}" onReachBottom="{{onReachBottom}}" onShow="{{onShow}}" pageParams="{{pageParams}}"></buy-car-dialog>
+    <block wx:if="{{pintuanRule}}">
+        <view catchtap="closeCutPriceModal" class="drawer_screen cut_screen"></view>
+        <view class="box">
+            <view class="rule_modal">
+                <view class="content">
+                    <view class="title">活动规则</view>
+                    <view class="line">1. 拼团订单支付成功后视为开团/参团成功</view>
+                    <view class="line">2. 必须在活动时间内邀请足够多的好友参团，拼团才算成功 </view>
+                    <view class="line">3. 发布的拼团也将同时展示在商品详情页中，其他人也可以参与</view>
+                    <view class="line">4. 若未在活动时间内完成拼团，则将自动退款至支付账户 </view>
+                    <view class="line">5. 如对活动有任何疑问，请联系本店微信客服或致电咨询 </view>
+                </view>
+                <view catchtap="closeRuleModal" class="close">
+                    <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/guanbi.png"></image>
+                </view>
+            </view>
+        </view>
+    </block>
+    <block wx:if="{{kanjiaRule}}">
+        <view catchtap="closeCutPriceModal" class="drawer_screen cut_screen"></view>
+        <view class="box">
+            <view class="rule_modal">
+                <view class="content">
+                    <view class="title">活动规则</view>
+                    <view class="line">1. 砍价活动每人每次限购一件</view>
+                    <view class="line">2. 每位好友（每个微信号）可帮忙砍价一次</view>
+                    <view class="line">3. 不用砍到最低也可购买，购买付款时以最后一次砍价价格为准</view>
+                    <view class="line">4. 购买后方可发起新的一次砍价</view>
+                    <view class="line">5. 活动时间结束后恢复原售价</view>
+                    <view class="line">6. 如对活动有任何疑问，请联系本店微信客服或致电咨询</view>
+                </view>
+                <view catchtap="closeRuleModal" class="close">
+                    <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/guanbi.png"></image>
+                </view>
+            </view>
+        </view>
+    </block>
+    <view class="noData" wx:if="{{isShow==false}}">
+        <view class="noData_img">
+            <image alt="" src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/one-shop-one-mini-app/undercarriage.png"></image>
+        </view>
+        <view class="noData_text">{{tipMsg}}</view>
+    </view>
+    <block wx:if="{{showCutPriceModal}}">
+        <view catchtap="closeCutPriceModal" class="drawer_screen"></view>
+        <view catchtap="closeCutPriceModal" class="cut_price_box">
+            <image src="http://yamxcx.oss-cn-shenzhen.aliyuncs.com/shop-multi/kjzhezhao.png"></image>
+        </view>
+    </block>
+    <return_index isGoodsDetail="{{true}}" wx:if="{{showReturnIndexBtn}}"></return_index>
+</block>
+<dongtai option="{{onLoadOption}}" wx:if="{{types==2}}"></dongtai>
+<authorize_dialog bind:backhandle="backHandle" onHide="{{onAuthHide}}" onShow="{{onAuthShow}}" params="{{authParam}}"></authorize_dialog>
+<wxs module="filters" src="goods_detail.wxs" />

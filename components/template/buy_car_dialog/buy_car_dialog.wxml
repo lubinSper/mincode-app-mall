@@ -1,0 +1,47 @@
+<template name="buyCarDialog">
+    <view bindtap="closeDialog" class="check_goods_type_bg {{checkGoodsTypeBg}}" wx:if="{{showCheckGoodsTypeBg}}"></view>
+    <view animation="{{animationData}}" class="check_goods_type" wx:if="{{showCheckGoodsType}}">
+        <view class="check_goods_warp">
+            <view class="goods_info">
+                <view class="goods_info_l">
+                    <image mode="aspectFill" src="{{coverImage?coverImage:imgUrls[0]}}"></image>
+                </view>
+                <view class="goods_info_c">
+                    <view class="goods_price">￥{{price}}</view>
+                    <view class="goods_orgin_price" wx:if="{{originalPrice}}">￥{{originalPrice}}</view>
+                    <view class="goods_surplus">剩余：{{inventory}}</view>
+                </view>
+                <view bindtap="closeDialog" class="goods_info_r"></view>
+            </view>
+            <view class="goods_type" wx:if="{{goodsAttribute.length>0}}">
+                <view class="goods_warp">
+                    <scroll-view scrollY="true" style="max-height:440rpx;">
+                        <view bindtap="switchType" class="goods_type_item {{i==index&&item.active?'goods_type_item_active':''}} {{item.inventory?'':'goods_type_item_disable'}}" data-attribute-id="{{item.id}}" data-index="{{i}}" data-inventory="{{item.inventory}}" data-original-price="{{item.originalPrice?item.originalPrice/100:''}}" data-price="{{item.price/100}}" wx:for="{{goodsAttribute}}" wx:for-index="i">{{item.attrName}}</view>
+                    </scroll-view>
+                </view>
+            </view>
+            <view class="goods_check_num">
+                <view class="goods_check_num_l">数量</view>
+                <view class="goods_check_num_r">
+                    <view bindtap="removeNum" class="goods_num_l" wx:if="{{count!=1}}">
+                        <view></view>
+                    </view>
+                    <view class="goods_num_l goods_num_l_disable" wx:else>
+                        <view></view>
+                    </view>
+                    <view class="goods_num_c">
+                        <view>{{count}}</view>
+                    </view>
+                    <view bindtap="addNum" class="goods_num_r" wx:if="{{count<inventory}}">
+                        <view></view>
+                    </view>
+                    <view class="goods_num_r goods_num_r_disable" wx:else>
+                        <view></view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view bindtap="addBuyCar" class="goods_sure" data-attribute-id="{{attributeId}}" data-count="{{count}}" data-id="{{id}}" wx:if="{{inventory}}">确定</view>
+        <view class="goods_out" wx:else>已售罄</view>
+    </view>
+</template>

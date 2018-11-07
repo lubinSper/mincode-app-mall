@@ -1,0 +1,328 @@
+page {
+    background-color: #ecedef!important;
+    overflow: hidden;
+}
+
+scroll-view {
+    padding-bottom: 100rpx;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+.coupon_ldetial_logo {
+    margin: 20rpx 40rpx 0rpx 40rpx;
+    border-radius: 16rpx;
+    position: relative;
+    text-align: center;
+    padding-bottom: 0rpx;
+    min-height: 440rpx;
+}
+
+.coupon_ldetial_logo .coupon-bg {
+    width: 100%;
+    min-height: 370rpx;
+    position: absolute;
+    z-index: 1;
+}
+
+.coupon_ldetial_logo .coupon_ldetial_logo_content {
+    width: 100%;
+    min-height: 370rpx;
+    padding-bottom: 30rpx;
+    z-index: 111;
+    border-radius: 20rpx;
+    margin-top: 20rpx;
+    position: absolute;
+}
+
+.coupon_ldetial_logo_content .coupon_circle {
+    width: 32rpx;
+    height: 32rpx;
+    display: block;
+    background-color: #eee;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    margin-top: -16rpx;
+}
+
+.coupon_ldetial_logo .coupon_ldetial_logo_head {
+    width: 156rpx;
+    height: 156rpx;
+    margin-top: -78rpx;
+    display: block;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    left: calc(50% - 78rpx);
+    top: 0;
+}
+
+.coupon_ldetial_logo .coupon_ldetial_logo_head .img {
+    width: 156rpx;
+    height: 156rpx;
+    display: block;
+    border-radius: 50%;
+}
+
+.coupon_ldetial_logo .discount {
+    margin: 10rpx auto 0 auto;
+    min-height: 185rpx;
+    width: 600rpx;
+    padding-top: 30rpx;
+}
+
+.coupon_ldetial_logo .discount .discount_price {
+    width: 184rpx;
+    line-height: 80rpx;
+    float: left;
+    font-size: 32rpx;
+    color: #e7422f;
+    padding-left: 10rpx;
+    display: flex;
+    align-items: baseline;
+}
+
+.coupon_ldetial_logo .discount .discount_price view {
+    width: auto;
+    margin: auto;
+}
+
+.coupon_ldetial_logo .discount .discount_price view b {
+    font-size: 50rpx;
+    font-weight: bold;
+    margin-right: 5rpx;
+    float: left;
+}
+
+.coupon_ldetial_logo .discount .discount_price view text {
+    float: right;
+    padding-top: 5rpx;
+}
+
+.coupon_ldetial_logo .discount .total {
+    width: 440rpx;
+    height: 90rpx;
+    float: left;
+    text-align: left;
+    display: table;
+}
+
+.coupon_ldetial_logo .discount .total .coupon_circumstances {
+    display: table-row;
+    vertical-align: middle;
+    width: 405rpx;
+    color: #000;
+    font-size: 48rpx;
+}
+
+.coupon_ldetial_logo .discount .total .fllc_time {
+    color: #888;
+    font-size: 24rpx;
+}
+
+.coupon_ldetial_logo .discount .total .coupon_name {
+    color: #555;
+    font-size: 26rpx;
+}
+
+.coupon_attention {
+    width: 80%;
+    color: #000;
+    font-size: 30rpx;
+    text-align: left;
+    margin: 40rpx auto;
+}
+
+.use-introduce {
+    margin: 60rpx 30rpx 60rpx 30rpx;
+    color: #fff;
+    font-size: 26rpx;
+    border-top: 1px solid #ddd;
+    position: relative;
+    padding-top: 30rpx;
+    line-height: 45rpx;
+}
+
+.use-introduce .use-introduce-title {
+    display: block;
+    width: 160rpx;
+    background-color: #eee;
+    position: absolute;
+    top: -24rpx;
+    color: #555;
+    left: 50%;
+    margin-left: -90rpx;
+    text-align: center;
+    padding-left: 0rpx;
+    font-size: 30rpx;
+}
+
+.coupon_introduce_container {
+    width: 88%;
+    min-height: 100rpx;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-size: 28rpx;
+    color: #888;
+    margin: 0 auto;
+    margin-top: 34rpx;
+}
+
+.coupon_introduce_container .coupon-flex-item {
+    min-height: 48rpx;
+    line-height: 40rpx;
+}
+
+.coupon_introduce_container .coupon_introduce_name {
+    padding-left: 6rpx;
+}
+
+.coupon_introduce_container .coupon_introduce_address {
+    margin-left: 26rpx;
+    max-height: 80rpx;
+}
+
+.coupon_introduce_container .coupon_introduce_address text {
+    display: inline-block;
+    max-height: 80rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.use-introduce view {
+    padding-left: 30rpx;
+}
+
+.use-introduce view span {
+    margin-left: -30rpx;
+}
+
+.coupon_footer_navigation {
+    width: 100%;
+    position: fixed;
+    z-index: 666;
+    bottom: 0;
+    left: 0;
+    height: 108rpx;
+    text-align: center;
+    background-color: #fff;
+}
+
+.coupon_footer_navigation navigator {
+    height: 90rpx;
+    width: 100%;
+    display: inline-block;
+    padding: 18rpx 0 0 0;
+}
+
+.coupon_footer_navigation .cfn_img {
+    height: 50rpx;
+}
+
+.coupon_footer_navigation .cfn_img image {
+    width: 46rpx;
+    height: 46rpx;
+}
+
+.coupon_footer_navigation .cfn_text {
+    width: 100%;
+    height: 20rpx;
+    color: #888;
+    font-size: 26rpx;
+}
+
+.discount_logo {
+    float: left;
+    width: 150rpx;
+    padding-left: 6rpx;
+}
+
+.discount_logo image {
+    width: 130rpx;
+    height: 130rpx;
+    display: block;
+    border-radius: 10rpx;
+    margin-top: 8rpx;
+    background-color: #f3f3f3;
+}
+
+.receive_infor {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.receive_infor .receive_infor_num {
+    width: 100%;
+    margin: 0 auto;
+    height: 60rpx;
+    line-height: 70rpx;
+    display: inline-block;
+    color: #888;
+    font-size: 26rpx;
+}
+
+.receive_infor .receive_click {
+    width: 67%;
+    height: 78rpx;
+    line-height: 78rpx;
+    display: inline-block;
+    border-radius: 44rpx;
+    text-align: center;
+    background-color: #fe6519;
+    font-size: 38rpx;
+    color: #fff;
+}
+
+.receive_infor .ccc {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-size: 38rpx;
+    color: #888;
+}
+
+.coupon_ldetial_logo .coupon_expired_ico {
+    position: absolute;
+    top: 40rpx;
+    right: 20rpx;
+    z-index: 333333;
+}
+
+.coupon_ldetial_logo .coupon_expired_ico image {
+    width: 240rpx;
+    height: 131rpx;
+}
+
+.recevie_infor_prompt {
+    width: 100%;
+    text-align: center;
+    padding-top: 50rpx;
+}
+
+.recevie_infor_prompt image {
+    width: 500rpx;
+    height: 86rpx;
+    margin: 0 auto;
+}
+
+.share {
+    background-color: transparent;
+    font-size: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    display: inline;
+    border: 0px;
+}
+
+.share:after {
+    border: 0px;
+}

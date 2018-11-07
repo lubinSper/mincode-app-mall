@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "我的",
+    "usingComponents": {
+        "authorize_dialog": "/components/wx-tpl/authorize_dialog/authorize/authorize",
+        "copyright": "/components/wx-tpl/copyright/copyright/copyright",
+        "PayDialog": "/components/wx-tpl/order/pay-dialog/index",
+        "vip_mask_layer": "/components/template/vip_mask_layer/vip_mask_layer"
+    }
+}

@@ -1,0 +1,5 @@
+<form bindsubmit="submitFormId" reportSubmit="true">
+    <button class="button-none" formType="submit" hoverClass="none" style="margin: 0 !important">
+        <view class="{{isResetPos?'release_view reset_pos':'release_view'}} {{isGoodsDetail?'goods':''}}"></view>
+    </button>
+</form>

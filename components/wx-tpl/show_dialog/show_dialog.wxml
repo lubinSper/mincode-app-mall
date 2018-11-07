@@ -1,0 +1,3 @@
+<view class="main" wx:if="{{show}}">
+    <view class="dialog">{{content?content:'网络连接错误'}}</view>
+</view>

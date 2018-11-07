@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "custom-banner": "/components/wx-tpl/custom-page-tpl/custom-page/custom-banner/custom-banner",
+        "NoData": "/components/wx-tpl/nodata/index",
+        "discuss": "/components/wx-tpl/discuss/discuss"
+    }
+}

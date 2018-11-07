@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "colours_title": "/components/wx-tpl/index/coloursTitle/coloursTitle",
+        "big-goods-view": "/components/wx-tpl/index/bigGoodsView/bigGoodsView",
+        "small-goods-view": "/components/wx-tpl/index/smallGoodsView/smallGoodsView"
+    }
+}

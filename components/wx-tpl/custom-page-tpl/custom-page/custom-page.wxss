@@ -1,0 +1,337 @@
+@import "../../../template/show_dialog/show_dialog.wxss";
+
+@import "../../../../vendor/wxParse/wxParse.wxss";
+
+page {
+}
+
+image {
+    width: 100%;
+}
+
+.news_content {
+    background: #fff;
+    min-height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.wxparse_content {
+    padding: 40rpx 30rpx;
+}
+
+.wxparse_content view {
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: pre-wrap!important;
+    overflow-x: hidden;
+}
+
+.custom_page {
+    background-color: #fff;
+}
+
+.nonMarginTop {
+    margin-top: 0!important;
+}
+
+.paddingTop40 {
+    padding-top: 40rpx!important;
+}
+
+.carousel {
+    width: 750rpx;
+    height: 376rpx;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin-top: 40rpx;
+}
+
+.carousel swiper {
+    width: 750rpx;
+    height: inherit;
+    display: block;
+    overflow: hidden;
+}
+
+.carousel image {
+    width: 750rpx;
+    background-color: #eeeeee;
+}
+
+.carousel text {
+    font-size: 26rpx;
+    color: #fff;
+    width: 86rpx;
+    height: 56rpx;
+    line-height: 56rpx;
+    text-align: center;
+    background-color: rgba(0,0,0,0.6);
+    position: absolute;
+    right: 0;
+    bottom: 20rpx;
+    z-index: 10;
+}
+
+.custom_img {
+    margin-top: 10rpx;
+}
+
+.custom_img image {
+    display: block;
+    border: none;
+    width: 100%;
+    background-color: #eeeeee;
+}
+
+.custom_video {
+    margin-top: 10rpx;
+}
+
+.custom_video .video {
+    display: block;
+    width: 100%;
+    background-color: #eeeeee;
+}
+
+.custom_video .video .posterbg1 {
+    width: 100%;
+    height: 100%;
+}
+
+.custom_video .video .posterbg1 .img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.custom_video .video .posterbg1 {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.custom_video .video .controls {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.custom_video .video .play {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.custom_video .video .play .poster-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.custom_video .video .play .posterbg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.custom_video .video .play .img {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    width: 120rpx;
+    height: 120rpx;
+    margin-top: -60rpx;
+    margin-left: -60rpx;
+}
+
+.custom_text {
+    padding: 0 30rpx;
+    margin-top: 40rpx;
+    line-height: 40rpx;
+    text-align: left;
+    font-size: 28rpx;
+    color: #555555;
+}
+
+.custom_text text {
+    color: inherit;
+    font-size: inherit;
+    font-style: inherit;
+}
+
+.custom_btn {
+    padding: 30rpx 0;
+    text-align: center;
+}
+
+.custom_btn .c_btn {
+    display: inline-block;
+    width: 362rpx;
+    height: 82rpx;
+    line-height: 82rpx;
+    background: #ff7800;
+    font-size: 32rpx;
+    color: #fefcfc;
+    border-radius: 50rpx;
+    margin: 0;
+    padding: 0;
+}
+
+.custom_btn .c_btn:after {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.custom_form {
+    width: 100%;
+    height: 660rpx;
+    box-sizing: border-box;
+    background: #f8f8f8;
+    margin-top: 10rpx;
+}
+
+.submit_title {
+    height: 120rpx;
+    line-height: 120rpx;
+    text-align: center;
+    font-size: 32rpx;
+    color: #222;
+}
+
+.submit_row {
+    height: 70rpx;
+    line-height: 70rpx;
+    margin-bottom: 26rpx;
+    clear: both;
+}
+
+.submit_row .submit_desc {
+    font-size: 28rpx;
+    color: #222;
+    margin-left: 60rpx;
+    float: left;
+    width: 60rpx;
+}
+
+.submit_desc_r {
+    margin-left: 30rpx;
+}
+
+.submit_row .submit_input {
+    float: left;
+    width: 486rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    border: 1rpx solid #d6d6d6;
+    background-color: #fff;
+    font-size: 28rpx;
+    margin-left: 20rpx;
+    padding: 0 30rpx;
+    border-radius: 4rpx;
+    color: #222;
+}
+
+.submit_btn {
+    clear: both;
+    margin: 0 auto;
+    width: 362rpx;
+    height: 82rpx;
+    line-height: 82rpx;
+    text-align: center;
+    font-size: 32rpx;
+    color: #fff;
+    letter-spacing: 2rpx;
+    background-color: #ff7521;
+    border-radius: 50rpx;
+}
+
+.submit_btn::after {
+    border: none;
+}
+
+.remindText {
+    text-align: center;
+    font-size: 24rpx;
+    color: red;
+    line-height: 20rpx;
+    height: 20rpx;
+}
+
+.no_data {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    padding-top: 276rpx;
+}
+
+.no_data .no_data_img,.no_data .no_data_text {
+    text-align: center;
+}
+
+.no_data .no_data_img {
+    line-height: 1rpx;
+    margin-bottom: 14rpx;
+}
+
+.no_data .no_data_img image {
+    width: 304rpx;
+    height: 248rpx;
+}
+
+.no_data .no_data_text {
+    padding-top: 15rpx;
+    line-height: 30rpx;
+}
+
+.no_data .no_data_text text {
+    color: #555;
+    font-size: 30rpx;
+}
+
+.loading_failure {
+    position: relative;
+    width: 100%;
+    height: 600rpx;
+}
+
+.loading_failure .loading_wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    height: 176rpx;
+}
+
+.loading_failure .loading_failure_img {
+    text-align: center;
+}
+
+.loading_failure image {
+    width: 100rpx;
+    height: 118rpx;
+}
+
+.loading_failure .loading_failure_text {
+    text-align: center;
+    font-size: 25rpx;
+    color: #bababa;
+}
+
+.loading_failure .loading_failure_text text {
+    font-weight: bold;
+    color: #888;
+}
+
+.shoppinglist {
+    margin-bottom: 20rpx;
+    overflow: hidden;
+}

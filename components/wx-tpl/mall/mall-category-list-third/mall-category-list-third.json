@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "show_dialog": "/components/wx-tpl/show_dialog/show_dialog",
+        "copyright": "/components/wx-tpl/copyright/copyright/copyright",
+        "NoData": "/components/wx-tpl/nodata/index"
+    }
+}

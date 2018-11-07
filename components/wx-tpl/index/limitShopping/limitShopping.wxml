@@ -1,0 +1,14 @@
+<view class="limit_shopping" style="margin-top: {{isUser?'0':'20rpx'}}" wx:if="{{limitArr.length>0}}">
+    <colours_title showAll="{{!isUser?true:false}}" title="{{isUser?name&&name:'限时购'}}" type="{{2}}" url="/subPackage/business/pages/limit_shopping/limit_shopping" wx:if="{{!isUser||isUser&&name}}"></colours_title>
+    <big-goods-view item="{{item}}" wx:if="{{limitArr.length<3&&!isUser}}" wx:for="{{limitArr}}" wx:key="id"></big-goods-view>
+    <view class="scroll_view" wx:if="{{limitArr.length>2&&!isUser}}">
+        <scroll-view class="scroll" scrollX="true">
+            <small-goods-view isLast="{{limitArr.length==index+1}}" item="{{item}}" wx:for="{{limitArr}}" wx:key="item"></small-goods-view>
+        </scroll-view>
+    </view>
+    <view style="background:#fff; overflow:hidden; " wx:if="{{isUser}}">
+        <view style="float: left;" wx:for="{{limitArr}}" wx:key="item">
+            <small-goods-view isUser="{{1}}" item="{{item}}"></small-goods-view>
+        </view>
+    </view>
+</view>
